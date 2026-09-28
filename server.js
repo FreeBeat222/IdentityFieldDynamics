@@ -39,7 +39,7 @@ footer{padding:45px 0 65px;border-top:1px solid rgba(203,208,212,.12);color:#666
 <body>
 <header><div class="shell"><nav>
 <a class="mark" href="#top"><span class="crest"><span>IFD</span></span><span>IDENTITY FIELD DYNAMICS</span></a>
-<div class="links"><div class="nav-drop"><a href="/about">About Us</a><div class="nav-menu"><a href="/about/identity-researcher">The Identity Researcher</a><a href="/about/mission">The IFD Mission</a></div></div><a href="#investigation">Current Investigation</a><a href="#discipline">Discipline</a><a href="#framework">Framework</a><a href="#research">Research</a><a href="/lab">Lab</a><a href="#codex">Codex</a><a href="/confessional">Confessional</a><a href="#crest">Crest</a></div>
+<div class="links"><div class="nav-drop"><a href="/about">About Us</a><div class="nav-menu"><a href="/about/identity-researcher">The Identity Researcher</a><a href="/about/mission">The IFD Mission</a></div></div><a href="#investigation">Current Investigation</a><a href="/observor/">OBSERVOR 2.0</a><a href="#discipline">Discipline</a><a href="#framework">Framework</a><a href="#research">Research</a><a href="/lab">Lab</a><a href="#codex">Codex</a><a href="/confessional">Confessional</a><a href="#crest">Crest</a></div>
 </nav></div></header>
 <main id="top">
 <section class="hero"><div class="shell hero-grid"><div>
