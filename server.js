@@ -10,6 +10,7 @@ const page = `<!doctype html>
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#070707">
+<!-- IFD MAIN PAGE REDEPLOY: 2026-10-03 -->
 <meta name="description" content="Identity Field Dynamics — the dynamics of identity as a field system.">
 <title>Identity Field Dynamics</title>
 <style>
