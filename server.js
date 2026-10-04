@@ -62,6 +62,19 @@ const initDatabase = async () => {
 
 
 const deepPage = (title, kicker, body) => `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#070707"><title>${title} · Identity Field Dynamics</title><style>body{margin:0;background:#050505;color:#eeeae1;font-family:Inter,system-ui,sans-serif}main{width:min(900px,calc(100% - 40px));margin:auto;padding:100px 0}a{color:#f3da8c;text-decoration:none}.k{color:#d6b15a;font-size:11px;letter-spacing:.25em;text-transform:uppercase}h1{font-size:clamp(44px,8vw,82px);line-height:.95;letter-spacing:-.05em;margin:20px 0 30px}p{color:#aaa9a4;font-size:18px;line-height:1.8}.panel{border-top:1px solid #292929;margin-top:55px;padding-top:35px}.back{font-size:11px;letter-spacing:.16em;text-transform:uppercase}</style></head><body><main><a class="back" href="/">← Identity Field Dynamics</a><div class="panel"><div class="k">${kicker}</div><h1>${title}</h1>${body}</div></main></body></html>`;
+app.get("/api/runtime-diagnostic", (_req,res)=>res.json({
+  runtime: "node",
+  smtp: {
+    host: Boolean(process.env.SMTP_HOST),
+    user: Boolean(process.env.SMTP_USER),
+    pass: Boolean(process.env.SMTP_PASS),
+    port: Boolean(process.env.SMTP_PORT),
+    secure: Boolean(process.env.SMTP_SECURE),
+    from: Boolean(process.env.SMTP_FROM),
+    research_to: Boolean(process.env.RESEARCH_TO)
+  }
+}));
+
 app.post("/api/research-intake", async (req,res)=>{
   const body=req.body||{};
   const intakeId = "IFD-RI-" + new Date().getUTCFullYear() + "-" + Date.now() + "-" + Math.random().toString(36).slice(2,8);
