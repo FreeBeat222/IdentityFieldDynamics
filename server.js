@@ -106,7 +106,7 @@ app.post("/api/research-intake", async (req,res)=>{
   }
   const html = `<h2>IFD RESEARCH INTAKE</h2><p><strong>${intakeId}</strong></p><p><strong>Encounter:</strong> ${escapeHtml(body.encounterType)}</p><p><strong>Participants:</strong> ${escapeHtml(participants)}</p><p><strong>Participant detail:</strong> ${escapeHtml(body.participantOther)}</p><hr><h3>WHAT WAS OBSERVED</h3><p>${escapeHtml(body.observable)}</p><p><strong>Summary:</strong> ${escapeHtml(body.summary)}</p><p><strong>Sequence:</strong> ${escapeHtml(body.sequence)}</p><p><strong>First observed:</strong> ${escapeHtml(body.firstObserved)}</p><p><strong>Persistence:</strong> ${escapeHtml(body.persistence)} | <strong>Repeatable:</strong> ${escapeHtml(body.repeatable)}</p><h3>EVIDENCE</h3><p>${escapeHtml(body.evidence)}</p><p><strong>Independent trace/witness:</strong> ${escapeHtml(body.independent)}</p><hr><h3>WHAT THE PARTICIPANT THINKS IT MEANS</h3><p>${escapeHtml(body.interpretation)}</p><p><strong>Research question:</strong> ${escapeHtml(body.question)}</p><h3>FOLLOW-UP</h3><p><strong>Name:</strong> ${escapeHtml(body.name)}</p><p><strong>Email:</strong> ${escapeHtml(body.email)}</p><p><strong>Permission:</strong> ${escapeHtml(body.consent)}</p><p><strong>Additional notes:</strong> ${escapeHtml(body.notes)}</p>`;
   if(!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS) {
-    await withDb(connection => connection.query("UPDATE research_intake SET status='persisted', email_status='not_configured', updated_at=NOW(3) WHERE intake_id=?", [intakeId]);
+    await withDb(connection => connection.query("UPDATE research_intake SET status='persisted', email_status='not_configured', updated_at=NOW(3) WHERE intake_id=?", [intakeId]));
     return res.status(503).json({
       error:"The research record was saved, but research email is not yet configured on the server.",
       intakeId
@@ -133,7 +133,7 @@ app.post("/api/research-intake", async (req,res)=>{
 app.get("/research/intake", (_req,res)=>res.sendFile(require("path").join(__dirname,"public","research-intake.html")));
 app.get("/api/research-intake/:id", async (req,res)=>{
   try {
-    const [rows] = await withDb(connection => connection.query("SELECT * FROM research_intake WHERE intake_id=?", [req.params.id]);
+    const [rows] = await withDb(connection => connection.query("SELECT * FROM research_intake WHERE intake_id=?", [req.params.id]));
     if(!rows.length) return res.status(404).json({error:"Research record not found."});
     res.json(rows[0]);
   } catch (err) {
