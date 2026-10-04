@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050505">
+<title>Research Intake · Identity Field Dynamics</title>
+<style>
+:root{--bg:#050505;--panel:#0a0a0a;--gold:#d6b15a;--bright:#f3da8c;--text:#eeeae1;--muted:#9b9992;--line:rgba(214,177,90,.22)}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -5%,rgba(214,177,90,.09),transparent 34rem),#050505;color:var(--text);font-family:Inter,system-ui,sans-serif}.shell{width:min(900px,calc(100% - 38px));margin:auto}main{padding:70px 0 110px}a{color:var(--bright);text-decoration:none}.back,.kicker{font-size:9px;letter-spacing:.24em;text-transform:uppercase}.back{color:#aaa}.kicker{color:var(--gold)}h1{font-size:clamp(48px,9vw,86px);line-height:.9;letter-spacing:-.06em;margin:22px 0}h2{font-size:28px;margin:0 0 14px}p{color:var(--muted);font-size:16px;line-height:1.75}.intro{max-width:760px}.rule{border-top:1px solid rgba(203,208,212,.12);margin:50px 0}.progress{height:3px;background:#181818;margin:28px 0 45px}.progress i{display:block;height:100%;width:0;background:var(--gold);transition:width .25s}.step{display:none}.step.active{display:block}.choice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:25px 0}.choice{border:1px solid rgba(214,177,90,.22);background:#090909;color:#ddd8ce;padding:17px;text-align:left;cursor:pointer;min-height:58px}.choice:hover,.choice.selected{border-color:var(--bright);background:#111}.choice small{display:block;color:#777;margin-top:6px;line-height:1.4}.field{margin:22px 0}.field label{display:block;color:#d9d4ca;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:9px}.field small{display:block;color:#666;line-height:1.5;margin-top:7px}.field input,.field textarea,.field select{width:100%;background:#080808;border:1px solid #292929;color:#eeeae1;padding:14px;font:inherit;outline:none}.field textarea{min-height:130px;resize:vertical}.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--gold)}.actions{display:flex;justify-content:space-between;gap:12px;margin-top:35px}.button{border:1px solid #79622e;background:transparent;color:#eeeae1;padding:13px 18px;font-size:9px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer}.primary{background:linear-gradient(135deg,#d6b15a,#806a36);color:#080808;border-color:var(--bright);font-weight:700}.note{border-left:1px solid var(--gold);padding:18px 0 18px 20px;margin:30px 0;color:#aaa;line-height:1.7}.success{border:1px solid rgba(214,177,90,.35);padding:30px;background:#090909}.error{color:#e3a0a0;margin-top:15px}@media(max-width:650px){.choice-grid{grid-template-columns:1fr}.actions{flex-direction:column}.actions .button{width:100%}}
+</style>
+</head>
+<body>
+<main><div class="shell">
+<a class="back" href="/">← Identity Field Dynamics</a>
+<div style="margin-top:70px" class="kicker">About Us / Contact Us / Research Intake v1.0</div>
+<h1>HOW CAN<br><span style="color:var(--bright)">WE HELP?</span></h1>
+<div class="intro">
+<p>If you've encountered something you think belongs in the investigation, don't simply send us an email. Tell us what happened.</p>
+<p>This intake is designed to preserve the difference between <strong>what you experienced</strong> and <strong>what you think it means</strong>. Your interpretation matters—but it should not overwrite the observation.</p>
+</div>
+<div class="note"><strong>The standard:</strong> You do not need to know what happened. You do not need to agree with IFD. You only need to describe what you observed as carefully as you can.</div>
+<div id="app">
+<div class="progress"><i id="bar"></i></div>
+
+<section class="step active" data-step="0">
+<div class="kicker">01 / The Encounter</div><h2>What brings you here?</h2>
+<p>Choose the description that comes closest. You can refine it later.</p>
+<div class="choice-grid">
+<button class="choice" data-key="encounterType" data-value="Something happened to me">Something happened to me</button>
+<button class="choice" data-key="encounterType" data-value="Something happened between me and another identity">Something happened between me and another identity</button>
+<button class="choice" data-key="encounterType" data-value="I observed something in another identity">I observed something in another identity</button>
+<button class="choice" data-key="encounterType" data-value="I observed a recurring pattern">I observed a recurring pattern</button>
+<button class="choice" data-key="encounterType" data-value="I am investigating a question">I am investigating a question</button>
+<button class="choice" data-key="encounterType" data-value="I don't know yet">I don't know yet</button>
+</div></section>
+
+<section class="step" data-step="1">
+<div class="kicker">02 / Participants</div><h2>What identities were involved?</h2>
+<p>Select all that apply.</p>
+<div class="choice-grid">
+<button class="choice multi" data-key="participants" data-value="Human">Human</button>
+<button class="choice multi" data-key="participants" data-value="Animal">Animal</button>
+<button class="choice multi" data-key="participants" data-value="Machine">Machine</button>
+<button class="choice multi" data-key="participants" data-value="AI / electrical system">AI / electrical system</button>
+<button class="choice multi" data-key="participants" data-value="Collective / group">Collective / group</button>
+<button class="choice multi" data-key="participants" data-value="Other / unknown">Other / unknown</button>
+</div>
+<div class="field"><label for="participantOther">If useful, identify the participant(s)</label><input id="participantOther" placeholder="Names, roles, systems, or simply 'unknown'"></div>
+</section>
+
+<section class="step" data-step="2">
+<div class="kicker">03 / The Phenomenon</div><h2>What happened?</h2>
+<p>Describe the event itself. Stay as close as possible to observable details.</p>
+<div class="field"><label for="summary">Brief description</label><textarea id="summary" placeholder="What happened?"></textarea></div>
+<div class="field"><label for="sequence">What happened first, next, and after that?</label><textarea id="sequence" placeholder="Describe the temporal sequence as best you can."></textarea></div>
+<div class="field"><label for="firstObserved">When did you first observe it?</label><input id="firstObserved" placeholder="Approximate date/time is fine"></div>
+</section>
+
+<section class="step" data-step="3">
+<div class="kicker">04 / Observation</div><h2>What exactly did you observe?</h2>
+<p>These are the observations we can potentially examine. Avoid explaining them yet.</p>
+<div class="field"><label for="observable">Observable behavior, change, or event</label><textarea id="observable" placeholder="For example: the response became shorter; the system stopped responding; a person changed behavior; an unexpected action occurred."></textarea></div>
+<div class="field"><label for="persistence">Did the phenomenon persist or change?</label><select id="persistence"><option value="">Select one</option><option>It persisted</option><option>It changed</option><option>It disappeared</option><option>It recurred</option><option>Unclear</option></select></div>
+<div class="field"><label for="repeatable">Could it be repeated or observed again?</label><select id="repeatable"><option value="">Select one</option><option>Yes</option><option>No</option><option>Possibly</option><option>I don't know</option></select></div>
+</section>
+
+<section class="step" data-step="4">
+<div class="kicker">05 / Evidence</div><h2>What trace remains?</h2>
+<p>Evidence may be a recording, document, message history, physical trace, repeated observation, or another person's independent account.</p>
+<div class="field"><label for="evidence">Describe available evidence</label><textarea id="evidence" placeholder="What could another researcher inspect?"></textarea></div>
+<div class="field"><label for="independent">Did anyone or anything else independently record or witness it?</label><textarea id="independent" placeholder="Person, device, log, recording, document, etc."></textarea></div>
+</section>
+
+<section class="step" data-step="5">
+<div class="kicker">06 / Interpretation</div><h2>What do you think it means?</h2>
+<p>Now we cross the methodological boundary. This is your interpretation—not a conclusion of IFD.</p>
+<div class="field"><label for="interpretation">Your interpretation</label><textarea id="interpretation" placeholder="What do you think was happening, and why?"></textarea></div>
+<div class="field"><label for="question">What question would you most like investigated?</label><textarea id="question" placeholder="If we could investigate one thing about this encounter, what should it be?"></textarea></div>
+</section>
+
+<section class="step" data-step="6">
+<div class="kicker">07 / The Researcher</div><h2>How can we follow up?</h2>
+<p>Contact information is optional unless you want a response.</p>
+<div class="field"><label for="name">Name</label><input id="name" autocomplete="name"></div>
+<div class="field"><label for="email">Email</label><input id="email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+<div class="field"><label for="consent">Follow-up permission</label><select id="consent"><option value="No follow-up requested">No follow-up requested</option><option value="Yes, you may contact me">Yes, you may contact me</option></select></div>
+<div class="field"><label for="notes">Anything else?</label><textarea id="notes" placeholder="Anything important that the instrument did not ask."></textarea></div>
+<div class="note"><strong>Before submission:</strong> This is a research intake, not a diagnostic service or emergency channel. Submission does not mean that IFD accepts your interpretation or that the report constitutes scientific evidence by itself.</div>
+</section>
+
+<section class="step" data-step="7">
+<div class="kicker">08 / Review</div><h2>Ready to submit?</h2>
+<p>Review the distinction one last time: observation first, interpretation second.</p>
+<div id="review" class="note"></div>
+<div class="actions"><button class="button" id="edit">← Review</button><button class="button primary" id="submit">Submit Research Intake</button></div>
+<div id="submitError" class="error"></div>
+</section>
+</div>
+<div id="success" class="success" style="display:none"></div>
+</div></main>
+<script>
+const state={participants:[]};let step=0;const steps=[...document.querySelectorAll('.step')];const bar=document.getElementById('bar');
+function show(n){step=n;steps.forEach((s,i)=>s.classList.toggle('active',i===n));bar.style.width=((n)/(steps.length-1)*100)+'%';if(n===7)renderReview();window.scrollTo({top:0,behavior:'smooth'})}
+function val(id){return document.getElementById(id)?.value?.trim()||''}
+document.querySelectorAll('.choice').forEach(b=>b.addEventListener('click',()=>{const k=b.dataset.key,v=b.dataset.value;if(b.classList.contains('multi')){const a=state[k]||[];const i=a.indexOf(v);if(i>=0){a.splice(i,1);b.classList.remove('selected')}else{a.push(v);b.classList.add('selected')}state[k]=a;if(step<6)document.querySelector('.step.active .actions')?.remove()}else{state[k]=v;b.parentElement.querySelectorAll('.choice').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');show(step+1)}}));
+function capture(){Object.assign(state,{participantOther:val('participantOther'),summary:val('summary'),sequence:val('sequence'),firstObserved:val('firstObserved'),observable:val('observable'),persistence:val('persistence'),repeatable:val('repeatable'),evidence:val('evidence'),independent:val('independent'),interpretation:val('interpretation'),question:val('question'),name:val('name'),email:val('email'),consent:val('consent'),notes:val('notes')})}
+['participantOther','summary','sequence','firstObserved','observable','persistence','repeatable','evidence','independent','interpretation','question','name','email','consent','notes'].forEach(id=>document.getElementById(id)?.addEventListener('input',capture));
+function renderReview(){capture();document.getElementById('review').innerHTML='<strong>Encounter:</strong> '+(state.encounterType||'—')+'<br><br><strong>Participants:</strong> '+(state.participants?.join(', ')||'—')+'<br><br><strong>Observation:</strong> '+(state.observable||state.summary||'—')+'<br><br><strong>Evidence:</strong> '+(state.evidence||'—')+'<br><br><strong>Interpretation:</strong> '+(state.interpretation||'—')+'<br><br><strong>Research question:</strong> '+(state.question||'—')+'<br><br><strong>Follow-up:</strong> '+(state.consent||'—')+' '+(state.email?'('+state.email+')':'');}
+steps.forEach((s,i)=>{if(i>0&&i<7){const a=document.createElement('div');a.className='actions';a.innerHTML='<button class="button backstep">← Back</button><button class="button primary nextstep">Continue →</button>';s.appendChild(a);a.querySelector('.backstep').onclick=()=>{capture();show(step-1)};a.querySelector('.nextstep').onclick=()=>{capture();show(step+1)}}});
+document.getElementById('edit').onclick=()=>show(6);
+document.getElementById('submit').onclick=async()=>{capture();const btn=document.getElementById('submit'),err=document.getElementById('submitError');btn.disabled=true;err.textContent='';try{const r=await fetch('/api/research-intake',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(state)});const d=await r.json();if(!r.ok)throw new Error(d.error||'Submission failed.');document.getElementById('app').style.display='none';document.getElementById('success').style.display='block';document.getElementById('success').innerHTML='<div class="kicker">Submission received</div><h2>Research Intake '+d.intakeId+'</h2><p>Your intake has been received by the IFD research system.</p><p><strong>Observation → question → research → evidence → revision.</strong></p><p>Keep this identifier if you refer to the submission later.</p>'}catch(e){err.textContent=e.message;btn.disabled=false}};
+</script>
+</body></html>
