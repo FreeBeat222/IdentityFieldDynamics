@@ -9,10 +9,26 @@ const fs = require("fs");
 const page = fs.readFileSync("public/homepage-cathedral.html", "utf8");
 
 app.use(express.json({ limit: "2mb" }));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public", { extensions: ["svg"] }));
 
 
 const deepPage = (title, kicker, body) => `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#070707"><title>${title} · Identity Field Dynamics</title><style>body{margin:0;background:#050505;color:#eeeae1;font-family:Inter,system-ui,sans-serif}main{width:min(900px,calc(100% - 40px));margin:auto;padding:100px 0}a{color:#f3da8c;text-decoration:none}.k{color:#d6b15a;font-size:11px;letter-spacing:.25em;text-transform:uppercase}h1{font-size:clamp(44px,8vw,82px);line-height:.95;letter-spacing:-.05em;margin:20px 0 30px}p{color:#aaa9a4;font-size:18px;line-height:1.8}.panel{border-top:1px solid #292929;margin-top:55px;padding-top:35px}.back{font-size:11px;letter-spacing:.16em;text-transform:uppercase}</style></head><body><main><a class="back" href="/">← Identity Field Dynamics</a><div class="panel"><div class="k">${kicker}</div><h1>${title}</h1>${body}</div></main></body></html>`;
+app.post("/api/research-intake", (req,res)=>{
+  const body=req.body||{};
+  const intakeId = "IFD-RI-" + new Date().getUTCFullYear() + "-" + String(Date.now()).slice(-5);
+  const required = ["encounterType","summary","observable","interpretation","question"];
+  if(required.some(k=>!String(body[k]||"").trim())) return res.status(400).json({error:"Please complete the encounter, phenomenon, observation, interpretation, and research-question fields."});
+  const escapeHtml = v => String(v??"").replace(/[&<>\\"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\\\"":"&quot;","'":"&#39;"}[c]));
+  const participants = Array.isArray(body.participants) ? body.participants.join(", ") : String(body.participants||"");
+  const html = `<h2>IFD RESEARCH INTAKE</h2><p><strong>${intakeId}</strong></p><p><strong>Encounter:</strong> ${escapeHtml(body.encounterType)}</p><p><strong>Participants:</strong> ${escapeHtml(participants)}</p><p><strong>Participant detail:</strong> ${escapeHtml(body.participantOther)}</p><hr><h3>WHAT WAS OBSERVED</h3><p>${escapeHtml(body.observable)}</p><p><strong>Summary:</strong> ${escapeHtml(body.summary)}</p><p><strong>Sequence:</strong> ${escapeHtml(body.sequence)}</p><p><strong>First observed:</strong> ${escapeHtml(body.firstObserved)}</p><p><strong>Persistence:</strong> ${escapeHtml(body.persistence)} | <strong>Repeatable:</strong> ${escapeHtml(body.repeatable)}</p><h3>EVIDENCE</h3><p>${escapeHtml(body.evidence)}</p><p><strong>Independent trace/witness:</strong> ${escapeHtml(body.independent)}</p><hr><h3>WHAT THE PARTICIPANT THINKS IT MEANS</h3><p>${escapeHtml(body.interpretation)}</p><p><strong>Research question:</strong> ${escapeHtml(body.question)}</p><h3>FOLLOW-UP</h3><p><strong>Name:</strong> ${escapeHtml(body.name)}</p><p><strong>Email:</strong> ${escapeHtml(body.email)}</p><p><strong>Permission:</strong> ${escapeHtml(body.consent)}</p><p><strong>Additional notes:</strong> ${escapeHtml(body.notes)}</p>`;
+  if(!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS) return res.status(503).json({error:"The intake instrument is live, but research email has not yet been configured on the server."});
+  const nodemailer = require("nodemailer");
+  const transporter = nodemailer.createTransport({host:process.env.SMTP_HOST,port:Number(process.env.SMTP_PORT||465),secure:String(process.env.SMTP_SECURE||"true")==="true",auth:{user:process.env.SMTP_USER,pass:process.env.SMTP_PASS}});
+  transporter.sendMail({from:process.env.SMTP_FROM||process.env.SMTP_USER,to:process.env.RESEARCH_TO||"research@identityfielddynamics.com",replyTo:body.email||undefined,subject:intakeId+" · IFD Research Intake",html}).then(()=>res.json({ok:true,intakeId})).catch(err=>{console.error("Research intake email failed:",err);res.status(502).json({error:"The intake could not be delivered to the research mailbox. Please try again later."})});
+});
+app.get("/research/intake", (_req,res)=>res.sendFile(require("path").join(__dirname,"public","research-intake.html")));
+app.get("/contact", (_req,res)=>res.redirect("/research/intake"));
 app.get("/research/memoranda", (_req,res)=>res.type("html").send(deepPage("Research Record","03A / Historical Research Record",`
 <p>The Research Record preserves the moments when the investigation changes direction. These memoranda are not retrospective summaries. They are contemporaneous records of questions, interruptions, recognitions, and methodological decisions.</p>
 <p><strong>History is part of the evidence.</strong> Later work may revise an interpretation, but it does not silently rewrite the path by which the investigation arrived there.</p>
