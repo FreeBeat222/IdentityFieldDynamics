@@ -132,7 +132,8 @@ app.post("/api/research-intake", async (req,res)=>{
     });
   }
   const nodemailer = require("nodemailer");
-  const transporter = nodemailer.createTransport({host:process.env.SMTP_HOST,port:Number(process.env.SMTP_PORT||465),secure:String(process.env.SMTP_SECURE||"true")==="true",auth:{user:process.env.SMTP_USER,pass:process.env.SMTP_PASS}});
+  const smtpHost = process.env.SMTP_HOST || "identityfielddynamics.com";
+  const transporter = nodemailer.createTransport({host:smtpHost,port:Number(process.env.SMTP_PORT||465),secure:String(process.env.SMTP_SECURE||"true")==="true",auth:{user:process.env.SMTP_USER,pass:process.env.SMTP_PASS}});
   transporter.sendMail({from:process.env.SMTP_FROM||process.env.SMTP_USER,to:process.env.RESEARCH_TO||"research@identityfielddynamics.com",replyTo:body.email||undefined,subject:intakeId+" · IFD Research Intake",html}).then(async()=>{
     await withDb(connection => connection.query("UPDATE research_intake SET status='complete', email_status='sent', updated_at=NOW(3) WHERE intake_id=?", [intakeId]));
     res.json({ok:true,intakeId});
