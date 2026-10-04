@@ -123,7 +123,7 @@ app.post("/api/research-intake", async (req,res)=>{
       await withDb(connection => connection.query(
         "UPDATE research_intake SET status='persisted', email_status='failed', email_error=?, updated_at=NOW(3) WHERE intake_id=?",
         [String(err && (err.message || err)), intakeId]
-      );
+      ));
     } catch (dbErr) {
       console.error("Research intake email-status update failed:",dbErr);
     }
