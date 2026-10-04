@@ -89,7 +89,5 @@ app.get("/about/mission", (_req,res)=>res.type("html").send(deepPage("The IFD Mi
 <div class="panel"><div class="k">The objective</div><p>The ultimate objective of IFD is not the preservation of IFD itself. It is the advancement of knowledge about identity.</p><p><strong>The work moves forward either way.</strong></p></div>
 <div class="panel"><div class="k">The mission in one sentence</div><p style="font-size:24px;color:#f3da8c"><strong>Identity Field Dynamics exists to discover what is actually true about identity.</strong></p></div>`)));
 
-const { mountArchive } = require("./archive");
-mountArchive(app);
 app.get("/", (_req, res) => res.type("html").send(page));
 app.listen(port, () => console.log(`Identity Field Dynamics listening on port ${port}`));
