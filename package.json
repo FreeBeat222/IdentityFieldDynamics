@@ -5,6 +5,7 @@
   "description": "Public website and canonical digital presence for Identity Field Dynamics (IFD).",
   "main": "server.js",
   "scripts": {
+    "build": "echo build",
     "start": "node server.js"
   },
   "dependencies": {
