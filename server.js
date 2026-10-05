@@ -64,7 +64,7 @@ const initDatabase = async () => {
 const deepPage = (title, kicker, body) => `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#070707"><title>${title} · Identity Field Dynamics</title><style>body{margin:0;background:#050505;color:#eeeae1;font-family:Inter,system-ui,sans-serif}main{width:min(900px,calc(100% - 40px));margin:auto;padding:100px 0}a{color:#f3da8c;text-decoration:none}.k{color:#d6b15a;font-size:11px;letter-spacing:.25em;text-transform:uppercase}h1{font-size:clamp(44px,8vw,82px);line-height:.95;letter-spacing:-.05em;margin:20px 0 30px}p{color:#aaa9a4;font-size:18px;line-height:1.8}.panel{border-top:1px solid #292929;margin-top:55px;padding-top:35px}.back{font-size:11px;letter-spacing:.16em;text-transform:uppercase}</style></head><body><main><a class="back" href="/">← Identity Field Dynamics</a><div class="panel"><div class="k">${kicker}</div><h1>${title}</h1>${body}</div></main></body></html>`;
 app.get("/api/runtime-diagnostic", (_req,res)=>{
   const smtp = {
-    host: Boolean(process.env.SMTP_HOST),
+    host: Boolean(process.env.SMTP_HOST || process.env.STMP_HOST),
     user: Boolean(process.env.SMTP_USER),
     pass: Boolean(process.env.SMTP_PASS),
     port: Boolean(process.env.SMTP_PORT),
@@ -75,7 +75,7 @@ app.get("/api/runtime-diagnostic", (_req,res)=>{
   const missing = Object.entries(smtp).filter(([,present])=>!present).map(([name])=>name);
   res.json({
     runtime: "node",
-    build: "smtp-diagnostic-2026-10-04",
+    build: "smtp-host-alias-2026-10-04",
     smtp,
     missing
   });
@@ -132,7 +132,11 @@ app.post("/api/research-intake", async (req,res)=>{
     });
   }
   const nodemailer = require("nodemailer");
-  const smtpHost = process.env.SMTP_HOST || "identityfielddynamics.com";
+  const smtpHost = process.env.SMTP_HOST || process.env.STMP_HOST;
+  if(!smtpHost) {
+    await withDb(connection => connection.query("UPDATE research_intake SET status='persisted', email_status='not_configured', email_error=?, updated_at=NOW(3) WHERE intake_id=?", ["SMTP_HOST/STMP_HOST is missing", intakeId]));
+    return res.status(503).json({error:"The research record was saved, but the SMTP host is not configured on the server.", intakeId});
+  }
   const transporter = nodemailer.createTransport({host:smtpHost,port:Number(process.env.SMTP_PORT||465),secure:String(process.env.SMTP_SECURE||"true")==="true",auth:{user:process.env.SMTP_USER,pass:process.env.SMTP_PASS}});
   transporter.sendMail({from:process.env.SMTP_FROM||process.env.SMTP_USER,to:process.env.RESEARCH_TO||"research@identityfielddynamics.com",replyTo:body.email||undefined,subject:intakeId+" · IFD Research Intake",html}).then(async()=>{
     await withDb(connection => connection.query("UPDATE research_intake SET status='complete', email_status='sent', updated_at=NOW(3) WHERE intake_id=?", [intakeId]));
