@@ -113,16 +113,13 @@ app.post("/api/research-intake", async (req,res)=>{
     });
   }
   const nodemailer = require("nodemailer");
-  const smtpHost = process.env.SMTP_HOST || process.env.STMP_HOST;
-  if(!smtpHost) {
-    await withDb(connection => connection.query("UPDATE research_intake SET status='persisted', email_status='not_configured', email_error=?, updated_at=NOW(3) WHERE intake_id=?", ["SMTP_HOST/STMP_HOST is missing", intakeId]));
-    return res.status(503).json({error:"The research record was saved, but the SMTP host is not configured on the server.", intakeId});
-  }
+  // GoDaddy Web Hosting (cPanel) provides a local SMTP relay for hosted applications.
+  // The supported relay is localhost:25 with no SMTP authentication or SSL.
   const transporter = nodemailer.createTransport({
-    host: smtpHost,
-    port: Number(process.env.SMTP_PORT || 465),
-    secure: String(process.env.SMTP_SECURE || "true") === "true",
-    auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS }
+    host: "localhost",
+    port: 25,
+    secure: false,
+    ignoreTLS: true
   });
   transporter.sendMail({from:process.env.SMTP_FROM||process.env.SMTP_USER,to:process.env.RESEARCH_TO||"research@identityfielddynamics.com",replyTo:body.email||undefined,subject:intakeId+" · IFD Research Intake",html}).then(async()=>{
     await withDb(connection => connection.query("UPDATE research_intake SET status='complete', email_status='sent', updated_at=NOW(3) WHERE intake_id=?", [intakeId]));
