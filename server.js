@@ -11,6 +11,8 @@ const page = fs.readFileSync("public/homepage-cathedral.html", "utf8");
 
 app.use(express.json({ limit: "2mb" }));
 app.use(express.urlencoded({ extended: false }));
+// Keep the homepage available only at its canonical URL.
+app.get("/homepage-cathedral.html", (_req, res) => res.redirect(301, "/"));
 app.use(express.static("public", { extensions: ["svg"] }));
 const dbConfig = () => ({
   host: process.env.DB_HOST,
