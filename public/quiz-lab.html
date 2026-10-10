@@ -51,9 +51,15 @@ questions[index].a.forEach((label,i)=>{const b=document.createElement('button');
 $('next').disabled=answers[index]===undefined;$('next').textContent=index===questions.length-1?'See reflection →':'Next question →';$('play').hidden=false;$('result').hidden=true;
 }
 function finish(){
-const counts=[0,0,0,0];answers.forEach((a,i)=>{if(a===0)counts[0]++;if(a===1)counts[1]++;if(a===2)counts[2]++;if(a===3)counts[3]++});
-const styles=[0,0,0,0];answers.forEach((a,i)=>{const map=[[0,1,2,3],[0,1,2,3],[2,1,2,3],[0,1,2,3],[0,2,1,2]];styles[map[i][a]]++});
-let winner=0;for(let i=1;i<styles.length;i++)if(styles[i]>styles[winner])winner=i;
+// Each answer is mapped by meaning, not by letter alone:
+// 0 = present evidence; 1 = history; 2 = identity in motion; 3 = context/uncertainty.
+const styles=[0,0,0,0];
+const map=[[0,1,2,3],[0,3,1,3],[2,1,3,3],[0,1,2,3],[0,2,1,2]];
+answers.forEach((a,i)=>{styles[map[i][a]]++});
+const maxScore=Math.max(...styles);
+const leaders=styles.map((score,i)=>score===maxScore?i:-1).filter(i=>i>=0);
+// A tie is reported as context-first rather than forcing a false distinction.
+const winner=leaders.length===1?leaders[0]:3;
 $('play').hidden=true;$('result').hidden=false;$('count').textContent='Challenge complete';$('progress').style.width='100%';
 const h=document.createElement('h2');h.textContent=reflections[winner].title;const p=document.createElement('p');p.textContent=reflections[winner].body;const p2=document.createElement('p');p2.textContent='Try the challenge again and answer from a different perspective. Notice what changes in your answers—and what stays the same.';const btn=document.createElement('button');btn.className='btn primary';btn.type='button';btn.textContent='Try again ↻';btn.addEventListener('click',reset);$('result').replaceChildren(h,p,p2,btn);
 }
