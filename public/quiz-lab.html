@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050505">
+<meta name="description" content="Explore identity through a short interactive challenge from Identity Field Dynamics.">
+<link rel="canonical" href="https://identityfielddynamics.com/quiz-lab.html">
+<title>The Identity Challenge | Identity Field Dynamics</title>
+<style>
+:root{--bg:#050505;--panel:#0b0b0b;--gold:#d6b15a;--bright:#f3da8c;--text:#eeeae1;--muted:#9b9992;--line:rgba(214,177,90,.25)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% -5%,rgba(214,177,90,.1),transparent 34rem),linear-gradient(#090909,#020202 70%,#070707);color:var(--text);font-family:Inter,system-ui,sans-serif;min-height:100vh}body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.12;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(#000,transparent 72%)}a{color:inherit;text-decoration:none}.shell{width:min(900px,calc(100% - 32px));margin:auto}header{position:relative;border-bottom:1px solid rgba(203,208,212,.1);background:rgba(4,4,4,.75)}nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px}.mark{display:flex;align-items:center;gap:12px;font-size:10px;letter-spacing:.2em;font-weight:700}.crest{width:30px;height:30px;display:grid;place-items:center;border:1px solid var(--gold);color:var(--bright);transform:rotate(45deg)}.crest span{transform:rotate(-45deg);font-size:9px}.back{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#b8b4aa}.eyebrow,.kicker{color:var(--gold);font-size:10px;letter-spacing:.28em;text-transform:uppercase}.intro{text-align:center;padding:66px 0 34px}.intro h1{font-size:clamp(40px,8vw,76px);letter-spacing:-.065em;line-height:.92;margin:18px 0}.intro h1 span{color:var(--bright)}.intro p{color:#aaa8a1;line-height:1.7;max-width:600px;margin:18px auto}.quiz{border:1px solid var(--line);background:linear-gradient(145deg,rgba(214,177,90,.055),rgba(8,8,8,.96) 35%);padding:clamp(20px,5vw,42px);box-shadow:0 30px 90px #0008}.meta{display:flex;justify-content:space-between;gap:12px;color:var(--gold);font-size:10px;letter-spacing:.14em;text-transform:uppercase}.track{height:3px;background:#29251b;margin:17px 0 32px}.fill{height:3px;background:linear-gradient(90deg,var(--gold),var(--bright));width:20%;transition:width .25s}.question{font-size:clamp(23px,4vw,36px);line-height:1.2;letter-spacing:-.035em;margin:0 0 24px}.answers{display:grid;gap:10px}.answer{font:inherit;text-align:left;color:var(--text);background:#111;border:1px solid #34312a;padding:16px 17px;display:flex;align-items:center;gap:13px;cursor:pointer;line-height:1.45;transition:border-color .15s,background .15s}.answer:hover,.answer:focus-visible{border-color:var(--gold);outline:none}.answer[aria-pressed=true]{border-color:var(--bright);background:#292316}.letter{flex:0 0 28px;height:28px;border:1px solid #6f6040;color:var(--bright);display:grid;place-items:center;font-size:11px}.actions{display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap;margin-top:25px}.btn{font:inherit;font-size:10px;letter-spacing:.16em;text-transform:uppercase;padding:14px 18px;border:1px solid #79622e;background:transparent;color:var(--text);cursor:pointer}.btn.primary{background:linear-gradient(135deg,#d6b15a,#806a36);color:#080808;border-color:var(--bright);font-weight:750}.btn:disabled{opacity:.35;cursor:not-allowed}.result{line-height:1.75;color:#c4c0b7}.result h2{font-size:clamp(28px,5vw,44px);line-height:1.05;letter-spacing:-.04em;color:var(--bright);margin:10px 0 18px}.note{font-size:12px;color:#858179;border-top:1px solid var(--line);padding-top:18px;margin-top:25px}.below{padding:44px 0 65px;text-align:center}.below h2{font-size:24px;letter-spacing:-.03em}.below p{color:#99968e;line-height:1.75;max-width:650px;margin:15px auto}.below a{color:var(--bright);text-decoration:underline;text-underline-offset:4px}footer{border-top:1px solid #25231d;padding:26px 0 38px;color:#666;font-size:9px;letter-spacing:.12em;text-transform:uppercase}@media(max-width:520px){.intro{padding-top:46px}.meta{font-size:9px}.answer{padding:13px}.actions .btn{flex:1}.back{font-size:9px}}
+</style>
+</head>
+<body>
+<header><div class="shell"><nav><a class="mark" href="/"><span class="crest"><span>IFD</span></span><span>IDENTITY FIELD DYNAMICS</span></a><a class="back" href="/">← Return to IFD</a></nav></div></header>
+<main class="shell">
+<section class="intro"><div class="eyebrow">IFD Quiz Lab · Challenge 01</div><h1>THE IDENTITY<br><span>CHALLENGE.</span></h1><p>Five questions. A minute or two. No registration. Explore how you think about identity, action, memory, and change.</p></section>
+<section class="quiz" aria-live="polite" aria-atomic="true">
+<div class="meta"><span id="stage">Challenge 01</span><span id="count">Question 1 of 5</span></div><div class="track"><div class="fill" id="progress"></div></div>
+<div id="play">
+<h2 class="question" id="question"></h2><div class="answers" id="answers"></div>
+<div class="actions"><button class="btn" id="restart" type="button">Start over</button><button class="btn primary" id="next" type="button" disabled>Next question →</button></div>
+</div>
+<div id="result" class="result" hidden></div>
+<p class="note">This is an exploratory reflection, not a psychological assessment or a validated measurement instrument. Your answers stay in this page; nothing is submitted or stored.</p>
+</section>
+<section class="below"><h2>The question is an invitation.</h2><p>Identity Field Dynamics investigates identity through observation, action, interaction, history, and change. This short challenge offers a starting point—not a verdict about who you are.</p><p><a href="/research-deep.html">Explore the IFD research</a> · <a href="/observor/">Visit OBSERVOR</a></p></section>
+</main>
+<footer><div class="shell">Identity Field Dynamics · Research in development</div></footer>
+<script>
+(function(){
+const questions=[
+{q:"If nobody remembered what you did yesterday, would today's actions still be you?",a:["Yes. Identity exists in the present.","No. Identity depends on accumulated history.","What I do now helps shape what I become.","I'm not sure. It depends on what happens next."]},
+{q:"Two people make the same choice for completely different reasons. Is it the same action?",a:["Yes. The observable choice is the same.","No. The intention changes its meaning.","The action is the same; its history differs.","I'd need more information to decide."]},
+{q:"You change your mind after encountering new evidence. What does that say about you?",a:["I can adapt when conditions change.","My earlier view was part of my history, too.","The encounter changed what I could see.","It depends on whether the change lasts."]},
+{q:"Which would help you recognize an identity over time?",a:["A stable pattern of behavior.","A continuous history of past interactions.","A recognizable structure, even as behavior changes.","A combination of evidence, compared over time."]},
+{q:"If the rules of a situation changed, what would you most want to observe?",a:["Whether the same choice is made.","How the person adapts to the new conditions.","Which parts of the pattern persist.","What new behavior emerges."]}
+];
+const reflections=[
+{title:"The present as evidence",body:"Your choices leaned toward what can be observed in the current moment. An IFD follow-up question is whether a present action tells the whole story—or whether earlier encounters help explain it."},
+{title:"History matters",body:"Your choices leaned toward continuity, intention, or accumulated experience. An IFD follow-up question is how history can be observed and distinguished from the story we tell about it."},
+{title:"Identity in motion",body:"Your choices leaned toward action, adaptation, and becoming. An IFD follow-up question is which changes matter, which patterns persist, and what evidence would distinguish them."},
+{title:"Context before conclusion",body:"Your choices leaned toward context, uncertainty, or combining different kinds of evidence. That is compatible with an investigative stance: define what is known, identify what is missing, and avoid deciding before observation."}
+];
+let index=0,answers=[];
+const $=id=>document.getElementById(id);
+function render(){
+$('stage').textContent='Challenge 01';$('count').textContent='Question '+(index+1)+' of '+questions.length;$('progress').style.width=((index+1)/questions.length*100)+'%';
+$('question').textContent=questions[index].q;$('answers').replaceChildren();
+questions[index].a.forEach((label,i)=>{const b=document.createElement('button');b.type='button';b.className='answer';b.setAttribute('aria-pressed',answers[index]===i?'true':'false');const letter=document.createElement('span');letter.className='letter';letter.textContent=String.fromCharCode(65+i);const text=document.createElement('span');text.textContent=label;b.append(letter,text);b.addEventListener('click',()=>{answers[index]=i;Array.from($('answers').children).forEach((el,j)=>el.setAttribute('aria-pressed',j===i?'true':'false'));$('next').disabled=false;$('next').textContent=index===questions.length-1?'See reflection →':'Next question →'});$('answers').append(b)});
+$('next').disabled=answers[index]===undefined;$('next').textContent=index===questions.length-1?'See reflection →':'Next question →';$('play').hidden=false;$('result').hidden=true;
+}
+function finish(){
+// Each answer is mapped by meaning, not by letter alone:
+// 0 = present evidence; 1 = history; 2 = identity in motion; 3 = context/uncertainty.
+const styles=[0,0,0,0];
+const map=[[0,1,2,3],[0,3,1,3],[2,1,3,3],[0,1,2,3],[0,2,1,2]];
+answers.forEach((a,i)=>{styles[map[i][a]]++});
+const maxScore=Math.max(...styles);
+const leaders=styles.map((score,i)=>score===maxScore?i:-1).filter(i=>i>=0);
+// A tie is reported as context-first rather than forcing a false distinction.
+const winner=leaders.length===1?leaders[0]:3;
+$('play').hidden=true;$('result').hidden=false;$('count').textContent='Challenge complete';$('progress').style.width='100%';
+const h=document.createElement('h2');h.textContent=reflections[winner].title;const p=document.createElement('p');p.textContent=reflections[winner].body;const p2=document.createElement('p');p2.textContent='Try the challenge again and answer from a different perspective. Notice what changes in your answers—and what stays the same.';const btn=document.createElement('button');btn.className='btn primary';btn.type='button';btn.textContent='Try again ↻';btn.addEventListener('click',reset);$('result').replaceChildren(h,p,p2,btn);
+}
+function reset(){index=0;answers=[];render()}
+$('next').addEventListener('click',()=>{if(answers[index]===undefined)return;if(index<questions.length-1){index++;render()}else finish()});$('restart').addEventListener('click',reset);render();
+})();
+</script>
+</body></html>
