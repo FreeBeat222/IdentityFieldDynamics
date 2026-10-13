@@ -58,23 +58,17 @@ const questions=[
 ["Treat both explanations as equally valid without checking the facts.","Fairness does not require treating every explanation as equally supported. Claims still need to be compared with evidence and relevant context.",false]
 ]}
 ];
-let index=0,chosen=[],score=0;
+let index=0,chosen=[],score=0,revealed=[];
 const $=id=>document.getElementById(id);
 function render(){
-const q=questions[index];$('stage').textContent='Bite 009';$('count').textContent='Question '+(index+1)+' of '+questions.length;$('progress').style.width=((index+1)/questions.length*100)+'%';$('scenario').textContent=q.scene;$('question').textContent=q.q;$('answers').replaceChildren();$('feedback').hidden=true;$('feedback').className='feedback';
-q.a.forEach((item,i)=>{const b=document.createElement('button');b.type='button';b.className='answer';b.setAttribute('aria-pressed','false');const letter=document.createElement('span');letter.className='letter';letter.textContent=String.fromCharCode(65+i);const text=document.createElement('span');text.textContent=item[0];b.append(letter,text);b.addEventListener('click',()=>select(i));$('answers').append(b)});
-$('next').disabled=true;$('next').textContent=q.multi?'Choose every answer, then continue →':'Commit to an answer →';$('play').hidden=false;$('result').hidden=true;
+const q=questions[index];revealed[index]=false;$('stage').textContent='Bite 009';$('count').textContent='Question '+(index+1)+' of '+questions.length;$('progress').style.width=((index+1)/questions.length*100)+'%';$('scenario').textContent=q.scene;$('question').textContent=q.q;$('answers').replaceChildren();$('feedback').hidden=true;$('feedback').className='feedback';
+q.a.forEach((item,i)=>{const b=document.createElement('button');b.type='button';b.className='answer';b.setAttribute('aria-pressed','false');const letter=document.createElement('span');letter.className='letter';letter.textContent=String.fromCharCode(65+i);const text=document.createElement('span');text.textContent=item[0];b.append(letter,text);b.addEventListener('click',()=>q.multi?toggleMulti(i):select(i));$('answers').append(b)});
+$('next').disabled=true;$('next').textContent=q.multi?'Lock choices and reveal lesson →':'Commit to an answer →';$('play').hidden=false;$('result').hidden=true;
 }
 function select(i){
 if(chosen[index]!==undefined)return;
 const q=questions[index],correct=q.multi?q.a.map((a,j)=>a[2]?j:-1).filter(j=>j>=0):[q.a.findIndex(a=>a[2])];
-if(q.multi){
-chosen[index]=[i];const b=$('answers').children[i];b.setAttribute('aria-pressed','true');
-const fb=$('feedback');fb.hidden=false;fb.className='feedback';fb.replaceChildren();const strong=document.createElement('strong');strong.textContent='One choice recorded';const p=document.createElement('p');p.textContent='This is a select-all question. Choose every conclusion supported by the evidence. Click a selected option again to remove it, then continue.';fb.append(strong,p);
-$('next').disabled=false;$('next').textContent='Lock choices and reveal lesson →';
-Array.from($('answers').children).forEach((el,j)=>{el.disabled=false;el.onclick=null;el.addEventListener('click',()=>toggleMulti(j),{once:false})});
-return;
-}
+
 chosen[index]=i;const picked=q.a[i];if(picked[2])score++;
 Array.from($('answers').children).forEach((el,j)=>{el.disabled=true;el.setAttribute('aria-pressed',j===i?'true':'false')});
 const fb=$('feedback');fb.hidden=false;fb.className='feedback '+(picked[2]?'good':'bad');const strong=document.createElement('strong');strong.textContent=picked[2]?'Your judgment fits the evidence':'Look again at the evidence';const p=document.createElement('p');p.textContent=picked[1];fb.append(strong,p);$('next').disabled=false;$('next').textContent=index===questions.length-1?'See what the mirror revealed →':'Next situation →';
@@ -91,7 +85,7 @@ const exact=selected.length===correct.length&&correct.every(j=>selected.includes
 Array.from($('answers').children).forEach((el,j)=>{el.disabled=true;el.setAttribute('aria-pressed',selected.includes(j)?'true':'false')});
 const fb=$('feedback');fb.hidden=false;fb.className='feedback '+(exact?'good':'bad');fb.replaceChildren();const strong=document.createElement('strong');strong.textContent=exact?'You identified the supported conclusions':'Compare each conclusion with the evidence';fb.append(strong);
 q.a.forEach((a,j)=>{const p=document.createElement('p');p.style.marginTop='9px';p.textContent=(a[2]?'SUPPORTED — ':'NOT ESTABLISHED — ')+a[1];fb.append(p)});
-$('next').textContent='Next situation →';
+revealed[index]=true;$('next').textContent=index===questions.length-1?'See what the mirror revealed →':'Next situation →';
 }
 function finish(){
 $('play').hidden=true;$('result').hidden=false;$('count').textContent='Bite complete';$('progress').style.width='100%';
@@ -107,8 +101,8 @@ lessons.forEach(([title,body])=>{const box=document.createElement('section');box
 const end=document.createElement('p');end.style.marginTop='25px';end.textContent='IFD working sequence: IDENTITY → ACTION → INTERACTION → SYNERGY → TRACE. Observe first. Preserve the detail. Separate what happened from what you think it means. Then make the strongest conclusion the evidence can support—and no stronger.';$('result').append(end);
 const btn=document.createElement('button');btn.className='btn primary';btn.type='button';btn.textContent='Take the challenge again ↻';btn.addEventListener('click',reset);$('result').append(btn);
 }
-function reset(){index=0;chosen=[];score=0;render()}
-$('next').addEventListener('click',()=>{if(chosen[index]===undefined)return;if(questions[index].multi&&$('next').textContent.startsWith('Lock choices')){revealMulti();return}if(index<questions.length-1){index++;render()}else finish()});
+function reset(){index=0;chosen=[];score=0;revealed=[];render()}
+$('next').addEventListener('click',()=>{if(chosen[index]===undefined)return;if(questions[index].multi&&!revealed[index]){revealMulti();return}if(index<questions.length-1){index++;render()}else finish()});
 $('restart').addEventListener('click',reset);render();
 })();
 </script>
