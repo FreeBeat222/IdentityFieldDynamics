@@ -93,31 +93,75 @@ const h=document.createElement('h2');h.textContent='What did the evidence actual
 // Synthesize the participant's selected answers into a judgment of the reasoning pattern shown in THIS run.
 const picked = chosen.map((v,i)=>Array.isArray(v)?v:[v]);
 const patterns={excuse:0,motive:0,double:0,overreach:0,evidence:0};
-picked.forEach((arr,i)=>{
-  arr.forEach(j=>{
-    if(i===0){if(j===2)patterns.excuse++;if(j===0)patterns.motive++;if(j===3)patterns.overreach++;if(j===1)patterns.evidence++;}
-    if(i===1){if(j===0)patterns.excuse++;if(j===1)patterns.motive++;if(j===3)patterns.overreach++;if(j===2)patterns.evidence++;}
-    if(i===2){if(j===3)patterns.excuse++;if(j===2)patterns.motive++;if(j===1)patterns.double++;if(j===0)patterns.evidence++;}
-    if(i===3){if(j===2)patterns.motive++;if(j===3)patterns.overreach++;if(j===0||j===1)patterns.evidence++;}
-    if(i===4){if(j===0)patterns.excuse++;if(j===1)patterns.overreach++;if(j===3)patterns.double++;if(j===2)patterns.evidence++;}
-  });
-});
+const answerAudit=[
+[
+{kind:'evidence',note:'You recognized the missed commitments as evidence against the claim of reliability.'},
+{kind:'evidence',note:'You kept the explanations separate from the observed pattern of missed deadlines.'},
+{kind:'excuse',note:'You chose to say the missed deadlines reveal nothing about reliability. They do: three missed commitments without warning are evidence about follow-through. The explanations may provide context; they do not erase the pattern.'},
+{kind:'overreach',note:'You turned a specific pattern into a universal verdict about reliability in every situation. That exceeds the evidence.'}
+],
+[
+{kind:'excuse',note:'You treated assembling the slides as enough to justify claiming the whole presentation. It does not erase the analysis and recommendations completed by other people. That answer minimizes the documented contributions of colleagues.'},
+{kind:'motive',note:'You made the truth of the claim depend on proving deceptive intent. It does not. The work record already shows that the claim overstates your contribution.'},
+{kind:'evidence',note:'You compared the claim with the documented division of labor and identified the overclaim.'},
+{kind:'overreach',note:'You turned one presentation into proof of a routine pattern. One record cannot establish “routinely.”'}
+],
+[
+{kind:'evidence',note:'You asked whether a relevant difference actually justifies applying a different standard.'},
+{kind:'double',note:'You moved the focus to whether the coworker is less responsible instead of examining your own double standard. That sidesteps the contradiction: you condemned lateness in them and excused it in yourself.'},
+{kind:'motive',note:'You generalized from lateness to disrespect without evidence of motive.'},
+{kind:'excuse',note:'You treated your own explanation feeling more convincing as the key test. That is self-serving: an explanation is not a justification unless the relevant facts support the exception.'}
+],
+[
+{kind:'evidence',note:'You named the repeated interruptions as the observed behavior.'},
+{kind:'evidence',note:'You recognized that apologies have not yet produced lasting behavioral change.'},
+{kind:'motive',note:'You assigned a hidden intention to humiliate people that the scenario does not establish.'},
+{kind:'overreach',note:'You declared that change will never happen. Repetition supports a serious judgment of the current pattern, not certainty about the entire future.'}
+],
+[
+{kind:'excuse',note:'You withdrew the judgment because “everyone makes mistakes.” That is an excuse, not an analysis. Your own similar conduct does not erase the evidence or the consequences of the other person’s conduct.'},
+{kind:'overreach',note:'You labeled both people permanently dishonest. That converts limited evidence into a totalizing identity verdict.'},
+{kind:'evidence',note:'You kept the judgment in view while requiring yourself to meet the same standard. That is the accountable choice.'},
+{kind:'double',note:'You treated both explanations as equally valid without checking facts. That is false equivalence: fairness requires the same standard, not automatic acceptance of every excuse.'}
+]
+];
+picked.forEach((arr,i)=>arr.forEach(j=>{const k=answerAudit[i][j].kind;patterns[k]++}));
 let verdictTitle,verdictBody;
 const avoidance=patterns.excuse+patterns.double;
 if(avoidance>=2 && avoidance>=patterns.motive && avoidance>=patterns.overreach){
-  verdictTitle='YOUR REASONING PROTECTED THE ACTOR FROM ACCOUNTABILITY.';
-  verdictBody='Across your choices, you tended to minimize a contradiction, appeal to a convenient exception, or soften the standard when it became uncomfortable. That is not neutral analysis: in this run, your reasoning made it easier for the person acting to escape scrutiny. If you were defending your own conduct, you just watched yourself make room for your own excuse. The behavior—not your worth as a person—is what needs confronting.';
+  verdictTitle='YOU MADE ROOM FOR THE EXCUSE. HERE IS WHERE.';
+  verdictBody='Your answers did not merely miss a detail. In multiple situations, you minimized documented conduct, shifted the standard, or treated an explanation as if it cancelled the behavior. Those moves protect the actor from accountability. If you were defending yourself, you just watched your own reasoning build an escape hatch: “my case is different,” “everyone makes mistakes,” or “my explanation feels convincing.” Unless the facts establish a relevant difference, that is not fairness. It is a double standard.';
 }else if(patterns.motive+patterns.overreach>=2 && patterns.motive+patterns.overreach>avoidance){
-  verdictTitle='YOU WENT BEYOND THE EVIDENCE.';
-  verdictBody='Your choices leaned toward assigning hidden motives or turning a limited pattern into a sweeping, permanent judgment. That can feel forceful, but force is not accuracy. You may have condemned more than the evidence supports. Name the conduct plainly; do not invent the inner story or pretend one scenario proves an entire identity.';
+  verdictTitle='YOU CONDEMNED BEYOND THE EVIDENCE.';
+  verdictBody='You did not let the conduct speak for itself. You added hidden motives or permanent character judgments that the facts do not establish. That is not accountability; it is overreach. Name the behavior, name its consequences, and make the strongest judgment the evidence supports—without inventing a secret intention or claiming one pattern proves an entire identity.';
 }else if(patterns.evidence>=3 && patterns.evidence>avoidance && patterns.evidence>patterns.motive+patterns.overreach){
-  verdictTitle='YOU HELD THE JUDGMENT TO THE EVIDENCE.';
-  verdictBody='Your choices generally kept the observed conduct in view, checked claims against the record, and resisted unsupported certainty. That is the strongest performance in this exercise. It is not proof that you always act this way; it is evidence that, in these scenarios, you used a more disciplined standard.';
+  verdictTitle='YOU FACED THE CONDUCT WITHOUT HIDING BEHIND A STORY.';
+  verdictBody='In these scenarios, you generally compared claims with observed behavior, required evidence for exceptions, and resisted both excuse-making and unsupported condemnation. That is the standard. Do not turn this score into a flattering identity label: the only result established here is how you reasoned through these five situations.';
 }else{
-  verdictTitle='YOUR JUDGMENT WAS INCONSISTENT.';
-  verdictBody='Your choices mixed evidence-based reasoning with moves that either softened accountability or went beyond what the facts establish. The combined pattern does not support a single sweeping label—but it does identify the work: when conduct conflicts with a claim, name the conflict; when you infer motive, show the evidence; when you make an exception, justify it by the same standard you apply to everyone else.';
+  verdictTitle='YOUR ANSWERS SPLIT: ACCOUNTABILITY IN ONE MOMENT, EVASION IN ANOTHER.';
+  verdictBody='You applied an evidence-based standard in some places but weakened it or overreached in others. Do not hide that inconsistency behind the claim that the quiz is complicated. The exact question is: where did you demand evidence from someone else, then accept an excuse—or invent a motive—when it suited your judgment? That is the pattern to examine.';
 }
-const verdict=document.createElement('section');verdict.className='lesson';const vh=document.createElement('h3');vh.textContent='THE VERDICT ON THIS RUN';const vtitle=document.createElement('p');vtitle.style.cssText='color:var(--bright);font-weight:800;margin:0 0 10px';vtitle.textContent=verdictTitle;const vbody=document.createElement('p');vbody.textContent=verdictBody;verdict.append(vh,vtitle,vbody);$('result').append(verdict);
+const verdict=document.createElement('section');verdict.className='lesson';
+const vh=document.createElement('h3');vh.textContent='THE SYNTHESIZED VERDICT';
+const vtitle=document.createElement('p');vtitle.style.cssText='color:var(--bright);font-weight:800;margin:0 0 10px';vtitle.textContent=verdictTitle;
+const vbody=document.createElement('p');vbody.textContent=verdictBody;verdict.append(vh,vtitle,vbody);
+const auditTitle=document.createElement('h3');auditTitle.textContent='YOUR ANSWERS, PUT TOGETHER';auditTitle.style.marginTop='20px';verdict.append(auditTitle);
+picked.forEach((arr,i)=>{
+  const block=document.createElement('div');block.style.cssText='border-top:1px solid var(--line);padding:13px 0';
+  const head=document.createElement('p');head.style.cssText='color:var(--bright);font-weight:700;margin:0 0 6px';head.textContent=questions[i].scene;
+  block.append(head);
+  arr.forEach(j=>{
+    const chosenLine=document.createElement('p');chosenLine.style.cssText='margin:0 0 6px;color:#eeeae1';
+    chosenLine.textContent='You chose: “'+questions[i].a[j][0]+'”';
+    const diagnosis=document.createElement('p');diagnosis.style.cssText='margin:0 0 8px;color:#aaa8a1';
+    diagnosis.textContent='What that choice does: '+answerAudit[i][j].note;
+    block.append(chosenLine,diagnosis);
+  });
+  verdict.append(block);
+});
+const closing=document.createElement('p');closing.style.cssText='color:var(--bright);font-weight:750;margin-top:18px';
+closing.textContent='THE POINT IS NOT TO CALL YOU A SHIT PERSON. THE POINT IS TO STOP YOU FROM HIDING THE SHITTY CONDUCT BEHIND YOUR OWN EXPLANATION.';
+verdict.append(closing);$('result').append(verdict);
 const lessons=[
 ['OBSERVATION ≠ INFERENCE','“Three deadlines were missed” is an observation. “They never intended to help” is an inference that requires more evidence.'],
 ['A CLAIM CAN MEET A RECORD','A documented action pattern can contradict a stated claim without proving a hidden motive or defining an entire person.'],
