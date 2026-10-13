@@ -14,14 +14,14 @@
 <body>
 <header><div class="shell"><nav><a class="mark" href="/"><span class="crest"><span>IFD</span></span><span>IDENTITY FIELD DYNAMICS</span></a><a class="back" href="/">← Return to IFD</a></nav></div></header>
 <main class="shell">
-<section class="intro"><div class="eyebrow">IFD Quiz Lab · Bite 009</div><h1>THE MIRROR<br><span>DOESN'T LIE.</span></h1><p>Real people make promises. Real people break them. Real people explain themselves. The hard part is deciding what the evidence actually means—including when the person in the mirror is you.</p><p><strong>Five situations. Five decisions. Look closely before you conclude.</strong></p></section>
+<section class="intro"><div class="eyebrow">IFD Quiz Lab · Bite 009</div><h1>THE MIRROR<br><span>DOESN'T LIE.</span></h1><p>Real people make promises. Real people break them. Real people explain themselves. The hard part is deciding what the evidence actually means—including when the person in the mirror is you.</p><p><strong>Five situations. Five decisions. Look closely before you conclude.</strong></p><p>Choose honestly. The engine will examine the reasoning your choices support. Retake the challenge to compare answers—but remember: changing an answer is a trace of reconsideration, not proof of changed conduct.</p></section>
 <section class="quiz" aria-live="polite" aria-atomic="false">
 <div class="meta"><span id="stage">Bite 009</span><span id="count">Question 1 of 5</span></div><div class="track"><div class="fill" id="progress"></div></div>
 <div id="play"><div class="scenario" id="scenario"></div><h2 class="question" id="question"></h2><div class="answers" id="answers"></div><div id="feedback" class="feedback" hidden role="status" aria-live="polite"></div><div class="actions"><button class="btn" id="restart" type="button">Start over</button><button class="btn primary" id="next" type="button" disabled>Commit to an answer →</button></div></div>
 <div id="result" class="result" hidden></div>
 <p class="note">This is an educational reasoning exercise, not a psychological assessment or a validated measurement instrument. Answers are processed in this page only; nothing is submitted or stored.</p>
 </section>
-<section class="below"><h2>The situation is the mirror.</h2><p>Identity Field Dynamics asks us to distinguish observation from inference, action from intention, and evidence from the story we tell about it. The goal is not to condemn a person. It is to make a better-supported judgment.</p><p><a href="/research-deep.html">Explore the IFD research</a> · <a href="/observor/">Visit OBSERVOR</a></p></section>
+<section class="below"><h2>The situation is the mirror.</h2><p>Identity Field Dynamics distinguishes observation from inference, action from intention, and evidence from excuse. When the evidence warrants it, name shitty conduct plainly. Do not invent motives, exaggerate beyond the record, or pretend one quiz establishes a person’s entire identity.</p><p><a href="/research-deep.html">Explore the IFD research</a> · <a href="/observor/">Visit OBSERVOR</a></p></section>
 </main>
 <footer><div class="shell">Identity Field Dynamics · Research in development</div></footer>
 <script>
@@ -59,6 +59,7 @@ const questions=[
 ]}
 ];
 let index=0,chosen=[],score=0,revealed=[];
+const attempts=[];
 const $=id=>document.getElementById(id);
 function render(){
 const q=questions[index];revealed[index]=false;$('stage').textContent='Bite 009';$('count').textContent='Question '+(index+1)+' of '+questions.length;$('progress').style.width=((index+1)/questions.length*100)+'%';$('scenario').textContent=q.scene;$('question').textContent=q.q;$('answers').replaceChildren();$('feedback').hidden=true;$('feedback').className='feedback';
@@ -88,6 +89,8 @@ q.a.forEach((a,j)=>{const p=document.createElement('p');p.style.marginTop='9px';
 revealed[index]=true;$('next').textContent=index===questions.length-1?'See what the mirror revealed →':'Next situation →';
 }
 function finish(){
+const currentAttempt={answers:chosen.map(v=>Array.isArray(v)?[...v].sort((a,b)=>a-b):v),score};
+attempts.push(currentAttempt);
 $('play').hidden=true;$('result').hidden=false;$('count').textContent='Bite complete';$('progress').style.width='100%';
 const h=document.createElement('h2');h.textContent='What did the evidence actually say?';const s=document.createElement('div');s.className='score';s.textContent=score+' / '+questions.length;const p=document.createElement('p');p.textContent='Your score reflects choices in this exercise—not your character, worth, or identity. The deeper test is whether you use the same standard when the behavior is yours.';$('result').replaceChildren(h,s,p);
 // Synthesize the participant's selected answers into a judgment of the reasoning pattern shown in THIS run.
@@ -159,9 +162,39 @@ picked.forEach((arr,i)=>{
   });
   verdict.append(block);
 });
-const closing=document.createElement('p');closing.style.cssText='color:var(--bright);font-weight:750;margin-top:18px';
-closing.textContent='THE POINT IS NOT TO CALL YOU A SHIT PERSON. THE POINT IS TO STOP YOU FROM HIDING THE SHITTY CONDUCT BEHIND YOUR OWN EXPLANATION.';
+const closing=document.createElement('p');closing.style.cssText='color:var(--bright);font-weight:850;margin-top:18px';
+closing.textContent='WHEN THE EVIDENCE WARRANTS IT, THE ENGINE WILL SAY IT PLAINLY: YOU ACTED LIKE A SHIT PERSON IN THIS SITUATION. THAT IS A JUDGMENT OF THE CONDUCT SHOWN HERE—not a claim that one short quiz proves your entire identity.';
 verdict.append(closing);$('result').append(verdict);
+const reward=document.createElement('section');reward.className='lesson';
+const rh=document.createElement('h3');rh.textContent='RESPONSIBILITY MUST BE RECOGNIZED—AND VERIFIED';
+const rp=document.createElement('p');rp.textContent='When you identify the conduct accurately, apply the same standard to yourself, or reject an unsupported accusation, that is responsible reasoning and it deserves recognition. An honest admission is a beginning; repair is another step; changed behavior must be demonstrated over time. This quiz can recognize your answers. It cannot certify your motives, your character, or real-world change.';
+reward.append(rh,rp);$('result').append(reward);
+if(attempts.length>1){
+ const previous=attempts[attempts.length-2], changes=[];
+ chosen.forEach((v,i)=>{
+  const now=Array.isArray(v)?[...v].sort((a,b)=>a-b):v;
+  const old=previous.answers[i];
+  if(JSON.stringify(now)!==JSON.stringify(old))changes.push({i,old,now});
+ });
+ const panel=document.createElement('section');panel.className='lesson';
+ const ph=document.createElement('h3');ph.textContent='RETAKE TRACE: WHAT CHANGED SINCE YOUR PREVIOUS ATTEMPT';
+ const pp=document.createElement('p');pp.textContent=changes.length
+  ? changes.length+' of 5 answers changed. The engine records the difference without pretending to know why you changed it. Compare your earlier reasoning with your current reasoning, then ask whether your conduct outside this quiz has changed too.'
+  : 'Your answers matched your previous attempt. Repetition can reinforce a standard, but the same answers alone do not prove learning or real-world change.';
+ panel.append(ph,pp);
+ changes.forEach(ch=>{
+  const detail=document.createElement('p');detail.style.marginTop='10px';
+  const oldLabel=Array.isArray(ch.old)?ch.old.map(j=>questions[ch.i].a[j][0]).join(' | '):questions[ch.i].a[ch.old]?.[0]||'No recorded answer';
+  const newLabel=Array.isArray(ch.now)?ch.now.map(j=>questions[ch.i].a[j][0]).join(' | '):questions[ch.i].a[ch.now]?.[0]||'No recorded answer';
+  detail.textContent=questions[ch.i].scene+': Earlier: “'+oldLabel+'” Now: “'+newLabel+'”';
+  panel.append(detail);
+ });
+ $('result').append(panel);
+}
+const commitments=document.createElement('section');commitments.className='lesson';
+const ch=document.createElement('h3');ch.textContent='TURN RECOGNITION INTO RESPONSIBILITY';
+const cp=document.createElement('p');cp.textContent='Before you leave, identify one specific behavior you will change, one repair you owe if harm was done, and what observable evidence would show that you followed through. A promise is not yet change. A single good act is not yet a pattern.';
+commitments.append(ch,cp);$('result').append(commitments);
 const lessons=[
 ['OBSERVATION ≠ INFERENCE','“Three deadlines were missed” is an observation. “They never intended to help” is an inference that requires more evidence.'],
 ['A CLAIM CAN MEET A RECORD','A documented action pattern can contradict a stated claim without proving a hidden motive or defining an entire person.'],
