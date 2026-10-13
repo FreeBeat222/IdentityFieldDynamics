@@ -90,6 +90,34 @@ revealed[index]=true;$('next').textContent=index===questions.length-1?'See what 
 function finish(){
 $('play').hidden=true;$('result').hidden=false;$('count').textContent='Bite complete';$('progress').style.width='100%';
 const h=document.createElement('h2');h.textContent='What did the evidence actually say?';const s=document.createElement('div');s.className='score';s.textContent=score+' / '+questions.length;const p=document.createElement('p');p.textContent='Your score reflects choices in this exercise—not your character, worth, or identity. The deeper test is whether you use the same standard when the behavior is yours.';$('result').replaceChildren(h,s,p);
+// Synthesize the participant's selected answers into a judgment of the reasoning pattern shown in THIS run.
+const picked = chosen.map((v,i)=>Array.isArray(v)?v:[v]);
+const patterns={excuse:0,motive:0,double:0,overreach:0,evidence:0};
+picked.forEach((arr,i)=>{
+  arr.forEach(j=>{
+    if(i===0){if(j===2)patterns.excuse++;if(j===0)patterns.motive++;if(j===3)patterns.overreach++;if(j===1)patterns.evidence++;}
+    if(i===1){if(j===0)patterns.excuse++;if(j===1)patterns.motive++;if(j===3)patterns.overreach++;if(j===2)patterns.evidence++;}
+    if(i===2){if(j===3)patterns.excuse++;if(j===2)patterns.motive++;if(j===1)patterns.double++;if(j===0)patterns.evidence++;}
+    if(i===3){if(j===2)patterns.motive++;if(j===3)patterns.overreach++;if(j===0||j===1)patterns.evidence++;}
+    if(i===4){if(j===0)patterns.excuse++;if(j===1)patterns.overreach++;if(j===3)patterns.double++;if(j===2)patterns.evidence++;}
+  });
+});
+let verdictTitle,verdictBody;
+const avoidance=patterns.excuse+patterns.double;
+if(avoidance>=2 && avoidance>=patterns.motive && avoidance>=patterns.overreach){
+  verdictTitle='YOUR REASONING PROTECTED THE ACTOR FROM ACCOUNTABILITY.';
+  verdictBody='Across your choices, you tended to minimize a contradiction, appeal to a convenient exception, or soften the standard when it became uncomfortable. That is not neutral analysis: in this run, your reasoning made it easier for the person acting to escape scrutiny. If you were defending your own conduct, you just watched yourself make room for your own excuse. The behavior—not your worth as a person—is what needs confronting.';
+}else if(patterns.motive+patterns.overreach>=2 && patterns.motive+patterns.overreach>avoidance){
+  verdictTitle='YOU WENT BEYOND THE EVIDENCE.';
+  verdictBody='Your choices leaned toward assigning hidden motives or turning a limited pattern into a sweeping, permanent judgment. That can feel forceful, but force is not accuracy. You may have condemned more than the evidence supports. Name the conduct plainly; do not invent the inner story or pretend one scenario proves an entire identity.';
+}else if(patterns.evidence>=3 && patterns.evidence>avoidance && patterns.evidence>patterns.motive+patterns.overreach){
+  verdictTitle='YOU HELD THE JUDGMENT TO THE EVIDENCE.';
+  verdictBody='Your choices generally kept the observed conduct in view, checked claims against the record, and resisted unsupported certainty. That is the strongest performance in this exercise. It is not proof that you always act this way; it is evidence that, in these scenarios, you used a more disciplined standard.';
+}else{
+  verdictTitle='YOUR JUDGMENT WAS INCONSISTENT.';
+  verdictBody='Your choices mixed evidence-based reasoning with moves that either softened accountability or went beyond what the facts establish. The combined pattern does not support a single sweeping label—but it does identify the work: when conduct conflicts with a claim, name the conflict; when you infer motive, show the evidence; when you make an exception, justify it by the same standard you apply to everyone else.';
+}
+const verdict=document.createElement('section');verdict.className='lesson';const vh=document.createElement('h3');vh.textContent='THE VERDICT ON THIS RUN';const vtitle=document.createElement('p');vtitle.style.cssText='color:var(--bright);font-weight:800;margin:0 0 10px';vtitle.textContent=verdictTitle;const vbody=document.createElement('p');vbody.textContent=verdictBody;verdict.append(vh,vtitle,vbody);$('result').append(verdict);
 const lessons=[
 ['OBSERVATION ≠ INFERENCE','“Three deadlines were missed” is an observation. “They never intended to help” is an inference that requires more evidence.'],
 ['A CLAIM CAN MEET A RECORD','A documented action pattern can contradict a stated claim without proving a hidden motive or defining an entire person.'],
