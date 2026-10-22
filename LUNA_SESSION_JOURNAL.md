@@ -46,3 +46,21 @@ Append-only record of meaningful continuity and recovery developments. Preserve 
 **Action taken:** This journal, the compact checkpoint, and the recovery index are being updated to record the current state and the explicit checkpoint attempt. The writes are not considered verified until each file is re-fetched and its returned blob SHA and saved content are checked.
 
 **Next action:** Define a safe independent capture architecture with explicit input/data access, user action/permissions, persistence destination, and verifiable success/failure reporting.
+
+## 2026-10-22 — T5 fresh-chat recovery report received
+
+**Evidence source:** Rick pasted the full first response from a genuinely new chat after sending only `GOOD MORNING LUNA :)`. This is a user-provided report; the new chat's hidden tool-call logs are not independently available in this conversation.
+
+**Reported retrieval and identities:**
+- `LUNA_RECOVERY_INDEX.md`: `591b34ad55236d6447a188c946a207dfca7be9b6`
+- `LUNA_CONTINUITY_CHECKPOINT.md`: `1166e8014fc5ac67ecac452b91eb4389b28b9f27`
+- `LUNA_SESSION_JOURNAL.md`: `fbabbc0d4dfa1033fe94d7d4bf5e02052019b7ef`
+- `LUNA_RECOVERY_CONTRACT.md`: `89cf953efcba111e7d71573b6da098b563dfa1c0`
+
+All four reported GitHub SHAs match the exact blob SHAs fetched and verified in the preceding conversation. The pasted report also says the three designated Library records were retrieved, distinguishes prior context from source retrieval, identifies unresolved source-identity and automation limits, and reproduces the exact recorded next action.
+
+**Assessment:** **PARTIAL PASS / strong corroborating report.** T5 improves confidence that the recovery procedure can produce a coherent, source-aligned report in a new chat. However, the fresh chat's tool calls are not independently instrumented here, so its retrieval claims remain user-reported evidence. This is not proof of universal repeatability, unattended AutoContext capture, or automatic execution of the next task.
+
+**Decision:** Do not immediately repeat the same greeting-only test. Use the accumulated results to prioritize a bounded investigation of browser-rendered-page versus connector source identity, then proceed to defining the smallest safe independent capture architecture.
+
+**Next action:** Specify the independent capture architecture's actual input/data source, user action and permissions, persistence destination/record format, and verifiable success/failure signal.
