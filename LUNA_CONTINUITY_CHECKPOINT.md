@@ -32,9 +32,13 @@ Reduce loss of useful work when a ChatGPT tab/session ends unexpectedly by prese
 - Decide whether a ten-minute checkpoint is proportionate, or whether event-based capture plus a less frequent safety snapshot is more practical.
 - Continue the Recovery Machine investigation into browser-rendered-page versus connector source-identity discrepancies.
 
+## Verified feasibility finding
+
+The repository's only current GitHub Actions workflow, `.github/workflows/generate-lockfile.yml`, runs on selected pushes to `main` and generates `package-lock.json`; it does not run on a timer or capture chat state. The available scheduled automation interface supports daily/weekly/monthly recurrence, not a ten-minute cadence, and does not automatically inherit this tab's live context. No silent live-transcript capture mechanism has been implemented or identified in the inspected tool surface.
+
 ## Exact next action
 
-Inspect the files under `.github/workflows` and the project's current automation/tool capabilities; establish what can run unattended, what source data it can actually access, and what requires an explicit user-triggered save. Do not deploy a timer that merely claims to save without access to the live session.
+Define the smallest safe viable independent capture architecture (for example, a user-triggered export/capture path into a local or external journal) and identify exactly what user action/permission it requires. Keep unattended capture marked unimplemented until demonstrated.
 
 ## Recovery limits
 
