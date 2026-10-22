@@ -102,3 +102,18 @@ The only repository workflow is `.github/workflows/generate-lockfile.yml`, trigg
 
 ### Current next action
 Define the smallest safe viable independent capture architecture (for example, a user-triggered export/capture path into a local or external journal), including its required user action/permissions, accessible data, and save verification. Do not describe unattended capture as operational until it is implemented and tested.
+
+
+## 9. LUNA AutoContext MVP status
+
+**Project name:** LUNA AutoContext — ECONOMY WITHOUT AMNESIA.
+
+**Draft implementation:** Branch `feature/luna-autocontext-mvp`; draft PR https://github.com/FreeBeat222/IdentityFieldDynamics/pull/7.
+
+**Static checks:** Manifest JSON parsed successfully. `service-worker.js`, `content.js`, and `popup.js` passed JavaScript syntax parsing after being fetched back from the branch.
+
+**Browser acceptance test:** NOT RUN. Do not mark PASS until a human verifies installation, opt-in checkpointing, local persistence after reload, disable behavior, and Markdown/JSON exports against the actual ChatGPT page.
+
+**Scope limitations:** The extension reads message elements currently present in the page DOM; this is not proof of a complete transcript. Automatic checkpoints remain local. No remote GitHub write is implemented, and no GitHub token is requested or stored.
+
+**Next action:** Run the acceptance checklist in `tools/luna-autocontext/README.md`, log each result, and correct observed failures before merging.
