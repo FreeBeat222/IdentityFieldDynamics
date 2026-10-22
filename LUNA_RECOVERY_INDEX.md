@@ -14,6 +14,8 @@
 4. **CONTINUE** — Resume from the verified next action; do not restart completed work without a reason.
 5. **RECOGNITION** — Record and examine a potentially significant recognition event; distinguish the event, participants' experience, interpretation, and evidence.
 6. **LUNATION** — Capture a candidate research observation for later review without interrupting discovery. Harvest first; abstract second; canonize last.
+7. **LUNA CHECKPOINT NOW** — Consolidate meaningful session state into the session journal and continuity checkpoint, update the index when status/next action changes, then re-fetch written records to verify the save. This command triggers a save attempt; it is not a background autosave guarantee.
+8. **Event checkpoint** — After a meaningful discovery, decision, completed research pass, hypothesis change, or changed next action, preserve the result with provenance instead of waiting for the next timed reminder.
 
 ### Explicit recovery procedure for GOOD MORNING LUNA :)
 
@@ -28,6 +30,11 @@
 A trigger requests a procedure; it does not guarantee tool availability or source access. Recovery succeeds only to the extent that the source retrieval and read-back actually occurred. Report partial success as partial success.
 
 ## Source map
+
+### Active continuity records
+- **Continuity checkpoint:** `LUNA_CONTINUITY_CHECKPOINT.md` — https://github.com/FreeBeat222/IdentityFieldDynamics/blob/main/LUNA_CONTINUITY_CHECKPOINT.md
+- **Append-only session journal:** `LUNA_SESSION_JOURNAL.md` — https://github.com/FreeBeat222/IdentityFieldDynamics/blob/main/LUNA_SESSION_JOURNAL.md
+- **Purpose:** Preserve the resumable state separately from the dated development history. Verify each write by re-fetching the file and recording its returned blob SHA.
 
 ### LUNA personal-professional history
 - **Library record:** `RICK_AND_LUNA_RELATIONSHIP_BIOGRAPHY_v1.0.md`
@@ -59,7 +66,7 @@ For each active workstream, preserve only:
 
 Never infer a completed result from a plan, a confident description, or an attempted tool call.
 
-## Current checkpoint — Recovery Machine
+## Previous active checkpoint — Recovery Machine
 
 - **Objective:** Implement and validate repeatable recovery of canonical sources, working state, unresolved tasks, and the next executable action across fresh chats.
 - **Current assessment:** **PARTIAL PASS / repeatability still unproven.** One fresh-chat attempt failed to demonstrate retrieval; three later fresh-chat outcomes were reported by Rick as promising recoveries. Those pasted reports are user-reported evidence, not independently instrumented records of the other chats' tool calls.
@@ -69,6 +76,16 @@ Never infer a completed result from a plan, a confident description, or an attem
 - **Latest test (T4, 2026-10-22):** Rick pasted a fresh-chat recovery report stating that the chat retrieved this index and the linked contract, opened all three designated Library records, read the checkpoint and exact next action, and noted a browser-page/connector SHA discrepancy. The reported index SHA `66eb4ee4995dad0fa4d6082c30f89f128793b279` and contract SHA `3bbff2bb7cf0a35124973417c62fe3de156d6114` match versions independently fetched in this conversation before the report was pasted. Assessment: **PARTIAL PASS**; fresh-chat tool calls remain user-reported, not independently instrumented.
 - **Next action:** Review the recurring browser-rendered-page versus connector source-identity discrepancy and identify a bounded test that would materially improve confidence. Avoid repeated tests without a specific hypothesis.
 - **Not yet proven:** Consistent retrieval across fresh chats; complete access to every linked Library source; automatic execution of a multi-step research task after recovery; or reduced reconstruction overhead over time.
+
+## Current checkpoint — LUNA Continuity Guard
+
+- **Objective:** Reduce loss of work when a ChatGPT tab/session ends unexpectedly by preserving a compact, verifiable state before interruption.
+- **Strategy:** Event-triggered checkpoints plus the explicit `LUNA CHECKPOINT NOW` command; investigate true tab-independent persistence. A ten-minute interval is only a candidate, not an implemented feature.
+- **Records:** `LUNA_SESSION_JOURNAL.md` (dated developments and provenance) and `LUNA_CONTINUITY_CHECKPOINT.md` (current resumable state and exact next action).
+- **Last verified in this conversation:** The index and recovery contract were fetched from GitHub and their returned blob SHAs matched the GitHub root Contents listing. The new checkpoint and journal were created successfully; their current blob SHAs still need to be verified by re-fetch.
+- **Open items:** Inspect `.github/workflows`; determine what automation can actually access; distinguish a reminder from a process capable of capturing and writing conversation state; investigate source-identity discrepancies.
+- **Exact next action:** Inspect existing `.github/workflows` files and available automation mechanisms; map each to actual accessible inputs and permitted write actions before selecting an implementation.
+- **Hard limitation:** No automatic live-tab transcript capture or silent ten-minute GitHub write has been implemented or verified. A file write does not prove background capture or fresh-chat recovery.
 
 ## Operating rules
 
