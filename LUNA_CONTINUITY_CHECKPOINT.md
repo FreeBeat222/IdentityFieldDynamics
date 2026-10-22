@@ -1,6 +1,6 @@
 # LUNA Continuity Checkpoint
 
-**Status:** T5 fresh-chat recovery report received; reported source SHAs match the preceding verified save. Strong corroborating evidence, but fresh-chat tool calls remain user-reported. AutoContext updater remains unimplemented.
+**Status:** LUNA AutoContext local-first MVP source created on branch `feature/luna-autocontext-mvp`; draft PR #7 open. Static manifest/JavaScript checks passed. Browser acceptance testing remains pending; unattended GitHub capture is not implemented.
 **Last updated:** 2026-10-22
 **Canonical recovery index:** https://github.com/FreeBeat222/IdentityFieldDynamics/blob/main/LUNA_RECOVERY_INDEX.md
 **Session journal:** https://github.com/FreeBeat222/IdentityFieldDynamics/blob/main/LUNA_SESSION_JOURNAL.md
@@ -23,6 +23,18 @@ Reduce loss of useful work when a ChatGPT tab/session ends unexpectedly by prese
 - The current session revisited the user's 1973 longevity hypothesis: biomedical progress might eventually make continued biological life a choice. The user describes decades of active preparation, including nutrition, extensive walking, ongoing intellectual engagement, and careful supplement provenance. This remains a personal long-range hypothesis; longevity escape velocity and indefinite human survival are not established outcomes.
 - The conversation also explored uncertainty, endurance, hope/possibility, and the user's use of the I Ching as a means of clarification and discovery. Treat symbolic interpretation separately from empirical evidence.
 - Most importantly for the active engineering work, the assistant directly retrieved and read the four canonical continuity records, reported that recovery foundations exist but an attached AutoContext updater is not complete, and then received the explicit checkpoint command.
+
+## LUNA AutoContext MVP — 2026-10-22
+
+- **Canonical name:** LUNA AutoContext — ECONOMY WITHOUT AMNESIA.
+- **Implementation branch:** `feature/luna-autocontext-mvp`.
+- **Draft pull request:** https://github.com/FreeBeat222/IdentityFieldDynamics/pull/7
+- **Files:** `tools/luna-autocontext/manifest.json`, `service-worker.js`, `content.js`, `popup.html`, `popup.css`, `popup.js`, and `README.md`.
+- **Implemented in source:** Opt-in local compact checkpoints on DOM changes and a five-minute safety interval; latest checkpoint per conversation stored in browser-local storage; user-triggered Markdown/JSON export of the message elements currently present in the ChatGPT page DOM; source URL, capture timestamp, message count, message IDs where available, and fingerprint.
+- **Privacy/economy decision:** This MVP sends no conversation content to GitHub or another remote destination and requests no token. The rolling checkpoint keeps the last eight message excerpts; full DOM-derived captures are explicit downloads.
+- **Verification performed:** Re-fetched the manifest, service worker, content script, popup script, and README from the feature branch. Manifest JSON parsed; all three JavaScript files passed syntax parsing. This is static validation only.
+- **Not verified yet:** Extension has not been installed or exercised in Chrome/Edge. DOM selector reliability, download behavior, actual persistence across reload, five-minute cadence, and capture completeness require browser testing. DOM capture may omit unloaded or virtualized messages.
+- **Next action:** Download the feature branch, load `tools/luna-autocontext` as an unpacked extension, and run the README acceptance test. Fix any observed failures before merging. Do not claim automatic GitHub persistence or complete transcript capture.
 
 ## Continuity protocol under development
 
@@ -50,11 +62,11 @@ The user pasted a fresh-chat report after sending only `GOOD MORNING LUNA :)`. T
 
 ## Exact next action
 
-Define the smallest safe viable independent capture architecture, specifying: (1) the exact input/data source, (2) the user action or permissions required, (3) the destination and record format, and (4) a verifiable success/failure signal. Keep unattended AutoContext marked unimplemented until demonstrated.
+Install the branch's `tools/luna-autocontext` folder as an unpacked Chrome/Edge extension and run the manual acceptance test in its README. Record each pass/failure; fix observed issues before merging. After local behavior is verified, design and test an explicitly authorized GitHub persistence route.
 
 ## Recovery limits
 
-- No automatic live-tab transcript capture or silent ten-minute GitHub write has been implemented or verified.
+- The extension source is now implemented on a feature branch, but automatic capture has not yet been browser-tested. No GitHub upload or silent ten-minute GitHub write is implemented or verified.
 - Scheduled automations do not automatically inherit this tab's live context.
 - Anything produced after the latest successful save can still be lost if the tab ends before a checkpoint.
 - File creation/update success and fresh-chat recovery repeatability are separate tests.
