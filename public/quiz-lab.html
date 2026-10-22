@@ -1,82 +1,59 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#050505">
-<meta name="description" content="Explore identity through a short interactive challenge from Identity Field Dynamics.">
+<meta name="description" content="Explore the IFD Quiz Lab: open-ended challenges and research pilots about identity, accountability, power, and the circumstances that shape our choices.">
 <link rel="canonical" href="https://identityfielddynamics.com/quiz-lab.html">
-<title>The Identity Challenge | Identity Field Dynamics</title>
+<title>Quiz Lab | Identity Field Dynamics</title>
 <style>
-:root{--bg:#050505;--panel:#0b0b0b;--gold:#d6b15a;--bright:#f3da8c;--text:#eeeae1;--muted:#9b9992;--line:rgba(214,177,90,.25)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% -5%,rgba(214,177,90,.1),transparent 34rem),linear-gradient(#090909,#020202 70%,#070707);color:var(--text);font-family:Inter,system-ui,sans-serif;min-height:100vh}body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.12;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(#000,transparent 72%)}a{color:inherit;text-decoration:none}.shell{width:min(900px,calc(100% - 32px));margin:auto}header{position:relative;border-bottom:1px solid rgba(203,208,212,.1);background:rgba(4,4,4,.75)}nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px}.mark{display:flex;align-items:center;gap:12px;font-size:10px;letter-spacing:.2em;font-weight:700}.crest{width:30px;height:30px;display:grid;place-items:center;border:1px solid var(--gold);color:var(--bright);transform:rotate(45deg)}.crest span{transform:rotate(-45deg);font-size:9px}.back{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#b8b4aa}.eyebrow,.kicker{color:var(--gold);font-size:10px;letter-spacing:.28em;text-transform:uppercase}.intro{text-align:center;padding:66px 0 34px}.intro h1{font-size:clamp(40px,8vw,76px);letter-spacing:-.065em;line-height:.92;margin:18px 0}.intro h1 span{color:var(--bright)}.intro p{color:#aaa8a1;line-height:1.7;max-width:600px;margin:18px auto}.quiz{border:1px solid var(--line);background:linear-gradient(145deg,rgba(214,177,90,.055),rgba(8,8,8,.96) 35%);padding:clamp(20px,5vw,42px);box-shadow:0 30px 90px #0008}.meta{display:flex;justify-content:space-between;gap:12px;color:var(--gold);font-size:10px;letter-spacing:.14em;text-transform:uppercase}.track{height:3px;background:#29251b;margin:17px 0 32px}.fill{height:3px;background:linear-gradient(90deg,var(--gold),var(--bright));width:20%;transition:width .25s}.question{font-size:clamp(23px,4vw,36px);line-height:1.2;letter-spacing:-.035em;margin:0 0 24px}.answers{display:grid;gap:10px}.answer{font:inherit;text-align:left;color:var(--text);background:#111;border:1px solid #34312a;padding:16px 17px;display:flex;align-items:center;gap:13px;cursor:pointer;line-height:1.45;transition:border-color .15s,background .15s}.answer:hover,.answer:focus-visible{border-color:var(--gold);outline:none}.answer[aria-pressed=true]{border-color:var(--bright);background:#292316}.letter{flex:0 0 28px;height:28px;border:1px solid #6f6040;color:var(--bright);display:grid;place-items:center;font-size:11px}.actions{display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap;margin-top:25px}.btn{font:inherit;font-size:10px;letter-spacing:.16em;text-transform:uppercase;padding:14px 18px;border:1px solid #79622e;background:transparent;color:var(--text);cursor:pointer}.btn.primary{background:linear-gradient(135deg,#d6b15a,#806a36);color:#080808;border-color:var(--bright);font-weight:750}.btn:disabled{opacity:.35;cursor:not-allowed}.result{line-height:1.75;color:#c4c0b7}.result h2{font-size:clamp(28px,5vw,44px);line-height:1.05;letter-spacing:-.04em;color:var(--bright);margin:10px 0 18px}.note{font-size:12px;color:#858179;border-top:1px solid var(--line);padding-top:18px;margin-top:25px}.below{padding:44px 0 65px;text-align:center}.below h2{font-size:24px;letter-spacing:-.03em}.below p{color:#99968e;line-height:1.75;max-width:650px;margin:15px auto}.below a{color:var(--bright);text-decoration:underline;text-underline-offset:4px}footer{border-top:1px solid #25231d;padding:26px 0 38px;color:#666;font-size:9px;letter-spacing:.12em;text-transform:uppercase}@media(max-width:520px){.intro{padding-top:46px}.meta{font-size:9px}.answer{padding:13px}.actions .btn{flex:1}.back{font-size:9px}}
+:root{color-scheme:dark;--bg:#050505;--panel:#10100f;--panel2:#15130f;--gold:#d6b15a;--bright:#f3da8c;--text:#eeeae1;--muted:#aaa69c;--line:rgba(214,177,90,.25);--dim:#77736a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -8%,rgba(214,177,90,.13),transparent 35rem),linear-gradient(180deg,#090909,#020202 72%,#070707);color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.11;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(#000,transparent 75%)}a{color:inherit;text-decoration:none}button,input{font:inherit}.shell{width:min(1100px,calc(100% - 36px));margin:auto;position:relative}header{border-bottom:1px solid rgba(203,208,212,.12);background:rgba(4,4,4,.78)}nav{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:16px}.mark{display:flex;align-items:center;gap:13px;font-size:10px;letter-spacing:.2em;font-weight:750}.crest{width:31px;height:31px;display:grid;place-items:center;border:1px solid var(--gold);color:var(--bright);transform:rotate(45deg);flex:0 0 auto}.crest span{transform:rotate(-45deg);font-size:9px}.navlink{color:#b8b4aa;font-size:10px;letter-spacing:.15em;text-transform:uppercase}.hero{text-align:center;padding:76px 0 43px}.eyebrow,.kicker{color:var(--gold);font-size:10px;letter-spacing:.28em;text-transform:uppercase}.hero h1{font-size:clamp(48px,8vw,88px);line-height:.91;letter-spacing:-.075em;margin:21px 0 23px;font-weight:780}.hero h1 span{color:var(--bright)}.hero p{max-width:710px;margin:0 auto;color:#b2aea4;line-height:1.8;font-size:clamp(15px,2vw,17px)}.hero .sub{margin-top:14px;color:#7f7b72;font-size:12px}.rule{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:0 auto 28px}.toolbar{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin:0 0 22px}.toolbar-label{color:var(--gold);font-size:10px;letter-spacing:.23em;text-transform:uppercase}.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{border:1px solid #3c3526;background:#0d0d0c;color:#bcb7ab;border-radius:999px;padding:10px 14px;font-size:11px;cursor:pointer;transition:background .15s,border-color .15s,color .15s}.filter:hover,.filter:focus-visible{border-color:var(--gold);outline:none}.filter[aria-pressed=true]{background:#2b2415;color:var(--bright);border-color:#9d7e39}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{display:flex;flex-direction:column;min-height:310px;padding:23px;border:1px solid var(--line);border-radius:4px;background:linear-gradient(145deg,rgba(214,177,90,.065),rgba(13,13,12,.97) 48%);transition:transform .18s,border-color .18s,background .18s}.card:hover{transform:translateY(-3px);border-color:rgba(243,218,140,.65);background:linear-gradient(145deg,rgba(214,177,90,.1),rgba(13,13,12,.98) 48%)}.card:focus-within{outline:1px solid var(--bright);outline-offset:3px}.cardtop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:23px}.symbol{width:44px;height:44px;display:grid;place-items:center;border:1px solid #59482a;color:var(--bright);font-size:21px}.status{font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:#d8c58f;border:1px solid #51452b;padding:7px 9px;white-space:nowrap}.status.pilot{color:#d6b15a;border-style:dashed}.topic{color:#a99a73;font-size:9px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px}.card h2{font-size:clamp(22px,2.5vw,28px);line-height:1.08;letter-spacing:-.04em;margin:0 0 12px;font-weight:680}.card p{font-size:13px;color:#aaa69d;line-height:1.75;margin:0 0 21px}.cardbottom{margin-top:auto;padding-top:15px;border-top:1px solid rgba(214,177,90,.17);display:flex;align-items:center;justify-content:space-between;gap:10px}.launch{color:var(--bright);font-size:10px;letter-spacing:.15em;text-transform:uppercase;font-weight:750}.time{color:#716d64;font-size:10px}.card a:focus-visible{outline:2px solid var(--bright);outline-offset:5px}.empty{display:none;color:#aaa69d;padding:25px;border:1px dashed #51452b;text-align:center}.section{padding:39px 0 12px}.sectionhead{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}.section h2{font-size:23px;letter-spacing:-.04em;margin:0 0 8px}.sectionhead p{color:#817d74;font-size:12px;margin:0}.principle{margin:28px 0 0;padding:25px;border-left:2px solid var(--gold);background:linear-gradient(90deg,rgba(214,177,90,.07),rgba(214,177,90,0));}.principle blockquote{font-size:clamp(18px,2.5vw,24px);line-height:1.45;letter-spacing:-.025em;margin:0;color:#e4dece}.principle p{font-size:12px;line-height:1.7;color:#918c81;margin:12px 0 0}.research-note{padding:25px 0 45px;color:#888379;font-size:11px;line-height:1.8;max-width:800px}.research-note strong{color:#b8ae96}footer{border-top:1px solid #25231d;padding:26px 0 38px;color:#69655c;font-size:9px;letter-spacing:.14em;text-transform:uppercase}.footerinner{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}.footerinner a{color:#aaa18e;text-decoration:underline;text-underline-offset:4px}
+@media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding-top:60px}.card{min-height:290px}}
+@media(max-width:560px){.shell{width:min(100% - 26px,1100px)}nav{min-height:65px}.mark{font-size:8px;letter-spacing:.14em;gap:10px}.crest{width:28px;height:28px}.navlink{font-size:9px}.hero{padding:49px 0 31px}.hero h1{font-size:clamp(44px,13vw,65px)}.toolbar{align-items:flex-start;flex-direction:column}.filters{width:100%}.filter{padding:9px 11px}.grid{grid-template-columns:1fr;gap:12px}.card{min-height:0;padding:20px}.cardtop{margin-bottom:17px}.card h2{font-size:25px}.principle{padding:20px 17px}.footerinner{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;transform:none!important}}
 </style>
 </head>
 <body>
-<header><div class="shell"><nav><a class="mark" href="/"><span class="crest"><span>IFD</span></span><span>IDENTITY FIELD DYNAMICS</span></a><a class="back" href="/">← Return to IFD</a></nav></div></header>
+<header><div class="shell"><nav><a class="mark" href="/"><span class="crest"><span>IFD</span></span><span>IDENTITY FIELD DYNAMICS</span></a><a class="navlink" href="/">← Return to IFD</a></nav></div></header>
 <main class="shell">
-<section class="intro"><div class="eyebrow">IFD Quiz Lab · Challenge 01</div><h1>THE IDENTITY<br><span>CHALLENGE.</span></h1><p>Five questions. A minute or two. No registration. Explore how you think about identity, action, memory, and change.</p></section>
-<section class="quiz" aria-live="polite" aria-atomic="true">
-<div class="meta"><span id="stage">Challenge 01</span><span id="count">Question 1 of 5</span></div><div class="track"><div class="fill" id="progress"></div></div>
-<div id="play">
-<h2 class="question" id="question"></h2><div class="answers" id="answers"></div>
-<div class="actions"><button class="btn" id="restart" type="button">Start over</button><button class="btn primary" id="next" type="button" disabled>Next question →</button></div>
+<section class="hero"><div class="eyebrow">Identity Field Dynamics · Research in Development</div><h1>THE QUIZ <span>LAB.</span></h1><p>Questions worth thinking about. Explore identity through action, accountability, power, and the circumstances that shape the choices available to us.</p><p class="sub">No registration. No personality labels. No predetermined worldview to adopt.</p></section>
+<div class="rule"></div>
+<section aria-labelledby="collection-title">
+<div class="toolbar"><div class="toolbar-label" id="collection-title">Explore the collection · <span id="quiz-count">3 experiences</span></div><div class="filters" role="group" aria-label="Filter quizzes by topic"><button class="filter" type="button" data-filter="all" aria-pressed="true">All quizzes</button><button class="filter" type="button" data-filter="identity" aria-pressed="false">Identity</button><button class="filter" type="button" data-filter="accountability" aria-pressed="false">Action &amp; accountability</button><button class="filter" type="button" data-filter="power" aria-pressed="false">Power &amp; circumstances</button></div></div>
+<div class="grid" id="quiz-grid">
+<article class="card" data-topics="identity" aria-labelledby="identity-title"><div class="cardtop"><div class="symbol" aria-hidden="true">◈</div><span class="status">Foundational challenge</span></div><div class="topic">Identity · Action · History</div><h2 id="identity-title">The Identity Challenge</h2><p>Five questions about identity, action, memory, and change. A starting point for examining what persists, what shifts, and what counts as evidence.</p><div class="cardbottom"><a class="launch" href="/quiz-lab-identity-challenge.html">Enter challenge <span aria-hidden="true">→</span></a><span class="time">~2 minutes</span></div></article>
+<article class="card" data-topics="accountability identity" aria-labelledby="mirror-title"><div class="cardtop"><div class="symbol" aria-hidden="true">◇</div><span class="status">Scenario challenge</span></div><div class="topic">Action · Evidence · Responsibility</div><h2 id="mirror-title">The Mirror Doesn't Lie</h2><p>Bite 009 asks you to examine promises, excuses, double standards, and the difference between observed conduct and inferred motive.</p><div class="cardbottom"><a class="launch" href="/quiz-lab-bite-009.html">Face the mirror <span aria-hidden="true">→</span></a><span class="time">~5 situations</span></div></article>
+<article class="card" data-topics="power accountability" aria-labelledby="power-title"><div class="cardtop"><div class="symbol" aria-hidden="true">⌁</div><span class="status pilot">Research pilot</span></div><div class="topic">Power · Circumstances · Choice</div><h2 id="power-title">POWER: Who Determines the Choices?</h2><p>Five roadbuilding scenarios explore how systems shape formal options, practical possibilities, constraints, and consequences—and what evidence might distinguish competing interpretations.</p><div class="cardbottom"><a class="launch" href="/quiz-lab-power-pilot.html">Explore the pilot <span aria-hidden="true">→</span></a><span class="time">5 scenarios</span></div></article>
 </div>
-<div id="result" class="result" hidden></div>
-<p class="note">This is an exploratory reflection, not a psychological assessment or a validated measurement instrument. Your answers stay in this page; nothing is submitted or stored.</p>
+<div class="empty" id="empty-state" role="status">No quizzes match this topic yet. Choose another filter to explore the collection.</div>
 </section>
-<section class="quiz" style="margin:28px 0;border-color:rgba(214,177,90,.4)">
-<div class="eyebrow">IFD Quiz Lab · New challenge</div>
-<h2 class="question" style="margin-top:18px">Ready for a harder mirror?</h2>
-<p style="color:#aaa8a1;line-height:1.7">The original Identity Challenge remains here. When you're ready, try a new scenario-based quiz about promises, accountability, double standards, and what the evidence really proves.</p>
-<a class="btn primary" style="display:inline-block;margin-top:12px" href="/quiz-lab-bite-009.html">Take Bite 009: The Mirror Doesn't Lie →</a>
-</section>
-<section class="quiz" style="margin:28px 0;border-color:rgba(214,177,90,.4)">
-<div class="eyebrow">IFD Quiz Lab · Research pilot</div>
-<h2 class="question" style="margin-top:18px">Who determines the choices?</h2>
-<p style="color:#aaa8a1;line-height:1.7">Explore POWER through five roadbuilding situations. Choose an interpretive lens, then choose the evidence you would inspect next. This is an exploratory research pilot, not a validated assessment; your answers stay in this page and are not submitted or stored.</p>
-<a class="btn primary" style="display:inline-block;margin-top:12px" href="/quiz-lab-power-pilot.html">Take the POWER pilot →</a>
-</section>
-<section class="below"><h2>The question is an invitation.</h2><p>Identity Field Dynamics investigates identity through observation, action, interaction, history, and change. This short challenge offers a starting point—not a verdict about who you are.</p><p><a href="/research-deep.html">Explore the IFD research</a> · <a href="/observor/">Visit OBSERVOR</a></p></section>
+<section class="section" aria-labelledby="next-title"><div class="sectionhead"><div><div class="kicker">An expanding research space</div><h2 id="next-title">The collection grows with the questions.</h2></div><p>New challenges can join without rebuilding the Lab.</p></div><div class="principle"><blockquote>“DON’T TELL PEOPLE WHAT TO THINK. GIVE THEM SOMETHING WORTH THINKING ABOUT. THEN LISTEN TO WHAT THEY DO WITH IT.”</blockquote><p>The Lab is an invitation to examine, question, disagree, and bring new hypotheses into view—not a machine for assigning people a type.</p></div></section>
+<div class="research-note"><strong>Research status:</strong> These experiences are exploratory reflections and research pilots, not validated psychological assessments or established measurements of identity. Each quiz explains its own purpose and limits. Responses are processed in the quiz page; the quizzes do not submit or store your answers.</div>
 </main>
-<footer><div class="shell">Identity Field Dynamics · Research in development</div></footer>
+<footer><div class="shell footerinner"><span>Identity Field Dynamics · Research in development</span><a href="/research-deep.html">Explore IFD research</a></div></footer>
 <script>
 (function(){
-const questions=[
-{q:"If nobody remembered what you did yesterday, would today's actions still be you?",a:["Yes. Identity exists in the present.","No. Identity depends on accumulated history.","What I do now helps shape what I become.","I'm not sure. It depends on what happens next."]},
-{q:"Two people make the same choice for completely different reasons. Is it the same action?",a:["Yes. The observable choice is the same.","No. The intention changes its meaning.","The action is the same; its history differs.","I'd need more information to decide."]},
-{q:"You change your mind after encountering new evidence. What does that say about you?",a:["I can adapt when conditions change.","My earlier view was part of my history, too.","The encounter changed what I could see.","It depends on whether the change lasts."]},
-{q:"Which would help you recognize an identity over time?",a:["A stable pattern of behavior.","A continuous history of past interactions.","A recognizable structure, even as behavior changes.","A combination of evidence, compared over time."]},
-{q:"If the rules of a situation changed, what would you most want to observe?",a:["Whether the same choice is made.","How the person adapts to the new conditions.","Which parts of the pattern persist.","What new behavior emerges."]}
-];
-const reflections=[
-{title:"The present as evidence",body:"Your choices leaned toward what can be observed in the current moment. An IFD follow-up question is whether a present action tells the whole story—or whether earlier encounters help explain it."},
-{title:"History matters",body:"Your choices leaned toward continuity, intention, or accumulated experience. An IFD follow-up question is how history can be observed and distinguished from the story we tell about it."},
-{title:"Identity in motion",body:"Your choices leaned toward action, adaptation, and becoming. An IFD follow-up question is which changes matter, which patterns persist, and what evidence would distinguish them."},
-{title:"Context before conclusion",body:"Your choices leaned toward context, uncertainty, or combining different kinds of evidence. That is compatible with an investigative stance: define what is known, identify what is missing, and avoid deciding before observation."}
-];
-let index=0,answers=[];
-const $=id=>document.getElementById(id);
-function render(){
-$('stage').textContent='Challenge 01';$('count').textContent='Question '+(index+1)+' of '+questions.length;$('progress').style.width=((index+1)/questions.length*100)+'%';
-$('question').textContent=questions[index].q;$('answers').replaceChildren();
-questions[index].a.forEach((label,i)=>{const b=document.createElement('button');b.type='button';b.className='answer';b.setAttribute('aria-pressed',answers[index]===i?'true':'false');const letter=document.createElement('span');letter.className='letter';letter.textContent=String.fromCharCode(65+i);const text=document.createElement('span');text.textContent=label;b.append(letter,text);b.addEventListener('click',()=>{answers[index]=i;Array.from($('answers').children).forEach((el,j)=>el.setAttribute('aria-pressed',j===i?'true':'false'));$('next').disabled=false;$('next').textContent=index===questions.length-1?'See reflection →':'Next question →'});$('answers').append(b)});
-$('next').disabled=answers[index]===undefined;$('next').textContent=index===questions.length-1?'See reflection →':'Next question →';$('play').hidden=false;$('result').hidden=true;
+const buttons=Array.from(document.querySelectorAll('[data-filter]'));
+const cards=Array.from(document.querySelectorAll('.card[data-topics]'));
+const count=document.getElementById('quiz-count');
+const empty=document.getElementById('empty-state');
+function applyFilter(filter){
+let visible=0;
+cards.forEach(card=>{
+const topics=(card.getAttribute('data-topics')||'').split(/\s+/);
+const show=filter==='all'||topics.includes(filter);
+card.hidden=!show;
+if(show)visible++;
+});
+buttons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.filter===filter)));
+count.textContent=visible+' '+(visible===1?'experience':'experiences');
+empty.style.display=visible===0?'block':'none';
 }
-function finish(){
-// Each answer is mapped by meaning, not by letter alone:
-// 0 = present evidence; 1 = history; 2 = identity in motion; 3 = context/uncertainty.
-const styles=[0,0,0,0];
-const map=[[0,1,2,3],[0,3,1,3],[2,1,3,3],[0,1,2,3],[0,2,1,2]];
-answers.forEach((a,i)=>{styles[map[i][a]]++});
-const maxScore=Math.max(...styles);
-const leaders=styles.map((score,i)=>score===maxScore?i:-1).filter(i=>i>=0);
-// A tie is reported as context-first rather than forcing a false distinction.
-const winner=leaders.length===1?leaders[0]:3;
-$('play').hidden=true;$('result').hidden=false;$('count').textContent='Challenge complete';$('progress').style.width='100%';
-const h=document.createElement('h2');h.textContent=reflections[winner].title;const p=document.createElement('p');p.textContent=reflections[winner].body;const p2=document.createElement('p');p2.textContent='Try the challenge again and answer from a different perspective. Notice what changes in your answers—and what stays the same.';const btn=document.createElement('button');btn.className='btn primary';btn.type='button';btn.textContent='Try again ↻';btn.addEventListener('click',reset);$('result').replaceChildren(h,p,p2,btn);
-}
-function reset(){index=0;answers=[];render()}
-$('next').addEventListener('click',()=>{if(answers[index]===undefined)return;if(index<questions.length-1){index++;render()}else finish()});$('restart').addEventListener('click',reset);render();
+buttons.forEach(button=>button.addEventListener('click',()=>applyFilter(button.dataset.filter)));
+applyFilter('all');
 })();
 </script>
-</body></html>
+</body>
+</html>
