@@ -28,12 +28,16 @@ jobs:
         run: npm install
       - name: Commit package-lock.json if changed
         run: |
-          if git diff --quiet -- package-lock.json; then
+          if [ ! -f package-lock.json ]; then
+            echo "ERROR: npm install did not create package-lock.json."
+            exit 1
+          fi
+          git add package-lock.json
+          if git diff --cached --quiet -- package-lock.json; then
             echo "package-lock.json is already up to date."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add package-lock.json
           git commit -m "Add package-lock.json"
           git push origin main
