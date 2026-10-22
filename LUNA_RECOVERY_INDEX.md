@@ -89,6 +89,7 @@ Never infer a completed result from a plan, a confident description, or an attem
 - **Draft PR:** https://github.com/FreeBeat222/IdentityFieldDynamics/pull/7
 - **Exact next action:** Download the feature branch, load `tools/luna-autocontext` as an unpacked extension in Chrome/Edge, and run the README acceptance checklist. Fix failures before merge. Once local capture is verified, implement a separate, explicitly authorized remote persistence path.
 - **Recovery rule:** A source commit or passing syntax check does not prove browser capture, complete transcript preservation, or fresh-chat recovery.
+- **Latest explicit checkpoint:** `LUNA CHECKPOINT NOW` recorded after the AutoContext MVP and retry/status changes. The continuity checkpoint and session journal were updated; re-fetch them and the index after this write to verify all three saved blob SHAs and intended content.
 
 ## Operating rules
 
