@@ -70,3 +70,31 @@ T4 completed the previously recorded next test and has been logged above. The ne
 - Never invent a SHA, source read, or completed action.
 - Update the index's current checkpoint and this log together when a new test materially changes the state.
 - Do not claim full recovery merely because a file write or a single test succeeded.
+
+
+## 8. Continuity Guard — preserving state before interruption
+
+The recovery contract depends on durable records being updated before a session disappears. The continuity strategy is therefore separate from the fresh-chat recovery test.
+
+### Record layers
+- **Recovery index:** navigation, source map, current status, open issues, exact next action.
+- **Session journal:** append-only dated discoveries, decisions, and provenance.
+- **Continuity checkpoint:** compact resumable state with last verified result, evidence, open items, and one executable next action.
+
+### Save triggers
+- **Event-triggered:** after a meaningful discovery, decision, completed research pass, hypothesis change, or changed next action.
+- **Explicit:** `LUNA CHECKPOINT NOW` requests consolidation of current state, writing the journal/checkpoint and updating the index when warranted, followed by re-fetch verification.
+- **Periodic:** a ten-minute interval is a candidate only. Do not describe it as implemented unless an actual process can access the relevant live state and successfully persist it at that cadence.
+
+### Required save verification
+1. State which files were written.
+2. Re-fetch each written file after the write.
+3. Record the returned blob SHA and confirm the saved content includes the intended checkpoint.
+4. If a write or verification fails, report that clearly; do not claim the save is complete.
+5. Keep source-derived facts, user-reported claims, interpretations, and proposals distinguishable.
+
+### Automation constraint
+A scheduled reminder is not a live-session autosave. Any unattended mechanism must be evaluated for the actual inputs it can access, its permission to persist them, its cadence limits, failure visibility, and security/privacy implications. The current project has not yet demonstrated automatic capture of a live ChatGPT tab or silent ten-minute persistence.
+
+### Current next action
+Inspect existing repository workflows and available automation mechanisms. Establish what can run unattended, what data each mechanism can actually access, and which parts require an explicit user-triggered save. Do not implement a timer that merely claims to preserve state without access to the live session.
