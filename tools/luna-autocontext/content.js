@@ -78,11 +78,17 @@
     if (!(await isEnabled())) return;
     const snapshot = await capture();
     if (!snapshot.messageCount || snapshot.fingerprint === lastSentFingerprint) return;
-    lastSentFingerprint = snapshot.fingerprint;
-    chrome.runtime.sendMessage({
-      type: "LUNA_AUTOCONTEXT_CHECKPOINT",
-      payload: snapshot
-    }).catch(() => {});
+    // Advance the local fingerprint only after the worker confirms persistence.
+    // If saving fails, a later mutation or five-minute cycle can retry the same state.
+    try {
+      const response = await chrome.runtime.sendMessage({
+        type: "LUNA_AUTOCONTEXT_CHECKPOINT",
+        payload: snapshot
+      });
+      if (response?.ok) lastSentFingerprint = snapshot.fingerprint;
+    } catch (_) {
+      // Keep the fingerprint pending so a later cycle retries.
+    }
   }
 
   chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
