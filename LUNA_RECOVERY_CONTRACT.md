@@ -110,7 +110,7 @@ Define the smallest safe viable independent capture architecture (for example, a
 
 **Draft implementation:** Branch `feature/luna-autocontext-mvp`; draft PR https://github.com/FreeBeat222/IdentityFieldDynamics/pull/7.
 
-**Static checks:** Manifest JSON parsed successfully. `service-worker.js`, `content.js`, and `popup.js` passed JavaScript syntax parsing after being fetched back from the branch.
+**Static checks:** Manifest JSON parsed successfully. `service-worker.js`, `content.js`, and `popup.js` passed JavaScript syntax parsing after being fetched back from the branch. The content script retries on later cycles unless the service worker acknowledges persistence; the popup surfaces the most recent saved/error status. Latest PR head: `b6a6bae4da3371664b824882aa8696073b53c95e`.
 
 **Browser acceptance test:** NOT RUN. Do not mark PASS until a human verifies installation, opt-in checkpointing, local persistence after reload, disable behavior, and Markdown/JSON exports against the actual ChatGPT page.
 
