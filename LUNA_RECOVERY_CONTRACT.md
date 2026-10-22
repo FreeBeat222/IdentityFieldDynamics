@@ -96,5 +96,8 @@ The recovery contract depends on durable records being updated before a session 
 ### Automation constraint
 A scheduled reminder is not a live-session autosave. Any unattended mechanism must be evaluated for the actual inputs it can access, its permission to persist them, its cadence limits, failure visibility, and security/privacy implications. The current project has not yet demonstrated automatic capture of a live ChatGPT tab or silent ten-minute persistence.
 
+### Verified feasibility finding
+The only repository workflow is `.github/workflows/generate-lockfile.yml`, triggered by selected pushes to `main`; it generates `package-lock.json` and does not capture conversation state. The available scheduled automation interface supports daily/weekly/monthly recurrence, not a ten-minute cadence, and does not automatically inherit this live tab's context. No silent live-transcript capture mechanism has been implemented or identified in the inspected tool surface.
+
 ### Current next action
-Inspect existing repository workflows and available automation mechanisms. Establish what can run unattended, what data each mechanism can actually access, and which parts require an explicit user-triggered save. Do not implement a timer that merely claims to preserve state without access to the live session.
+Define the smallest safe viable independent capture architecture (for example, a user-triggered export/capture path into a local or external journal), including its required user action/permissions, accessible data, and save verification. Do not describe unattended capture as operational until it is implemented and tested.
