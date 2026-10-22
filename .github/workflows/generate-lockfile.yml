@@ -1,0 +1,39 @@
+name: Generate and commit package lockfile
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "package.json"
+      - ".github/workflows/generate-lockfile.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  lockfile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Run npm install
+        run: npm install
+      - name: Commit package-lock.json if changed
+        run: |
+          if git diff --quiet -- package-lock.json; then
+            echo "package-lock.json is already up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add package-lock.json
+          git commit -m "Add package-lock.json"
+          git push origin main
