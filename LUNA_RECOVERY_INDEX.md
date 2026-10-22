@@ -77,19 +77,18 @@ Never infer a completed result from a plan, a confident description, or an attem
 - **Next action:** Use one bounded comparison to investigate the browser-rendered-page versus connector source-identity discrepancy, then proceed to defining the independent capture architecture. Avoid repeated greeting-only tests without a specific hypothesis.
 - **Not yet proven:** Consistent retrieval across fresh chats; complete access to every linked Library source; automatic execution of a multi-step research task after recovery; or reduced reconstruction overhead over time.
 
-## Current checkpoint — LUNA Continuity Guard
+## Current checkpoint — LUNA AutoContext: ECONOMY WITHOUT AMNESIA
 
-- **Objective:** Reduce loss of work when a ChatGPT tab/session ends unexpectedly by preserving a compact, verifiable state before interruption; define a safe independent AutoContext capture route.
-- **Strategy:** Event-triggered checkpoints plus explicit `LUNA CHECKPOINT NOW`; investigate true tab-independent persistence. A ten-minute interval is only a candidate, not implemented.
-- **Records:** `LUNA_SESSION_JOURNAL.md` (dated developments and provenance) and `LUNA_CONTINUITY_CHECKPOINT.md` (current resumable state and exact next action).
-- **Latest retrieval verified in this conversation:** The GitHub connector directly fetched and read the index, checkpoint, journal, and recovery contract. After the explicit checkpoint save, the verified SHAs were index `591b34ad55236d6447a188c946a207dfca7be9b6`; checkpoint `1166e8014fc5ac67ecac452b91eb4389b28b9f27`; journal `fbabbc0d4dfa1033fe94d7d4bf5e02052019b7ef`; contract `89cf953efcba111e7d71573b6da098b563dfa1c0`.
-- **T5 report:** Rick pasted a fresh-chat recovery report; all four SHAs it reported match those verified versions. This strengthens confidence but remains user-reported evidence, not independent instrumentation.
-- **Checkpoint trigger:** Rick issued `LUNA CHECKPOINT NOW`; the save was successfully verified by re-fetching all three written records and matching their returned SHAs.
-- **Current assessment:** Recovery foundation implemented; fresh-chat repeatability remains partial/unproven; attached AutoContext updater not implemented.
-- **Verified feasibility finding:** The only inspected repository workflow is `.github/workflows/generate-lockfile.yml`, triggered by selected pushes to `main`; it generates `package-lock.json` and does not capture conversation state. Available scheduled automations support daily/weekly/monthly recurrence, not ten-minute cadence, and do not automatically inherit this live tab's context.
-- **Open items:** Define a safe independent capture route; determine required user action/permissions, accessible data, destination, and failure reporting; investigate source-identity discrepancies.
-- **Exact next action:** Define the smallest safe viable independent capture architecture, specifying (1) exact input/data source, (2) user action/permissions, (3) destination/record format, and (4) verifiable success/failure signal.
-- **Hard limitation:** No automatic live-tab transcript capture or silent ten-minute GitHub write has been implemented or verified. A file write does not prove background capture or fresh-chat recovery.
+- **Objective:** Build a low-cost, independently testable capture path that preserves source evidence while maintaining compact, resumable checkpoints.
+- **Current status:** A local-first Chrome/Edge Manifest V3 MVP exists on branch `feature/luna-autocontext-mvp`; draft PR #7 is open. Static checks passed; browser acceptance tests remain pending.
+- **Implementation files:** `tools/luna-autocontext/manifest.json`, `service-worker.js`, `content.js`, `popup.html`, `popup.css`, `popup.js`, `README.md`.
+- **Implemented in source:** Opt-in local checkpoints on DOM changes and every five minutes; latest compact checkpoint per conversation stored locally; explicit Markdown/JSON export of message elements present in the page DOM; timestamps, source URL, message count, and fingerprint.
+- **Economy/privacy:** No remote transmission and no GitHub token in this MVP. Working checkpoint keeps eight recent excerpts; full snapshots are user-triggered downloads.
+- **Verification actually performed:** Fetched all key source files back from the feature branch; manifest JSON parsed; service-worker.js, content.js, and popup.js passed JavaScript syntax parsing.
+- **Not verified:** Browser runtime, real ChatGPT DOM selection, export/download behavior, persistence after reload, timer behavior, and completeness. DOM-derived capture may be incomplete. No GitHub upload or unattended background capture outside the active page is implemented.
+- **Draft PR:** https://github.com/FreeBeat222/IdentityFieldDynamics/pull/7
+- **Exact next action:** Download the feature branch, load `tools/luna-autocontext` as an unpacked extension in Chrome/Edge, and run the README acceptance checklist. Fix failures before merge. Once local capture is verified, implement a separate, explicitly authorized remote persistence path.
+- **Recovery rule:** A source commit or passing syntax check does not prove browser capture, complete transcript preservation, or fresh-chat recovery.
 
 ## Operating rules
 
