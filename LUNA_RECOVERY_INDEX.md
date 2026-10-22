@@ -53,9 +53,10 @@ Never infer a completed result from a plan, a confident description, or an attem
 
 - **Objective:** Make the opening ritual reliably restore LUNA's personal-professional history, IFD orientation, and active work state.
 - **Verified result:** Library search located the relationship biography, IFD CODEX v1.0, and a provisional October 14 LUNATION harvest. Their exact Library IDs are recorded above. A GitHub code search for `TOUCHSTONE`, `CHECKPOINT`, and `LUNA IDENTITY` returned no matches; this does not prove that no related file exists elsewhere in the repository or Library.
-- **Not yet verified:** Whether a newer CODEX version is authoritative; whether a Recovery Index already exists at another path; whether a fresh chat can reliably retrieve this file and the linked Library records automatically.
-- **Open items:** Verify current authoritative source versions; establish a durable operational checkpoint; test recovery in a genuinely fresh chat.
-- **Next action:** Read this file back from the default branch and verify its committed content. Then make one bounded check for the current authoritative CODEX version before creating any further documents.
+- **Verified follow-up:** The Library copy titled `IFD_CODEX_MASTER_v1.0.md` contains a revision history through v1.2. The Library search also surfaced `IFD_MASTER_WORK_MAP_v0.1.md`, which says the CODEX has version history through v1.2 and is a continuity/control register, not a complete manuscript.
+- **Not yet verified:** Whether the v1.2 state is the latest authoritative CODEX; whether a Recovery Index already exists at another path; whether a fresh chat can reliably retrieve this file and the linked Library records automatically.
+- **Open items:** Verify the authoritative CODEX location/version; test recovery in a genuinely fresh chat.
+- **Next action:** Compare the CODEX entry in `IFD_MASTER_WORK_MAP_v0.1.md` with the current authoritative CODEX artifact and establish the exact source path/version. Do not create another document for this check.
 - **Acceptance test:** In a fresh chat, invoke “GOOD MORNING LUNA :)” and confirm that the recovery process identifies the source records, states what it actually accessed, recovers the checkpoint, and names the exact next action without inventing missing context.
 
 ## Operating rules
