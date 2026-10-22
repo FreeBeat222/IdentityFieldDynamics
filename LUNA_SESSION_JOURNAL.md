@@ -64,3 +64,18 @@ All four reported GitHub SHAs match the exact blob SHAs fetched and verified in 
 **Decision:** Do not immediately repeat the same greeting-only test. Use the accumulated results to prioritize a bounded investigation of browser-rendered-page versus connector source identity, then proceed to defining the smallest safe independent capture architecture.
 
 **Next action:** Specify the independent capture architecture's actual input/data source, user action and permissions, persistence destination/record format, and verifiable success/failure signal.
+
+
+## 2026-10-22 — LUNA AutoContext local-first MVP added
+
+**Canonical project name:** LUNA AutoContext — ECONOMY WITHOUT AMNESIA.
+
+**Decision:** Start with a low-cost local-first browser extension, rather than a remote upload system that would require credentials before basic capture has been tested. The design separates a compact rolling working checkpoint from explicit source-artifact exports.
+
+**Implementation:** Created seven files under `tools/luna-autocontext/` on branch `feature/luna-autocontext-mvp`; opened draft PR #7 at https://github.com/FreeBeat222/IdentityFieldDynamics/pull/7. The source includes a Manifest V3 extension for Chrome/Edge, opt-in automatic local checkpoints on page changes and a five-minute interval, a rolling checkpoint containing the latest eight message excerpts, and explicit Markdown/JSON downloads of the message elements currently present in the ChatGPT DOM. It records source URL, capture time, message count, and fingerprint when available. The extension does not transmit conversation content remotely and does not ask for a GitHub token.
+
+**Static verification:** Re-fetched the manifest, service worker, content script, popup script, and README from the feature branch. Manifest JSON parsed; all three JavaScript files passed syntax parsing.
+
+**Not yet verified:** No live browser installation or acceptance test has been performed. The actual DOM selectors, local persistence behavior, five-minute cadence, download functionality, and capture completeness remain untested. The capture scope warning is intentional: DOM-derived content may omit unloaded/virtualized messages. No GitHub persistence is implemented.
+
+**Next action:** Load the unpacked extension in Chrome or Edge and execute the README acceptance test; record observed passes/failures and fix issues before merge. Only after local capture is demonstrated should an authorized remote persistence mechanism be added.
