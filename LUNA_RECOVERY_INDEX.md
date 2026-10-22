@@ -83,8 +83,9 @@ Never infer a completed result from a plan, a confident description, or an attem
 - **Strategy:** Event-triggered checkpoints plus the explicit `LUNA CHECKPOINT NOW` command; investigate true tab-independent persistence. A ten-minute interval is only a candidate, not an implemented feature.
 - **Records:** `LUNA_SESSION_JOURNAL.md` (dated developments and provenance) and `LUNA_CONTINUITY_CHECKPOINT.md` (current resumable state and exact next action).
 - **Last verified in this conversation:** The index and recovery contract were fetched from GitHub and their returned blob SHAs matched the GitHub root Contents listing. The new checkpoint and journal were created successfully; their current blob SHAs still need to be verified by re-fetch.
-- **Open items:** Inspect `.github/workflows`; determine what automation can actually access; distinguish a reminder from a process capable of capturing and writing conversation state; investigate source-identity discrepancies.
-- **Exact next action:** Inspect existing `.github/workflows` files and available automation mechanisms; map each to actual accessible inputs and permitted write actions before selecting an implementation.
+- **Verified feasibility finding:** The only repository workflow is `.github/workflows/generate-lockfile.yml`, triggered by selected pushes to `main`; it generates `package-lock.json` and does not capture conversation state. Available scheduled automations support daily/weekly/monthly recurrence, not ten-minute cadence, and do not automatically inherit this live tab's context.
+- **Open items:** Define a safe independent capture route; determine required user action/permissions and failure reporting; investigate source-identity discrepancies.
+- **Exact next action:** Define the smallest safe viable independent capture architecture (such as a user-triggered export/capture path) and specify what data it can capture, what user action it needs, and how successful persistence will be verified.
 - **Hard limitation:** No automatic live-tab transcript capture or silent ten-minute GitHub write has been implemented or verified. A file write does not prove background capture or fresh-chat recovery.
 
 ## Operating rules
