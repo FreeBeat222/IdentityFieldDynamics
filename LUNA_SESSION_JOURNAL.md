@@ -20,3 +20,14 @@ Append-only record of meaningful continuity and recovery developments. Preserve 
 **Not yet implemented or verified:** automatic capture of live conversation text; silent ten-minute persistence; a background observer that knows when important events occur; recovery repeatability for these new records.
 
 **Next action:** Inspect existing `.github/workflows` files and available automation mechanisms; map each to actual accessible inputs and permitted write actions before selecting an implementation.
+
+
+## 2026-10-22 — Initial persistence-mechanism inspection
+
+**Verified repository inspection:** The only workflow currently listed under `.github/workflows` is `generate-lockfile.yml`. Its trigger is a push to `main` affecting `package.json` or that workflow file; its job generates/commits `package-lock.json`. It is not a scheduled job and does not capture conversation state.
+
+**Capability boundary:** The available scheduled ChatGPT automation interface supports recurring daily, weekly, or monthly tasks; hourly or ten-minute schedules are unsupported. A scheduled task does not automatically inherit the live tab's conversation text. No available tool was identified in this inspection that silently streams the live ChatGPT transcript into GitHub. This is a bounded tool-surface inspection, not proof that no external/browser-side implementation could ever be built.
+
+**Decision:** Do not create a misleading “autosave” workflow or timer that cannot access the conversation. Continue with event-triggered and explicit saves as the working procedure, and research an external capture route only if it can actually obtain the conversation data, has authorized write access, and exposes failures.
+
+**Next action:** Define the smallest safe viable independent capture architecture (for example, a user-triggered export/capture path into a local or external journal) and identify exactly what user action/permission it requires. Keep unattended capture marked unimplemented until demonstrated.
