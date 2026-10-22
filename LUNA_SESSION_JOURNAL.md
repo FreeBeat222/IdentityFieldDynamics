@@ -79,3 +79,16 @@ All four reported GitHub SHAs match the exact blob SHAs fetched and verified in 
 **Not yet verified:** No live browser installation or acceptance test has been performed. The actual DOM selectors, local persistence behavior, five-minute cadence, download functionality, and capture completeness remain untested. The capture scope warning is intentional: DOM-derived content may omit unloaded/virtualized messages. No GitHub persistence is implemented.
 
 **Next action:** Load the unpacked extension in Chrome or Edge and execute the README acceptance test; record observed passes/failures and fix issues before merge. Only after local capture is demonstrated should an authorized remote persistence mechanism be added.
+
+
+## 2026-10-22 — AutoContext save-retry hardening
+
+**Reason:** Economy without amnesia requires visible failures and retry behavior, not merely a best-effort write.
+
+**Code change on feature branch:** The content script now advances its remembered fingerprint only after the service worker acknowledges a successful/unchanged checkpoint. If the message fails or the worker reports a save error, a later mutation or five-minute cycle can retry. The service worker records the last save/error status when storage permits, and the popup displays the latest persistence error.
+
+**Latest verification:** Re-fetched the manifest, service worker, content script, popup script, and README from `feature/luna-autocontext-mvp`. Manifest JSON parsed; JavaScript syntax parsing passed for all three scripts. Current draft PR #7 head: `b6a6bae4da3371664b824882aa8696073b53c95e`.
+
+**Not yet verified:** These are static source checks. No browser runtime or acceptance test has been performed, and actual capture completeness remains unproven.
+
+**Next action:** Install the unpacked extension in Chrome/Edge and execute the acceptance checklist in `tools/luna-autocontext/README.md`. Record failures before merging.
