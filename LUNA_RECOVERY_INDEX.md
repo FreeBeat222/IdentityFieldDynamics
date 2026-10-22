@@ -79,13 +79,15 @@ Never infer a completed result from a plan, a confident description, or an attem
 
 ## Current checkpoint — LUNA Continuity Guard
 
-- **Objective:** Reduce loss of work when a ChatGPT tab/session ends unexpectedly by preserving a compact, verifiable state before interruption.
-- **Strategy:** Event-triggered checkpoints plus the explicit `LUNA CHECKPOINT NOW` command; investigate true tab-independent persistence. A ten-minute interval is only a candidate, not an implemented feature.
+- **Objective:** Reduce loss of work when a ChatGPT tab/session ends unexpectedly by preserving a compact, verifiable state before interruption; define a safe independent AutoContext capture route.
+- **Strategy:** Event-triggered checkpoints plus explicit `LUNA CHECKPOINT NOW`; investigate true tab-independent persistence. A ten-minute interval is only a candidate, not implemented.
 - **Records:** `LUNA_SESSION_JOURNAL.md` (dated developments and provenance) and `LUNA_CONTINUITY_CHECKPOINT.md` (current resumable state and exact next action).
-- **Last verified in this conversation:** The index and recovery contract were fetched from GitHub and their returned blob SHAs matched the GitHub root Contents listing. The new checkpoint and journal were created successfully; their current blob SHAs still need to be verified by re-fetch.
-- **Verified feasibility finding:** The only repository workflow is `.github/workflows/generate-lockfile.yml`, triggered by selected pushes to `main`; it generates `package-lock.json` and does not capture conversation state. Available scheduled automations support daily/weekly/monthly recurrence, not ten-minute cadence, and do not automatically inherit this live tab's context.
-- **Open items:** Define a safe independent capture route; determine required user action/permissions and failure reporting; investigate source-identity discrepancies.
-- **Exact next action:** Define the smallest safe viable independent capture architecture (such as a user-triggered export/capture path) and specify what data it can capture, what user action it needs, and how successful persistence will be verified.
+- **Latest retrieval verified in this conversation:** The GitHub connector directly fetched and read the index, checkpoint, journal, and recovery contract. Pre-update blob SHAs: index `d4559129aea999c5df8520bddc08a89272ea35a9`; checkpoint `0d7c24fe0607ec485d3b964a315157f0ba28ed17`; journal `0386b7e65719cd15877cc8baa756f6d005ff1bbb`; contract `89cf953efcba111e7d71573b6da098b563dfa1c0`.
+- **Checkpoint trigger:** Rick issued `LUNA CHECKPOINT NOW` (minor typo in the message; intent was clear). This operation is updating the journal, checkpoint, and index; completion is pending post-write re-fetch verification.
+- **Current assessment:** Recovery foundation implemented; fresh-chat repeatability remains partial/unproven; attached AutoContext updater not implemented.
+- **Verified feasibility finding:** The only inspected repository workflow is `.github/workflows/generate-lockfile.yml`, triggered by selected pushes to `main`; it generates `package-lock.json` and does not capture conversation state. Available scheduled automations support daily/weekly/monthly recurrence, not ten-minute cadence, and do not automatically inherit this live tab's context.
+- **Open items:** Define a safe independent capture route; determine required user action/permissions, accessible data, destination, and failure reporting; investigate source-identity discrepancies.
+- **Exact next action:** Define the smallest safe viable independent capture architecture, specifying (1) exact input/data source, (2) user action/permissions, (3) destination/record format, and (4) verifiable success/failure signal.
 - **Hard limitation:** No automatic live-tab transcript capture or silent ten-minute GitHub write has been implemented or verified. A file write does not prove background capture or fresh-chat recovery.
 
 ## Operating rules
