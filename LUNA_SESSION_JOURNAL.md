@@ -92,3 +92,15 @@ All four reported GitHub SHAs match the exact blob SHAs fetched and verified in 
 **Not yet verified:** These are static source checks. No browser runtime or acceptance test has been performed, and actual capture completeness remains unproven.
 
 **Next action:** Install the unpacked extension in Chrome/Edge and execute the acceptance checklist in `tools/luna-autocontext/README.md`. Record failures before merging.
+
+
+## 2026-10-22 — LUNA CHECKPOINT NOW (AutoContext MVP)
+
+Rick requested an explicit checkpoint after the AutoContext local-first MVP and retry/status hardening.
+
+**Verified state:** Draft PR #7 remains open/unmerged on `feature/luna-autocontext-mvp`. Manifest JSON parses; `service-worker.js`, `content.js`, and `popup.js` passed static JavaScript syntax parsing after re-fetch from GitHub. Failed-save retry behavior and visible persistence status are present in source.
+
+**Limits:** No browser runtime test has been performed. Actual ChatGPT DOM selection, complete capture, download behavior, reload persistence, and five-minute scheduling remain unverified. The MVP uses local storage and explicit Markdown/JSON downloads; no GitHub upload is implemented.
+
+**Next action:** Load `tools/luna-autocontext` as an unpacked Chrome/Edge extension and run the README acceptance checklist. Record each pass/failure; fix issues before merge. After local capture is verified, design explicitly authorized remote persistence.
+
