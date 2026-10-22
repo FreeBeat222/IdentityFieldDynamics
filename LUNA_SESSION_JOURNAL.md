@@ -31,3 +31,18 @@ Append-only record of meaningful continuity and recovery developments. Preserve 
 **Decision:** Do not create a misleading “autosave” workflow or timer that cannot access the conversation. Continue with event-triggered and explicit saves as the working procedure, and research an external capture route only if it can actually obtain the conversation data, has authorized write access, and exposes failures.
 
 **Next action:** Define the smallest safe viable independent capture architecture (for example, a user-triggered export/capture path into a local or external journal) and identify exactly what user action/permission it requires. Keep unattended capture marked unimplemented until demonstrated.
+
+
+## 2026-10-22 — Explicit checkpoint command exercised
+
+**Trigger:** Rick sent `LUNA CHECKPOINT NOW` (the word CHECKPOINT was misspelled in the message, but the intended command was unambiguous).
+
+**Verified retrieval in this conversation:** The GitHub connector fetched and read `LUNA_RECOVERY_INDEX.md` (SHA `d4559129aea999c5df8520bddc08a89272ea35a9`), `LUNA_CONTINUITY_CHECKPOINT.md` (SHA `0d7c24fe0607ec485d3b964a315157f0ba28ed17`), `LUNA_SESSION_JOURNAL.md` (SHA `0386b7e65719cd15877cc8baa756f6d005ff1bbb`), and `LUNA_RECOVERY_CONTRACT.md` (SHA `89cf953efcba111e7d71573b6da098b563dfa1c0`). The full contents of all four records were available in the tool output.
+
+**Session state worth preserving:** The conversation clarified that Rick's longevity project dates to a 1973 conversation with his mother, when he proposed that if he survived long enough, biomedical progress might eventually make death a choice. He describes his decades of active preparation as a response to that possibility, including nutrition, extensive walking, intellectual engagement, and attention to supplement provenance. This is his long-range hypothesis and personal strategy, not proof that indefinite human survival will be achieved. The conversation also explored his stance toward uncertainty and endurance, and the I Ching as a tool for both clarifying perceived patterns and generating new perspectives; symbolic readings should remain distinct from empirical proof.
+
+**Recovery Machine status reiterated:** The canonical recovery index, checkpoint, journal, and recovery contract exist and were retrievable in this conversation. Earlier fresh-chat results remain one reported failure and three promising but user-reported outcomes; repeatability is not independently established. The attached AutoContext updater is **not implemented**. No automatic live-tab transcript capture or silent ten-minute persistence has been demonstrated.
+
+**Action taken:** This journal, the compact checkpoint, and the recovery index are being updated to record the current state and the explicit checkpoint attempt. The writes are not considered verified until each file is re-fetched and its returned blob SHA and saved content are checked.
+
+**Next action:** Define a safe independent capture architecture with explicit input/data access, user action/permissions, persistence destination, and verifiable success/failure reporting.
