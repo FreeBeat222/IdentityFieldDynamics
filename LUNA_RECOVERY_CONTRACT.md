@@ -53,14 +53,15 @@ A successful response is evidence of that attempt, not proof of repeatability. A
 | T1 | 2026-10-22 | Earlier fresh-chat response described in the current project record | Greeting/persona/project recognized; source retrieval and checkpoint read-back were not demonstrated | **FAIL** — recognition without demonstrated retrieval |
 | T2 | 2026-10-22 | Recovery report pasted by Rick; not independently instrumented | Report said canonical index was opened and read; Library excerpts for the relationship biography, IFD CODEX, and LUNATION harvest were located; SHA comparison remained unverified | **PARTIAL PASS** — promising reported retrieval; provenance remains user-reported |
 | T3 | 2026-10-22 | Second recovery report pasted by Rick; not independently instrumented | Report said index and relevant excerpts from all three Library records were retrieved; checkpoint and exact next action were read back; unverified items were named. Reported index SHA `be47bd058bab8d5c9ffe1c84f28455ddf7d0c4f3` matched the SHA independently fetched in the preceding conversation | **PARTIAL PASS** — second promising reported result; repeatability not established |
+| T4 | 2026-10-22 | Third recovery report pasted by Rick; not independently instrumented | Report said the current index (`66eb4ee4995dad0fa4d6082c30f89f128793b279`) and contract (`3bbff2bb7cf0a35124973417c62fe3de156d6114`) were retrieved; all three designated Library records were opened; checkpoint and exact next action were read back. It flagged an older browser-rendered checkpoint/SHA discrepancy and treated the connector SHA as current rather than claiming the conflicting values were verified. Both reported SHAs match the versions independently fetched in this conversation before the report was pasted. | **PARTIAL PASS** — strongest reported recovery so far; still user-reported rather than independently instrumented |
 
 ### Current assessment
 
-**PARTIAL PASS / repeatability still unproven.** The sequence contains one reported failure and two promising reported outcomes. The two later reports are useful evidence, but they are not independent instrumented records of the fresh chats' tool calls.
+**PARTIAL PASS / repeatability not yet established.** The sequence now contains one reported failure and three promising reported outcomes. T4's reported source identities match the files independently fetched in this conversation immediately before recording the result. The report is detailed and provenance-aware, but its claims about the fresh chat's tool calls remain user-reported rather than independently instrumented.
 
 ## 6. Next test
 
-After this contract is committed and linked from the canonical index, conduct one further fresh-chat test using only the trigger. Evaluate it against sections 3–4, preserve the result in this log, and do not overwrite earlier test outcomes.
+T4 completed the previously recorded next test and has been logged above. The next engineering step is to review the recurring source-identity discrepancy between the browser-rendered GitHub page and connector output, then decide whether another bounded fresh-chat test is warranted. Do not immediately ask for repeated tests without a specific hypothesis; first use the accumulated evidence to identify what additional test would establish.
 
 ## 7. Change control
 
