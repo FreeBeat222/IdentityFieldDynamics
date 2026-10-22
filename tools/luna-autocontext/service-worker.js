@@ -1,5 +1,6 @@
 const SETTINGS_KEY = "lunaAutoContext.settings.v1";
 const CHECKPOINTS_KEY = "lunaAutoContext.checkpoints.v1";
+const STATUS_KEY = "lunaAutoContext.status.v1";
 
 async function saveCheckpoint(payload) {
   const settingsResult = await chrome.storage.local.get({
@@ -16,6 +17,9 @@ async function saveCheckpoint(payload) {
 
   // Write only when the DOM-derived fingerprint changes.
   if (previous?.fingerprint === payload.fingerprint) {
+    await chrome.storage.local.set({
+      [STATUS_KEY]: { result: "unchanged", at: new Date().toISOString() }
+    });
     return { ok: true, unchanged: true };
   }
 
@@ -36,7 +40,10 @@ async function saveCheckpoint(payload) {
   };
 
   checkpoints[key] = { ...checkpoints[key], changedAt: new Date().toISOString() };
-  await chrome.storage.local.set({ [CHECKPOINTS_KEY]: checkpoints });
+  await chrome.storage.local.set({
+    [CHECKPOINTS_KEY]: checkpoints,
+    [STATUS_KEY]: { result: "saved", at: new Date().toISOString() }
+  });
   return { ok: true, unchanged: false };
 }
 
@@ -44,7 +51,15 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message?.type === "LUNA_AUTOCONTEXT_CHECKPOINT") {
     saveCheckpoint(message.payload)
       .then(sendResponse)
-      .catch((error) => sendResponse({ ok: false, error: String(error) }));
+      .catch(async (error) => {
+        const detail = String(error);
+        try {
+          await chrome.storage.local.set({
+            [STATUS_KEY]: { result: "error", at: new Date().toISOString(), message: detail }
+          });
+        } catch (_) {}
+        sendResponse({ ok: false, error: detail });
+      });
     return true;
   }
 });
