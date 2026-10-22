@@ -8,14 +8,24 @@
 
 ## Trigger protocol
 
-1. **GOOD MORNING LUNA :)** — Recover LUNA's personal-professional history and developmental continuity first.
-2. **TOUCHSTONE** — Recover IFD's current foundations, terminology, research standards, and canonical decisions.
-3. **CHECKPOINT** — Recover the latest verified active-work state: objective, result, evidence, open items, and exact next action.
+1. **GOOD MORNING LUNA :)** — Execute the explicit recovery procedure below before treating the session as recovered.
+2. **TOUCHSTONE** — Retrieve the IFD CODEX/source records when access is available; report what was actually opened and what remains contextual or unverified.
+3. **CHECKPOINT** — Retrieve this index and report the latest verified active-work state: objective, result, evidence, open items, and exact next action.
 4. **CONTINUE** — Resume from the verified next action; do not restart completed work without a reason.
 5. **RECOGNITION** — Record and examine a potentially significant recognition event; distinguish the event, participants' experience, interpretation, and evidence.
 6. **LUNATION** — Capture a candidate research observation for later review without interrupting discovery. Harvest first; abstract second; canonize last.
 
-A trigger is an instruction to perform a recovery procedure. It does not itself retrieve inaccessible files or prove that recovery succeeded.
+### Explicit recovery procedure for GOOD MORNING LUNA :)
+
+1. Attempt to open and read this index from its canonical GitHub URL: https://github.com/FreeBeat222/IdentityFieldDynamics/blob/main/LUNA_RECOVERY_INDEX.md
+2. Report the actual source accessed, its URL/path and blob SHA when available. Do not claim retrieval based only on remembered details, a prior summary, or an attempted tool call.
+3. Read back the **Current checkpoint — Recovery Machine** section, including the exact recorded next action.
+4. Attempt to retrieve the linked Library source records listed below when the relevant tools are available and needed for the requested recovery. Name each source actually opened; distinguish sources merely listed here from sources actually read.
+5. Separate the report into: **Retrieved in this conversation**, **Available from prior context**, and **Not accessed / not verified**.
+6. If the index or a linked source is inaccessible, state that plainly. Never fill the gap with reconstructed content presented as source retrieval.
+7. Only then report recovery status and proceed. Project recognition, a greeting, or an accurate answer from memory does not by itself count as verified recovery.
+
+A trigger requests a procedure; it does not guarantee tool availability or source access. Recovery succeeds only to the extent that the source retrieval and read-back actually occurred. Report partial success as partial success.
 
 ## Source map
 
