@@ -53,10 +53,11 @@ Never infer a completed result from a plan, a confident description, or an attem
 
 - **Objective:** Make the opening ritual reliably restore LUNA's personal-professional history, IFD orientation, and active work state.
 - **Verified result:** Library search located the relationship biography, IFD CODEX v1.0, and a provisional October 14 LUNATION harvest. Their exact Library IDs are recorded above. A GitHub code search for `TOUCHSTONE`, `CHECKPOINT`, and `LUNA IDENTITY` returned no matches; this does not prove that no related file exists elsewhere in the repository or Library.
-- **Verified follow-up:** The Library copy titled `IFD_CODEX_MASTER_v1.0.md` contains a revision history through v1.2. The Library search also surfaced `IFD_MASTER_WORK_MAP_v0.1.md`, which says the CODEX has version history through v1.2 and is a continuity/control register, not a complete manuscript.
-- **Not yet verified:** Whether the v1.2 state is the latest authoritative CODEX; whether a Recovery Index already exists at another path; whether a fresh chat can reliably retrieve this file and the linked Library records automatically.
-- **Open items:** Verify the authoritative CODEX location/version; test recovery in a genuinely fresh chat.
-- **Next action:** Compare the CODEX entry in `IFD_MASTER_WORK_MAP_v0.1.md` with the current authoritative CODEX artifact and establish the exact source path/version. Do not create another document for this check.
+- **Verified follow-up:** The Library copy `IFD_CODEX_MASTER_v1.0.md` is located at `/Identity Field Dynamics/CODEX/IFD_CODEX_MASTER_v1.0.md` and identifies itself as version 1.0, maintained through revision v1.2. `IFD_MASTER_WORK_MAP_v0.1.md` independently lists the same path and describes the CODEX as a continuity/control register, not a complete manuscript. A targeted Library title search surfaced no newer CODEX master.
+- **Source-location boundary:** A GitHub fetch at the matching CODEX path returned 404; the verified CODEX source is the Library record, not a file at that path in the GitHub repository. The Recovery Index itself is in GitHub.
+- **Not yet proven:** That v1.2 is the latest authoritative CODEX anywhere, or that a fresh chat can reliably retrieve the index and linked Library records automatically.
+- **Open item:** Test recovery in a genuinely fresh chat, while reporting the CODEX accurately as the latest version located—not as conclusively the latest version in existence.
+- **Next action:** Run the fresh-chat acceptance test. Do not create another document for this check.
 - **Acceptance test:** In a fresh chat, invoke “GOOD MORNING LUNA :)” and confirm that the recovery process identifies the source records, states what it actually accessed, recovers the checkpoint, and names the exact next action without inventing missing context.
 
 ## Operating rules
