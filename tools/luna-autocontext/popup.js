@@ -1,5 +1,6 @@
 const SETTINGS_KEY = "lunaAutoContext.settings.v1";
 const CHECKPOINTS_KEY = "lunaAutoContext.checkpoints.v1";
+const STATUS_KEY = "lunaAutoContext.status.v1";
 
 const autoCapture = document.getElementById("autoCapture");
 const statusEl = document.getElementById("status");
@@ -65,18 +66,27 @@ function toMarkdown(snapshot) {
 }
 
 async function refreshCheckpointStatus() {
-  const result = await chrome.storage.local.get({ [CHECKPOINTS_KEY]: {} });
+  const result = await chrome.storage.local.get({
+    [CHECKPOINTS_KEY]: {},
+    [STATUS_KEY]: null
+  });
   const checkpoints = Object.values(result[CHECKPOINTS_KEY] || {});
-  if (!checkpoints.length) {
-    checkpointStatus.textContent = "No automatic checkpoints saved yet.";
-    return;
+  const lastStatus = result[STATUS_KEY];
+  let summary = "No automatic checkpoints saved yet.";
+  if (checkpoints.length) {
+    checkpoints.sort((a, b) => (b.changedAt || "").localeCompare(a.changedAt || ""));
+    const latest = checkpoints[0];
+    summary = checkpoints.length + " conversation(s) checkpointed. Latest: " +
+      (latest.title || "Untitled") + " — " + (latest.messageCount ?? "?") +
+      " message elements; updated " + (latest.changedAt || "time unknown") + ".";
   }
-  checkpoints.sort((a, b) => (b.changedAt || "").localeCompare(a.changedAt || ""));
-  const latest = checkpoints[0];
-  checkpointStatus.textContent =
-    checkpoints.length + " conversation(s) checkpointed. Latest: " +
-    (latest.title || "Untitled") + " — " + (latest.messageCount ?? "?") +
-    " message elements; updated " + (latest.changedAt || "time unknown") + ".";
+  if (lastStatus?.result === "error") {
+    summary += " LAST SAVE ERROR (" + (lastStatus.at || "time unknown") + "): " +
+      (lastStatus.message || "Unknown storage error") + ".";
+  } else if (lastStatus?.result === "saved") {
+    summary += " Last save confirmed at " + lastStatus.at + ".";
+  }
+  checkpointStatus.textContent = summary;
 }
 
 autoCapture.addEventListener("change", async () => {
