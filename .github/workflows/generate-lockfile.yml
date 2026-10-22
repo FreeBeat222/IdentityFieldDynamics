@@ -14,6 +14,7 @@ permissions:
 jobs:
   lockfile:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -24,12 +25,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Run npm install
-        run: npm install
+      - name: Generate lockfile with bounded network retries
+        timeout-minutes: 3
+        run: |
+          npm config get registry
+          npm install --package-lock-only --ignore-scripts --no-audit --no-fund --fetch-retries=1 --fetch-timeout=30000
       - name: Commit package-lock.json if changed
         run: |
           if [ ! -f package-lock.json ]; then
-            echo "ERROR: npm install did not create package-lock.json."
+            echo "ERROR: npm did not create package-lock.json."
             exit 1
           fi
           git add package-lock.json
