@@ -72,3 +72,13 @@ Install the branch's `tools/luna-autocontext` folder as an unpacked Chrome/Edge 
 - Scheduled automations do not automatically inherit this tab's live context.
 - Anything produced after the latest successful save can still be lost if the tab ends before a checkpoint.
 - File creation/update success and fresh-chat recovery repeatability are separate tests.
+
+
+## 2026-10-22 — Explicit LUNA CHECKPOINT NOW
+
+- **Trigger:** Rick requested `LUNA CHECKPOINT NOW` after the AutoContext local-first MVP was added and its retry/error-reporting behavior was hardened on the feature branch.
+- **Verified before write:** Directly fetched the canonical recovery index, continuity checkpoint, session journal, and recovery contract from `FreeBeat222/IdentityFieldDynamics`. The active state was confirmed as draft PR #7 on `feature/luna-autocontext-mvp`, static checks passed, browser acceptance tests not yet run, and no remote GitHub upload implemented.
+- **Work completed in this session:** Added the AutoContext implementation and installation/test documentation to the feature branch; adjusted failed-save retry behavior and visible persistence status; re-fetched the extension source files; confirmed manifest JSON parses and all three JavaScript files pass syntax parsing; re-fetched all four continuity records after the prior continuity update and confirmed AutoContext and the acceptance-test next action are present.
+- **Evidence / limits:** Draft PR #7 remains open and unmerged. The browser extension has not been installed or run here. DOM capture completeness, actual browser persistence, and unattended remote capture remain unverified/not implemented.
+- **Exact next action:** Download the feature branch, load `tools/luna-autocontext` as an unpacked extension in Chrome or Edge, and execute the README acceptance checklist. Record each pass/failure and fix observed failures before merging. Only after local capture is verified, design a separate explicitly authorized remote persistence route.
+- **Save verification rule:** This entry is a save attempt until the checkpoint, journal, and index are each re-fetched after their writes and their returned blob SHAs and intended content are checked.
