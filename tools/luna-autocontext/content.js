@@ -75,9 +75,7 @@
         url: location.href,
         messageCount
       });
-    } catch (_) {
-      // A dead/unavailable worker is itself surfaced by the popup's direct test.
-    }
+    } catch (_) {}
   }
 
   async function isEnabled() {
@@ -98,8 +96,9 @@
     }
 
     if (!enabled) {
-      await report("disabled", "Automatic checkpoints are disabled.");
-      return { ok: false, result: "disabled", detail: "Automatic checkpoints are disabled." };
+      const detail = "Automatic checkpoints are disabled.";
+      if (force) await report("disabled", detail);
+      return { ok: false, result: "disabled", detail };
     }
 
     try {
