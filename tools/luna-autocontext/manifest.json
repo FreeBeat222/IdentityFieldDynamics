@@ -1,9 +1,13 @@
 {
   "manifest_version": 3,
   "name": "LUNA AutoContext — Economy Without Amnesia",
-  "version": "0.1.0",
-  "description": "Local-first ChatGPT checkpoints and user-triggered transcript exports. No remote transmission.",
-  "permissions": ["storage", "downloads", "activeTab"],
+  "version": "0.1.1",
+  "description": "Local-first ChatGPT checkpoints, visible capture diagnostics, and user-triggered transcript exports. No remote transmission.",
+  "permissions": [
+    "storage",
+    "downloads",
+    "activeTab"
+  ],
   "host_permissions": [
     "https://chatgpt.com/*",
     "https://chat.openai.com/*"
@@ -21,7 +25,9 @@
         "https://chatgpt.com/*",
         "https://chat.openai.com/*"
       ],
-      "js": ["content.js"],
+      "js": [
+        "content.js"
+      ],
       "run_at": "document_idle"
     }
   ]
