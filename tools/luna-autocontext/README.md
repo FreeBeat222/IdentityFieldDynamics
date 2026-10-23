@@ -1,15 +1,17 @@
 # LUNA AutoContext — ECONOMY WITHOUT AMNESIA
 
-**MVP status: source added; browser installation and runtime behavior still require local testing.**
+**MVP status:** source and one-click diagnostics are implemented. Browser runtime acceptance remains incomplete; do not describe the extension as verified until the diagnostic and export tests pass.
 
-A small, local-first Chrome/Edge Manifest V3 extension for ChatGPT conversations.
+A local-first Chrome/Edge Manifest V3 extension for ChatGPT conversations.
 
-## What this first version does
+## What this version does
 
-- When explicitly enabled, creates a compact checkpoint on page changes and on a five-minute safety interval.
-- Stores only the latest compact checkpoint per conversation in `chrome.storage.local`.
+- When explicitly enabled, attempts a compact checkpoint on page changes and on a five-minute safety interval.
+- Stores the latest compact checkpoint per conversation in `chrome.storage.local`.
 - Exposes a user-triggered full snapshot export as Markdown or JSON.
-- Records source URL, capture time, message-element count, message identifiers where available, and a SHA-256 fingerprint when Web Crypto is available.
+- Shows persistent status for the last capture attempt, including saved, unchanged, zero-message, disabled, and error outcomes.
+- Includes **Test capture now**, a one-click diagnostic for the active ChatGPT tab. It reports whether the content script ran, how many message elements it found, and whether local storage confirmed a save.
+- Records source URL, capture time, message-element count, message identifiers where available, and a fingerprint.
 - Includes a capture-scope warning because DOM-derived messages may omit unloaded or virtualized content.
 - Sends no conversation content to GitHub or any other remote service. No API token is requested or stored.
 
@@ -19,19 +21,28 @@ A small, local-first Chrome/Edge Manifest V3 extension for ChatGPT conversations
 - Does not guarantee that every message in the conversation is present in the page DOM.
 - Does not capture other tabs, other conversations, or content after the browser has closed.
 - Does not generate a semantic summary with an AI model.
-- Does not guarantee that a checkpoint is saved if the browser closes before the content script sends it and the service worker completes the write.
+- Does not guarantee a checkpoint if the browser closes before the content script sends it and the service worker completes the write.
 
-## Install locally (Chrome or Edge)
+## Install or update locally (Chrome or Edge)
 
-1. Download or clone this repository.
+1. Download or pull the `feature/luna-autocontext-mvp` branch.
 2. Open `chrome://extensions` (Chrome) or `edge://extensions` (Edge).
-3. Turn on **Developer mode**.
-4. Choose **Load unpacked** and select the `tools/luna-autocontext` directory.
-5. Open or reload a ChatGPT conversation tab.
-6. Open the LUNA AutoContext extension popup.
-7. Enable **Automatic checkpoints**. This is opt-in and remains off by default.
-8. Verify the popup reports a saved local checkpoint after the page changes or after a capture cycle.
-9. Use **Download full snapshot** to preserve a source artifact outside the extension's rolling checkpoint.
+3. For an existing unpacked install, use **Reload** on the extension card after replacing the source files. Then reload the ChatGPT conversation tab so its content script is refreshed.
+4. For a first install, turn on **Developer mode**, choose **Load unpacked**, and select `tools/luna-autocontext`.
+5. Open a ChatGPT conversation tab and open the LUNA AutoContext popup.
+6. Automatic checkpoints remain opt-in and off by default. If already enabled, do not toggle it again just to repeat a completed step.
+7. Click **Test capture now** once. Read the explicit PASS/FAIL result and the persistent “Last attempt” detail.
+8. If the test passes, compare the saved message count and export a JSON or Markdown snapshot; check message order and exact passages against the visible conversation.
+
+## Reading the diagnostic
+
+- **PASS: … saved locally** — the content script returned a nonzero message count and the service worker confirmed a local write.
+- **PASS: … already matches** — capture ran and the stored fingerprint already matched; this is a valid no-change outcome.
+- **FAIL: zero message elements** — the content script responded, but its selectors found no messages. Investigate the live ChatGPT DOM selectors.
+- **FAIL: content script is not running** — the active tab needs the extension's content script injected (normally reload the ChatGPT tab after updating the extension).
+- **FAIL: storage/capture error** — use the specific displayed error; do not repeat setup steps without evidence that setup is the cause.
+
+The Refresh button now updates the visible checkpoint report and displays a refresh time. A status report includes the last attempt result and detail so a no-op is no longer indistinguishable from a failed attempt.
 
 ## Storage model
 
@@ -39,21 +50,20 @@ A small, local-first Chrome/Edge Manifest V3 extension for ChatGPT conversations
 - **Evidence artifact:** a user-triggered Markdown or JSON download containing all message elements found at capture time.
 - **No silent remote persistence:** a later GitHub integration must use explicit authorization, visible status, safe token handling, and read-back verification.
 
-## First acceptance test
+## Acceptance test
 
-1. Install unpacked and open a conversation with several turns.
-2. With automatic checkpoints off, confirm no checkpoint appears.
-3. Enable automatic checkpoints and trigger a new message or page change.
-4. Confirm a checkpoint appears in the popup.
-5. Export JSON and Markdown; compare message count, order, roles, and a few exact text passages with the page.
-6. Reload the tab and confirm the local checkpoint remains.
-7. Disable automatic capture and confirm new page changes do not update the checkpoint.
-8. Confirm no network requests to GitHub or other remote destinations are made by this extension.
+1. With automatic checkpoints off, verify no checkpoint is written.
+2. With automatic checkpoints on, click **Test capture now** once in a ChatGPT conversation.
+3. Confirm a PASS result and a nonzero message-element count, or record the exact FAIL detail.
+4. Export JSON/Markdown and compare message count, order, roles, and a few exact text passages with the page.
+5. Reload the tab and confirm the local checkpoint remains.
+6. Disable automatic capture and verify ordinary page changes do not update the checkpoint.
+7. Confirm no network requests to GitHub or other remote destinations are made by this extension.
 
-Record any failed step as a failure; do not treat a successful file write as proof of complete conversation capture.
+Record failed steps as failures. A successful file write is not proof of complete conversation capture.
 
 ## Design rule
 
 **Preserve the evidence. Compress the working model. Never confuse the two.**
 
-This MVP uses a compact rolling checkpoint for recovery and explicit exports for source preservation. It is a starting point for testable local capture, not yet the independent, unattended GitHub capture system.
+This MVP is a starting point for testable local capture, not yet the independent, unattended GitHub capture system.
