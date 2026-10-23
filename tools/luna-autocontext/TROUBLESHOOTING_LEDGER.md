@@ -21,7 +21,9 @@
 - The capture script uses selectors `[data-message-author-role="user"]` and `[data-message-author-role="assistant"]`.
 - Before this diagnostic patch, errors in the automatic content-script path were swallowed, and a zero-message capture did not leave a persistent failure reason. That made a failed capture hard to distinguish from no attempt.
 - The prior Refresh handler only reread storage; it did not signal that the refresh completed.
-- Static syntax checks on the earlier source passed. They do not establish live browser behavior.
+- Current static checks run against the latest branch source passed in this session: JavaScript syntax parsing for `service-worker.js`, `content.js`, and `popup.js`; manifest JSON parsing; popup ID uniqueness; and confirmation that every `getElementById()` reference in `popup.js` exists in `popup.html`. These are source-level checks only; they do not establish live browser behavior.
+- Repository metadata reports a size of **9,479 KB**. The current five core extension files inspected total 21,080 JavaScript string characters (not a byte-accurate package size). Repository size is not the extension's local browser-storage budget.
+- No actual local-storage usage measurement or Chrome/Edge storage quota test has been performed. Do not claim a numeric remaining capture budget until that is measured in the running browser.
 
 ## Changes made in build 0.1.1
 
@@ -32,10 +34,24 @@
 - Updated the README with the diagnostic meanings and a revised acceptance test.
 - Bumped manifest version from 0.1.0 to 0.1.1.
 - All changes are on `feature/luna-autocontext-mvp`; the draft PR remains the review path. The user's locally loaded 0.1.0 copy does not magically update when branch source changes.
+- Removed the accidental duplicate workflow `.github/workflows/luna-autocontext-checks-v2.yml`; retain one workflow definition rather than two identically named workflows.
+
+## CI observation
+
+- GitHub Actions run **39878966211** for `.github/workflows/luna-autocontext-checks.yml` completed with conclusion `failure`.
+- The GitHub jobs endpoint returned **zero jobs**, and the commit combined-status endpoint returned no status entries. Therefore no JavaScript or manifest check was shown to have run in that workflow attempt.
+- The available evidence does **not** establish why the workflow produced zero jobs. Do not describe this as a source-code test failure or invent a root cause. The source-level checks above were independently performed in this session.
+
+## Smallest safe capture architecture
+
+1. **Source:** the current ChatGPT tab's rendered DOM, read by the extension's content script. Scope is only the message elements currently present in that DOM; completeness is not guaranteed.
+2. **Trigger and permission:** one visible user action, **Test capture now**, using the content script already registered for ChatGPT URLs. Automatic checkpoints remain opt-in; preserve the user's existing enabled setting and do not ask them to enable it again.
+3. **Destination and record:** compact checkpoints in `chrome.storage.local`; full Markdown/JSON snapshots are explicit user-triggered downloads. No conversation content is uploaded to GitHub or another remote service by this MVP.
+4. **Success/failure evidence:** the popup reports a PASS/FAIL result and count; the persistent status records the attempt; a downloaded snapshot can be checked against the visible conversation. A local write proves persistence of the captured DOM-derived data, not completeness of the transcript.
 
 ## Current state
 
-**Still unverified in a live browser:** whether build 0.1.1 successfully injects/runs the content script, detects current ChatGPT message elements, writes a checkpoint, and exports accurate content. The toolbar-icon behavior also remains unresolved.
+**Still unverified in a live browser:** whether build 0.1.1 successfully injects/runs the content script, detects current ChatGPT message elements, writes a checkpoint, and exports accurate content. The toolbar-icon behavior also remains unresolved. The storage quota and actual usage are also unmeasured.
 
 ## Next action — one discriminating test, not another setup cycle
 
@@ -47,3 +63,7 @@ After updating the unpacked files from the branch and reloading the extension an
 - Popup does not open from the toolbar: investigate the Edge action/pinning/UI path separately; do not infer the capture path from this alone.
 
 Do not ask the user to re-enable automatic checkpoints. Do not repeat the same test without a changed condition or a new diagnostic result.
+
+## Design rule
+
+**Preserve the evidence. Compress the working model. Never confuse the two.**
