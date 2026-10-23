@@ -2,11 +2,23 @@ const SETTINGS_KEY = "lunaAutoContext.settings.v1";
 const CHECKPOINTS_KEY = "lunaAutoContext.checkpoints.v1";
 const STATUS_KEY = "lunaAutoContext.status.v1";
 
+async function writeStatus(status) {
+  await chrome.storage.local.set({
+    [STATUS_KEY]: { ...status, at: new Date().toISOString() }
+  });
+}
+
 async function saveCheckpoint(payload) {
   const settingsResult = await chrome.storage.local.get({
     [SETTINGS_KEY]: { autoCapture: false }
   });
   if (!settingsResult[SETTINGS_KEY]?.autoCapture) {
+    await writeStatus({
+      result: "disabled",
+      title: payload.title || "",
+      url: payload.url || "",
+      message: "Automatic checkpoints are disabled."
+    });
     return { ok: false, reason: "auto-capture-disabled" };
   }
 
@@ -15,10 +27,13 @@ async function saveCheckpoint(payload) {
   const key = payload.conversationKey || payload.url;
   const previous = checkpoints[key];
 
-  // Write only when the DOM-derived fingerprint changes.
   if (previous?.fingerprint === payload.fingerprint) {
-    await chrome.storage.local.set({
-      [STATUS_KEY]: { result: "unchanged", at: new Date().toISOString() }
+    await writeStatus({
+      result: "unchanged",
+      title: payload.title || previous.title || "",
+      url: payload.url || previous.url || "",
+      messageCount: payload.messageCount,
+      message: "Capture ran; the saved checkpoint already has this content."
     });
     return { ok: true, unchanged: true };
   }
@@ -40,9 +55,13 @@ async function saveCheckpoint(payload) {
   };
 
   checkpoints[key] = { ...checkpoints[key], changedAt: new Date().toISOString() };
-  await chrome.storage.local.set({
-    [CHECKPOINTS_KEY]: checkpoints,
-    [STATUS_KEY]: { result: "saved", at: new Date().toISOString() }
+  await chrome.storage.local.set({ [CHECKPOINTS_KEY]: checkpoints });
+  await writeStatus({
+    result: "saved",
+    title: payload.title || "",
+    url: payload.url || "",
+    messageCount: payload.messageCount,
+    message: "Checkpoint written to this browser's local storage."
   });
   return { ok: true, unchanged: false };
 }
@@ -52,14 +71,29 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     saveCheckpoint(message.payload)
       .then(sendResponse)
       .catch(async (error) => {
-        const detail = String(error);
+        const detail = String(error?.message || error);
         try {
-          await chrome.storage.local.set({
-            [STATUS_KEY]: { result: "error", at: new Date().toISOString(), message: detail }
+          await writeStatus({
+            result: "error",
+            title: message.payload?.title || "",
+            url: message.payload?.url || sender.tab?.url || "",
+            message: detail
           });
         } catch (_) {}
         sendResponse({ ok: false, error: detail });
       });
+    return true;
+  }
+
+  if (message?.type === "LUNA_AUTOCONTEXT_DIAGNOSTIC") {
+    writeStatus({
+      result: message.result || "diagnostic",
+      title: message.title || "",
+      url: message.url || sender.tab?.url || "",
+      messageCount: message.messageCount ?? null,
+      message: message.detail || ""
+    }).then(() => sendResponse({ ok: true }))
+      .catch((error) => sendResponse({ ok: false, error: String(error?.message || error) }));
     return true;
   }
 });
