@@ -69,7 +69,7 @@ function toMarkdown(snapshot) {
   return lines.join("\n");
 }
 
-async function refreshCheckpointStatus() {
+async function refreshCheckpointStatus({ updateFooter = true } = {}) {
   try {
     const result = await chrome.storage.local.get({
       [CHECKPOINTS_KEY]: {},
@@ -103,10 +103,10 @@ async function refreshCheckpointStatus() {
         (lastStatus.message ? "\nDetail: " + lastStatus.message : "");
     }
     checkpointStatus.textContent = summary;
-    setStatus("Status refreshed at " + new Date().toLocaleTimeString() + ".");
+    if (updateFooter) setStatus("Status refreshed at " + new Date().toLocaleTimeString() + ".");
   } catch (error) {
     checkpointStatus.textContent = "Could not read local checkpoint storage: " + String(error?.message || error);
-    setStatus("Storage read failed.");
+    if (updateFooter) setStatus("Storage read failed.");
   }
 }
 
@@ -116,13 +116,14 @@ autoCapture.addEventListener("change", async () => {
     const settings = { ...result[SETTINGS_KEY], autoCapture: autoCapture.checked };
     await chrome.storage.local.set({ [SETTINGS_KEY]: settings });
     setStatus(autoCapture.checked ? "Automatic local checkpoints enabled." : "Automatic checkpoints paused.");
-    await refreshCheckpointStatus();
+    await refreshCheckpointStatus({ updateFooter: false });
   } catch (error) {
     setStatus("Could not update setting: " + String(error?.message || error));
   }
 });
 
 document.getElementById("runDiagnostic").addEventListener("click", async () => {
+  let finalStatus = "FAIL: Diagnostic did not complete.";
   setStatus("Running one capture test on the active ChatGPT tab…");
   try {
     const tab = await getActiveChatTab();
@@ -131,16 +132,17 @@ document.getElementById("runDiagnostic").addEventListener("click", async () => {
     });
     const result = response?.result || "unknown";
     if (response?.ok && result === "saved") {
-      setStatus("PASS: " + response.messageCount + " message elements captured and checkpoint saved locally.");
+      finalStatus = "PASS: " + response.messageCount + " message elements captured and checkpoint saved locally.";
     } else if (response?.ok && result === "unchanged") {
-      setStatus("PASS: capture ran; the saved checkpoint already matches this content (" + response.messageCount + " message elements).");
+      finalStatus = "PASS: capture ran; saved checkpoint already matches this content (" + response.messageCount + " message elements).";
     } else {
-      setStatus("FAIL: " + (response?.detail || response?.error || result));
+      finalStatus = "FAIL: " + (response?.detail || response?.error || result);
     }
   } catch (error) {
-    setStatus("FAIL: " + String(error?.message || error));
+    finalStatus = "FAIL: " + String(error?.message || error);
   }
-  await refreshCheckpointStatus();
+  await refreshCheckpointStatus({ updateFooter: false });
+  setStatus(finalStatus);
 });
 
 document.getElementById("downloadMarkdown").addEventListener("click", async () => {
@@ -173,13 +175,13 @@ document.getElementById("exportCheckpoint").addEventListener("click", async () =
   }
 });
 
-document.getElementById("refresh").addEventListener("click", refreshCheckpointStatus);
+document.getElementById("refresh").addEventListener("click", () => refreshCheckpointStatus());
 
 document.getElementById("clearCheckpoints").addEventListener("click", async () => {
   if (!confirm("Delete all LUNA AutoContext checkpoints stored in this browser? Download any checkpoint you want to keep first.")) return;
   try {
     await chrome.storage.local.remove(CHECKPOINTS_KEY);
-    await refreshCheckpointStatus();
+    await refreshCheckpointStatus({ updateFooter: false });
     setStatus("Local checkpoints cleared. Downloaded exports are not affected.");
   } catch (error) {
     setStatus("Could not clear checkpoints: " + String(error?.message || error));
