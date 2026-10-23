@@ -38,7 +38,6 @@
         .map((byte) => byte.toString(16).padStart(2, "0"))
         .join("");
     }
-    // Fallback is a change detector, not a cryptographic integrity guarantee.
     let hash = 2166136261;
     for (const byte of bytes) hash = Math.imul(hash ^ byte, 16777619);
     return "fnv1a-" + (hash >>> 0).toString(16);
@@ -53,7 +52,6 @@
       title: document.title,
       messages
     };
-    const fp = await fingerprint(source);
     return {
       schema: "luna-autocontext-capture/1",
       capturedAt,
@@ -62,9 +60,24 @@
       title: document.title,
       messageCount: messages.length,
       messages,
-      fingerprint: fp,
+      fingerprint: await fingerprint(source),
       captureScope: "DOM-visible messages only; completeness is not guaranteed."
     };
+  }
+
+  async function report(result, detail, messageCount = null) {
+    try {
+      await chrome.runtime.sendMessage({
+        type: "LUNA_AUTOCONTEXT_DIAGNOSTIC",
+        result,
+        detail,
+        title: document.title,
+        url: location.href,
+        messageCount
+      });
+    } catch (_) {
+      // A dead/unavailable worker is itself surfaced by the popup's direct test.
+    }
   }
 
   async function isEnabled() {
@@ -74,20 +87,56 @@
     return Boolean(result[SETTINGS_KEY]?.autoCapture);
   }
 
-  async function checkpointIfEnabled() {
-    if (!(await isEnabled())) return;
-    const snapshot = await capture();
-    if (!snapshot.messageCount || snapshot.fingerprint === lastSentFingerprint) return;
-    // Advance the local fingerprint only after the worker confirms persistence.
-    // If saving fails, a later mutation or five-minute cycle can retry the same state.
+  async function checkpointIfEnabled({ force = false } = {}) {
+    let enabled;
     try {
+      enabled = await isEnabled();
+    } catch (error) {
+      const detail = "Could not read extension settings: " + String(error?.message || error);
+      await report("error", detail);
+      return { ok: false, result: "error", detail };
+    }
+
+    if (!enabled) {
+      await report("disabled", "Automatic checkpoints are disabled.");
+      return { ok: false, result: "disabled", detail: "Automatic checkpoints are disabled." };
+    }
+
+    try {
+      const snapshot = await capture();
+      if (!snapshot.messageCount) {
+        const detail = "Capture script ran, but found zero message elements. The ChatGPT DOM selectors may need updating.";
+        await report("no-messages", detail, 0);
+        return { ok: false, result: "no-messages", detail, messageCount: 0 };
+      }
+
+      if (!force && snapshot.fingerprint === lastSentFingerprint) {
+        return { ok: true, result: "unchanged-in-page", messageCount: snapshot.messageCount };
+      }
+
       const response = await chrome.runtime.sendMessage({
         type: "LUNA_AUTOCONTEXT_CHECKPOINT",
         payload: snapshot
       });
-      if (response?.ok) lastSentFingerprint = snapshot.fingerprint;
-    } catch (_) {
-      // Keep the fingerprint pending so a later cycle retries.
+      if (!response?.ok) {
+        const detail = response?.error || response?.reason || "The service worker did not confirm the checkpoint write.";
+        await report("error", detail, snapshot.messageCount);
+        return { ok: false, result: "error", detail, messageCount: snapshot.messageCount };
+      }
+
+      lastSentFingerprint = snapshot.fingerprint;
+      return {
+        ok: true,
+        result: response.unchanged ? "unchanged" : "saved",
+        messageCount: snapshot.messageCount,
+        detail: response.unchanged
+          ? "Capture ran; saved content was already current."
+          : "Checkpoint saved locally."
+      };
+    } catch (error) {
+      const detail = "Capture/save failed: " + String(error?.message || error);
+      await report("error", detail);
+      return { ok: false, result: "error", detail };
     }
   }
 
@@ -95,14 +144,25 @@
     if (message?.type === "LUNA_AUTOCONTEXT_CAPTURE_FULL") {
       capture()
         .then((snapshot) => sendResponse({ ok: true, snapshot }))
-        .catch((error) => sendResponse({ ok: false, error: String(error) }));
+        .catch((error) => sendResponse({ ok: false, error: String(error?.message || error) }));
+      return true;
+    }
+
+    if (message?.type === "LUNA_AUTOCONTEXT_RUN_DIAGNOSTIC") {
+      checkpointIfEnabled({ force: true })
+        .then(sendResponse)
+        .catch((error) => sendResponse({
+          ok: false,
+          result: "error",
+          detail: String(error?.message || error)
+        }));
       return true;
     }
   });
 
   const observer = new MutationObserver(() => {
     clearTimeout(mutationTimer);
-    mutationTimer = setTimeout(checkpointIfEnabled, MUTATION_DEBOUNCE_MS);
+    mutationTimer = setTimeout(() => checkpointIfEnabled(), MUTATION_DEBOUNCE_MS);
   });
   observer.observe(document.documentElement, {
     subtree: true,
@@ -116,6 +176,6 @@
     }
   });
 
-  setInterval(checkpointIfEnabled, CHECKPOINT_INTERVAL_MS);
+  setInterval(() => checkpointIfEnabled(), CHECKPOINT_INTERVAL_MS);
   checkpointIfEnabled();
 })();
