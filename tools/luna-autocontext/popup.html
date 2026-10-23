@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LUNA AutoContext</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <div class="eyebrow">LOCAL-FIRST CAPTURE</div>
+    <h1>LUNA AutoContext</h1>
+    <p class="motto">ECONOMY WITHOUT AMNESIA</p>
+  </header>
+
+  <section class="panel">
+    <label class="toggle-row" for="autoCapture">
+      <span>
+        <strong>Automatic checkpoints</strong>
+        <small>On page changes and every 5 minutes</small>
+      </span>
+      <input id="autoCapture" type="checkbox">
+    </label>
+    <p class="note">When enabled, compact checkpoints are saved in this browser only. No GitHub upload or other network transmission occurs.</p>
+  </section>
+
+  <section class="panel">
+    <h2>Capture this conversation</h2>
+    <button id="downloadMarkdown" class="primary">Download full snapshot (.md)</button>
+    <button id="downloadJson">Download full snapshot (.json)</button>
+    <p class="note">Exports messages currently present in the ChatGPT page's DOM. It may not include unloaded or virtualized messages.</p>
+  </section>
+
+  <section class="panel">
+    <div class="status-heading">
+      <h2>Local checkpoint</h2>
+      <button id="refresh" class="small-button" title="Refresh checkpoint status">Refresh</button>
+    </div>
+    <p id="checkpointStatus" aria-live="polite">Checking local storage…</p>
+    <button id="runDiagnostic" class="primary">Test capture now</button>
+    <p class="note">Runs one capture attempt on the active ChatGPT tab and reports whether messages were found and saved. It does not change the automatic-checkpoint setting.</p>
+    <button id="exportCheckpoint">Export latest checkpoint (.json)</button>
+  </section>
+
+  <footer>
+    <span id="status" aria-live="polite">Ready.</span>
+    <button id="clearCheckpoints" class="danger">Clear local checkpoints</button>
+  </footer>
+  <script src="popup.js"></script>
+</body>
+</html>
