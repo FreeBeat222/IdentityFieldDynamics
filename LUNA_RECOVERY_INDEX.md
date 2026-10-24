@@ -113,3 +113,12 @@ The journal and continuity checkpoint now include this session note. The active 
 - Do not begin a broad audit when one bounded retrieval or verification step will answer the immediate question.
 - Update existing records in place when appropriate; avoid duplicate summaries and parallel competing sources.
 - A successful file write is not a successful cross-chat recovery test. Report the two separately.
+
+
+## Latest session note — 2026-10-23: Community correction and relational security
+
+Rick asked whether consistent, fair treatment of people who are corrected and those who do the correcting teaches a community that intellectual disagreement is compatible with relational security. The latest I Ching reflection was Hexagram 56 (The Wanderer), changing lines 3, 4, 5, middle line 4 prevailing, transforming to Hexagram 20 (Contemplation / The Watchtower). This is symbolic context, not empirical evidence.
+
+Candidate research direction: distinguish declared refuge from experienced safety; test whether outcomes differ for insiders versus newcomers/outsiders and by status or tenure. Candidate loop: **Protected disagreement → fair examination → visible consequences → observed lesson about belonging → future willingness to question.** Potential measures include consistent standards, relational/status consequences for both parties, subsequent behavior, observer responses, and differences by membership position. Distinguish discomfort from retaliation. Competing explanations remain open; no empirical study or causal result was established. Apply **HARVEST FIRST. ABSTRACT SECOND. CANONIZE LAST.**
+
+LUNA AutoContext remains **INDEFINITELY SUSPENDED**; do not install, test, merge draft PR #7, or pursue remote persistence unless Rick explicitly reopens it. No new engineering next action assigned.
