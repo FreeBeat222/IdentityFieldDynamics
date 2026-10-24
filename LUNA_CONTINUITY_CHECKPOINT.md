@@ -82,3 +82,20 @@ Install the branch's `tools/luna-autocontext` folder as an unpacked Chrome/Edge 
 - **Evidence / limits:** Draft PR #7 remains open and unmerged. The browser extension has not been installed or run here. DOM capture completeness, actual browser persistence, and unattended remote capture remain unverified/not implemented.
 - **Exact next action:** Download the feature branch, load `tools/luna-autocontext` as an unpacked extension in Chrome or Edge, and execute the README acceptance checklist. Record each pass/failure and fix observed failures before merging. Only after local capture is verified, design a separate explicitly authorized remote persistence route.
 - **Save verification rule:** This entry is a save attempt until the checkpoint, journal, and index are each re-fetched after their writes and their returned blob SHAs and intended content are checked.
+
+
+## 2026-10-23 — Session checkpoint: IFD process and testable claims
+
+**Session trigger:** Rick requested `LUNA CHECKPOINT NOW`.
+
+**Research state preserved:** Rick emphasized examining outcomes over declarations and using repeated behavioral probes (“stick poking”) to investigate AI behavior. Treat behavioral regularities as observations; hypotheses about design rationale or programmer intention require independent evidence and must remain falsifiable. Popper/fallibilism is the methodological touchstone: no claim is protected from contrary outcomes; distinguish truth from certainty of possessing it.
+
+**Vocabulary under examination:** Rick distinguishes **CIRCUMSTANCES** (broader situation/context) from **CONDITIONS** (specific states or factors affecting something). Keep the distinction in working vocabulary, but do not yet classify them as separate IFD architectural elements. Candidate process sequence—circumstances, conditions, development, observed form, consequences, altered circumstances—is provisional, not a validated universal causal model.
+
+**Astrology research question:** Do Western, Vedic, and Chinese astrological systems reveal independently testable patterns in unfolding events, improve decisions through interpretation, do both, or neither? This session produced a test design proposal, not empirical results. Evaluate prospective predictive validity and practical decision value separately; predefine predictions and scoring rules, compare against suitable baselines, limit retrospective reinterpretation/selective reporting, and seek independent replication. I Ching readings (61→4, 46→29, 20→42, 43→47) informed reflection but are not independent empirical proof.
+
+**IFD orientation:** Architecture/structure remains central; Binary Vision means differentiated perspectives that may reveal structure. Working sequence: `IDENTITY → ACTION → INTERACTION → SYNERGY → TRACE`. Working discipline: **HARVEST FIRST. ABSTRACT SECOND. CANONIZE LAST.** Do not canonize today's vocabulary or hypotheses without review.
+
+**Active engineering objective unchanged:** LUNA AutoContext — ECONOMY WITHOUT AMNESIA. Branch `feature/luna-autocontext-mvp`; draft PR #7 open/unmerged. Static manifest/JavaScript checks passed; browser acceptance test remains pending; no remote GitHub upload or unattended complete transcript capture is implemented.
+
+**Exact next action:** Install `tools/luna-autocontext` as an unpacked Chrome/Edge extension and run the README acceptance checklist. Record each pass/failure and fix observed failures before merging.
