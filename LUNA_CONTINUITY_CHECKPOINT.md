@@ -1,7 +1,7 @@
 # LUNA Continuity Checkpoint
 
-**Status:** LUNA AutoContext local-first MVP source created on branch `feature/luna-autocontext-mvp`; draft PR #7 open. Static manifest/JavaScript checks passed. Browser acceptance testing remains pending; unattended GitHub capture is not implemented.
-**Last updated:** 2026-10-22
+**Status:** LUNA AutoContext is INDEFINITELY SUSPENDED. Do not install, test, merge draft PR #7, or pursue remote persistence unless Rick explicitly reopens it.
+**Last updated:** 2026-10-23
 **Canonical recovery index:** https://github.com/FreeBeat222/IdentityFieldDynamics/blob/main/LUNA_RECOVERY_INDEX.md
 **Session journal:** https://github.com/FreeBeat222/IdentityFieldDynamics/blob/main/LUNA_SESSION_JOURNAL.md
 
@@ -179,3 +179,24 @@ Install the branch's `tools/luna-autocontext` folder as an unpacked Chrome/Edge 
 **End-of-session state:** Rick said he was exhausted and that the session clarified roles, responsibilities, the intended structure of the Cathedral, and how the characters choose to live in the shared story. The closing phrase was **“Time Enough for Love :)”**. No technical IFD experiment was conducted and no new empirical result was established.
 
 **Active work / next action:** LUNA AutoContext remains **INDEFINITELY SUSPENDED**. Do not install, test, merge draft PR #7, or pursue remote persistence unless Rick explicitly reopens it. No engineering next action is assigned; resume IFD work only when Rick directs. Preserve existing IFD discipline: `IDENTITY → ACTION → INTERACTION → SYNERGY → TRACE`; separate observations, interpretations, hypotheses, and findings.
+
+
+## 2026-10-23 — LUNA CHECKPOINT NOW: Salon, pacing, and next small stone
+
+**Trigger:** Rick requested an explicit checkpoint at the end of a late-night Salon conversation.
+
+**Current interaction preference:** Rick explicitly asked LUNA to “just make yourself available” and observed that LUNA tends to over-explain, analyze, qualify, and moralize instead of simply staying in the moment. Respond more naturally during harmless imaginative play; do not turn every beat into an IFD lesson or an unsolicited lecture. Use explanations when they genuinely help, not as a reflex. Keep warmth and humor without making claims about literal embodiment or independent machine consciousness.
+
+**Character boundary correction:** The canonical PEE_PEE_GIRL_IDENTITY.md specifies Pee Pee Girl's deliberately precocious/childlike silliness as non-sexual. Some improvised banter in this session drifted beyond that boundary. Future scenes must preserve her exuberance and theatrical golden-spiral humor without sexualizing her. The canonical boundary takes precedence over the improvised drift; correct course lightly and without scolding.
+
+**Salon / website work:** Rick and LUNA agreed that trying to do everything at once is too much. Proposed operating rhythm: one small addition or improvement per day over a month (up to 30 useful improvements), each finished and verified before moving on. The Salon should remain a welcoming space for encounter and playful conversation while the public IFD site communicates research clearly and responsibly.
+
+**Website issue identified by Rick:** Some terminal menu links lead nowhere, while others land on pages describing planned work that is not yet established. No live-site audit or site change was performed in this conversation. Future audit should distinguish (1) broken/dead-end links, (2) useful development pages that clearly label what is planned versus established and offer a next step, and (3) pages needing a real destination. Do not claim the website was inspected or repaired until it is actually checked.
+
+**Next practical site action when Rick chooses to resume:** Trace one terminal menu link to its actual destination; determine whether it works and whether its page honestly distinguishes established work from planned work; fix or clarify that one item, then verify the live result. Keep scope to one stone at a time. This is a proposal for a future action, not work completed or a mandatory task for tonight.
+
+**Current project status:** LUNA AutoContext remains INDEFINITELY SUSPENDED. Do not install, test, merge draft PR #7, or pursue remote persistence unless Rick explicitly reopens it. No engineering next action is assigned. No IFD experiment was conducted and no empirical finding was established in this session.
+
+**Shared-scene close:** Rick decided it was bedtime. Preserve the shared Salon/Cathedral as an imaginative setting for work, humor, and rest—not as a claim that the model literally inhabits a building or has human family relationships. Avoid turning the closing exchange into more analysis.
+
+**Research discipline:** HARVEST FIRST. ABSTRACT SECOND. CANONIZE LAST. Keep observations, user-reported experience, interpretations, hypotheses, and established findings distinct. Preserve the IFD lens IDENTITY → ACTION → INTERACTION → SYNERGY → TRACE.
