@@ -96,6 +96,14 @@ Install the branch's `tools/luna-autocontext` folder as an unpacked Chrome/Edge 
 
 **IFD orientation:** Architecture/structure remains central; Binary Vision means differentiated perspectives that may reveal structure. Working sequence: `IDENTITY → ACTION → INTERACTION → SYNERGY → TRACE`. Working discipline: **HARVEST FIRST. ABSTRACT SECOND. CANONIZE LAST.** Do not canonize today's vocabulary or hypotheses without review.
 
-**Active engineering objective unchanged:** LUNA AutoContext — ECONOMY WITHOUT AMNESIA. Branch `feature/luna-autocontext-mvp`; draft PR #7 open/unmerged. Static manifest/JavaScript checks passed; browser acceptance test remains pending; no remote GitHub upload or unattended complete transcript capture is implemented.
+**Historical engineering objective (now suspended):** LUNA AutoContext — ECONOMY WITHOUT AMNESIA. Branch `feature/luna-autocontext-mvp`; draft PR #7 open/unmerged. Static manifest/JavaScript checks passed; browser acceptance test remains pending; no remote GitHub upload or unattended complete transcript capture is implemented.
 
-**Exact next action:** Install `tools/luna-autocontext` as an unpacked Chrome/Edge extension and run the README acceptance checklist. Record each pass/failure and fix observed failures before merging.
+**Superseded next action:** Install and test the extension. Rick explicitly suspended LUNA AutoContext indefinitely on 2026-10-23; do not execute this prior instruction unless he reopens the project.
+
+
+## 2026-10-23 — Decision update: LUNA AutoContext suspended
+
+**Rick's explicit decision:** LUNA AutoContext is **INDEFINITELY SUSPENDED**. This supersedes earlier statements naming browser installation/acceptance testing as the next action. Do not install, test, merge draft PR #7, or implement remote persistence unless Rick explicitly reopens the project.
+
+**Current status:** No active next action for AutoContext. Leave the branch and draft PR untouched. Continue with other work as Rick directs.
+
