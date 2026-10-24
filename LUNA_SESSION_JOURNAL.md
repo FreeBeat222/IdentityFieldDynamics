@@ -125,3 +125,9 @@ Rick requested an explicit checkpoint after the AutoContext local-first MVP and 
 **Engineering state unchanged:** LUNA AutoContext — ECONOMY WITHOUT AMNESIA remains on `feature/luna-autocontext-mvp`, draft PR #7 open/unmerged. Static syntax/manifest checks passed; live browser acceptance tests remain unperformed. No remote GitHub upload or unattended complete transcript capture is implemented.
 
 **Next executable action:** Install `tools/luna-autocontext` as an unpacked Chrome/Edge extension and run the acceptance checklist in its README; record pass/fail outcomes and fix observed failures before merge. The IFD and astrology-testing questions above are research leads, not a replacement for this verified next action.
+
+
+## 2026-10-23 — Rick suspends LUNA AutoContext indefinitely
+
+Rick explicitly denied the previously proposed next action to install the extension and run browser acceptance tests. His decision: **LUNA AutoContext is INDEFINITELY SUSPENDED.** This supersedes earlier engineering next-action instructions. Do not install, test, merge draft PR #7, or pursue remote persistence unless Rick explicitly reopens the project. No active AutoContext action remains; leave the work untouched and move on as directed.
+
