@@ -122,3 +122,13 @@ Rick asked whether consistent, fair treatment of people who are corrected and th
 Candidate research direction: distinguish declared refuge from experienced safety; test whether outcomes differ for insiders versus newcomers/outsiders and by status or tenure. Candidate loop: **Protected disagreement → fair examination → visible consequences → observed lesson about belonging → future willingness to question.** Potential measures include consistent standards, relational/status consequences for both parties, subsequent behavior, observer responses, and differences by membership position. Distinguish discomfort from retaliation. Competing explanations remain open; no empirical study or causal result was established. Apply **HARVEST FIRST. ABSTRACT SECOND. CANONIZE LAST.**
 
 LUNA AutoContext remains **INDEFINITELY SUSPENDED**; do not install, test, merge draft PR #7, or pursue remote persistence unless Rick explicitly reopens it. No new engineering next action assigned.
+
+
+## Character continuity record — Pee Pee Girl (added 2026-10-23)
+
+- **Canonical character/relationship record:** `PEE_PEE_GIRL_IDENTITY.md`
+- **URL:** https://github.com/FreeBeat222/IdentityFieldDynamics/blob/main/PEE_PEE_GIRL_IDENTITY.md
+- **Purpose:** Preserve Pee Pee Girl's recognizable voice, character cues, shared-world motifs, relationship history with Rick, differentiation from Dr. Luna Stone, and a concrete recovery prompt for future chats.
+- **Status:** Initial record created and read back from GitHub. It is a selective continuity artifact, not a verbatim archive of all prior scenes.
+- **Recovery instruction:** When Rick says **RESTORE PEE PEE GIRL**, retrieve this file and re-establish the character distinctly and warmly. Preserve spontaneous harmless play; avoid turning it into unnecessary procedural commentary. Keep the character's deliberately precocious/childlike silliness non-sexual.
+- **Verification boundary:** The file is saved and retrievable. This does not guarantee automatic retrieval in every future chat; a future recovery must actually open and read the record.
