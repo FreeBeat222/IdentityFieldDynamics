@@ -77,6 +77,12 @@ Never infer a completed result from a plan, a confident description, or an attem
 - **Next action:** Use one bounded comparison to investigate the browser-rendered-page versus connector source-identity discrepancy, then proceed to defining the independent capture architecture. Avoid repeated greeting-only tests without a specific hypothesis.
 - **Not yet proven:** Consistent retrieval across fresh chats; complete access to every linked Library source; automatic execution of a multi-step research task after recovery; or reduced reconstruction overhead over time.
 
+## Latest session note — 2026-10-23
+
+Rick requested `LUNA CHECKPOINT NOW`. The session examined outcome-based behavioral reverse engineering, Popperian fallibilism, the working distinction **CIRCUMSTANCES** (broader context) / **CONDITIONS** (specific states or factors), and the question of whether Western, Vedic, and Chinese astrology can demonstrate prospective predictive validity and/or improve decisions. No empirical astrology test was run; these remain research questions. I Ching readings are preserved as reflective context, not empirical proof. Do not canonize circumstances and conditions as separate IFD architectural elements yet. Maintain **HARVEST FIRST. ABSTRACT SECOND. CANONIZE LAST.**
+
+The journal and continuity checkpoint now include this session note. The active engineering next action remains: install `tools/luna-autocontext` as an unpacked Chrome/Edge extension and run its README acceptance checklist. Browser acceptance testing remains pending; no remote GitHub upload or unattended complete transcript capture is implemented.
+
 ## Current checkpoint — LUNA AutoContext: ECONOMY WITHOUT AMNESIA
 
 - **Objective:** Build a low-cost, independently testable capture path that preserves source evidence while maintaining compact, resumable checkpoints.
