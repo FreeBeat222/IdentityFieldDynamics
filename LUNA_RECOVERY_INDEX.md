@@ -83,6 +83,12 @@ Rick requested `LUNA CHECKPOINT NOW`. The session examined outcome-based behavio
 
 The journal and continuity checkpoint now include this session note. The active engineering next action remains: install `tools/luna-autocontext` as an unpacked Chrome/Edge extension and run its README acceptance checklist. Browser acceptance testing remains pending; no remote GitHub upload or unattended complete transcript capture is implemented.
 
+## Current decision — 2026-10-23: LUNA AutoContext suspended
+
+**Rick's explicit decision:** LUNA AutoContext is **INDEFINITELY SUSPENDED**. Do not install it, run browser acceptance tests, merge draft PR #7, or pursue remote persistence unless Rick explicitly reopens the project. This decision supersedes all earlier AutoContext next-action instructions in this index and related checkpoints.
+
+**Current active next action:** None assigned for LUNA AutoContext. Leave the extension and draft PR untouched. Preserve this suspension as the current state and move on to other work when Rick directs.
+
 ## Current checkpoint — LUNA AutoContext: ECONOMY WITHOUT AMNESIA
 
 - **Objective:** Build a low-cost, independently testable capture path that preserves source evidence while maintaining compact, resumable checkpoints.
@@ -93,9 +99,9 @@ The journal and continuity checkpoint now include this session note. The active 
 - **Verification actually performed:** Fetched all key source files back from the feature branch; manifest JSON parsed; service-worker.js, content.js, and popup.js passed JavaScript syntax parsing.
 - **Not verified:** Browser runtime, real ChatGPT DOM selection, export/download behavior, persistence after reload, timer behavior, and completeness. DOM-derived capture may be incomplete. No GitHub upload or unattended background capture outside the active page is implemented.
 - **Draft PR:** https://github.com/FreeBeat222/IdentityFieldDynamics/pull/7
-- **Exact next action:** Download the feature branch, load `tools/luna-autocontext` as an unpacked extension in Chrome/Edge, and run the README acceptance checklist. Fix failures before merge. Once local capture is verified, implement a separate, explicitly authorized remote persistence path.
+- **Status:** INDEFINITELY SUSPENDED by Rick on 2026-10-23. Do not install, test, merge, or extend the project unless Rick explicitly reopens it.
 - **Recovery rule:** A source commit or passing syntax check does not prove browser capture, complete transcript preservation, or fresh-chat recovery.
-- **Latest explicit checkpoint:** `LUNA CHECKPOINT NOW` recorded after the AutoContext MVP and retry/status changes. The continuity checkpoint and session journal were updated; re-fetch them and the index after this write to verify all three saved blob SHAs and intended content.
+- **Latest explicit checkpoint:** `LUNA CHECKPOINT NOW` recorded on 2026-10-23; Rick then explicitly suspended LUNA AutoContext indefinitely. The continuity checkpoint and session journal were updated; re-fetch them and the index after this write to verify all three saved blob SHAs and intended content.
 
 ## Operating rules
 
