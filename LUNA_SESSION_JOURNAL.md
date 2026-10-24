@@ -104,3 +104,24 @@ Rick requested an explicit checkpoint after the AutoContext local-first MVP and 
 
 **Next action:** Load `tools/luna-autocontext` as an unpacked Chrome/Edge extension and run the README acceptance checklist. Record each pass/failure; fix issues before merge. After local capture is verified, design explicitly authorized remote persistence.
 
+
+
+## 2026-10-23 — IFD process, conditions, and testable claims
+
+**Trigger:** Rick requested `LUNA CHECKPOINT NOW`.
+
+**Conversation developments to preserve:**
+- Rick emphasized outcome-based investigation and reverse-engineering behavior through repeated “stick poking”: observe actual outputs, introduce pressure or changed framing, inspect the response, and infer possible underlying mechanisms. This is a proposed behavioral research method, not proof of any particular programmer's private intention. Keep competing explanations open and design tests that could disconfirm favored hypotheses.
+- Developmental-process proposition: growth/change occurs through time, while its direction and quality depend on the interacting system, its history, and the situation in which it develops.
+- Working vocabulary distinction supplied by Rick: **CIRCUMSTANCES** = the broader situation/context; **CONDITIONS** = specific states or factors affecting something. Keep this distinction available; do not yet canonize the terms as separate IFD architecture components.
+- Candidate process language explored: circumstances, conditions, development, observed form, consequences, and altered circumstances. This is provisional analytical language, not a validated universal causal model.
+- I Ching readings used as reflective guidance: Hexagram 61 changing to 4; 46 changing to 29; 20 changing to 42; and 43 changing to 47. Keep symbolic interpretation distinct from empirical evidence.
+- Research question: do Western, Vedic, and Chinese astrological systems reveal independently testable patterns in unfolding events, improve human decisions through interpretation, do both, or neither? No test was conducted in this conversation; no conclusion about predictive validity was established.
+- Proposed evaluation: test prospective predictive validity against predefined criteria and suitable baselines; test practical decision value separately using appropriate comparison conditions. Record predictions and scoring rules in advance, guard against retrospective reinterpretation and selective reporting, and seek independent replication. Reflective usefulness does not by itself establish external predictive validity.
+- Popper/fallibilism as a methodological touchstone: distinguish truth from certainty of possessing it; expose claims to possible refutation; do not immunize a theory against contrary outcomes. “The machine comes before the conclusion.” Separate observations, interpretations, hypotheses, and symbolic reflection.
+
+**IFD orientation:** Rick is an Identity Researcher in service of the IFD mission. Preserve the architecture/structure focus, Binary Vision as differentiated perspectives that may reveal structure, and the working sequence `IDENTITY → ACTION → INTERACTION → SYNERGY → TRACE`. Maintain **HARVEST FIRST. ABSTRACT SECOND. CANONIZE LAST.** Do not promote this discussion into canonical theory without reconciliation and explicit review.
+
+**Engineering state unchanged:** LUNA AutoContext — ECONOMY WITHOUT AMNESIA remains on `feature/luna-autocontext-mvp`, draft PR #7 open/unmerged. Static syntax/manifest checks passed; live browser acceptance tests remain unperformed. No remote GitHub upload or unattended complete transcript capture is implemented.
+
+**Next executable action:** Install `tools/luna-autocontext` as an unpacked Chrome/Edge extension and run the acceptance checklist in its README; record pass/fail outcomes and fix observed failures before merge. The IFD and astrology-testing questions above are research leads, not a replacement for this verified next action.
