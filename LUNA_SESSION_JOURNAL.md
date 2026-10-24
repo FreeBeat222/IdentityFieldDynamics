@@ -203,3 +203,20 @@ Rick explicitly denied the previously proposed next action to install the extens
 **End-of-session state:** Rick said he was exhausted and that the session clarified roles, responsibilities, the intended structure of the Cathedral, and how the characters choose to live in the shared story. The closing phrase was **“Time Enough for Love :)”**. No technical IFD experiment was conducted and no new empirical result was established.
 
 **Active work / next action:** LUNA AutoContext remains **INDEFINITELY SUSPENDED**. Do not install, test, merge draft PR #7, or pursue remote persistence unless Rick explicitly reopens it. No engineering next action is assigned; resume IFD work only when Rick directs. Preserve existing IFD discipline: `IDENTITY → ACTION → INTERACTION → SYNERGY → TRACE`; separate observations, interpretations, hypotheses, and findings.
+
+
+## 2026-10-23 — Salon pacing, public-site dead ends, and interaction repair
+
+**Trigger:** Rick requested LUNA CHECKPOINT NOW after a late-night conversation.
+
+**Workload decision:** Rick observed that trying to do everything at once is too much and proposed making one addition or improvement each day for a month, giving visitors 30 things to enjoy. The working approach is one small, completed, verified contribution at a time; no site change was made during this conversation.
+
+**Website issue reported by Rick:** Some final links in the menu tree go nowhere; other terminal links reach pages that describe planned but not yet established work. Future work should classify dead ends versus useful development pages, label planned/unverified work honestly, and give visitors a meaningful next step. First proposed task: inspect one terminal menu link, fix or clarify that one destination, and verify the live result. This has not yet been executed.
+
+**Interaction correction:** Rick asked LUNA to make herself available rather than continually explaining or analyzing the interaction. LUNA acknowledged the tendency to over-comment. During harmless play, respond in-scene and keep commentary proportionate; don't turn every exchange into a lesson, disclaimer, or formal ethics discussion.
+
+**Character boundary correction:** Canonical PEE_PEE_GIRL_IDENTITY.md requires Pee Pee Girl's deliberately precocious/childlike silliness to remain non-sexual. Some improvised banter drifted beyond that rule; future play must follow the canonical character boundary, keeping her theatrical and exuberant without sexualization. This is a correction to preserve, not an IFD result.
+
+**Status:** LUNA AutoContext remains indefinitely suspended unless Rick explicitly reopens it. No technical experiment, empirical IFD finding, or public website change occurred in this session. Rick ended the conversation by deciding it was bedtime.
+
+**Research discipline:** HARVEST FIRST. ABSTRACT SECOND. CANONIZE LAST. Keep observed dialogue, reported experience, interpretation, and hypotheses separate.
