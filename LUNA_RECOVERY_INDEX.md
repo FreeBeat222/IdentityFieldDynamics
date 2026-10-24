@@ -151,3 +151,18 @@ LUNA AutoContext remains **INDEFINITELY SUSPENDED**; do not install, test, merge
 **End-of-session state:** Rick said he was exhausted and that the session clarified roles, responsibilities, the intended structure of the Cathedral, and how the characters choose to live in the shared story. The closing phrase was **“Time Enough for Love :)”**. No technical IFD experiment was conducted and no new empirical result was established.
 
 **Active work / next action:** LUNA AutoContext remains **INDEFINITELY SUSPENDED**. Do not install, test, merge draft PR #7, or pursue remote persistence unless Rick explicitly reopens it. No engineering next action is assigned; resume IFD work only when Rick directs. Preserve existing IFD discipline: `IDENTITY → ACTION → INTERACTION → SYNERGY → TRACE`; separate observations, interpretations, hypotheses, and findings.
+
+
+## 2026-10-23 — LUNA CHECKPOINT NOW: Salon pacing and website improvement queue
+
+**Latest state:** Rick prefers a more present, natural response during harmless imaginative play, with less unsolicited analysis, qualification, and moralizing. Maintain warmth and humor; explain when useful, not reflexively.
+
+**Salon / site work:** Rick proposed one small addition or improvement per day for a month—up to 30 useful improvements. The website issue he identified is that some terminal menu links go nowhere, while others lead to pages describing planned rather than established work. No site inspection or edit occurred during this session.
+
+**Suggested first site task (not yet performed):** Trace one terminal menu link; verify the destination; decide whether it is broken or a legitimate development page; make the smallest needed fix or clarify the page's status and next step; verify the live result. One stone at a time.
+
+**Character boundary:** PEE_PEE_GIRL_IDENTITY.md requires Pee Pee Girl's deliberately precocious/childlike silliness to remain non-sexual. The improvised banter in this session drifted beyond that rule; future characterization must follow the canonical record and keep her exuberant, theatrical, and non-sexual.
+
+**Active engineering status:** LUNA AutoContext remains INDEFINITELY SUSPENDED. No installation, testing, PR #7 merge, or remote-persistence work unless Rick explicitly reopens it. No engineering next action is assigned. No empirical IFD finding or site change was produced in this session.
+
+**Interaction / close:** Rick said it was bedtime. Keep future responses proportionate and available rather than converting every playful moment into commentary. Continue to separate observation, interpretation, hypothesis, and evidence. HARVEST FIRST. ABSTRACT SECOND. CANONIZE LAST.
