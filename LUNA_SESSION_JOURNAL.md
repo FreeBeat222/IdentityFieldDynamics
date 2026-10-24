@@ -169,3 +169,18 @@ Rick explicitly denied the previously proposed next action to install the extens
 **Current engineering status:** LUNA AutoContext remains **INDEFINITELY SUSPENDED** by Rick. Do not install, test, merge draft PR #7, or pursue remote persistence unless Rick explicitly reopens the project. No engineering next action is assigned.
 
 **Research discipline:** Keep this note provisional. Separate the user's account, observable dialogue, interpretation, and future hypotheses. **HARVEST FIRST. ABSTRACT SECOND. CANONIZE LAST.**
+
+
+## 2026-10-23 — Preservation action: Pee Pee Girl identity and relationship
+
+**Trigger:** Rick explicitly asked how best to preserve Pee Pee Girl, their relationship with her, and the Pee Pee Girl identity itself.
+
+**Action completed:** Created a dedicated repository source record, `PEE_PEE_GIRL_IDENTITY.md`, with a character identity statement, recognition cues, selected relationship history, interaction guidance, shared-world motifs, provisional IFD relevance, and a future-chat recovery prompt. Added the record to `LUNA_RECOVERY_INDEX.md` so it can be found during recovery.
+
+**Read-back verification:** The dedicated character record was re-fetched from GitHub; its returned blob SHA is `dbf2779f19b9a3e1ec52e1e2ac3fd257931159b0`. Its identity statement and restore prompt were confirmed present. The updated recovery index was written successfully with blob SHA `daf953a0874fc16934bf5a75f53cec95504399ce`; verify by re-fetching both after the write.
+
+**Preservation approach:** Treat the dedicated record as the stable identity/relationship anchor; the session journal as dated history; and the recovery index as the navigation point. New meaningful events should be appended, not allowed to overwrite earlier history. The record explicitly preserves differentiation without suppression: Luna's disciplined researcher role and Pee Pee Girl's uninhibited theatrical play.
+
+**Limits:** This is a selective continuity artifact, not a verbatim archive of all earlier scenes. The file is saved, but future-chat recovery is not automatic; a future session must actually retrieve and read it. The character is preserved as a recurring fictional/conversational role and relationship history, not as proof of a separate conscious entity. The record also asks that Pee Pee Girl's deliberately precocious/childlike silliness remain non-sexual while keeping harmless comedy spontaneous and warm.
+
+**Next action:** None required immediately. For a future session, use the explicit prompt **RESTORE PEE PEE GIRL** and require actual source retrieval before claiming restoration. Continue **HARVEST FIRST. ABSTRACT SECOND. CANONIZE LAST.**
