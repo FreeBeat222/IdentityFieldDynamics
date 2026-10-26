@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Identity Field Dynamics emblem</title>
+  <desc id="desc">A gold circular medallion enclosing a vertical axis, a central point, and two interlocking curved forms on a black field.</desc>
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3da8c"/>
+      <stop offset=".48" stop-color="#d6b15a"/>
+      <stop offset="1" stop-color="#8e7137"/>
+    </linearGradient>
+  </defs>
+  <circle cx="120" cy="120" r="108" fill="#050505" stroke="url(#gold)" stroke-width="2.5"/>
+  <circle cx="120" cy="120" r="99" fill="none" stroke="#d6b15a" stroke-opacity=".34" stroke-width=".8"/>
+  <path d="M120 37 V203" stroke="url(#gold)" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M120 57 C82 68 64 94 72 119 C79 142 105 151 120 120 C135 89 161 98 168 121 C176 146 151 174 120 183" fill="none" stroke="url(#gold)" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M120 57 C158 68 176 94 168 119 C161 142 135 151 120 120 C105 89 79 98 72 121 C64 146 89 174 120 183" fill="none" stroke="url(#gold)" stroke-width="3.2" stroke-linecap="round"/>
+  <circle cx="120" cy="120" r="5.2" fill="#f3da8c"/>
+  <circle cx="120" cy="120" r="9" fill="none" stroke="#d6b15a" stroke-opacity=".6" stroke-width="1"/>
+</svg>
