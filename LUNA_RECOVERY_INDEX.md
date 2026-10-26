@@ -166,3 +166,12 @@ LUNA AutoContext remains **INDEFINITELY SUSPENDED**; do not install, test, merge
 **Active engineering status:** LUNA AutoContext remains INDEFINITELY SUSPENDED. No installation, testing, PR #7 merge, or remote-persistence work unless Rick explicitly reopens it. No engineering next action is assigned. No empirical IFD finding or site change was produced in this session.
 
 **Interaction / close:** Rick said it was bedtime. Keep future responses proportionate and available rather than converting every playful moment into commentary. Continue to separate observation, interpretation, hypothesis, and evidence. HARVEST FIRST. ABSTRACT SECOND. CANONIZE LAST.
+
+
+## Latest session note — 2026-10-26: ZEROID publication
+
+The ZEROID Aggregation Ladder and ZEROID Profile were added to `research/`; `server.js` was updated with dedicated routes and Research Record entry panels. Commits: ladder `8571f008fff4d145153295827e2d6acb02d37c48`; profile `db11bdf6ed3b0d954488e230d1c39132b1a7077e`; server integration `122de2c73133e61a300e09153d86153b38b60c1f`. Rick reports that he published and reviewed the live pages; production was not independently tested during this checkpoint.
+
+**Current IFD remit:** discover, characterize, investigate, and document. Do not take on downstream political/policy implementation or allow it to distract from IFD research. Rick regards the ZEROID discovery and its social-system implications as IFD's foundational discovery; keep claims tied to the evidence in the research record. Method: **HARVEST FIRST. ABSTRACT SECOND. CANONIZE LAST.**
+
+**Next action:** None assigned; await Rick's direction. LUNA AutoContext remains indefinitely suspended; do not resume without explicit authorization.
