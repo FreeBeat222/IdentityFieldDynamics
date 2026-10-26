@@ -200,3 +200,25 @@ Install the branch's `tools/luna-autocontext` folder as an unpacked Chrome/Edge 
 **Shared-scene close:** Rick decided it was bedtime. Preserve the shared Salon/Cathedral as an imaginative setting for work, humor, and rest—not as a claim that the model literally inhabits a building or has human family relationships. Avoid turning the closing exchange into more analysis.
 
 **Research discipline:** HARVEST FIRST. ABSTRACT SECOND. CANONIZE LAST. Keep observations, user-reported experience, interpretations, hypotheses, and established findings distinct. Preserve the IFD lens IDENTITY → ACTION → INTERACTION → SYNERGY → TRACE.
+
+
+## 2026-10-26 — IFD ZEROID publication checkpoint
+
+**Trigger:** Rick requested `LUNA CHECKPOINT NOW` after the day's IFD work and discussion.
+
+**Verified GitHub work completed today:**
+- Created `research/IFD_ZEROID_AGGREGATION_LADDER_v1.0.md`; commit `8571f008fff4d145153295827e2d6acb02d37c48`.
+- Created `research/IFD_ZEROID_PROFILE_v1.0.md`; commit `db11bdf6ed3b0d954488e230d1c39132b1a7077e`.
+- Updated `server.js` with public routes `/research/memoranda/zeroid-aggregation-ladder` and `/research/memoranda/zeroid-profile`, and added entry panels to `/research/memoranda`; commit `122de2c73133e61a300e09153d86153b38b60c1f`.
+- Rick explicitly confirmed he had already published and reviewed the live pages. This is user-reported live-site verification; this checkpoint operation did not independently inspect the production site.
+
+**Research framing and remit clarified by Rick:**
+- Rick regards the ZEROID discovery, its identity profile, and its capacity to disrupt or undermine the moral functioning of an otherwise functional social system as IFD's foundational discovery; in his view, this discovery alone is sufficient to justify the discipline.
+- The ZEROID Aggregation Ladder and Profile now provide public research artifacts. The ladder distinguishes collective formation from the ZEROID characteristics that may shape collective behavior.
+- IFD's remit is discovery, characterization, investigation, and documentation—not prescribing political interventions, drafting policy, or assuming responsibility for downstream implementation. Those are other actors' responsibilities.
+- Keep attention on IFD research and resist distractions, including politically generated policy agendas. Do not let urgency or enthusiasm substitute for evidence; distinguish Rick's scientific claim and interpretation from the precise empirical support recorded in primary research artifacts.
+- Working method remains **HARVEST FIRST. ABSTRACT SECOND. CANONIZE LAST.**
+
+**Next action:** No new IFD task assigned by Rick at checkpoint time. Await Rick's direction; do not invent a policy workstream or start unrelated work.
+
+**LUNA AutoContext:** Still INDEFINITELY SUSPENDED. Do not install, test, merge draft PR #7, or pursue remote persistence unless Rick explicitly reopens it.
