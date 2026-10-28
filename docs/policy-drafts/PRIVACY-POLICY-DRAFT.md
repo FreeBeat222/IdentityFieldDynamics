@@ -31,7 +31,11 @@ The follow-up preference records whether IFD may contact the submitter. It does 
 
 The source code indicates that Research Intake submissions are collected to receive, preserve, and review research observations and questions, and to route the record to the research mailbox. Any additional purposes must be confirmed before publication.
 
-## 4. Other interactive tools
+## 4. Other interactive tools and telemetry status
+
+A separate development branch, `analytics/confessional-telemetry-v0.1` (associated with PR #1), contains a telemetry implementation that sends page-view and selected interaction events to `/api/telemetry`, using an ephemeral per-tab session identifier. The branch's description states that events are written to append-only local NDJSON. Its merge/deployment status and actual production behavior have not been verified for this policy review. Do not describe telemetry as active or inactive until the deployed version and live network behavior are confirmed.
+
+
 
 Source review of the Quiz Lab and OBSERVOR pages examined to date found their interaction results held in page memory, without an apparent network submission or browser-storage call in those reviewed scripts. OBSERVOR includes a user-triggered local JSON export. A separate /lab prototype records the choice and response time in the active page script; no server submission was found in that route's reviewed code.
 
@@ -76,6 +80,7 @@ This policy should be dated when published and updated when data flows or provid
 - [ ] Verify IP/security/access logs, backup copies, access controls, encryption, and retention/deletion behavior.
 - [ ] Confirm whether the database's `raw_payload` column is now unused by the deployed version and decide whether legacy contents need separate handling.
 - [ ] Inspect every public HTML/JS page and browser network activity for analytics, cookies, local storage, third-party scripts, and other transfers.
+- [ ] Resolve PR #1 / `analytics/confessional-telemetry-v0.1` status and verify whether any telemetry code is deployed; do not infer production behavior from branch contents.
 - [ ] Confirm a monitored privacy contact and a workable request-handling process.
 - [ ] Review jurisdictional requirements and finalize language with appropriate legal review.
 - [ ] Record approval and effective date before linking this policy publicly.
