@@ -1,0 +1,30 @@
+/* Shared IFD copyright presentation. Keep this component visually consistent across all pages. */
+.ifd-copyright {
+  display: block;
+  margin: 12px auto 0;
+  color: #aaa69c;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  text-align: center;
+  text-transform: none;
+}
+.ifd-copyright-link,
+.ifd-copyright a {
+  color: #d6b15a;
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.ifd-copyright-link:hover,
+.ifd-copyright a:hover {
+  color: #f3da8c;
+}
+.ifd-copyright-link:focus-visible,
+.ifd-copyright a:focus-visible {
+  outline: 2px solid #f3da8c;
+  outline-offset: 3px;
+}
