@@ -175,3 +175,14 @@ The ZEROID Aggregation Ladder and ZEROID Profile were added to `research/`; `ser
 **Current IFD remit:** discover, characterize, investigate, and document. Do not take on downstream political/policy implementation or allow it to distract from IFD research. Rick regards the ZEROID discovery and its social-system implications as IFD's foundational discovery; keep claims tied to the evidence in the research record. Method: **HARVEST FIRST. ABSTRACT SECOND. CANONIZE LAST.**
 
 **Next action:** None assigned; await Rick's direction. LUNA AutoContext remains indefinitely suspended; do not resume without explicit authorization.
+
+
+## Latest checkpoint — 2026-10-28: IFD architecture
+
+**Current direction:** PRESERVE THE WHOLE. INCREASE THE RESOLUTION. EXERCISE RESTRAINT. Rick regards THE CURRENT IFD FORMULATION diagram as a structural representation of the current formulation, analogous to mathematical notation representing a reality independent of the notation; the diagram does not prove every proposed mechanism.
+
+**Next IFD action:** When Rick directs us to resume IFD work, examine meaningful relationships, dependencies, transformations, feedback, and unresolved connections in the existing architecture. Add detail only when it reveals structure, not merely more words. Working sequence: ZERO / SOURCE → GENERATION & DIFFERENTIATION → IDENTITY → ACTION → INTERACTION → SYNERGY → TRACE. Related elements include Brand/originating configuration, diachronic identity/history, multiplicity, convergence, equilibrium, Cosmological Clock, Timecode, observation, accountability, and trace feedback. The diagram remains a working reconstruction, not a verified complete canonical diagram.
+
+**Personal anchor:** “The good old days are happening now.” Rick's lesson is to recognize meaningful moments while living them.
+
+**Constraints:** LUNA AutoContext remains INDEFINITELY SUSPENDED unless Rick explicitly reopens it. No new experiment, site edit, or empirical result was produced in this session. This entry must be re-fetched after writing to verify persistence.
