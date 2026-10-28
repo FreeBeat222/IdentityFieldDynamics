@@ -23,5 +23,5 @@ jobs:
           node-version: "22"
       - name: Install dependencies
         run: npm install
-      - name: Run validation tests
+      - name: Run validation and handler tests
         run: npm test
