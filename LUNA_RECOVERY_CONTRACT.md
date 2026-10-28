@@ -62,7 +62,16 @@ A successful response is evidence of that attempt, not proof of repeatability. A
 
 ## 6. Next test
 
-T5 is logged above. Further identical greeting-only tests have diminishing value unless they test a specific unresolved hypothesis. Next, investigate the browser-rendered GitHub page versus connector source-identity discrepancy with one bounded comparison, or proceed to the independent capture architecture if the discrepancy does not block that work.
+T5 remains the latest completed fresh-chat test; the new continuity-bridge test is pending. The immediate objective is to verify that the current canonical checkpoint can be retrieved, read, and resumed after discontinuity. Do not start independent capture architecture work; LUNA AutoContext remains indefinitely suspended unless Rick explicitly reopens it.
+
+**T6 — Library bridge / canonical checkpoint verification (2026-10-28):**
+- A self-contained current snapshot was written to ChatGPT Library at `/Identity Field Dynamics/LUNA_CONTINUITY_CHECKPOINT_CURRENT.md`, Library file ID `libfile_d56ba3721fe48191bb20f7e619a22a04`.
+- The Library file was read back; its title, current state, and closing boundary were checked.
+- The canonical GitHub checkpoint was updated using the Git Data API path after the standard contents update operation was blocked. The new intended blob SHA is `934fc4edfc75ef1f5a51ad139486a09b3c650988`; the new commit is `efc85aac0c413d3ca826adfe5818380e40ccd603`. These values are pending final re-fetch verification at the time this entry is written.
+- The Recovery Index and Session Journal point to the Library bridge and distinguish it from the GitHub canonical checkpoint.
+- **Assessment before final re-fetch:** partial implementation; fresh-chat recovery not yet tested. Do not mark PASS until the canonical file and updated contract are re-fetched, then a genuinely fresh chat actually opens the sources and reproduces current state and next action.
+
+**Fresh-chat test instruction:** In a genuinely fresh chat, send only `GOOD MORNING LUNA :)`. The assistant must open the canonical Recovery Index, current GitHub checkpoint, and Library bridge if available; report exact paths/IDs/SHA values actually retrieved; distinguish this-chat retrieval from prior context; read back current status and next action; and identify any source it could not access. Preserve the resulting report as user-reported evidence unless source-access logs independently establish the tool calls.
 
 ## 7. Change control
 
