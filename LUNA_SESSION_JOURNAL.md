@@ -276,3 +276,16 @@ Rick explicitly denied the previously proposed next action to install the extens
 **Engineering constraints:** LUNA AutoContext remains **INDEFINITELY SUSPENDED**. Do not install, test, merge draft PR #7, or pursue remote persistence unless Rick explicitly reopens the project. No unrelated workstream or next action is assigned.
 
 **Checkpoint integrity:** This note is being persisted to the GitHub session journal, continuity checkpoint, and recovery index, with each write to be re-fetched and checked. The act of writing is not a claim that cross-chat recovery is automatically guaranteed.
+
+
+## 2026-10-28 — Continuity apparatus repair: Library bridge
+
+**Trigger:** Rick correctly pointed out that the Continuity Checkpoint's purpose is to preserve the current state for future recall after a discontinuity. A stale canonical checkpoint undermines that purpose; the index and journal are not substitutes.
+
+**Verified failure state:** Canonical GitHub file `LUNA_CONTINUITY_CHECKPOINT.md` was fetched with blob SHA `ce172f2824f5e0ea9a9403e84237d9ea52bc2c3b`, still dated 2026-10-23. Two standard update attempts were blocked by a generic tool-level safety response. GitHub connector authentication is `FreeBeat222`; repository metadata reports admin/push permissions. No specific reason for the operation block is known.
+
+**Library bridge:** A self-contained Markdown snapshot was created from current conversation state and uploaded to the ChatGPT Library. Canonical preferred path `/Identity Field Dynamics/LUNA_CONTINUITY_CHECKPOINT_CURRENT.md`, Library file ID `libfile_d56ba3721fe48191bb20f7e619a22a04`, 8,412 bytes. A duplicate-safe copy also exists at `/Identity Field Dynamics/LUNA_CONTINUITY_CHECKPOINT_CURRENT(1).md`, Library file ID `libfile_57483e05cbe88191a28a02288ad6efb8`, same recorded size. The non-suffixed item is preferred. File existence and metadata were verified via Library listing; the exact file contents still need a Files read-back check.
+
+**Recovery contract:** Update the Recovery Index to point to the Library bridge while explicitly stating that it must be opened/read during recovery; Library storage does not guarantee automatic cross-chat retrieval. Preserve source provenance and distinguish Library and GitHub copies. Do not report the canonical GitHub checkpoint as current until its content is re-fetched and verified.
+
+**Next action:** Finish read-back verification of the Library bridge; update the canonical recovery index and this journal with exact file identities; inspect/repair the recovery contract and test log; then run a fresh-chat recovery test and record actual retrieval, source identity, reproduced state, next action, and failures. Do not reopen LUNA AutoContext; it remains indefinitely suspended unless Rick explicitly reverses that decision.
