@@ -240,3 +240,11 @@ Install the branch's `tools/luna-autocontext` folder as an unpacked Chrome/Edge 
 
 
 **Post-write verification — 2026-10-28:** The canonical checkpoint was re-fetched after the Git Data API commit. Returned blob SHA `934fc4edfc75ef1f5a51ad139486a09b3c650988` matches the created blob; the re-fetched text includes the Library bridge ID and current recovery state. Recovery Index SHA `5ec3ec75d6d814adf5066c290e4fde9f17868f06` and Session Journal SHA `868293911463f372d7f92a873caf9ded37a8ecb5` were also re-fetched after their writes. A fresh-chat test has not yet been run.
+
+
+## 2026-10-28 — Current continuity failure and preservation correction
+Rick reported a reproducible stale-state symptom: the wakeup sequence recovered one session behind, and repeating it in a new tab produced the same result. Rick suspects GitHub was inaccessible when a checkpoint update was needed, leaving the newest state unsaved; root cause is not independently isolated. The central failure is persistence before recovery: no recovery process can retrieve state that was never saved.
+
+**Required design:** failover-first, write-through preservation. On material state changes or `LUNA CHECKPOINT NOW`, save current state immediately to an independent durable destination. If GitHub is unavailable, use the canonical ChatGPT Library checkpoint `/Identity Field Dynamics/LUNA_CONTINUITY_CHECKPOINT_CURRENT.md` and provide a downloadable artifact for Rick's computer. A Library copy is not a computer-local backup until downloaded. Read back each saved destination and verify the current marker, status, unresolved items, and next action. On failure, report `UNSAVED / NOT VERIFIED`, retain the last known-good copy, and expose the unsaved delta. GitHub is a versioned reference, not a gatekeeper.
+
+**Verified in this conversation:** canonical Library checkpoint upload succeeded and read-back confirmed the current finding and failover rule. Recovery Index blob `e689f9873e45d77ba732b9eeb8b1f6fedfc29ee8`, Recovery Contract blob `81892227e53f7bdccabb634d3e7759869bc583ea`, and Session Journal blob `6088e43b4d0370760c0674f8c892fffdd5211cf5` were written to GitHub and re-fetched; the failover marker was present in each. Current checkpoint GitHub write/read-back and fresh-chat recovery are tracked separately.
