@@ -75,12 +75,69 @@ const initDatabase = async () => {
 const deepPage = (title, kicker, body) => `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#070707"><title>${title} · Identity Field Dynamics</title><style>body{margin:0;background:#050505;color:#eeeae1;font-family:Inter,system-ui,sans-serif}main{width:min(900px,calc(100% - 40px));margin:auto;padding:100px 0}a{color:#f3da8c;text-decoration:none}.k{color:#d6b15a;font-size:11px;letter-spacing:.25em;text-transform:uppercase}h1{font-size:clamp(44px,8vw,82px);line-height:.95;letter-spacing:-.05em;margin:20px 0 30px}p{color:#aaa9a4;font-size:18px;line-height:1.8}.panel{border-top:1px solid #292929;margin-top:55px;padding-top:35px}.back{font-size:11px;letter-spacing:.16em;text-transform:uppercase}footer{border-top:1px solid rgba(203,208,212,.12);padding:24px 0 36px;color:#777;font-size:10px;letter-spacing:.08em;text-transform:uppercase}.footlinks{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:12px}.footlinks a{font-size:10px;letter-spacing:.1em;text-transform:uppercase}</style><link rel="stylesheet" href="/copyright.css"></head><body><main><a class="back" href="/">← Identity Field Dynamics</a><div class="panel"><div class="k">${kicker}</div><h1>${title}</h1>${body}</div></main><footer><div style="width:min(900px,calc(100% - 40px));margin:auto">Identity Field Dynamics<div class="ifd-copyright"><a class="ifd-copyright-link" href="/copyright">Copyright © 2026 Rick York</a></div><div class="footlinks"><a href="/copyright">Copyright</a><a href="/contact">Contact</a></div></div></footer></body></html>`;
 
 app.post("/api/research-intake", async (req,res)=>{
-  const body=req.body||{};
+  const incoming = req.body;
+  if (!incoming || typeof incoming !== "object" || Array.isArray(incoming)) {
+    return res.status(400).json({error:"Please submit a valid research-intake record."});
+  }
+
+  // Accept only the fields defined by the public intake instrument.
+  // Do not persist arbitrary client-supplied keys or duplicate the whole request in raw_payload.
+  const allowedEncounterTypes = new Set([
+    "Something happened to me",
+    "Something happened between me and another identity",
+    "I observed something in another identity",
+    "I observed a recurring pattern",
+    "I am investigating a question",
+    "I don't know yet"
+  ]);
+  const allowedParticipants = new Set([
+    "Human", "Animal", "Machine", "AI / electrical system",
+    "Collective / group", "Other / unknown"
+  ]);
+  const allowedPersistence = new Set(["", "It persisted", "It changed", "It disappeared", "It recurred", "Unclear"]);
+  const allowedRepeatable = new Set(["", "Yes", "No", "Possibly", "I don't know"]);
+  const allowedConsent = new Set(["No follow-up requested", "Yes, you may contact me"]);
+  const textLimits = {
+    participantOther: 1000, summary: 5000, sequence: 5000, firstObserved: 255,
+    observable: 5000, persistence: 100, repeatable: 100, evidence: 5000,
+    independent: 3000, interpretation: 5000, question: 3000, name: 255,
+    email: 320, consent: 100, notes: 5000
+  };
+  const body = {};
+  for (const key of Object.keys(textLimits)) {
+    const value = incoming[key] ?? "";
+    if (typeof value !== "string") {
+      return res.status(400).json({error:"Please check the format of each text field and try again."});
+    }
+    const normalized = value.trim();
+    if (normalized.length > textLimits[key]) {
+      return res.status(400).json({error:"One or more fields exceed the permitted length. Please shorten the entry and try again."});
+    }
+    body[key] = normalized;
+  }
+  if (typeof incoming.encounterType !== "string" || !allowedEncounterTypes.has(incoming.encounterType)) {
+    return res.status(400).json({error:"Please choose a valid encounter type."});
+  }
+  body.encounterType = incoming.encounterType;
+  if (!Array.isArray(incoming.participants) ||
+      incoming.participants.length > allowedParticipants.size ||
+      incoming.participants.some(value => typeof value !== "string" || !allowedParticipants.has(value)) ||
+      new Set(incoming.participants).size !== incoming.participants.length) {
+    return res.status(400).json({error:"Please choose valid participant categories."});
+  }
+  body.participants = incoming.participants;
+  if (!allowedPersistence.has(body.persistence) || !allowedRepeatable.has(body.repeatable) ||
+      !allowedConsent.has(body.consent)) {
+    return res.status(400).json({error:"Please choose valid options for the observation and follow-up fields."});
+  }
+  if (body.email && !/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(body.email)) {
+    return res.status(400).json({error:"Please enter a valid email address or leave the email field blank."});
+  }
   const intakeId = "IFD-RI-" + new Date().getUTCFullYear() + "-" + Date.now() + "-" + Math.random().toString(36).slice(2,8);
   const required = ["encounterType","summary","observable","interpretation","question"];
   if(required.some(k=>!String(body[k]||"").trim())) return res.status(400).json({error:"Please complete the encounter, phenomenon, observation, interpretation, and research-question fields."});
   const escapeHtml = v => String(v ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-  const participants = Array.isArray(body.participants) ? body.participants.join(", ") : String(body.participants||"");
+  const participants = body.participants.join(", ");
 
   try {
     await withDb(connection => connection.query(
@@ -88,8 +145,8 @@ app.post("/api/research-intake", async (req,res)=>{
         intake_id, created_at, updated_at, encounter_type, participants, participant_detail,
         summary, observable, sequence_text, first_observed, persistence, repeatable,
         evidence, independent_trace, interpretation, research_question, name, email,
-        consent, notes, status, email_status, raw_payload
-      ) VALUES (?, NOW(3), NOW(3), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'persisted', 'pending', ?)`,
+        consent, notes, status, email_status
+      ) VALUES (?, NOW(3), NOW(3), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'persisted', 'pending')`,
       [
         intakeId,
         body.encounterType,
@@ -107,9 +164,8 @@ app.post("/api/research-intake", async (req,res)=>{
         body.question,
         body.name || "",
         body.email || "",
-        body.consent || "",
-        body.notes || "",
-        JSON.stringify(body)
+        body.consent,
+        body.notes
       ]
     ));
   } catch (err) {
