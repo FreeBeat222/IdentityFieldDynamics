@@ -34,7 +34,7 @@ function responseDouble() {
   };
 }
 
-function setup({ env = {}, queryImpl, sendMail, logger = { error() {} } } = {}) {
+function setup({ env = {}, queryImpl, sendMail, createTransportImpl, logger = { error() {} } } = {}) {
   const queries = [];
   const withDb = async callback => callback({
     query: async (sql, params = []) => {
@@ -45,6 +45,7 @@ function setup({ env = {}, queryImpl, sendMail, logger = { error() {} } } = {}) 
   });
   const transports = [];
   const createTransport = config => {
+    if (createTransportImpl) return createTransportImpl(config);
     const transporter = { sendMail: async message => {
       if (sendMail) return sendMail(message);
       return { accepted: [message.to] };
@@ -121,6 +122,19 @@ test("successful persistence and email updates status and returns intake ID", as
   assert.match(queries[1].sql, /email_status='sent'/);
   assert.equal(transports.length, 1);
   assert.deepEqual(transports[0].config, { host: "localhost", port: 25, secure: false, ignoreTLS: true });
+});
+
+test("SMTP transport initialization failure is recorded as email failure", async () => {
+  const { handler, queries } = setup({
+    env: { SMTP_USER: "sender@example.org", SMTP_PASS: "test-only" },
+    createTransportImpl: () => { throw new Error("transport setup failed"); }
+  });
+  const res = responseDouble();
+  await handler({ body: validPayload() }, res);
+  assert.equal(res.statusCode, 502);
+  assert.match(res.payload.error, /record was saved, but email delivery failed/i);
+  assert.match(queries[1].sql, /email_status='failed'/);
+  assert.equal(queries[1].params[0], "transport setup failed");
 });
 
 test("email failure preserves saved record and records email failure", async () => {
