@@ -126,3 +126,9 @@ Define the smallest safe viable independent capture architecture (for example, a
 **Scope limitations:** The extension reads message elements currently present in the page DOM; this is not proof of a complete transcript. Automatic checkpoints remain local. No remote GitHub write is implemented, and no GitHub token is requested or stored.
 
 **Next action:** Run the acceptance checklist in `tools/luna-autocontext/README.md`, log each result, and correct observed failures before merging.
+
+
+## 2026-10-28 — Failover-first write-through rule
+No single service may gate preservation or recovery. On material state changes or `LUNA CHECKPOINT NOW`, preserve the current state immediately. If GitHub is unavailable, fail over to the canonical ChatGPT Library checkpoint and create a downloadable artifact for local storage; do not wait for GitHub. Read back each written destination and verify the new marker, status, open items, and next action. If write or verification fails, report `UNSAVED / NOT VERIFIED`, name the failed destination, expose the unsaved delta in the response, and retain the last known-good copy. Reconcile versions when GitHub returns without overwriting newer verified state with stale content. A fresh-chat test is separate from a successful write and must be performed before declaring recovery reliable.
+
+**2026-10-28 test status:** Rick reported and reproduced one-session-behind recovery in a new tab. GitHub inaccessibility is his suspected cause; root cause not isolated. Current checkpoint Library write/read-back was verified in this conversation. Current GitHub write/read-back and fresh-chat recovery are not yet verified.
