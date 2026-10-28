@@ -1,6 +1,7 @@
 const express = require("express");
 const mysql = require("mysql2/promise");
 const { createResearchIntakeHandler } = require("./lib/research-intake-handler");
+const { createResearchIntakeRateLimiter } = require("./lib/research-intake-rate-limit");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -75,7 +76,15 @@ const initDatabase = async () => {
 
 const deepPage = (title, kicker, body) => `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#070707"><title>${title} · Identity Field Dynamics</title><style>body{margin:0;background:#050505;color:#eeeae1;font-family:Inter,system-ui,sans-serif}main{width:min(900px,calc(100% - 40px));margin:auto;padding:100px 0}a{color:#f3da8c;text-decoration:none}.k{color:#d6b15a;font-size:11px;letter-spacing:.25em;text-transform:uppercase}h1{font-size:clamp(44px,8vw,82px);line-height:.95;letter-spacing:-.05em;margin:20px 0 30px}p{color:#aaa9a4;font-size:18px;line-height:1.8}.panel{border-top:1px solid #292929;margin-top:55px;padding-top:35px}.back{font-size:11px;letter-spacing:.16em;text-transform:uppercase}footer{border-top:1px solid rgba(203,208,212,.12);padding:24px 0 36px;color:#777;font-size:10px;letter-spacing:.08em;text-transform:uppercase}.footlinks{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:12px}.footlinks a{font-size:10px;letter-spacing:.1em;text-transform:uppercase}</style><link rel="stylesheet" href="/copyright.css"></head><body><main><a class="back" href="/">← Identity Field Dynamics</a><div class="panel"><div class="k">${kicker}</div><h1>${title}</h1>${body}</div></main><footer><div style="width:min(900px,calc(100% - 40px));margin:auto">Identity Field Dynamics<div class="ifd-copyright"><a class="ifd-copyright-link" href="/copyright">Copyright © 2026 Rick York</a></div><div class="footlinks"><a href="/copyright">Copyright</a><a href="/contact">Contact</a></div></div></footer></body></html>`;
 
-app.post("/api/research-intake", createResearchIntakeHandler({ withDb }));
+// Conservative process-local burst limit. Do not enable proxy-derived IP limits
+// until the production proxy chain and trusted headers are verified.
+app.post("/api/research-intake",
+  createResearchIntakeRateLimiter({
+    limit: Number(process.env.RESEARCH_INTAKE_RATE_LIMIT || 30),
+    windowMs: Number(process.env.RESEARCH_INTAKE_RATE_WINDOW_MS || 15 * 60 * 1000)
+  }),
+  createResearchIntakeHandler({ withDb })
+);
 app.get("/research/intake", (_req,res)=>res.sendFile(require("path").join(__dirname,"public","research-intake.html")));
 app.get("/api/research-intake/:id", (_req, res) => {
   // Intake IDs are not authorization credentials. Never expose participant details
