@@ -1,13 +1,13 @@
 # LUNA Continuity Checkpoint
 
 **Status:** LUNA AutoContext is INDEFINITELY SUSPENDED. Do not install, test, merge draft PR #7, or pursue remote persistence unless Rick explicitly reopens it.
-**Last updated:** 2026-10-23
+**Last updated:** 2026-10-28
 **Canonical recovery index:** https://github.com/FreeBeat222/IdentityFieldDynamics/blob/main/LUNA_RECOVERY_INDEX.md
 **Session journal:** https://github.com/FreeBeat222/IdentityFieldDynamics/blob/main/LUNA_SESSION_JOURNAL.md
 
 ## Active objective
 
-Reduce loss of useful work when a ChatGPT tab/session ends unexpectedly by preserving a compact, verifiable state that a fresh chat can retrieve; determine the smallest safe viable independent context-capture architecture.
+Maintain a reliable, testable continuity chain across session discontinuities: a current checkpoint, explicit source retrieval, read-back verification, provenance, and one executable next action. LUNA AutoContext remains indefinitely suspended; do not pursue it unless Rick explicitly reopens it.
 
 ## Last verified result
 
@@ -222,3 +222,18 @@ Install the branch's `tools/luna-autocontext` folder as an unpacked Chrome/Edge 
 **Next action:** No new IFD task assigned by Rick at checkpoint time. Await Rick's direction; do not invent a policy workstream or start unrelated work.
 
 **LUNA AutoContext:** Still INDEFINITELY SUSPENDED. Do not install, test, merge draft PR #7, or pursue remote persistence unless Rick explicitly reopens it.
+
+
+## Current continuity apparatus repair — 2026-10-28
+
+**Why this matters:** The checkpoint's purpose is to preserve the current working state for recall after a discontinuity. The index and journal are supporting records, not substitutes for a current checkpoint.
+
+**Library recovery bridge:** A self-contained Markdown snapshot is stored in ChatGPT Library at `/Identity Field Dynamics/LUNA_CONTINUITY_CHECKPOINT_CURRENT.md`, Library file ID `libfile_d56ba3721fe48191bb20f7e619a22a04` (8,412 bytes). It has been read back and its title, current state, and closing boundary were checked. A duplicate-safe copy exists at `/Identity Field Dynamics/LUNA_CONTINUITY_CHECKPOINT_CURRENT(1).md`, ID `libfile_57483e05cbe88191a28a02288ad6efb8`; prefer the non-suffixed item. The Library file does not synchronize automatically with GitHub and is not guaranteed to be retrieved in every new chat.
+
+**Canonical GitHub status:** The pre-repair checkpoint blob was `ce172f2824f5e0ea9a9403e84237d9ea52bc2c3b`. Standard file update attempts were blocked by a generic tool-level safety response. The connector is authenticated as `FreeBeat222` and repository metadata reports admin/push permissions; the cause of the standard-operation block is unknown. Do not infer an authentication failure.
+
+**Current recovery state:** The Recovery Index and Session Journal were updated and re-fetched successfully. Current verified blob SHAs: index `5ec3ec75d6d814adf5066c290e4fde9f17868f06`; journal `868293911463f372d7f92a873caf9ded37a8ecb5`.
+
+**Next action:** Finish synchronizing this canonical checkpoint with the current Library bridge and update the Recovery Contract/test log. Then perform a genuine fresh-chat test: send only `GOOD MORNING LUNA :)`, require actual source reads and source identities, verify that the checkpoint state and one next action are reproduced, and log observed evidence. Treat the test as pending until performed; do not call the system fully recovered merely because the files exist.
+
+**Explicit suspension:** LUNA AutoContext remains INDEFINITELY SUSPENDED by Rick. No installation, testing, merge of draft PR #7, or remote-persistence work unless Rick explicitly reopens it.
