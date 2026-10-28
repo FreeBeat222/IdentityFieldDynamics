@@ -29,6 +29,19 @@
 
 A trigger requests a procedure; it does not guarantee tool availability or source access. Recovery succeeds only to the extent that the source retrieval and read-back actually occurred. Report partial success as partial success.
 
+
+## Current continuity bridge — 2026-10-28
+
+**Purpose:** Recover current session state even while the canonical GitHub checkpoint file is stale.
+
+- **ChatGPT Library checkpoint:** `LUNA_CONTINUITY_CHECKPOINT_CURRENT.md`
+- **Canonical Library path:** `/Identity Field Dynamics/LUNA_CONTINUITY_CHECKPOINT_CURRENT.md`
+- **Library file ID:** `libfile_d56ba3721fe48191bb20f7e619a22a04`
+- **Verified alternate duplicate:** `/Identity Field Dynamics/LUNA_CONTINUITY_CHECKPOINT_CURRENT(1).md`, Library file ID `libfile_57483e05cbe88191a28a02288ad6efb8`. Both have the same recorded size (8,412 bytes); prefer the non-suffixed canonical path.
+- **Important limitation:** Library presence does not guarantee automatic retrieval in every new chat. A recovery procedure must explicitly search/open and read back this file, and report whether it actually succeeded.
+- **GitHub canonical checkpoint:** `LUNA_CONTINUITY_CHECKPOINT.md` remains stale as of 2026-10-23, blob SHA `ce172f2824f5e0ea9a9403e84237d9ea52bc2c3b`. The standard update operation was blocked twice with a generic tool-level safety response. Connector authentication as `FreeBeat222` and admin/push permission on the repository were verified, so do not attribute the failure to sign-in or lack of repository permission without new evidence.
+- **Next action:** Update and test the whole recovery contract across the index, checkpoint bridge, journal, and recovery test log. Test in a genuinely fresh chat; mark pass only after sources are actually retrieved and the recorded current state/next action is reproduced accurately. Keep GitHub and Library versions distinguished by exact source identity.
+
 ## Source map
 
 ### Active continuity records
