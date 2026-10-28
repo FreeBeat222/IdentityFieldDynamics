@@ -76,10 +76,11 @@ test("rejects invalid enumerated observation and follow-up values", () => {
 
 test("accepts a normal email and rejects malformed email addresses", () => {
   assert.equal(validateResearchIntake(validPayload({ email: "researcher@example.org" })).ok, true);
-  for (const email of ["not-an-email", "a b@example.org", "a@@example.org", "a@example", "@example.org", "a@example.org "]) {
+  for (const email of ["not-an-email", "a b@example.org", "a@@example.org", "a@example", "@example.org"]) {
     assert.equal(validateResearchIntake(validPayload({ email })).ok, false, email);
   }
   assert.equal(validateResearchIntake(validPayload({ email: "" })).ok, true);
+  assert.equal(validateResearchIntake(validPayload({ email: " a@example.org " })).body.email, "a@example.org");
 });
 
 test("does not retain arbitrary client-supplied properties", () => {
