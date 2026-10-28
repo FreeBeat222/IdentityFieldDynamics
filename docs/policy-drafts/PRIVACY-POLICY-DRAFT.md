@@ -57,6 +57,8 @@ Research Intake records are stored in the configured database; email copies may 
 
 Before publication, the operator must determine the actual retention approach, access restrictions, backup behavior, incident response, and process for handling deletion or access requests. Until then, no specific retention period or deletion guarantee should be stated.
 
+**Repository comparison finding (28 October 2026):** the current default-branch `server.js` inserts `JSON.stringify(body)` into the `raw_payload` column when a Research Intake submission is saved. The proposed handler on PR #9 instead inserts an allowlisted set of structured fields and does not write the complete request body to `raw_payload`. This establishes a difference between the two source versions; it does not establish which version is deployed, whether historical rows contain `raw_payload`, or whether database backups/mailbox copies retain submitted information. Verify the live deployment and historical records through authorized, read-only inspection before deciding on any cleanup or deletion.
+
 The application disables Express's X-Powered-By header and disables public lookup of intake records by intake ID. These safeguards do not establish that all data is confidential or eliminate all security risk. No promise of absolute security is made.
 
 ## 8. Choices and requests
