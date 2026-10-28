@@ -1,6 +1,6 @@
 const express = require("express");
 const mysql = require("mysql2/promise");
-const { validateResearchIntake } = require("./lib/research-intake-validation");
+const { createResearchIntakeHandler } = require("./lib/research-intake-handler");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -75,84 +75,7 @@ const initDatabase = async () => {
 
 const deepPage = (title, kicker, body) => `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#070707"><title>${title} · Identity Field Dynamics</title><style>body{margin:0;background:#050505;color:#eeeae1;font-family:Inter,system-ui,sans-serif}main{width:min(900px,calc(100% - 40px));margin:auto;padding:100px 0}a{color:#f3da8c;text-decoration:none}.k{color:#d6b15a;font-size:11px;letter-spacing:.25em;text-transform:uppercase}h1{font-size:clamp(44px,8vw,82px);line-height:.95;letter-spacing:-.05em;margin:20px 0 30px}p{color:#aaa9a4;font-size:18px;line-height:1.8}.panel{border-top:1px solid #292929;margin-top:55px;padding-top:35px}.back{font-size:11px;letter-spacing:.16em;text-transform:uppercase}footer{border-top:1px solid rgba(203,208,212,.12);padding:24px 0 36px;color:#777;font-size:10px;letter-spacing:.08em;text-transform:uppercase}.footlinks{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:12px}.footlinks a{font-size:10px;letter-spacing:.1em;text-transform:uppercase}</style><link rel="stylesheet" href="/copyright.css"></head><body><main><a class="back" href="/">← Identity Field Dynamics</a><div class="panel"><div class="k">${kicker}</div><h1>${title}</h1>${body}</div></main><footer><div style="width:min(900px,calc(100% - 40px));margin:auto">Identity Field Dynamics<div class="ifd-copyright"><a class="ifd-copyright-link" href="/copyright">Copyright © 2026 Rick York</a></div><div class="footlinks"><a href="/copyright">Copyright</a><a href="/contact">Contact</a></div></div></footer></body></html>`;
 
-app.post("/api/research-intake", async (req,res)=>{
-  const validation = validateResearchIntake(req.body);
-  if (!validation.ok) {
-    return res.status(validation.status).json({ error: validation.error });
-  }
-  const body = validation.body;
-  const intakeId = "IFD-RI-" + new Date().getUTCFullYear() + "-" + Date.now() + "-" + Math.random().toString(36).slice(2,8);
-  const required = ["encounterType","summary","observable","interpretation","question"];
-  if(required.some(k=>!String(body[k]||"").trim())) return res.status(400).json({error:"Please complete the encounter, phenomenon, observation, interpretation, and research-question fields."});
-  const escapeHtml = v => String(v ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-  const participants = body.participants.join(", ");
-
-  try {
-    await withDb(connection => connection.query(
-      `INSERT INTO research_intake (
-        intake_id, created_at, updated_at, encounter_type, participants, participant_detail,
-        summary, observable, sequence_text, first_observed, persistence, repeatable,
-        evidence, independent_trace, interpretation, research_question, name, email,
-        consent, notes, status, email_status
-      ) VALUES (?, NOW(3), NOW(3), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'persisted', 'pending')`,
-      [
-        intakeId,
-        body.encounterType,
-        JSON.stringify(Array.isArray(body.participants) ? body.participants : []),
-        body.participantOther || "",
-        body.summary,
-        body.observable,
-        body.sequence || "",
-        body.firstObserved || "",
-        body.persistence || "",
-        body.repeatable || "",
-        body.evidence || "",
-        body.independent || "",
-        body.interpretation,
-        body.question,
-        body.name || "",
-        body.email || "",
-        body.consent,
-        body.notes
-      ]
-    ));
-  } catch (err) {
-    console.error("Research intake database persistence failed:", err);
-    return res.status(503).json({error:"The research record could not be persisted. No email was sent."});
-  }
-  const html = `<h2>IFD RESEARCH INTAKE</h2><p><strong>${intakeId}</strong></p><p><strong>Encounter:</strong> ${escapeHtml(body.encounterType)}</p><p><strong>Participants:</strong> ${escapeHtml(participants)}</p><p><strong>Participant detail:</strong> ${escapeHtml(body.participantOther)}</p><hr><h3>WHAT WAS OBSERVED</h3><p>${escapeHtml(body.observable)}</p><p><strong>Summary:</strong> ${escapeHtml(body.summary)}</p><p><strong>Sequence:</strong> ${escapeHtml(body.sequence)}</p><p><strong>First observed:</strong> ${escapeHtml(body.firstObserved)}</p><p><strong>Persistence:</strong> ${escapeHtml(body.persistence)} | <strong>Repeatable:</strong> ${escapeHtml(body.repeatable)}</p><h3>EVIDENCE</h3><p>${escapeHtml(body.evidence)}</p><p><strong>Independent trace/witness:</strong> ${escapeHtml(body.independent)}</p><hr><h3>WHAT THE PARTICIPANT THINKS IT MEANS</h3><p>${escapeHtml(body.interpretation)}</p><p><strong>Research question:</strong> ${escapeHtml(body.question)}</p><h3>FOLLOW-UP</h3><p><strong>Name:</strong> ${escapeHtml(body.name)}</p><p><strong>Email:</strong> ${escapeHtml(body.email)}</p><p><strong>Permission:</strong> ${escapeHtml(body.consent)}</p><p><strong>Additional notes:</strong> ${escapeHtml(body.notes)}</p>`;
-  if(!process.env.SMTP_USER || !process.env.SMTP_PASS) {
-    await withDb(connection => connection.query("UPDATE research_intake SET status='persisted', email_status='not_configured', updated_at=NOW(3) WHERE intake_id=?", [intakeId]));
-    return res.status(503).json({
-      error:"The research record was saved, but research email is not yet configured on the server.",
-      intakeId
-    });
-  }
-  const nodemailer = require("nodemailer");
-  // GoDaddy Web Hosting (cPanel) provides a local SMTP relay for hosted applications.
-  // The supported relay is localhost:25 with no SMTP authentication or SSL.
-  const transporter = nodemailer.createTransport({
-    host: "localhost",
-    port: 25,
-    secure: false,
-    ignoreTLS: true
-  });
-  transporter.sendMail({from:process.env.SMTP_FROM||process.env.SMTP_USER,to:process.env.RESEARCH_TO||"research@identityfielddynamics.com",replyTo:body.email||undefined,subject:intakeId+" · IFD Research Intake",html}).then(async()=>{
-    await withDb(connection => connection.query("UPDATE research_intake SET status='complete', email_status='sent', updated_at=NOW(3) WHERE intake_id=?", [intakeId]));
-    res.json({ok:true,intakeId});
-  }).catch(async err=>{
-    console.error("Research intake email failed:",err);
-    try {
-      await withDb(connection => connection.query(
-        "UPDATE research_intake SET status='persisted', email_status='failed', email_error=?, updated_at=NOW(3) WHERE intake_id=?",
-        [String(err && (err.message || err)), intakeId]
-      ));
-    } catch (dbErr) {
-      console.error("Research intake email-status update failed:",dbErr);
-    }
-    res.status(502).json({error:"The research record was saved, but email delivery failed. The intake ID is "+intakeId+"."});
-  });
-});
+app.post("/api/research-intake", createResearchIntakeHandler({ withDb }));
 app.get("/research/intake", (_req,res)=>res.sendFile(require("path").join(__dirname,"public","research-intake.html")));
 app.get("/api/research-intake/:id", (_req, res) => {
   // Intake IDs are not authorization credentials. Never expose participant details
