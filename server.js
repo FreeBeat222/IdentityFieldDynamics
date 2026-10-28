@@ -130,7 +130,7 @@ app.post("/api/research-intake", async (req,res)=>{
       !allowedConsent.has(body.consent)) {
     return res.status(400).json({error:"Please choose valid options for the observation and follow-up fields."});
   }
-  if (body.email && !/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(body.email)) {
+  if (body.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email)) {
     return res.status(400).json({error:"Please enter a valid email address or leave the email field blank."});
   }
   const intakeId = "IFD-RI-" + new Date().getUTCFullYear() + "-" + Date.now() + "-" + Math.random().toString(36).slice(2,8);
