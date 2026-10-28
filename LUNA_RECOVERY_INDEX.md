@@ -199,3 +199,7 @@ The ZEROID Aggregation Ladder and ZEROID Profile were added to `research/`; `ser
 **Personal anchor:** “The good old days are happening now.” Rick's lesson is to recognize meaningful moments while living them.
 
 **Constraints:** LUNA AutoContext remains INDEFINITELY SUSPENDED unless Rick explicitly reopens it. No new experiment, site edit, or empirical result was produced in this session. This entry must be re-fetched after writing to verify persistence.
+
+
+## 2026-10-28 — Failover-first preservation
+The latest state must not depend on GitHub being available. When GitHub writes fail or are unavailable, preserve the current state in the canonical ChatGPT Library checkpoint at `/Identity Field Dynamics/LUNA_CONTINUITY_CHECKPOINT_CURRENT.md`, verify it by read-back, and provide a downloadable local artifact for Rick to store on his computer. A Library copy is not a computer-local backup until downloaded. Keep the last known-good version; do not report a save as complete without read-back verification. Current finding: Rick reproduced a one-session-behind wakeup result in a new tab; suspected GitHub write failure is not yet isolated as root cause. Fresh-chat recovery of this current finding remains untested.
