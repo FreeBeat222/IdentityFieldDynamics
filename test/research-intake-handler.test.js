@@ -65,8 +65,13 @@ test("INSERT SQL placeholder count matches parameter count and table columns", a
   const res = responseDouble();
   await handler({ body: validPayload() }, res);
   assert.equal(res.statusCode, 503); // Email deliberately not configured.
+  const columnBlock = INSERT_SQL.match(/INSERT INTO research_intake \(([\s\S]*?)\) VALUES/);
+  assert.ok(columnBlock, "INSERT statement should declare its columns");
+  const columnCount = columnBlock[1].split(",").map(column => column.trim()).length;
+  assert.equal(columnCount, 22);
   assert.equal((INSERT_SQL.match(/\?/g) || []).length, 18);
   assert.equal(queries[0].params.length, 18);
+  // 22 columns = 18 bound values + 2 NOW(3) expressions + 2 fixed status literals.
   assert.match(queries[0].sql, /INSERT INTO research_intake/);
   assert.equal(queries[0].params[0], res.payload.intakeId);
   assert.equal(queries[0].params[2], JSON.stringify(["Human"]));
