@@ -289,3 +289,11 @@ Rick explicitly denied the previously proposed next action to install the extens
 **Recovery contract:** Update the Recovery Index to point to the Library bridge while explicitly stating that it must be opened/read during recovery; Library storage does not guarantee automatic cross-chat retrieval. Preserve source provenance and distinguish Library and GitHub copies. Do not report the canonical GitHub checkpoint as current until its content is re-fetched and verified.
 
 **Next action:** Finish read-back verification of the Library bridge; update the canonical recovery index and this journal with exact file identities; inspect/repair the recovery contract and test log; then run a fresh-chat recovery test and record actual retrieval, source identity, reproduced state, next action, and failures. Do not reopen LUNA AutoContext; it remains indefinitely suspended unless Rick explicitly reverses that decision.
+
+
+## 2026-10-28 — Reproducible stale recovery and failover requirement
+Rick reported that the wakeup sequence restored LUNA one session behind; he repeated the full sequence in a new tab and observed the same result. This is a reproducible stale-state symptom, while the specific root cause remains unisolated. Rick suspects GitHub was inaccessible when the checkpoint update was needed, so the current state was never persisted.
+
+**Decision:** GitHub must be a versioned reference, not a gatekeeper. Adopt failover-first, write-through preservation: save the current state to the canonical ChatGPT Library checkpoint when GitHub is unavailable; read it back; provide a downloadable local artifact; preserve the last known-good copy; explicitly report `UNSAVED / NOT VERIFIED` on any failed write or read-back. Do not claim the local-computer backup exists until Rick downloads the file.
+
+**Verified here:** canonical Library checkpoint upload succeeded and the exact file was read back. **Not yet verified:** current findings written/read back in GitHub; companion Library records; fresh-chat recovery of the current marker.
