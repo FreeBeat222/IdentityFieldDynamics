@@ -12,10 +12,16 @@ test("database schema can store the full independently recorded trace", () => {
     path.join(root, "migrations", "2026-10-28-research-intake-independent-trace.sql"),
     "utf8"
   );
+  const idempotencyMigration = fs.readFileSync(
+    path.join(root, "migrations", "2026-10-29-research-intake-idempotency.sql"),
+    "utf8"
+  );
 
   assert.match(validation, /independent:\s*3000/);
   assert.match(server, /independent_trace TEXT\b/);
   assert.match(server, /submission_key VARCHAR\(128\) NULL/);
   assert.match(server, /UNIQUE KEY uq_research_intake_submission_key \(submission_key\)/);
   assert.match(migration, /MODIFY COLUMN independent_trace TEXT NULL/i);
+  assert.match(idempotencyMigration, /ADD COLUMN submission_key VARCHAR\(128\) NULL/i);
+  assert.match(idempotencyMigration, /ADD UNIQUE KEY uq_research_intake_submission_key \(submission_key\)/i);
 });
