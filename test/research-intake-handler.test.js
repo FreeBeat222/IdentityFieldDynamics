@@ -227,3 +227,25 @@ test("status-update failure after successful email is not misreported as deliver
   assert.doesNotMatch(res.payload.error, /email delivery failed/i);
   assert.equal(queries.length, 2);
 });
+
+
+test("missing or malformed idempotency key is rejected before database or email side effects", async t => {
+  const { handler, queries, transports } = setup({
+    env: { SMTP_USER: "sender@example.org", SMTP_PASS: "test-only" }
+  });
+  for (const [name, headers] of [
+    ["missing", {}],
+    ["too short", { "idempotency-key": "short" }],
+    ["contains whitespace", { "idempotency-key": "invalid key value" }],
+    ["too long", { "idempotency-key": "k".repeat(129) }]
+  ]) {
+    await t.test(name, async () => {
+      const res = responseDouble();
+      await handler({ body: validPayload(), headers }, res);
+      assert.equal(res.statusCode, 400);
+      assert.match(res.payload.error, /valid submission key/i);
+      assert.equal(queries.length, 0);
+      assert.equal(transports.length, 0);
+    });
+  }
+});
