@@ -2,6 +2,10 @@ const express = require("express");
 const mysql = require("mysql2/promise");
 const { createResearchIntakeHandler } = require("./lib/research-intake-handler");
 const { createResearchIntakeRateLimiter } = require("./lib/research-intake-rate-limit");
+const { getResearchIntakeRateLimitConfig } = require("./lib/research-intake-rate-limit-config");
+
+// Fail fast with an explicit configuration error rather than starting with invalid limits.
+const researchIntakeRateLimitConfig = getResearchIntakeRateLimitConfig();
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -79,10 +83,7 @@ const deepPage = (title, kicker, body) => `<!doctype html><html lang="en"><head>
 // Conservative process-local burst limit. Do not enable proxy-derived IP limits
 // until the production proxy chain and trusted headers are verified.
 app.post("/api/research-intake",
-  createResearchIntakeRateLimiter({
-    limit: Number(process.env.RESEARCH_INTAKE_RATE_LIMIT || 30),
-    windowMs: Number(process.env.RESEARCH_INTAKE_RATE_WINDOW_MS || 15 * 60 * 1000)
-  }),
+  createResearchIntakeRateLimiter(researchIntakeRateLimitConfig),
   createResearchIntakeHandler({ withDb })
 );
 app.get("/research/intake", (_req,res)=>res.sendFile(require("path").join(__dirname,"public","research-intake.html")));
