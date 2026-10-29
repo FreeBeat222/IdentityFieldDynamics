@@ -51,6 +51,7 @@ const initDatabase = async () => {
   await withDb(connection => connection.query(`
     CREATE TABLE IF NOT EXISTS research_intake (
       intake_id VARCHAR(64) PRIMARY KEY,
+      submission_key VARCHAR(128) NULL,
       created_at DATETIME(3) NOT NULL,
       updated_at DATETIME(3) NOT NULL,
       encounter_type VARCHAR(255) NOT NULL,
@@ -73,7 +74,8 @@ const initDatabase = async () => {
       status VARCHAR(64) NOT NULL DEFAULT 'persisted',
       email_status VARCHAR(64) NOT NULL DEFAULT 'pending',
       email_error TEXT,
-      raw_payload JSON
+      raw_payload JSON,
+      UNIQUE KEY uq_research_intake_submission_key (submission_key)
     )
   `));
 };
