@@ -273,3 +273,22 @@ test("duplicate records with pending or unconfigured email status require reconc
     });
   }
 });
+
+
+test("duplicate-key lookup failure refuses a new submission and sends no email", async () => {
+  const duplicateError = Object.assign(new Error("duplicate key"), { code: "ER_DUP_ENTRY" });
+  const { handler, queries, transports } = setup({
+    env: { SMTP_USER: "sender@example.org", SMTP_PASS: "test-only" },
+    queryImpl: async (_sql, _params, count) => {
+      if (count === 1) throw duplicateError;
+      throw new Error("lookup unavailable");
+    }
+  });
+  const res = responseDouble();
+  await handler({ body: validPayload(), headers: { "idempotency-key": "test-submission-key-0001" } }, res);
+  assert.equal(res.statusCode, 503);
+  assert.match(res.payload.error, /could not confirm whether this submission was already saved/i);
+  assert.match(res.payload.error, /do not start a new submission/i);
+  assert.equal(queries.length, 2);
+  assert.equal(transports.length, 0);
+});
