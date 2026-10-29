@@ -292,3 +292,20 @@ test("duplicate-key lookup failure refuses a new submission and sends no email",
   assert.equal(queries.length, 2);
   assert.equal(transports.length, 0);
 });
+
+
+test("explicit SMTP recipient rejection is recorded as delivery failure", async () => {
+  const { handler, queries, transports } = setup({
+    env: { SMTP_USER: "sender@example.org", SMTP_PASS: "test-only" },
+    sendMail: async () => ({ accepted: [], rejected: ["research@identityfielddynamics.com"] })
+  });
+  const res = responseDouble();
+  await handler({ body: validPayload(), headers: { "idempotency-key": "test-submission-key-0001" } }, res);
+  assert.equal(res.statusCode, 502);
+  assert.match(res.payload.error, /email delivery failed/i);
+  assert.match(res.payload.error, /do not resubmit/i);
+  assert.equal(res.payload.emailSent, false);
+  assert.match(queries[1].sql, /email_status='failed'/);
+  assert.match(queries[1].params[0], /rejected one or more research intake recipients/i);
+  assert.equal(transports.length, 1);
+});
