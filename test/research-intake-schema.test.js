@@ -1,0 +1,19 @@
+const test = require("node:test");
+const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const path = require("node:path");
+const { textLimits } = require("../lib/research-intake-validation");
+
+const root = path.join(__dirname, "..");
+
+test("database schema can store the full independently recorded trace", () => {
+  const server = fs.readFileSync(path.join(root, "server.js"), "utf8");
+  const migration = fs.readFileSync(
+    path.join(root, "migrations", "2026-10-28-research-intake-independent-trace.sql"),
+    "utf8"
+  );
+
+  assert.equal(textLimits.independent, 3000);
+  assert.match(server, /independent_trace TEXT\b/);
+  assert.match(migration, /MODIFY COLUMN independent_trace TEXT NULL/i);
+});
