@@ -28,6 +28,8 @@ After applying the migrations, inspect the table definition and indexes again. C
 
 Deploy only the reviewed PR commit after both migrations have succeeded and the post-migration schema has been verified.
 
+Before go-live, define and test a monitored reconciliation procedure for persisted records whose `email_status` is `pending`, `failed`, or `not_configured`. The handler deliberately avoids automatic resend on duplicate submissions, so these states require an authorized operator to inspect the record and decide how to complete notification without creating duplicate emails. Name the responsible role, monitoring cadence, and escalation path; do not assume the intake ID alone guarantees that anyone will notice an undelivered notification.
+
 Use controlled test submissions with synthetic data. Verify:
 - A valid submission is persisted and receives an intake ID.
 - A repeat request using the same idempotency key returns the existing intake rather than sending a second email.
