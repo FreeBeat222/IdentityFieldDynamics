@@ -249,3 +249,27 @@ test("missing or malformed idempotency key is rejected before database or email 
     });
   }
 });
+
+
+test("duplicate records with pending or unconfigured email status require reconciliation without resending", async t => {
+  for (const emailStatus of ["pending", "not_configured"]) {
+    await t.test(emailStatus, async () => {
+      const duplicateError = Object.assign(new Error("duplicate key"), { code: "ER_DUP_ENTRY" });
+      const { handler, queries, transports } = setup({
+        env: { SMTP_USER: "sender@example.org", SMTP_PASS: "test-only" },
+        queryImpl: async (_sql, _params, count) => {
+          if (count === 1) throw duplicateError;
+          return [[{ intake_id: "IFD-RI-2026-reconcile-" + emailStatus, email_status: emailStatus }], []];
+        }
+      });
+      const res = responseDouble();
+      await handler({ body: validPayload(), headers: { "idempotency-key": "test-submission-key-0001" } }, res);
+      assert.equal(res.statusCode, 409);
+      assert.equal(res.payload.intakeId, "IFD-RI-2026-reconcile-" + emailStatus);
+      assert.equal(res.payload.emailSent, false);
+      assert.match(res.payload.error, /do not resubmit/i);
+      assert.equal(queries.length, 2);
+      assert.equal(transports.length, 0);
+    });
+  }
+});
