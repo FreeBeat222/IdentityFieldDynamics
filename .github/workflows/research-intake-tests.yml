@@ -1,0 +1,29 @@
+name: Research intake validation tests
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "server.js"
+      - "package.json"
+      - "lib/**"
+      - "migrations/**"
+      - "public/research-intake.html"
+      - "test/**"
+      - ".github/workflows/research-intake-tests.yml"
+  workflow_dispatch:
+
+jobs:
+  research-intake-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install dependencies
+        run: npm install
+      - name: Run validation, handler, and rate-limit tests
+        run: npm test
