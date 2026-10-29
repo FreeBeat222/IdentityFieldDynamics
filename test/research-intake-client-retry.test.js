@@ -7,9 +7,12 @@ const vm = require("node:vm");
 const html = fs.readFileSync(path.join(__dirname, "..", "public", "research-intake.html"), "utf8");
 
 test("research intake client script parses as valid JavaScript", () => {
-  const scripts = [...html.matchAll(/<script>([\\s\\S]*?)<\\/script>/g)];
-  assert.equal(scripts.length, 1, "expected one inline application script");
-  assert.doesNotThrow(() => new vm.Script(scripts[0][1]), "inline client script must parse");
+  const start = html.indexOf("<script>");
+  const end = html.indexOf("</script>", start + 8);
+  assert.notEqual(start, -1, "expected an inline application script");
+  assert.notEqual(end, -1, "expected the inline application script to close");
+  assert.equal(html.indexOf("<script>", start + 8), -1, "expected one inline application script");
+  assert.doesNotThrow(() => new vm.Script(html.slice(start + 8, end)), "inline client script must parse");
 });
 
 test("research intake preserves the original payload for uncertain persistence retries", () => {
