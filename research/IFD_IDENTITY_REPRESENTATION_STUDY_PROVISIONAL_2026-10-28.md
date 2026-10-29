@@ -120,3 +120,14 @@ Because the images visibly name Rick or identify his role, they cannot, as curre
 **What cannot be said now:** The available record does not establish accurate facial resemblance, identify the specific features Rick recognized, show that the two images were independently generated, or prove that an identity itself was preserved by the model.
 
 **Research status:** OPEN. PROVISIONAL. NON-CANONICAL. No IFD theory or canonical finding is established by this note.
+
+## 10. Process note — write-access correction (2026-10-28)
+
+The researcher clarified that the preceding blockage concerned **repository writes**, not missing image access or a need for further conceptual analysis. Treat this as a workflow correction.
+
+- Preserve the existing exploratory record and its evidence limits.
+- Verify write access with a small, additive change rather than replacing or duplicating the record.
+- A successful repository write verifies that this write path worked for this operation only; it does not establish that every tool, branch, or workflow is unblocked.
+- Continue provenance recovery as the next research task. Do not claim the missing prompts or verbatim recognition response have been recovered unless they are actually retrieved.
+- The study remains **OPEN · PROVISIONAL · NON-CANONICAL**.
+
