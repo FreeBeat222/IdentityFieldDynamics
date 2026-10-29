@@ -59,7 +59,7 @@ const initDatabase = async () => {
       persistence VARCHAR(255),
       repeatable VARCHAR(255),
       evidence TEXT,
-      independent_trace VARCHAR(255),
+      independent_trace TEXT,
       interpretation TEXT NOT NULL,
       research_question TEXT NOT NULL,
       name VARCHAR(255),
