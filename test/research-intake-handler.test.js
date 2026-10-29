@@ -64,24 +64,24 @@ function setup({ env = {}, queryImpl, sendMail, createTransportImpl, logger = { 
 test("INSERT SQL placeholder count matches parameter count and table columns", async () => {
   const { handler, queries } = setup();
   const res = responseDouble();
-  await handler({ body: validPayload() }, res);
+  await handler({ body: validPayload(), headers: { "idempotency-key": "test-submission-key-0001" } }, res);
   assert.equal(res.statusCode, 503); // Email deliberately not configured.
   const columnBlock = INSERT_SQL.match(/INSERT INTO research_intake \(([\s\S]*?)\) VALUES/);
   assert.ok(columnBlock, "INSERT statement should declare its columns");
   const columnCount = columnBlock[1].split(",").map(column => column.trim()).length;
-  assert.equal(columnCount, 22);
-  assert.equal((INSERT_SQL.match(/\?/g) || []).length, 18);
-  assert.equal(queries[0].params.length, 18);
-  // 22 columns = 18 bound values + 2 NOW(3) expressions + 2 fixed status literals.
+  assert.equal(columnCount, 23);
+  assert.equal((INSERT_SQL.match(/\?/g) || []).length, 19);
+  assert.equal(queries[0].params.length, 19);
+  // 23 columns = 19 bound values + 2 NOW(3) expressions + 2 fixed status literals.
   assert.match(queries[0].sql, /INSERT INTO research_intake/);
   assert.equal(queries[0].params[0], res.payload.intakeId);
-  assert.equal(queries[0].params[2], JSON.stringify(["Human"]));
+  assert.equal(queries[0].params[3], JSON.stringify(["Human"]));
 });
 
 test("invalid request is rejected before database or email side effects", async () => {
   const { handler, queries, transports } = setup({ env: { SMTP_USER: "x", SMTP_PASS: "y" } });
   const res = responseDouble();
-  await handler({ body: validPayload({ encounterType: "forged" }) }, res);
+  await handler({ body: validPayload({ encounterType: "forged" }), headers: { "idempotency-key": "test-submission-key-0001" } }, res);
   assert.equal(res.statusCode, 400);
   assert.equal(queries.length, 0);
   assert.equal(transports.length, 0);
@@ -93,17 +93,37 @@ test("database insert failure sends no email and returns persistence error", asy
     queryImpl: async () => { throw new Error("db unavailable"); }
   });
   const res = responseDouble();
-  await handler({ body: validPayload() }, res);
+  await handler({ body: validPayload(), headers: { "idempotency-key": "test-submission-key-0001" } }, res);
   assert.equal(res.statusCode, 503);
   assert.match(res.payload.error, /No email was sent/);
   assert.equal(queries.length, 1);
   assert.equal(transports.length, 0);
 });
 
+test("repeated submission key returns the existing saved record without sending another email", async () => {
+  const duplicateError = Object.assign(new Error("duplicate key"), { code: "ER_DUP_ENTRY" });
+  const { handler, queries, transports } = setup({
+    env: { SMTP_USER: "sender@example.org", SMTP_PASS: "test-only" },
+    queryImpl: async (_sql, _params, count) => {
+      if (count === 1) throw duplicateError;
+      return [[{ intake_id: "IFD-RI-2026-existing", email_status: "sent" }], []];
+    }
+  });
+  const res = responseDouble();
+  await handler({ body: validPayload(), headers: { "idempotency-key": "test-submission-key-0001" } }, res);
+  assert.equal(res.statusCode, 200);
+  assert.equal(res.payload.duplicate, true);
+  assert.equal(res.payload.intakeId, "IFD-RI-2026-existing");
+  assert.equal(res.payload.emailSent, true);
+  assert.equal(queries.length, 2);
+  assert.match(queries[1].sql, /WHERE submission_key=\?/);
+  assert.equal(transports.length, 0);
+});
+
 test("missing SMTP configuration records status and does not attempt email", async () => {
   const { handler, queries, transports } = setup();
   const res = responseDouble();
-  await handler({ body: validPayload() }, res);
+  await handler({ body: validPayload(), headers: { "idempotency-key": "test-submission-key-0001" } }, res);
   assert.equal(res.statusCode, 503);
   assert.match(res.payload.error, /email is not yet configured/i);
   assert.match(queries[1].sql, /email_status='not_configured'/);
@@ -115,7 +135,7 @@ test("successful persistence and email updates status and returns intake ID", as
     env: { SMTP_USER: "sender@example.org", SMTP_PASS: "test-only" }
   });
   const res = responseDouble();
-  await handler({ body: validPayload({ email: "person@example.org" }) }, res);
+  await handler({ body: validPayload({ email: "person@example.org" }), headers: { "idempotency-key": "test-submission-key-0001" } }, res);
   assert.equal(res.statusCode, 200);
   assert.equal(res.payload.ok, true);
   assert.equal(queries.length, 2);
@@ -130,7 +150,7 @@ test("SMTP transport initialization failure is recorded as email failure", async
     createTransportImpl: () => { throw new Error("transport setup failed"); }
   });
   const res = responseDouble();
-  await handler({ body: validPayload() }, res);
+  await handler({ body: validPayload(), headers: { "idempotency-key": "test-submission-key-0001" } }, res);
   assert.equal(res.statusCode, 502);
   assert.match(res.payload.error, /record was saved, but email delivery failed/i);
   assert.match(res.payload.error, /do not resubmit/i);
@@ -146,7 +166,7 @@ test("email failure preserves saved record and records email failure", async () 
     sendMail: async () => { throw new Error("relay unavailable"); }
   });
   const res = responseDouble();
-  await handler({ body: validPayload() }, res);
+  await handler({ body: validPayload(), headers: { "idempotency-key": "test-submission-key-0001" } }, res);
   assert.equal(res.statusCode, 502);
   assert.match(res.payload.error, /record was saved, but email delivery failed/i);
   assert.match(res.payload.error, /do not resubmit/i);
@@ -163,7 +183,7 @@ test("email HTML escapes submitted markup before it enters the message", async (
     sendMail: async message => { capturedMessage = message; return {}; }
   });
   const res = responseDouble();
-  await handler({ body: validPayload({ summary: "<script>alert('x')</script>" }) }, res);
+  await handler({ body: validPayload({ summary: "<script>alert('x')</script>" }), headers: { "idempotency-key": "test-submission-key-0001" } }, res);
   assert.equal(res.statusCode, 200);
   assert.doesNotMatch(capturedMessage.html, /<script>/i);
   assert.match(capturedMessage.html, /&lt;script&gt;/i);
@@ -180,7 +200,7 @@ test("status-update failure after successful email is not misreported as deliver
     }
   });
   const res = responseDouble();
-  await handler({ body: validPayload() }, res);
+  await handler({ body: validPayload(), headers: { "idempotency-key": "test-submission-key-0001" } }, res);
   assert.equal(calls, 2);
   assert.equal(res.statusCode, 503);
   assert.equal(res.payload.emailSent, true);
