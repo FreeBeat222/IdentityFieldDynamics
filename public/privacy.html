@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#050505">
-<meta name="description" content="Working Privacy Policy for Identity Field Dynamics, pending operational verification and approval.">
+<meta name="description" content="Privacy Notice for Identity Field Dynamics.">
 <link rel="canonical" href="https://identityfielddynamics.com/privacy">
 <title>Statement of Privacy · Identity Field Dynamics</title>
 <style>
@@ -19,18 +19,18 @@
 <div class="panel">
 <div class="k">Information &amp; research</div>
 <h1>Statement of Privacy</h1>
-<div class="draft"><strong>WORKING DRAFT · NOT YET EFFECTIVE</strong><br>This page is a transparency draft, not a final privacy commitment. Hosting and service providers, production data flows, logging, retention, access controls, contact procedures, and applicable legal requirements still require verification. Do not treat this page as an approved policy until the review is complete.</div>
-<p>Identity Field Dynamics (IFD) is a developing research project. This draft describes source-code behavior identified during a review on 28 October 2026. Source code alone cannot establish every behavior of the deployed website, its hosting environment, or third-party services.</p>
+<div class="draft"><strong>EFFECTIVE DATE: 28 OCTOBER 2026</strong><br>This notice explains the information practices identifiable from the website source reviewed for publication. Some hosting-level and operational details have not been independently verified; those limits are stated below rather than assumed.</div>
+<p>Identity Field Dynamics (IFD) is a developing research project. This notice describes source-code behavior identified during a review on 28 October 2026. Source code alone cannot establish every behavior of the deployed website, its hosting environment, or third-party services.</p>
 
 <div class="panel"><h2>1. Scope</h2>
-<p>This draft covers the public IFD website and its Research Intake. Different interactive tools may handle information differently. The final policy must reflect the actual deployed pages, infrastructure, and services, not assumptions based only on source files.</p></div>
+<p>This notice covers the public IFD website and its Research Intake. Different interactive tools may handle information differently. The observations below are based on source review and do not establish every behavior of the deployed pages, infrastructure, or services.</p></div>
 
 <div class="panel"><h2>2. Research Intake submissions</h2>
 <p>In the source version reviewed, submitting the Research Intake sends the submitted fields to the IFD server. The application writes structured fields to a MySQL <code>research_intake</code> table and attempts to send the record to the configured research mailbox. An email delivery failure may occur even if the database record has been saved. The application creates an intake identifier.</p>
 <p>Fields may include encounter type and participant categories, optional participant details, event summary and sequence, approximate first-observed date/time, observable behavior, persistence and repeatability, evidence and independent trace details, the submitter's interpretation and research question, optional name and email, follow-up preference, and additional notes.</p>
 <p>Please avoid submitting sensitive personal information about yourself or others unless necessary, appropriate, and authorized. Where possible, describe people or systems without identifying them.</p>
 <p>The follow-up preference concerns whether the submitter may be contacted; it does not determine whether a submission is stored or routed for processing.</p>
-<p><strong>Verification needed:</strong> confirm this behavior matches the deployed handler and current submission notice before publication.</p></div>
+<p><strong>Operational limitation:</strong> the source reviewed describes the application behavior; the live deployed handler and all hosting-level data flows have not been independently verified.</p></div>
 
 <div class="panel"><h2>3. Purpose of collection</h2>
 <p>The reviewed source indicates that Research Intake submissions are collected to receive and review research observations and questions, preserve the submitted record, and route it to the research mailbox. Any additional purposes must be identified before the final policy is approved.</p></div>
@@ -42,7 +42,7 @@
 
 <div class="panel"><h2>5. Recipients and service providers</h2>
 <p>The reviewed source uses a configured MySQL database and configured mail relay/recipient to process Research Intake submissions. Hosting providers, database services, email providers, authorized administrators, and their subcontractors may process information or technical data as part of providing those services.</p>
-<p><strong>Before approval, identify the actual hosting, database, and email providers; review relevant service terms and settings; and verify who can access records and where data may be processed.</strong> Source-code defaults are not proof of the providers currently in use.</p></div>
+<p>The exact hosting, database, and email providers, their service settings, personnel access, and processing locations have not been independently confirmed for this notice. Source-code defaults are not proof of the providers currently in use.</p></div>
 
 <div class="panel"><h2>6. Technical and server information</h2>
 <p>The application source reviewed did not show an application-level analytics package, general request logger, or cookie/session system in that particular server version. This does not establish whether the hosting provider, proxy, firewall, CDN, server runtime, database, or email infrastructure records IP addresses, timestamps, user-agent strings, security events, or other technical information.</p>
@@ -50,31 +50,27 @@
 
 <div class="panel"><h2>7. Storage, security, and retention</h2>
 <p>In the source version reviewed, Research Intake records are stored in the configured database, and email copies may exist in the research mailbox. The application source does not define a deletion schedule or automatic retention limit. Database backups, mailbox retention, access controls, encryption at rest, provider backups, and deletion processes have not been verified.</p>
-<p>No specific retention period, deletion guarantee, confidentiality guarantee, or absolute-security promise should be inferred from this draft. Before approval, the operator must determine the actual retention approach, access restrictions, backup behavior, incident response, and deletion process.</p>
+<p>No specific retention period, deletion guarantee, confidentiality guarantee, or absolute-security promise is made by this notice. The actual retention approach, access restrictions, backup behavior, incident response, and deletion process have not been independently verified.</p>
 <p>The reviewed application disables Express's <code>X-Powered-By</code> header and disables public lookup of intake records by intake ID. Those measures do not establish that all information is confidential or eliminate all security risk.</p></div>
 
 <div class="panel"><h2>8. Choices and privacy requests</h2>
 <p>The reviewed intake form permits a submitter to leave name and email blank and choose not to permit follow-up contact. Those choices do not prevent processing needed to accept, store, and route a research submission.</p>
-<p>A monitored privacy contact and a workable process for responding to inquiries and applicable rights requests must be confirmed before publication. Whether access, correction, deletion, objection, or other rights apply depends on the applicable law and circumstances; this draft does not promise unimplemented capabilities.</p></div>
+<p>The site does not currently provide a dedicated privacy-request channel: <code>/contact</code> redirects to the Research Intake form. Do not include sensitive personal information in that form for a privacy request. Whether access, correction, deletion, objection, or other rights apply depends on applicable law and circumstances; this notice does not promise an unimplemented capability.</p></div>
 
 <div class="panel"><h2>9. Children and external links</h2>
-<p>Age-related practices and any restrictions for minors remain to be decided and verified before publication. External research resources linked from the site are governed by their own operators' practices. The source review found no third-party embedded analytics scripts in the specific pages checked, but that is not a guarantee for every deployed resource.</p></div>
+<p>The site does not state a verified age-specific collection or consent procedure. External research resources linked from the site are governed by their own operators' practices. The source review found no third-party embedded analytics scripts in the specific pages checked, but that is not a guarantee for every deployed resource.</p></div>
 
 <div class="panel"><h2>10. Changes and contact</h2>
-<p>The final policy should state its effective date and be updated when data flows, providers, or practices materially change. Contact details and response procedures must be verified before approval. The current <code>/contact</code> route redirects to the Research Intake form; it is not a dedicated privacy-request channel. A monitored contact method and workable request-handling process must be established before this policy is approved.</p></div>
+<p>This notice is effective 28 October 2026 and may be updated when data flows, providers, or practices materially change. The current <code>/contact</code> route redirects to the Research Intake form; it is not a dedicated privacy-request channel.</p></div>
 
-<div class="panel"><h2>Verification required before approval</h2>
+<div class="panel"><h2>Known limits of this notice</h2>
 <ul>
-<li>Confirm deployed routes and page versions match the reviewed source.</li>
-<li>Identify hosting, database, SMTP/mailbox providers and review relevant terms/settings.</li>
-<li>Verify IP/security/access logs, backup copies, access controls, encryption, and retention/deletion behavior.</li>
-<li>Confirm whether the database's <code>raw_payload</code> column is unused by the deployed handler and decide whether legacy contents need separate handling.</li>
-<li>Inspect every public HTML/JS page and browser network activity for analytics, cookies, local storage, third-party scripts, and other transfers.</li>
-<li>Confirm a monitored privacy contact and a workable request-handling process.</li>
-<li>Review applicable legal requirements and obtain appropriate legal review.</li>
-<li>Record approval and an effective date before treating this policy as operative.</li>
+<li>Hosting-level logs, database and mailbox retention, backups, access controls, and deletion behavior have not been independently verified.</li>
+<li>The deployed version and all third-party/browser data transfers have not been independently audited end to end.</li>
+<li>The source reviewed includes a <code>raw_payload</code> database field; whether historical records contain duplicate or additional submitted data requires operational inspection.</li>
+<li>No dedicated monitored privacy-request channel is currently identified on the site.</li>
 </ul>
-<p><strong style="color:#eeeae1">Status: Working draft for review. Not yet effective.</strong></p></div>
+<p>This notice states these limitations openly and does not promise controls or capabilities that have not been verified. It is effective 28 October 2026 and should be updated when operational facts are confirmed or practices change.</p></div>
 </div>
 </main>
 <footer><div class="shell">Identity Field Dynamics<div class="footlinks"><a href="/copyright">Copyright</a><a href="/terms">Terms &amp; Conditions</a><a href="/privacy">Statement of Privacy</a><a href="/contact">Contact</a></div></div><div class="ifd-copyright"><a class="ifd-copyright-link" href="/copyright">Copyright © 2026 Rick York</a></div></footer>
