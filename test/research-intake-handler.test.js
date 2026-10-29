@@ -120,6 +120,25 @@ test("repeated submission key returns the existing saved record without sending 
   assert.equal(transports.length, 0);
 });
 
+test("repeated key for a saved record with failed email requires reconciliation and does not resend", async () => {
+  const duplicateError = Object.assign(new Error("duplicate key"), { code: "ER_DUP_ENTRY" });
+  const { handler, queries, transports } = setup({
+    env: { SMTP_USER: "sender@example.org", SMTP_PASS: "test-only" },
+    queryImpl: async (_sql, _params, count) => {
+      if (count === 1) throw duplicateError;
+      return [[{ intake_id: "IFD-RI-2026-needs-reconciliation", email_status: "failed" }], []];
+    }
+  });
+  const res = responseDouble();
+  await handler({ body: validPayload(), headers: { "idempotency-key": "test-submission-key-0001" } }, res);
+  assert.equal(res.statusCode, 409);
+  assert.equal(res.payload.intakeId, "IFD-RI-2026-needs-reconciliation");
+  assert.equal(res.payload.emailSent, false);
+  assert.match(res.payload.error, /do not resubmit/i);
+  assert.equal(queries.length, 2);
+  assert.equal(transports.length, 0);
+});
+
 test("missing SMTP configuration records status and does not attempt email", async () => {
   const { handler, queries, transports } = setup();
   const res = responseDouble();
