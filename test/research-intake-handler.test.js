@@ -134,7 +134,7 @@ test("SMTP transport initialization failure is recorded as email failure", async
   assert.equal(res.statusCode, 502);
   assert.match(res.payload.error, /record was saved, but email delivery failed/i);
   assert.match(res.payload.error, /do not resubmit/i);
-  assert.match(res.payload.intakeId, /^IFD-RI-\\d{4}-\\d+-[a-z0-9]+$/i);
+  assert.match(res.payload.intakeId, /^IFD-RI-\d{4}-\d+-[a-z0-9]+$/i);
   assert.equal(res.payload.emailSent, false);
   assert.match(queries[1].sql, /email_status='failed'/);
   assert.equal(queries[1].params[0], "transport setup failed");
@@ -150,7 +150,7 @@ test("email failure preserves saved record and records email failure", async () 
   assert.equal(res.statusCode, 502);
   assert.match(res.payload.error, /record was saved, but email delivery failed/i);
   assert.match(res.payload.error, /do not resubmit/i);
-  assert.match(res.payload.intakeId, /^IFD-RI-\\d{4}-\\d+-[a-z0-9]+$/i);
+  assert.match(res.payload.intakeId, /^IFD-RI-\d{4}-\d+-[a-z0-9]+$/i);
   assert.equal(res.payload.emailSent, false);
   assert.match(queries[1].sql, /email_status='failed'/);
   assert.equal(queries[1].params[0], "relay unavailable");
