@@ -309,3 +309,22 @@ test("explicit SMTP recipient rejection is recorded as delivery failure", async 
   assert.match(queries[1].params[0], /rejected one or more research intake recipients/i);
   assert.equal(transports.length, 1);
 });
+
+
+test("unexpected request properties are not persisted in the structured intake record", async () => {
+  const { handler, queries, transports } = setup();
+  const res = responseDouble();
+  await handler({
+    body: {
+      ...validPayload(),
+      unexpectedTrackingData: "must-not-be-stored",
+      raw_payload: "must-not-be-stored",
+      arbitraryNestedObject: { secret: "must-not-be-stored" }
+    },
+    headers: { "idempotency-key": "test-submission-key-0001" }
+  }, res);
+  assert.equal(res.statusCode, 503); // No SMTP configuration in this fixture.
+  assert.doesNotMatch(queries[0].sql, /raw_payload|unexpectedTrackingData|arbitraryNestedObject/i);
+  assert.equal(JSON.stringify(queries[0].params).includes("must-not-be-stored"), false);
+  assert.equal(transports.length, 0);
+});
