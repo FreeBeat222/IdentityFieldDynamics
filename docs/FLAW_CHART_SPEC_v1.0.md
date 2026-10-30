@@ -88,7 +88,7 @@ Use this compact assessment when an entry concerns a feature, capability, limita
 1. **IDENTIFY THE FEATURE** — State exactly what is being examined; preserve its source, version, and observed behavior.
 2. **DEFINE THE JOB** — State the intended function, beneficiary or system, and conditions of use.
 3. **ASSESS ITS VALUE** — Examine five dimensions: functional contribution; research or discovery contribution; efficiency and resource contribution; alternative-use potential; and risks, costs, or unintended consequences.
-4. **COMPARE DISPOSITIONS** — Consider correction, removal, redesign, reinforcement, development, preservation, strategic exploitation, monitoring, or deferral. Explain why the selected option fits the context.
+4. **COMPARE DISPOSITIONS** — Consider correction, removal, redesign, reinforcement, development, preservation, strategic exploitation, monitoring, deferral, or rejection of the finding. Explain why the selected option fits the context. Reject a proposed finding, interpretation, or intervention when the evidence or reasoning does not justify accepting it; preserve the rationale and supporting evidence.
 5. **VERIFY THE DECISION** — Define the observable result that would support the selected disposition; record the method, result, and limitations. A recommendation is not a demonstrated outcome.
 
 For each assessment dimension, use one evidence label: **DEMONSTRATED**, **SUPPORTED BUT INCOMPLETE**, **PLAUSIBLE / UNTESTED**, or **UNKNOWN**. These labels describe the state of evidence, not a numerical score or ranking. Do not aggregate them into a score. If evidence is insufficient, preserve uncertainty and defer judgment where appropriate.
