@@ -1,0 +1,79 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#050505"><meta name="description" content="Research, Construction, Verification, and Archiving."><link rel="canonical" href="https://identityfielddynamics.com/current-ifd/four-channel-workflow.html"><title>The Four-Channel Workflow · Identity Field Dynamics</title><style>
+:root{--bg:#080808;--panel:#10100e;--gold:#c6a75d;--bright:#dfc77f;--text:#e9e6df;--muted:#c3beb4;--soft:#99948b;--line:rgba(198,167,93,.24);--line2:rgba(203,208,212,.14)}
+*{box-sizing:border-box;font-family:"Aptos", "Segoe UI", sans-serif}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;background:var(--bg);color:var(--text);font-size:16px;line-height:1.65}
+a{color:var(--bright);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px;color:var(--text)}
+.shell{width:min(1000px,calc(100% - 40px));margin:auto}
+header{border-bottom:1px solid var(--line2);padding:14px 0}
+.headrow{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand,.back,.eyebrow,.kicker,.meta,.toc,.tag,.label,.footlinks,.smallcaps{font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+.brand{color:var(--soft)}.back{color:var(--gold)}
+main{padding:42px 0 64px}
+.hero{max-width:78ch}
+.eyebrow,.kicker{color:var(--gold)}
+.hero h1{font-family:"Aptos Display","Aptos","Segoe UI",sans-serif;font-size:24px;line-height:1.25;font-weight:600;letter-spacing:.02em;margin:12px 0}
+.gold{color:var(--bright)}
+.hero .sub{font-size:16px;line-height:1.6;color:var(--muted);max-width:76ch;margin:0}
+.meta{display:flex;gap:8px 18px;flex-wrap:wrap;color:var(--soft);margin-top:16px}
+.notice{font-size:16px;line-height:1.65;border-left:2px solid var(--gold);background:rgba(198,167,93,.045);padding:14px 18px;margin:22px 0;color:var(--muted)}
+.notice strong{color:var(--bright)}
+.toc{display:flex;gap:8px 16px;flex-wrap:wrap;border-top:1px solid #292929;border-bottom:1px solid #292929;padding:12px 0;margin:24px 0 4px}
+.toc a{font-size:14px;color:var(--muted)}
+.section{padding:36px 0 0;scroll-margin-top:18px}
+.section h2{font-size:24px;line-height:1.25;font-weight:700;margin:8px 0 14px}
+.section h3,.card h3{font-size:16px;line-height:1.35;font-weight:700;color:var(--text);margin:22px 0 8px}
+.section p,.section li{font-size:16px;line-height:1.65;color:var(--muted)}
+.section p{max-width:78ch;margin:10px 0}
+.section ul,.section ol{padding-left:22px}
+.diagram{border:1px solid var(--line);background:linear-gradient(145deg,rgba(198,167,93,.045),rgba(255,255,255,.01));padding:20px;margin:18px 0}
+.diagram-title{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.node{border:1px solid rgba(198,167,93,.32);background:#0b0b0b;padding:12px 14px;text-align:center}
+.node b{display:block;font-size:16px;font-weight:700;letter-spacing:.04em;color:var(--text)}
+.node span{display:block;font-size:14px;line-height:1.5;color:var(--muted);margin-top:5px}
+.arrow{text-align:center;color:var(--gold);font-size:16px;line-height:1.25}
+.branch{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.branch3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.card{border:1px solid var(--line2);border-top:1px solid var(--line);background:rgba(255,255,255,.015);padding:16px}
+.card h3{margin:0 0 6px}.card p{font-size:16px;line-height:1.55;color:var(--muted);margin:0}
+.equation{font-size:16px;line-height:1.5;color:var(--bright);text-align:center;padding:12px 6px;overflow-wrap:anywhere}
+.tag{display:inline-block;border:1px solid rgba(198,167,93,.3);padding:4px 7px;color:var(--muted);margin:0 6px 7px 0}
+.rule{border-top:1px solid #292929;margin:20px 0}
+.quote{font-size:16px!important;font-weight:700;color:var(--text)!important;line-height:1.6!important}
+.small{font-size:14px!important;line-height:1.55!important;color:var(--soft)!important}
+.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);margin:18px 0}
+.flow article{background:#0b0b0b;padding:16px}
+.flow .num{font-size:14px;color:var(--gold);letter-spacing:.08em}
+.flow h3{font-size:16px;font-weight:700;color:var(--text);letter-spacing:.06em;margin:8px 0 6px}
+.flow p{font-size:16px;line-height:1.55;color:var(--muted);margin:0}
+.linkgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);margin:18px 0}
+.linkcard{display:block;background:#0b0b0b;padding:16px}
+.linkcard .label{font-size:14px;color:var(--gold)}
+.linkcard strong{display:block;font-size:16px;font-weight:700;color:var(--text);margin:6px 0}
+.linkcard span:last-child{display:block;font-size:16px;line-height:1.55;color:var(--muted)}
+.linkcard:hover{background:#141414}
+.status-list{display:grid;gap:8px;margin:16px 0}
+.status-item{border:1px solid var(--line2);padding:13px 16px;background:rgba(255,255,255,.012)}
+.status-item strong{display:block;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
+.status-item p{font-size:16px;line-height:1.55;margin:0}
+.footer{border-top:1px solid #292929;margin-top:44px;padding-top:18px;color:var(--soft);font-size:14px;line-height:1.6;letter-spacing:.06em;text-transform:uppercase}
+.footer a{color:#c9b77f}
+.footlinks{display:flex;gap:8px 16px;flex-wrap:wrap;margin-top:8px}
+.toplink{display:inline-block;margin-top:16px;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+#architecture .node b a,#architecture .card h3 a{color:inherit;text-decoration:none}#architecture .node b a:hover,#architecture .card h3 a:hover{color:var(--bright);text-decoration:underline;text-underline-offset:4px}#architecture .node b a:focus-visible,#architecture .card h3 a:focus-visible{outline:2px solid var(--bright);outline-offset:4px}a:focus-visible{outline:2px solid var(--bright);outline-offset:4px}
+@media(max-width:760px){main{padding:30px 0 48px}.branch,.branch3,.linkgrid{grid-template-columns:1fr}.flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:440px){.flow{grid-template-columns:1fr}.shell{width:calc(100% - 30px)}.headrow{align-items:flex-start;flex-direction:column;gap:8px}}
+
+
+.backline{border-top:1px solid #292929;margin-top:30px;padding-top:16px;font-size:14px;letter-spacing:.04em}.backline a{color:var(--bright)}</style><link rel="stylesheet" href="/copyright.css"></head><body><header><div class="shell headrow"><a class="back" href="/current-ifd-formulation.html#architecture">← THE CURRENT IFD FORMULATION</a><div class="brand">Explanatory record · The Four-Channel Workflow</div></div></header><main class="shell"><section class="hero"><div class="eyebrow">Identity Field Dynamics · Explanatory Page</div><h1>The Four-Channel Workflow</h1><p class="sub">Research, Construction, Verification, and Archiving.</p></section><div class="notice"><strong>Relationship to the formulation.</strong> This page explains an element or supporting method associated with the centralized architecture. It does not replace or expand THE CURRENT IFD FORMULATION. The return link identifies the relevant point in the central map.</div><section class="section" id="workflow">
+<div class="kicker">11 / Distributed development architecture</div><h2>The four-channel workflow.</h2>
+<p>The formulation is developed through four coordinated channels operating on one shared knowledge substrate. These are distinct functions, not four competing versions of the work. Coordination and dependency tracking support the channels; they are not a fifth channel.</p>
+<div class="flow">
+<article><div class="num">CHANNEL 01</div><h3>RESEARCH</h3><p>Gather sources, observations, questions, evidence, and candidate relationships. Preserve provenance and distinguish what is observed from what is inferred.</p></article>
+<article><div class="num">CHANNEL 02</div><h3>CONSTRUCTION</h3><p>Define concepts, articulate relationships, assemble the formulation, build diagrams, and develop instruments or explanatory models.</p></article>
+<article><div class="num">CHANNEL 03</div><h3>VERIFICATION</h3><p>Check derivations, internal consistency, evidence, links, implementation, and whether proposed corrections actually resolve identified problems.</p></article>
+<article><div class="num">CHANNEL 04</div><h3>ARCHIVING</h3><p>Preserve sources, versions, decisions, findings, revisions, and unresolved questions so the development history remains recoverable.</p></article>
+</div>
+<p>The working order is not a one-way conveyor belt. Research may reopen construction; verification may return a claim for revision; archiving preserves every material state. The shared discipline is: <strong>HARVEST FIRST. ABSTRACT SECOND. CANONIZE LAST.</strong></p>
+</section><p class="backline"><a href="/current-ifd-formulation.html#architecture">← Return to the relevant element in THE CURRENT IFD FORMULATION</a></p><div class="footer">Identity Field Dynamics · <a href="/current-ifd-formulation.html">The Current IFD Formulation</a> · <a href="/">Home</a><div class="ifd-copyright"><a class="ifd-copyright-link" href="/copyright">Copyright © 2026 Rick York</a></div></div></main></body></html>
