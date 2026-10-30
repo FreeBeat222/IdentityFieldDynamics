@@ -125,7 +125,7 @@ Every formal entry should contain:
 
 ## 7. Verification standard
 
-A correction may be marked RESOLVED only when the entry records:
+A corrective action may be marked RESOLVED only when the entry records:
 
 - the original issue and its acceptance criteria;
 - the exact correction and the version in which it appears;
@@ -134,7 +134,7 @@ A correction may be marked RESOLVED only when the entry records:
 - checks for regressions, displaced problems, or new contradictions;
 - remaining limitations and the scope of the resolution.
 
-If any required element is missing, retain a non-final status or explain the justified exception. “Resolved” is bounded by the tested scope; it does not certify the entire theory or system.
+If any required element is missing, retain a non-final status or explain the justified exception. “Resolved” is bounded by the tested scope; it does not certify the entire theory or system. Non-corrective dispositions (such as preservation, strategic exploitation, monitoring, or development) are recorded as dispositions, not mislabeled as corrections or as proof that an identified defect has been resolved. Their outcomes should be reviewed against the stated purpose, risks, and observable consequences.
 
 ## 8. Four-channel integration
 
@@ -170,6 +170,11 @@ The repository record is the durable archive. The public instrument page explain
 ## Exact passage / observed behavior
 
 ## Issue statement
+
+## Context / intended use
+
+## Potential utility / opportunity
+[Distinguish plausible utility from demonstrated utility.]
 
 ## Claim or assumption at risk
 
