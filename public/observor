@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>OBSERVOR 2.0 — Phenomenon / Ablation</title>
+<title>OBSERVOR™ 2.0 — Phenomenon / Ablation</title>
 <style>
 :root{--bg:#090909;--panel:#141414;--line:#303030;--text:#eee;--muted:#aaa;--gold:#c9a85c;--good:#8fd19e}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,Segoe UI,sans-serif}
@@ -18,7 +18,7 @@ pre{white-space:pre-wrap;max-height:340px;overflow:auto;background:#0b0b0b;paddi
 </head>
 <body>
 <main>
-<h1>OBSERVOR 2.0</h1>
+<h1>OBSERVOR™ 2.0</h1>
 <p class="lede"><b>Phenomenon before identity.</b> Measure behavior first. Systematically manipulate candidate properties. Observe what changes or disappears. Do not assign an identity construct unless the data warrant one.</p>
 
 <div class="grid">
