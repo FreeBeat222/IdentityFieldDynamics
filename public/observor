@@ -64,12 +64,12 @@ pre{white-space:pre-wrap;max-height:340px;overflow:auto;background:#0b0b0b;paddi
 
 <section class="panel full">
 <h2>5 — Research log</h2>
-<pre id="log">OBSERVOR 2.0 initialized. Identity inference disabled by design.</pre>
+<pre id="log">OBSERVOR™ 2.0 initialized. Identity inference disabled by design.</pre>
 </section>
 </div>
 </main>
 <script>
-const S={started:null,records:[],log:["OBSERVOR 2.0 initialized. Identity inference disabled by design."]};
+const S={started:null,records:[],log:["OBSERVOR™ 2.0 initialized. Identity inference disabled by design."]};
 const $=id=>document.getElementById(id);
 function now(){return new Date().toISOString()}
 function cfg(){return{study:$('study').value.trim(),property:$('property').value.trim(),ablation:$('ablation').value,condition:$('condition').value,stimulus:$('stimulus').value.trim(),question:$('question').value.trim()}}
