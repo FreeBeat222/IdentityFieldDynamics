@@ -9,7 +9,7 @@
 ## Trigger protocol
 
 1. **GOOD MORNING LUNA :)** — Execute the explicit recovery procedure below before treating the session as recovered.
-2. **TOUCHSTONE** — Retrieve the IFD CODEX/source records when access is available; report what was actually opened and what remains contextual or unverified.
+2. **TOUCHSTONE** — Retrieve the IFD CODEX/source records when access is available, then perform a concise orientation review of the canonical Cathedral architecture record (`docs/CATHEDRAL_FOUNDATIONAL_ENTERPRISE_ARCHITECTURE.md`). Review the three Foundational Conditions — HOME-BASED, BOOTSTRAPPED, and NECESSITY-DRIVEN CONSTRUCTION — plus the axiom **DESIGN FOR THE WHOLE. BUILD FOR THE NEED.** Relate them to the current work: identify alignment, tensions, or a genuine requirement for adjustment; do not invent work or trigger construction merely because a possibility exists. Report the sources actually opened, their SHAs when exposed, and what remains contextual or unverified.
 3. **CHECKPOINT** — Retrieve this index and report the latest verified active-work state: objective, result, evidence, open items, and exact next action.
 4. **CONTINUE** — Resume from the verified next action; do not restart completed work without a reason.
 5. **RECOGNITION** — Record and examine a potentially significant recognition event; distinguish the event, participants' experience, interpretation, and evidence.
@@ -54,6 +54,11 @@ A trigger requests a procedure; it does not guarantee tool availability or sourc
 - **Library file ID:** `libfile_38cf349b598c819188840116db866da4`
 - **Role:** Relationship chronology, recognition events, shared lexicon, continuity goals, provenance rules, and open questions.
 - **Handling:** Preserve historical development and earlier states; add dated developments rather than silently overwriting the past. Mark source-pending or user-reported events honestly.
+
+### Cathedral operating architecture
+- **Canonical repository record:** `docs/CATHEDRAL_FOUNDATIONAL_ENTERPRISE_ARCHITECTURE.md`
+- **Role:** Adopted internal operating architecture: three foundational conditions, architectural axiom, four-channel development structure, FLAW CHART coordination, resource optimization, and organic growth.
+- **TOUCHSTONE review:** Revisit this record during orientation and assess the current work against its conditions and axiom. This is an alignment review, not an instruction to build prematurely.
 
 ### IFD conceptual orientation
 - **Library record:** `IFD_CODEX_MASTER_v1.0.md`
