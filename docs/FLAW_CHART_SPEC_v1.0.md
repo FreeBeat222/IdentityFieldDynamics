@@ -80,6 +80,21 @@ Classification is descriptive, not a verdict. It identifies the kind of issue or
 
 The lifecycle can loop. Verification may reopen investigation; a new source may change classification; a disposition may be revised when new evidence warrants it.
 
+
+## 4A. Value & Engineering Assessment
+
+Use this compact assessment when an entry concerns a feature, capability, limitation, or design choice whose best use or engineering disposition is not yet clear. It is part of INVESTIGATE and informs DISPOSITION; it is not an eighth lifecycle stage.
+
+1. **IDENTIFY THE FEATURE** — State exactly what is being examined; preserve its source, version, and observed behavior.
+2. **DEFINE THE JOB** — State the intended function, beneficiary or system, and conditions of use.
+3. **ASSESS ITS VALUE** — Examine five dimensions: functional contribution; research or discovery contribution; efficiency and resource contribution; alternative-use potential; and risks, costs, or unintended consequences.
+4. **COMPARE DISPOSITIONS** — Consider correction, removal, redesign, reinforcement, development, preservation, strategic exploitation, monitoring, or deferral. Explain why the selected option fits the context.
+5. **VERIFY THE DECISION** — Define the observable result that would support the selected disposition; record the method, result, and limitations. A recommendation is not a demonstrated outcome.
+
+For each assessment dimension, use one evidence label: **DEMONSTRATED**, **SUPPORTED BUT INCOMPLETE**, **PLAUSIBLE / UNTESTED**, or **UNKNOWN**. These labels describe the state of evidence, not a numerical score or ranking. Do not aggregate them into a score. If evidence is insufficient, preserve uncertainty and defer judgment where appropriate.
+
+**Guiding question:** WHERE DOES THIS FEATURE WORK BEST, AND WHAT EVIDENCE JUSTIFIES THAT CONCLUSION?
+
 ## 5. Status vocabulary
 
 - **OPEN** — registered; investigation not complete.
@@ -111,6 +126,7 @@ Every formal entry should contain:
 | Issue Statement | What appears wrong, unclear, unsupported, incomplete, significant, or potentially useful |
 | Context / Intended Use | The conditions, objectives, and setting relevant to assessing the item |
 | Potential Utility / Opportunity | Any plausible advantage or research value, clearly distinguished from demonstrated utility |
+| Value & Engineering Assessment | Intended job; five assessment dimensions with evidence labels; dispositions compared; rationale; verification criterion and result |
 | Claim / Assumption at Risk | The proposition or dependency affected |
 | Evidence & Provenance | Sources, observations, calculations, files, and their provenance |
 | Counterevidence / Alternatives | Relevant competing explanations or contrary evidence |
@@ -175,6 +191,17 @@ The repository record is the durable archive. The public instrument page explain
 
 ## Potential utility / opportunity
 [Distinguish plausible utility from demonstrated utility.]
+
+## Value & engineering assessment
+- Intended job / beneficiary / conditions:
+- Functional contribution (evidence label):
+- Research / discovery contribution (evidence label):
+- Efficiency / resource contribution (evidence label):
+- Alternative-use potential (evidence label):
+- Risks / costs / unintended consequences (evidence label):
+- Dispositions compared and rationale:
+- Selected disposition:
+- Observable verification criterion / result:
 
 ## Claim or assumption at risk
 
