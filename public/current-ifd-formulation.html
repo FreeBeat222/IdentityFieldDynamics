@@ -13,6 +13,77 @@
 a:focus-visible{outline:2px solid var(--bright);outline-offset:4px}
 @media(max-width:760px){main{padding-top:48px}.branch,.branch3,.linkgrid{grid-template-columns:1fr}.flow{grid-template-columns:repeat(2,minmax(0,1fr))}.section p,.section li{font-size:15px}.mission p{font-size:15px}}
 @media(max-width:440px){.flow{grid-template-columns:1fr}.headrow{align-items:flex-start;flex-direction:column;gap:9px}}
+
+/* IFD editorial composition: compact, consistent, reader-first */
+:root{--text:#e9e6df;--muted:#c3beb4;--soft:#99948b;--gold:#c6a75d;--bright:#dfc77f}
+*{font-family:Arial,Helvetica,sans-serif!important}
+body{font-size:16px!important;line-height:1.65;color:var(--text)}
+.shell{width:min(1000px,calc(100% - 40px))}
+main{padding:42px 0 64px}
+header{padding:14px 0}
+.hero{max-width:78ch}
+.hero h1{font-size:24px!important;line-height:1.25!important;letter-spacing:.02em;font-weight:700;margin:12px 0}
+.hero .sub{font-size:16px!important;line-height:1.6!important;max-width:76ch;color:var(--muted)}
+.brand,.back,.eyebrow,.kicker,.meta,.toc,.tag,.label,.footlinks,.smallcaps,
+.notice,.diagram-title,.node span,.node b,.arrow,.equation,.small,.flow .num,.flow h3,.flow p,
+.linkcard .label,.linkcard strong,.linkcard span:last-child,.status-item strong,.footer,.toplink{font-size:14px!important}
+.brand,.back,.eyebrow,.kicker,.meta,.toc,.tag,.label,.footlinks,.smallcaps{letter-spacing:.08em}
+.eyebrow,.kicker,.diagram-title{color:var(--gold)}
+.meta{margin-top:16px;color:var(--soft)}
+.notice{line-height:1.65!important;padding:14px 18px;margin:22px 0;color:var(--muted)}
+.toc{gap:8px 16px;padding:12px 0;margin:24px 0 4px}
+.toc a{font-size:14px!important;color:var(--muted)}
+.section{padding:36px 0 0;scroll-margin-top:18px}
+.section h2{font-size:24px!important;line-height:1.25!important;font-weight:700;margin:8px 0 14px;letter-spacing:0}
+.section h3,.card h3{font-size:16px!important;line-height:1.35!important;font-weight:700;color:var(--text);margin:22px 0 8px}
+.section p,.section li{font-size:16px!important;line-height:1.65!important;color:var(--muted)}
+.section p{max-width:78ch;margin:10px 0}
+.section ul,.section ol{padding-left:22px}
+.diagram{padding:20px;margin:18px 0}
+.diagram-title{margin-bottom:12px}
+.node{padding:12px 14px}
+.node b{font-weight:700!important;color:var(--text)}
+.node span{line-height:1.5!important;color:var(--muted)}
+.arrow{line-height:1.25!important;color:var(--gold)}
+.branch,.branch3{gap:10px}
+.card{padding:16px}
+.card h3{margin:0 0 6px}
+.card p{font-size:16px!important;line-height:1.55!important;color:var(--muted)}
+.equation{font-family:Arial,Helvetica,sans-serif!important;color:var(--text);padding:12px 6px;overflow-wrap:anywhere}
+.tag{padding:4px 7px;color:var(--muted)}
+.rule{margin:20px 0}
+.quote{font-size:16px!important;line-height:1.6!important;color:var(--text)!important;font-weight:700}
+.small{line-height:1.55!important;color:var(--soft)!important}
+.flow{gap:1px;margin:18px 0}
+.flow article{padding:16px}
+.flow .num{color:var(--gold);letter-spacing:.08em}
+.flow h3{font-weight:700!important;color:var(--text);letter-spacing:.06em;margin:8px 0 6px}
+.flow p{line-height:1.55!important;color:var(--muted)}
+.linkgrid{margin:18px 0}
+.linkcard{padding:16px}
+.linkcard .label{color:var(--gold)}
+.linkcard strong{font-weight:700!important;color:var(--text);margin:6px 0}
+.linkcard span:last-child{line-height:1.55!important;color:var(--muted)}
+.status-list{gap:8px;margin:16px 0}
+.status-item{padding:13px 16px}
+.status-item strong{font-weight:700!important;color:var(--gold);letter-spacing:.08em;margin-bottom:5px}
+.status-item p{font-size:16px!important;line-height:1.55!important}
+.footer{margin-top:44px;padding-top:18px;line-height:1.6!important;letter-spacing:.06em}
+.footlinks{gap:8px 16px;margin-top:8px}
+.toplink{margin-top:16px;letter-spacing:.08em}
+a{color:var(--bright)}
+a:hover{color:var(--text)}
+@media(max-width:760px){
+ main{padding:30px 0 48px}
+ .branch,.branch3,.linkgrid{grid-template-columns:1fr}
+ .flow{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:440px){
+ .flow{grid-template-columns:1fr}
+ .shell{width:min(100% - 30px,1000px)}
+ .headrow{align-items:flex-start;flex-direction:column;gap:8px}
+}
+
 </style>
 <link rel="stylesheet" href="/copyright.css">
 </head>
