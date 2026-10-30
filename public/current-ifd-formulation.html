@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050505">
+<meta name="description" content="The Current IFD Formulation: the proposed integrated architecture of identity within Identity Field Dynamics, with concepts, relationships, research status, and unresolved questions.">
+<link rel="canonical" href="https://identityfielddynamics.com/current-ifd-formulation.html">
+<title>The Current IFD Formulation · Identity Field Dynamics</title>
+<style>
+:root{--bg:#050505;--panel:#0b0b0b;--gold:#d6b15a;--bright:#f3da8c;--text:#eeeae1;--muted:#aaa69d;--line:rgba(214,177,90,.24);--soft:#77736b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% 0,rgba(214,177,90,.09),transparent 38rem),#050505;color:var(--text);font-family:Inter,system-ui,sans-serif}a{color:var(--bright);text-decoration:none}a:hover{text-decoration:underline}.shell{width:min(1040px,calc(100% - 36px));margin:auto}header{border-bottom:1px solid rgba(203,208,212,.12);padding:22px 0}.brand{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#b8b2a5}.back{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)}main{padding:74px 0 100px}.eyebrow,.kicker{color:var(--gold);font-size:10px;letter-spacing:.24em;text-transform:uppercase}.hero{max-width:900px}.hero h1{font-size:clamp(42px,8vw,84px);line-height:.94;letter-spacing:-.06em;margin:20px 0}.hero .sub{font-size:clamp(17px,2.3vw,22px);line-height:1.65;color:#c6c1b6;max-width:790px}.meta{display:flex;gap:10px 22px;flex-wrap:wrap;color:#858078;font-size:11px;margin-top:25px}.notice{border:1px solid var(--line);background:rgba(214,177,90,.045);padding:22px 24px;margin:38px 0;color:#c7c0b2;line-height:1.75}.notice strong{color:var(--bright)}.toc{display:flex;gap:9px 18px;flex-wrap:wrap;border-top:1px solid #292929;border-bottom:1px solid #292929;padding:18px 0;margin:45px 0}.toc a{font-size:11px;color:#c4bdaE}.section{padding:56px 0 0;scroll-margin-top:20px}.section h2{font-size:clamp(27px,4vw,42px);letter-spacing:-.04em;margin:12px 0 20px}.section h3{color:var(--bright);font-size:18px;margin:30px 0 10px}.section p,.section li{color:var(--muted);font-size:16px;line-height:1.8}.section ul,.section ol{padding-left:22px}.diagram{border:1px solid var(--line);background:linear-gradient(145deg,rgba(214,177,90,.055),rgba(255,255,255,.012));padding:26px;margin:28px 0}.diagram-title{color:var(--gold);font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:18px}.node{border:1px solid rgba(214,177,90,.38);background:#090909;padding:16px;text-align:center}.node b{display:block;color:var(--bright);font-size:15px;letter-spacing:.07em}.node span{display:block;color:#9c978c;font-size:12px;line-height:1.55;margin-top:6px}.arrow{text-align:center;color:var(--gold);font-size:20px;line-height:1.5}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.card{border-top:1px solid var(--line);background:rgba(255,255,255,.018);padding:20px}.card h3{margin:0 0 8px}.card p{font-size:14px;margin:0}.equation{font-family:Georgia,serif;color:var(--bright);font-size:clamp(19px,3vw,28px);text-align:center;padding:20px 8px;overflow-wrap:anywhere}.status{display:inline-block;border:1px solid rgba(214,177,90,.35);padding:4px 8px;color:#d7c28e;font-size:9px;letter-spacing:.12em;text-transform:uppercase;margin:0 5px 7px 0}.rule{border-top:1px solid #292929;margin:35px 0}.quote{font-size:clamp(20px,3vw,28px)!important;color:var(--bright)!important;line-height:1.5!important}.small{font-size:13px!important;color:#858078!important}.footer{border-top:1px solid #292929;margin-top:70px;padding-top:25px;color:#777;font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+@media(max-width:700px){main{padding-top:48px}.grid2,.grid3{grid-template-columns:1fr}.diagram{padding:16px}.section p,.section li{font-size:15px}}
+</style>
+<link rel="stylesheet" href="/copyright.css">
+</head>
+<body>
+<header><div class="shell"><a class="back" href="/">← Identity Field Dynamics</a><div class="brand" style="float:right">The central formulation</div></div></header>
+<main class="shell">
+<section class="hero">
+<div class="eyebrow">Identity Field Dynamics · Central Reference</div>
+<h1>THE CURRENT<br><span style="color:var(--bright)">IFD FORMULATION</span></h1>
+<p class="sub">The proposed integrated architecture through which Identity Field Dynamics investigates the origin, differentiation, manifestation, continuity, action, interaction, and trace of identity.</p>
+<div class="meta"><span>Public working formulation · Edition 0.2</span><span>29 October 2026</span><span>Research in development</span></div>
+</section>
+<div class="notice"><strong>Research status — read this first.</strong><br>This page articulates the current working architecture of IFD. It does not claim that every component, transition, cosmological interpretation, or proposed mechanism has been empirically established. Mathematical relationships are distinguished from the ontological interpretations built upon them. Proposed relationships remain open to examination, correction, and rejection. The formulation is the present organizing account—not a finished or infallible theory.</div>
+<nav class="toc" aria-label="On this page">
+<a href="#whole">Whole architecture</a><a href="#generative">Generative engine</a><a href="#clock">Cosmological Clock</a><a href="#brand">Brand &amp; time</a><a href="#operation">Identity in operation</a><a href="#principles">Whole-system principles</a><a href="#method">Research discipline</a><a href="#status">Status &amp; questions</a>
+</nav>
+
+<section class="section" id="whole">
+<div class="kicker">01 / The integrated view</div><h2>One architecture. Distinct engines. Connected relationships.</h2>
+<p>The Current IFD Formulation proposes that identity should be investigated as a phenomenon with an originating and differentiating architecture, a temporal configuration, an unfolding history of action and interaction, and relationships among individual and collective manifestations. The following diagram presents the whole at a glance. Each connection is a proposed structural relationship unless otherwise identified.</p>
+<div class="diagram">
+<div class="diagram-title">The proposed architecture · whole-system view</div>
+<div class="node"><b>ZERO = EVERYTHING</b><span>Proposed underlying unity; not zero understood simply as absence</span></div>
+<div class="arrow">↓</div>
+<div class="node"><b>SOURCE / SOURCE FORMULA</b><span>Proposed generative architecture · mathematical and ontological claims kept distinct</span></div>
+<div class="arrow">↓</div>
+<div class="grid2"><div class="node"><b>GENERATION</b><span>SPARK · cycle · manifestation</span></div><div class="node"><b>DIFFERENTIATION</b><span>Unique originating signature · call signal</span></div></div>
+<div class="arrow">↓</div>
+<div class="node"><b>FREQUENCY / CALL SIGNAL → SUBSTANCE → IDENTITY</b><span>Proposed sequence by which differentiated manifestation becomes individual identity</span></div>
+<div class="arrow">↓</div>
+<div class="grid2"><div class="node"><b>COSMOLOGICAL CLOCK</b><span>Temporal framework of cosmic unfolding</span></div><div class="node"><b>TIMECODE</b><span>Collective configuration of energy frequencies at a distinct moment in cosmic time</span></div></div>
+<div class="arrow">↓</div>
+<div class="node"><b>BRANDING → BRAND</b><span>Proposed originating event and permanent identity imprint · synchronic dimension</span></div>
+<div class="arrow">↓</div>
+<div class="node"><b>IDENTITY → ACTION → INTERACTION → SYNERGY → TRACE</b><span>Diachronic operation, relationship, consequence, observation, and record</span></div>
+<div class="arrow">↓</div>
+<div class="node"><b>COLLECTIVE MANIFESTATION</b><span>Differentiated identities participating in larger patterns of relationship and organization</span></div>
+<div class="rule"></div>
+<div class="grid3"><div class="card"><h3>LOVE</h3><p>Proposed binding principle relating differentiated manifestations to the whole.</p></div><div class="card"><h3>COHERENCE</h3><p>Proposed intelligible organization of relationships among differentiated parts.</p></div><div class="card"><h3>EQUILIBRIUM</h3><p>Proposed whole-system persistence amid change and multiplicity.</p></div></div>
+<p class="small">The diagram is an integrated conceptual map, not a validated causal flowchart. LOVE, COHERENCE, and EQUILIBRIUM are proposed as principles operating across the architecture, not as a final three-step sequence.</p>
+</div>
+</section>
+
+<section class="section" id="generative">
+<div class="kicker">02 / The generative engine</div><h2>ZERO · SOURCE · SPARK · SIGNATURE</h2>
+<p>The formulation begins with the proposition <strong>ZERO = EVERYTHING</strong>. In this account, ZERO is not being used merely to denote an empty set, a numerical placeholder, or absolute nothingness. It names a proposed underlying unity from which differentiated manifestations arise.</p>
+<p>SOURCE names the proposed generative architecture of that unity. The Source Formula, Euler's relationships, circular structure, and wave relationships enter the formulation as mathematical points of examination. The proposed sequence is:</p>
+<div class="diagram"><div class="equation">ZERO → SOURCE → SPARK → UNIQUE ORIGINATING SIGNATURE</div><div class="equation">SPARK → FREQUENCY → SUBSTANCE → IDENTITY</div></div>
+<h3>Euler: mathematical relationship and ontological interpretation</h3>
+<div class="equation">e<sup>iθ</sup> = cos θ + i sin θ</div>
+<p>Euler's formula expresses a mathematical relationship between complex exponentials and circular trigonometric components. Euler's identity, <span style="color:var(--bright)">e<sup>iπ</sup> + 1 = 0</span>, is a precise mathematical result. These equations do not, by themselves, establish that the universe is generated by a Source Formula, that zero produces physical existence, or that identities possess unique frequencies. Those are additional ontological and physical propositions requiring their own definitions and evidence.</p>
+<h3>The unique originating signature</h3>
+<p>The proposed extension is that differentiated identities possess a unique originating signature—a call signal or channel relating each manifestation to the common Source. The wireless communication analogy is used to make the intended architecture graspable: a shared domain can accommodate differentiated signals without requiring absolute isolation. The analogy does not yet specify a literal physical mechanism.</p>
+<p>The unresolved transitions are important: what constitutes a SPARK; how frequency is defined; what makes a signature unique; how frequency relates to substance; and how substance gives rise to identity. The sequence makes these relationships explicit so they can be investigated rather than silently assumed.</p>
+</section>
+
+<section class="section" id="clock">
+<div class="kicker">03 / Temporal architecture</div><h2>The Cosmological Clock and the Timecode</h2>
+<p>The Cosmological Clock is the proposed temporal framework within which the universe's unfolding, generation, differentiation, manifestation, and change occur. It is not interchangeable with the System Clock that orders events and processes within an individual identity's history.</p>
+<div class="diagram"><div class="node"><b>COSMOLOGICAL CLOCK</b><span>Temporal framework of cosmic unfolding</span></div><div class="arrow">↓</div><div class="node"><b>TIMECODE</b><span>The specific collective configuration of energy frequencies at a distinct moment in cosmic time</span></div><div class="arrow">↓</div><div class="node"><b>ASTROLOGICAL ARTICULATION</b><span>An interpretive articulation of the Timecode; not identical to the Timecode itself</span></div></div>
+<p><strong>Astrology is an articulation of the Timecode.</strong> Within the formulation, the Timecode is the proposed temporal specification: the collective configuration of energy frequencies at a distinct moment. Astrology is an interpretive system for articulating that configuration. The interpretation and the proposed underlying configuration must not be conflated.</p>
+<p>The System Clock orders the temporal unfolding of manifestation, development, action, interaction, and change. An entity's diachronic history is examined through successive expressions, experiences, relationships, and traces within time.</p>
+</section>
+
+<section class="section" id="brand">
+<div class="kicker">04 / Originating configuration</div><h2>Branding and the permanent Brand</h2>
+<p>At birth, the entity enters the world within a particular Timecode. The formulation describes the moment of branding as the event through which that configuration imprints the entity. The resulting <strong>Brand is the permanent identity imprint</strong>—a synchronic slice of time associated with the collective configuration at birth.</p>
+<p>The birth chart records the cosmological elements and their configuration at that precise moment. Astrology articulates the Timecode through the chart. The chart is a representation of the configuration; it is not the branding event itself.</p>
+<div class="grid2">
+<div class="card"><h3>Synchronic · Brand</h3><p>The proposed permanent originating imprint associated with the moment of birth. The moment passes; the Brand remains as the fixed reference in this formulation.</p></div>
+<div class="card"><h3>Diachronic · Identity through time</h3><p>The unfolding history of action, interaction, experience, development, and trace. The history changes; it is not reducible to the originating Brand.</p></div>
+</div>
+<p>The Brand is not the whole life, and the life is not the Brand. They are complementary dimensions of the proposed identity architecture: originating configuration and temporal unfolding. The permanence of the Brand is a stated commitment within this formulation; the proposed cosmological imprint mechanism and its consequences remain questions for independent investigation.</p>
+</section>
+
+<section class="section" id="operation">
+<div class="kicker">05 / Operational architecture</div><h2>Identity in operation</h2>
+<p>The formulation returns to its central research subject through the sequence:</p>
+<div class="diagram"><div class="equation">IDENTITY → ACTION → INTERACTION → SYNERGY → TRACE</div></div>
+<div class="grid2">
+<div class="card"><h3>Identity</h3><p>The subject whose structure, continuity, differentiation, and dynamics are being investigated.</p></div>
+<div class="card"><h3>Action</h3><p>An occurrence or expression through which identity may become observable. ACTION = IDENTITY is a central IFD proposition, not an established mathematical equality.</p></div>
+<div class="card"><h3>Interaction</h3><p>Relationships among actions, entities, or conditions when they affect or respond to one another.</p></div>
+<div class="card"><h3>Synergy</h3><p>A proposed category for examining what emerges through interaction and whether the resulting organization differs from the individual components considered separately. It requires operational definition.</p></div>
+<div class="card"><h3>Trace</h3><p>A record, consequence, or observable residue associated with actions and interactions. Traces provide material for subsequent observation and comparison.</p></div>
+<div class="card"><h3>Feedback and development</h3><p>Traces inform later observation; interactions can alter the conditions of subsequent action. Feedback is a proposed relationship whose mechanisms require further specification.</p></div>
+</div>
+<p>The arrows organize relationships under investigation. They do not establish a universal, strictly linear causal law. A single action does not automatically establish a complete or permanent description of an actor. A statement about identity, an observed action, a trace, and an interpretation are different kinds of things and must remain distinguishable.</p>
+<h3>Individual and collective manifestation</h3>
+<p>Identity also raises the problem of distinctness: how one entity is distinguished from another and how that distinction persists or changes. Interactions may produce patterns of organization beyond an individual participant. IFD investigates how coordination occurs, how collective patterns emerge, and which properties can reasonably be attributed to an individual or to the larger organization. A collective is not assumed to have precisely the same properties as an individual.</p>
+</section>
+
+<section class="section" id="principles">
+<div class="kicker">06 / Whole-system principles</div><h2>LOVE · COHERENCE · EQUILIBRIUM</h2>
+<p>These three concepts are proposed as whole-system principles relating differentiation, relationship, and unity throughout the architecture.</p>
+<div class="grid3">
+<div class="card"><h3>LOVE</h3><p>The proposed binding principle of the formulation: the relationship through which differentiated manifestations remain related to the whole.</p></div>
+<div class="card"><h3>COHERENCE</h3><p>The proposed intelligible organization of relationships among differentiated components and manifestations.</p></div>
+<div class="card"><h3>EQUILIBRIUM</h3><p>The proposed persistence of the whole amid change, interaction, and multiplicity.</p></div>
+</div>
+<p>The formulation also explores whether increasing manifestation and differentiation can occur without the necessary loss of unity. This is a significant ontological and cosmological proposal. It is not a demonstrated consequence of Euler's formula or of the Source Formula as presently articulated.</p>
+</section>
+
+<section class="section" id="method">
+<div class="kicker">07 / Research discipline</div><h2>How the formulation is to be examined</h2>
+<p>The formulation must remain connected to observations, actions, records, and evidence. Its architecture is not validated by its elegance, completeness, or internal appeal. An instrument may operate as designed without validating the theory it is intended to investigate.</p>
+<div class="diagram"><div class="equation">CLAIM → DEFINITION → INDICATOR → OBSERVABLE → METHOD → RESULT → EVALUATION</div></div>
+<p>OBSERVOR, Quiz Lab, and other research instruments are methods for investigating particular questions. Their existence is not evidence that the Current IFD Formulation has been validated. Results must be reported with the procedures, conditions, limitations, and alternative explanations that bear on their interpretation.</p>
+<h3>Whole–Part Resolution</h3>
+<p><strong>WHOLE–PART RESOLUTION</strong> is the operating standard for examining the formulation: the capacity to comprehend a system as an integrated whole while simultaneously examining its internal components, mechanisms, and relationships at increasing levels of detail.</p>
+<ul><li>Never let detail destroy the whole.</li><li>Never let the whole obscure detail.</li><li>Zoom in without losing system context; zoom out without erasing meaningful distinctions.</li><li>Do not invent connections to fill gaps.</li></ul>
+<p>The broader architectural requirements are <strong>ALIGN. INTERCONNECT. MANIFEST.</strong> Components must be mutually compatible; relationships must be articulated; and the formulation must remain connected to observable phenomena and evidence.</p>
+</section>
+
+<section class="section" id="status">
+<div class="kicker">08 / Research status and open questions</div><h2>What this formulation is—and is not</h2>
+<p>The Current IFD Formulation is a developing research formulation. Its authority comes from being the documented current account of IFD's architecture, not from an assumption that every proposition is true.</p>
+<div class="card"><span class="status">Foundational commitments</span><p>The questions, definitions, and guiding propositions organizing the discipline, including the focus on identity as a phenomenon and the need to investigate action, interaction, continuity, and trace.</p></div>
+<div class="card"><span class="status">Proposed relationships</span><p>Structural connections advanced by the formulation, including the generative sequence, originating signature, Cosmological Clock, Timecode, branding, and whole-system principles. Their definitions and mechanisms require investigation.</p></div>
+<div class="card"><span class="status">Interpretive contributions</span><p>Conceptual prompts from the I Ching and the intellectual history of the investigation. These contributions document development; they do not by themselves establish empirical facts.</p></div>
+<div class="card"><span class="status">Mathematical results</span><p>Established mathematical relationships, such as Euler's formula, must be distinguished from additional claims that interpret them as descriptions of physical or ontological mechanisms.</p></div>
+<div class="card"><span class="status">Empirical findings</span><p>Only results supported by documented methods and evidence belong in this category. Instrument availability, conceptual fit, and successful software operation do not constitute validation.</p></div>
+<div class="card"><span class="status">Unresolved claims</span><p>Propositions whose meanings, mechanisms, evidence, or explanatory adequacy remain undetermined. These remain visible rather than being silently promoted to fact.</p></div>
+<h3>Questions that remain open</h3>
+<ul>
+<li>What precisely is ZERO in the proposed architecture, and how does its meaning differ from mathematical zero?</li>
+<li>Is SOURCE identical to ZERO, a function of ZERO, or a distinct generative structure?</li>
+<li>What defines a SPARK and a unique originating signature?</li>
+<li>How should frequency, substance, and manifestation be defined and related?</li>
+<li>What is the proposed mechanism connecting the Cosmological Clock, Timecode, branding, and permanent Brand?</li>
+<li>What observations could distinguish the Brand hypothesis from alternative explanations?</li>
+<li>Does action constitute identity, express it, reveal it, or provide evidence from which identity may be inferred?</li>
+<li>How should interaction, synergy, trace, and feedback be operationalized?</li>
+<li>Which aspects of collective organization can be attributed to individual identities, and which emerge at the collective level?</li>
+<li>What findings would require revision or rejection of particular components of the formulation?</li>
+</ul>
+<div class="notice"><strong>Revision principle.</strong><br>The formulation must change when warranted by contradictions, better definitions, failed predictions, new observations, or stronger explanations. No proposition is protected from examination by its place in the architecture.</div>
+</section>
+
+<section class="section">
+<div class="kicker">The governing statement</div>
+<p class="quote">IDENTITY FIELD DYNAMICS is the discipline.<br>THE CURRENT IFD FORMULATION is its present integrated account of the structure and dynamics of identity.<br>THE IFD RESEARCH PROGRAM investigates, evaluates, and refines that account.</p>
+<p>The objective is not to declare identity explained. It is to articulate the formulation clearly enough that its claims can be understood, investigated, challenged, and improved.</p>
+<p><strong>Explain identity. Follow its necessary relationships. Do not expand the scope beyond what the explanation requires.</strong></p>
+</section>
+<div class="footer">Identity Field Dynamics · Current IFD Formulation · Public working edition 0.2 · <a href="/research-deep.html">Research Program</a> · <a href="/observor/">OBSERVOR</a> · <a href="/">Home</a></div>
+</main>
+</body>
+</html>
