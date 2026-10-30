@@ -75,7 +75,7 @@ Classification is descriptive, not a verdict. It identifies the kind of issue or
 3. **CLASSIFY** — Describe type, scope, dependencies, and potential significance without overstating certainty.
 4. **INVESTIGATE** — Examine evidence, assumptions, derivations, counterexamples, and alternative explanations.
 5. **TRACK** — Maintain dated history of tests, findings, decisions, revisions, and open questions.
-6. **VERIFY** — Test whether a proposed correction resolves the original issue without creating or relocating another.
+6. **VERIFY** — Test the relevant claim, assessment, or proposed action; where correction is chosen, verify that it addresses the issue without creating or relocating another.
 7. **DISPOSITION** — Record the selected treatment and its rationale: correct, remove, redesign, reinforce, develop, preserve, strategically exploit, monitor, defer, or reject the finding. Record why the selected option is appropriate in context.
 
 The lifecycle can loop. Verification may reopen investigation; a new source may change classification; a disposition may be revised when new evidence warrants it.
