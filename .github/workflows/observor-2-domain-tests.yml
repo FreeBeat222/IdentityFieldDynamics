@@ -1,0 +1,23 @@
+name: OBSERVOR 2.0 domain tests
+
+on:
+  push:
+    branches:
+      - observor-2-trial-condition-model
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  domain-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Run OBSERVOR 2.0 domain tests
+        run: node --experimental-default-type=module --test tests/observor-2-domain-core.test.js
