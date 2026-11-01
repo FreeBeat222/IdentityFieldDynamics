@@ -171,6 +171,7 @@ export function transitionTrial(trial, nextStatus, details = {}) {
     throw new ObservorError("INVALID_TRANSITION", `Cannot transition trial from ${trial.status} to ${nextStatus}.`);
   }
   if (trial.status === "sealed") throw new ObservorError("TRIAL_SEALED", "A sealed trial cannot be changed.");
+  const fromStatus = trial.status;
   const at = details.at ?? new Date().toISOString();
   if (nextStatus === "started") trial.timing.started_at = at;
   if (nextStatus === "manipulation_recorded") {
@@ -199,7 +200,7 @@ export function transitionTrial(trial, nextStatus, details = {}) {
     if (details.reason) trial.events.push({ type: "terminal_reason", reason: String(details.reason), at });
   }
   trial.status = nextStatus;
-  trial.events.push({ type: "status_transition", from: TRANSITIONS[trial.events.at(-1)?.status] ?? null, to: nextStatus, at, details: clone(details) });
+  trial.events.push({ type: "status_transition", from: fromStatus, to: nextStatus, at, details: clone(details) });
   if (nextStatus === "sealed") deepFreeze(trial);
   return trial;
 }
