@@ -1,4 +1,4 @@
-import { CONDITIONS, MANIPULATION_STATUS, createSession, createTrial, transitionTrial, sealTrial } from "./observor-assets/js/domain-core.js";
+import { CONDITIONS, validateStudyProtocol, createSession, createTrial, transitionTrial, sealTrial } from "./observor-assets/js/domain-core.js";
 
 const $ = id => document.getElementById(id);
 const state = { protocol: null, session: null, active: null, records: [], startedAt: 0 };
@@ -31,8 +31,10 @@ function update() {
 $("openSession").onclick = () => {
   try {
     state.protocol = protocolFromForm();
+    const validation = validateStudyProtocol(state.protocol);
+    if (validation.length) throw Object.assign(new Error("Protocol is incomplete."), {details: validation});
     state.session = createSession({studyId:state.protocol.study_id,participantId:val("participant"),protocolVersion:state.protocol.protocol_version,instrumentBuild:"OBSERVOR-2.0-recorder-dev"});
-    state.records = []; state.active = null; $("errors").textContent="";
+    state.records = state.session.trials; state.active = null; $("errors").textContent="";
     say("Session opened in memory. No data have been uploaded or durably saved."); update();
   } catch(e) { reportError(e); }
 };
