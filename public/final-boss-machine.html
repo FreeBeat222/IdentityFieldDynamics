@@ -179,7 +179,7 @@ const el=id=>document.getElementById(id),freq=el("freq"),speed=el("speed"),phase
 let phase=0,running=true,previousTime=null,oneTurnTarget=null;
 const height=bottomY-topY,turns=3.15;
 function helixPath(currentPhase,f,offset,trail=false){
- const rise=Math.min(height,Math.max(0,currentPhase*Number(speed.value)*90));
+ const rise=Math.min(height,Math.max(0,currentPhase*90));
  if(rise<2)return "";
  const points=Math.max(120,Math.ceil(rise*1.2));
  let d="";
