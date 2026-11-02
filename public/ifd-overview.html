@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050505">
+<meta name="description" content="An introduction to Identity Field Dynamics: its formulation, architecture, and research approach.">
+<link rel="canonical" href="https://identityfielddynamics.com/ifd-overview.html">
+<title>Identity Field Dynamics · An Introduction</title>
+<style>
+:root{--bg:#080808;--panel:#10100e;--gold:#c6a75d;--bright:#dfc77f;--text:#e9e6df;--muted:#c3beb4;--soft:#99948b;--line:rgba(198,167,93,.24);--line2:rgba(203,208,212,.14)}
+*{box-sizing:border-box;font-family:"Aptos","Segoe UI",sans-serif}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-size:16px;line-height:1.65}
+a{color:var(--bright);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px;color:var(--text)}
+a:focus-visible{outline:2px solid var(--bright);outline-offset:4px}
+.shell{width:min(900px,calc(100% - 40px));margin:auto}
+header{border-bottom:1px solid var(--line2);padding:15px 0}
+.headrow{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.back,.eyebrow,.kicker,.label,footer{font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.back{color:var(--gold)}.brand{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+main{padding:52px 0 70px}
+.hero{max-width:78ch}
+.eyebrow,.kicker,.label{color:var(--gold)}
+h1{font-family:"Aptos Display","Aptos","Segoe UI",sans-serif;font-size:clamp(30px,5vw,44px);line-height:1.16;font-weight:600;letter-spacing:.01em;margin:12px 0 18px}
+.gold{color:var(--bright)}
+.deck{font-size:18px;line-height:1.65;color:var(--muted);max-width:76ch;margin:0}
+.statement{font-size:clamp(22px,3.4vw,30px);line-height:1.4;font-weight:650;color:var(--text);border-left:2px solid var(--gold);padding:7px 0 7px 20px;margin:34px 0}
+.rule{border-top:1px solid #292929;margin:34px 0}
+section{padding:20px 0 0;scroll-margin-top:18px}
+h2{font-size:25px;line-height:1.25;margin:8px 0 14px;font-weight:700}
+h3{font-size:16px;line-height:1.35;margin:0 0 8px;color:var(--bright);letter-spacing:.04em}
+p,li{font-size:16px;line-height:1.7;color:var(--muted)}
+p{max-width:78ch;margin:10px 0}
+.architecture{border:1px solid var(--line);background:linear-gradient(145deg,rgba(198,167,93,.045),rgba(255,255,255,.01));padding:20px;margin:20px 0}
+.architecture .label{text-align:center;margin-bottom:12px}
+.flow{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+.node{border:1px solid rgba(198,167,93,.32);background:#0b0b0b;padding:10px 12px;text-align:center;color:var(--text);font-size:13px;letter-spacing:.045em}
+.arrow{color:var(--gold);font-size:16px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);margin:18px 0}
+.card{background:#0b0b0b;padding:18px}
+.card p{font-size:15px;line-height:1.6;margin:0}
+.callout{border:1px solid var(--line);background:rgba(198,167,93,.035);padding:18px 20px;margin:20px 0}
+.callout p{margin:0}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0 0}
+.button{display:inline-block;border:1px solid rgba(198,167,93,.45);padding:12px 16px;font-size:13px;letter-spacing:.07em;text-transform:uppercase}
+.button.primary{background:var(--bright);color:#111;border-color:var(--bright)}
+footer{border-top:1px solid #292929;margin-top:48px;padding-top:18px;color:var(--soft);line-height:1.7}
+footer a{color:var(--bright)}
+@media(max-width:620px){main{padding:36px 0 52px}.grid{grid-template-columns:1fr}.shell{width:calc(100% - 30px)}}
+</style>
+<link rel="stylesheet" href="/copyright.css">
+</head>
+<body>
+<header><div class="shell headrow"><a class="back" href="/">← Identity Field Dynamics</a><div class="brand">An introduction to the discipline</div></div></header>
+<main class="shell">
+<div class="hero">
+<div class="eyebrow">Identity Field Dynamics · The Discipline</div>
+<h1>Identity is what it does.</h1>
+<p class="deck">Identity Field Dynamics investigates identity as a phenomenon in structure, operation, interaction, and consequence. It examines how identity is generated, differentiated, imprinted, expressed, maintained, changed, observed, and related to other identities.</p>
+</div>
+
+<div class="statement">The formulation provides the architecture. The research investigates its operation. The evidence informs what comes next.</div>
+
+<section id="formulation">
+<div class="kicker">01 / The formulation</div>
+<h2>The whole architecture</h2>
+<p>The Current IFD Formulation brings the proposed originating architecture of identity into relation with its manifestations, actions, interactions, traces, and collective patterns.</p>
+<div class="architecture" role="group" aria-label="A compact view of the Current IFD Formulation">
+<div class="label">Current IFD architecture · overview</div>
+<div class="flow">
+<span class="node">ZERO = EVERYTHING</span><span class="arrow">→</span>
+<span class="node">SOURCE</span><span class="arrow">→</span>
+<span class="node">GENERATION</span><span class="arrow">→</span>
+<span class="node">DIFFERENTIATION</span><span class="arrow">→</span>
+<span class="node">IDENTITY</span><span class="arrow">→</span>
+<span class="node">ACTION</span><span class="arrow">→</span>
+<span class="node">INTERACTION</span><span class="arrow">→</span>
+<span class="node">TRACE</span><span class="arrow">↔</span>
+<span class="node">FEEDBACK</span><span class="arrow">→</span>
+<span class="node">COLLECTIVE MANIFESTATION</span>
+</div>
+</div>
+<p>This is an integrated map of relationships. Its components are read together and investigated individually. The full formulation sets out the architecture in greater detail.</p>
+<div class="cta"><a class="button primary" href="/current-ifd-formulation.html">Explore the Current IFD Formulation</a></div>
+</section>
+
+<div class="rule"></div>
+<section id="diffraction">
+<div class="kicker">02 / From observable pattern to structural inquiry</div>
+<h2>A lesson from the history of DNA research</h2>
+<p>X-ray diffraction helped researchers investigate the structure of DNA. The diffraction patterns were observable evidence; the molecular structure had to be inferred through analysis and comparison with other evidence.</p>
+<p>Rosalind Franklin and Raymond Gosling produced important X-ray diffraction images, including the famous Photo 51. Watson and Crick used diffraction evidence alongside other research in developing their double-helix model. The work was collaborative and cumulative—not a single image announcing a finished answer.</p>
+<p>IFD takes inspiration from the reasoning pattern: observable patterns can constrain and inform structural inquiry. The analogy is methodological; behavioral patterns are not physical X-ray diffraction patterns.</p>
+<div class="callout"><p><strong>What structural properties of identity can be inferred from the observable patterns generated through interaction?</strong></p></div>
+</section>
+
+<section id="binary-vision">
+<div class="kicker">03 / Binary Vision</div>
+<h2>Two perspectives. One investigation.</h2>
+<p>When differently constituted researchers examine the same evidence, their observations can be compared. Independent examination, contrasting interpretations, and collaborative analysis can expose questions or structural possibilities that one perspective might overlook.</p>
+<p>The differences are not simply noise to be discarded. They are material for investigation: points of agreement, divergence, omission, tension, and alternative interpretation can guide the next inquiry.</p>
+</section>
+
+<section id="cross-substrate">
+<div class="kicker">04 / Cross-substrate research</div>
+<h2>Different substrates, shared evidence</h2>
+<p>IFD can bring human and artificial researchers into a shared investigation. Each examines a common body of evidence, records an initial interpretation, and then compares findings with the other.</p>
+<p>The collaboration can generate new questions and candidate explanations. Those interpretations are then examined against further evidence. The value lies not in assuming either perspective is authoritative, but in making their contributions and differences available for examination.</p>
+<div class="grid">
+<article class="card"><h3>OBSERVE</h3><p>Examine the same defined evidence and record what is noticed.</p></article>
+<article class="card"><h3>COMPARE</h3><p>Identify agreement, difference, omission, and competing interpretations.</p></article>
+<article class="card"><h3>INTERPRET</h3><p>Develop structural possibilities from the comparison and collaboration.</p></article>
+<article class="card"><h3>VERIFY</h3><p>Check interpretations against additional evidence and alternative explanations.</p></article>
+</div>
+<div class="callout"><p><strong>Can collaboration between differently constituted identities reveal structural features that either researcher might overlook independently?</strong></p></div>
+</section>
+
+<section id="research">
+<div class="kicker">05 / The research program</div>
+<h2>Investigation in operation</h2>
+<p>IFD brings its formulation into contact with observable action, interaction, behavioral traces, and changing conditions. Its research program develops instruments, examines identity configurations, investigates relationships between differentiated elements, and studies how identity manifests across individual and collective contexts.</p>
+<p>The work proceeds through discovery, consolidation, construction, verification, and continued refinement. The formulation gives the investigation an integrated architecture; research gives that architecture something to answer to.</p>
+<div class="cta">
+<a class="button primary" href="/current-ifd-formulation.html">Open the Current IFD Formulation</a>
+<a class="button" href="/research-intake.html">Explore Research</a>
+</div>
+</section>
+
+<div class="statement">WE DON'T PERSUADE. WE DELIVER.</div>
+<footer>
+<div>Identity Field Dynamics · Research and development</div>
+<div><a href="/current-ifd-formulation.html">The Current IFD Formulation</a> · <a href="/">Home</a></div>
+</footer>
+</main>
+</body>
+</html>
