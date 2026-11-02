@@ -8,7 +8,7 @@
 - User values evidence, defensibility, directness, and precise distinction between proposed, implemented, published, and verified.
 - Do not make the user repeat steps already completed. If a workflow fails, diagnose the actual discrepancy rather than restarting the same procedure.
 - IFD is a free, self-funded research project; user describes their role as **Identity Researcher**, not Founder.
-- Canonical naming distinction: “IDENTITY PHYSICS was the name of the discovery. IDENTITY FIELD DYNAMICS is the name of the discipline that emerged from it.”
+- Current discipline name: **Identity Field Dynamics (IFD)**.
 - Methodological rule: “The machine comes before the conclusion.”
 
 ## Current project state
@@ -51,7 +51,7 @@
 - Core sequence recorded: IDENTITY → ACTION → INTERACTION → SYNERGY → TRACE.
 - “ACTION = IDENTITY” is a proposition, not a universally established law.
 - Convergence does not itself establish causation.
-- Legacy six-axis model W,V,B,A,N,D and additive equation should not be presented as settled; W remains unresolved.
+- Any proposed model component must be independently justified and operationally defined before adoption.
 - OBSERVOR is intended to test identity without presupposing IFD, using baseline, controlled removal/ablation, and observable change.
 - Quiz Lab was reported live on 2026-10-10; empirical validity/reliability remains unestablished.
 - User wants project work to be evidence-first, with explicit differences between established commitments, hypotheses, symbolic interpretations, and pending evidence.
