@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="An interactive IFD digital instrument exploring Euler’s formula through a rotating source and real and imaginary waveform components.">
+<title>The Final Boss Machine™ · IFD Digital Instrument</title>
+<style>
+:root{--bg:#08111b;--panel:#101e2b;--gold:#e5bd67;--red:#ff5968;--blue:#45a7ff;--text:#e8edf3;--muted:#9aabba}
+*{box-sizing:border-box}body{margin:0;padding:24px;background:var(--bg);color:var(--text);font-family:system-ui,sans-serif}
+main{max-width:1250px;margin:auto}header{text-align:center;margin-bottom:22px}h1{color:var(--gold);letter-spacing:3px;margin:0}
+.subtitle{color:var(--muted);margin-top:8px}.machine{background:var(--panel);border:1px solid #34485b;border-radius:14px;padding:12px}
+svg{width:100%;height:auto;display:block}.controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px;padding:20px 8px}
+.control{background:#142536;border-radius:9px;padding:14px}label{display:block;color:var(--muted);font-size:13px;margin-bottom:9px}
+input{width:100%;accent-color:var(--gold)}output{color:var(--gold);font-weight:700}
+.buttons{display:flex;gap:10px;flex-wrap:wrap;padding:0 8px 12px}button{background:#24394c;color:white;border:1px solid #52677a;border-radius:7px;padding:10px 20px;cursor:pointer}
+button:hover{border-color:var(--gold);color:var(--gold)}.legend{display:flex;justify-content:center;gap:25px;padding:15px;flex-wrap:wrap}
+.key{display:flex;align-items:center;gap:8px;font-size:13px}.swatch{width:22px;height:4px}footer{text-align:center;color:var(--muted);font-size:12px;padding:15px}
+@media(max-width:600px){body{padding:8px}h1{font-size:20px}}
+.control-deck{max-width:1250px;margin:0 auto 16px;padding:12px;background:#101e2b;border:1px solid #52677a;border-radius:12px}
+.control-deck .controls{padding:8px 4px 14px}
+.control-deck .buttons{padding:0 4px 4px}
+.equation-panel{height:auto;max-height:none;overflow:visible}
+.equation-grid{align-items:stretch}
+.equation{height:auto;min-height:100px}
+
+
+.site-nav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 auto 18px;padding:12px 16px;max-width:1250px;border:1px solid #52677a;border-radius:9px;background:#101e2b}
+.site-nav a,footer a{color:var(--gold);text-decoration:none;font-size:12px;letter-spacing:.08em}
+html{scroll-behavior:smooth;scroll-padding-top:18px}
+body{min-height:100vh;overflow-x:hidden;overflow-y:auto}
+main{width:100%;max-width:1250px}
+.machine{height:auto;overflow:visible}
+.machine svg{width:100%;height:auto;max-height:none;overflow:visible}
+.equation-panel{height:auto;max-height:none;overflow:visible}
+.equation-grid{align-items:stretch}
+.equation{height:auto;min-height:100px}
+footer{line-height:1.8}
+@media(max-width:600px){body{padding:8px}.site-nav{font-size:10px}.machine{padding:5px}}
+
+</style>
+</head>
+<body>
+<main>
+<nav class="site-nav"><a href="/current-ifd-formulation.html">← IFD FORMULATION HUB</a><a href="#instrument">↓ INSTRUMENT</a><a href="#equations">↓ EQUATIONS</a></nav>
+<header><h1>THE FINAL BOSS MACHINE™</h1><div class="subtitle">Wave traces are emitted by the rotating source and propagate outward</div></header>
+<section class="control-deck" id="instrument" aria-label="Machine controls">
+<div class="controls">
+<div class="control"><label>Frequency (f): <output id="freqValue">1.00</output></label><input id="freq" type="range" min=".25" max="8" step=".25" value="1"></div>
+<div class="control"><label>Rotation speed: <output id="speedValue">1.00</output></label><input id="speed" type="range" min=".1" max="4" step=".1" value="1"></div>
+<div class="control"><label>Natural phase: <output id="phaseValue">0°</output></label><input id="phase" type="range" min="0" max="360" step="1" value="0"></div>
+</div>
+<div class="buttons"><button id="play" type="button">PAUSE</button><button id="reset" type="button">RESET</button><button id="oneTurn" type="button">ONE REVOLUTION</button></div>
+</section>
+
+<section class="machine">
+<svg id="machine" viewBox="0 0 1220 500" role="img" aria-label="A rotating source continuously emits cosine and sine wave traces from its right tangent">
+<defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#263b4d" stroke-width="1"/></pattern></defs>
+<rect width="1220" height="500" fill="url(#grid)"/>
+<circle cx="190" cy="245" r="132" fill="#152637" stroke="#e5bd67" stroke-width="3"/>
+<path d="M35 245H345 M190 85V405" stroke="#8395a7" stroke-width="1.4"/>
+<line id="radius" x1="190" y1="245" x2="322" y2="245" stroke="#e5bd67" stroke-width="3"/>
+<line id="projectionX" x1="322" y1="245" x2="322" y2="245" stroke="#ff5968" stroke-width="2"/>
+<line id="projectionY" x1="190" y1="245" x2="322" y2="245" stroke="#45a7ff" stroke-width="2"/>
+<circle cx="190" cy="245" r="4" fill="#e5bd67"/>
+<circle id="sourcePoint" cx="322" cy="245" r="8" fill="#e5bd67" stroke="#fff2ce" stroke-width="2"/>
+<line x1="322" y1="90" x2="1180" y2="90" stroke="#52677a" opacity=".3"/>
+<line x1="322" y1="245" x2="1180" y2="245" stroke="#8395a7" opacity=".6"/>
+<line x1="322" y1="400" x2="1180" y2="400" stroke="#52677a" opacity=".3"/>
+<text x="50" y="55" fill="#e5bd67" font-size="17">ROTATING SOURCE</text>
+<!-- Live mathematical labels integrated into the instrument face -->
+<g id="equationFace" font-family="Georgia,serif">
+  <rect x="74" y="105" width="232" height="42" rx="7" fill="#091521" stroke="#e5bd67" stroke-opacity=".75"/>
+  <text x="190" y="132" text-anchor="middle" fill="#f3d58f" font-size="22">e<tspan baseline-shift="super" font-size="13">ifx</tspan></text>
+  <text x="190" y="293" text-anchor="middle" fill="#e5bd67" font-size="15">θ = fx</text>
+  <rect x="665" y="15" width="500" height="34" rx="6" fill="#091521" stroke="#52677a"/>
+  <text x="915" y="38" text-anchor="middle" fill="#f2f5f8" font-size="19">e<tspan baseline-shift="super" font-size="12">ifx</tspan> = cos(fx) + i sin(fx)</text>
+  <text x="354" y="78" fill="#ff8791" font-size="13">Re(e<tspan baseline-shift="super" font-size="9">ifx</tspan>) = cos(fx)</text>
+  <text x="354" y="96" fill="#70bdff" font-size="13">Im(e<tspan baseline-shift="super" font-size="9">ifx</tspan>) = sin(fx)</text>
+  <rect x="820" y="424" width="345" height="42" rx="6" fill="#091521" stroke="#e5bd67" stroke-opacity=".7"/>
+  <text x="992" y="450" text-anchor="middle" fill="#f3d58f" font-size="17">e<tspan baseline-shift="super" font-size="11">iπ</tspan> + 1 = 0</text>
+</g>
+<text x="345" y="55" fill="#e8edf3" font-size="17">CONTINUOUS OUTPUT — SHARED PLANE</text>
+<text x="50" y="430" fill="#ff5968" font-size="14">REAL COMPONENT · COSINE</text>
+<text x="50" y="452" fill="#45a7ff" font-size="14">IMAGINARY COMPONENT · SINE</text>
+<path id="cosinePath" fill="none" stroke="#ff5968" stroke-width="4" stroke-linecap="round"/>
+<path id="sinePath" fill="none" stroke="#45a7ff" stroke-width="4" stroke-linecap="round"/>
+<line id="cursor" x1="322" y1="75" x2="322" y2="415" stroke="#e5bd67" stroke-width="1.5" opacity=".8"/>
+<circle id="cosineDot" cx="322" cy="90" r="6" fill="#ff5968"/>
+<circle id="sineDot" cx="322" cy="245" r="6" fill="#45a7ff"/>
+<text x="350" y="470" fill="#9aabba" font-size="13">The first revolution draws the wave from the tangent; subsequent turns continuously feed it.</text>
+</svg>
+
+<div class="equation-panel" id="equations" aria-label="Mathematical relationships used by the machine">
+  <style>
+    .equation-panel{margin:14px 8px 4px;padding:18px;background:#0b1722;border:1px solid #52677a;border-radius:10px}
+    .equation-panel h2{margin:0 0 14px;color:#e5bd67;font-size:16px;letter-spacing:1.5px}
+    .equation-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:10px}
+    .equation{padding:12px;background:#142536;border-left:3px solid #e5bd67;border-radius:5px;min-height:86px}
+    .equation .name{font-size:11px;letter-spacing:1px;color:#9aabba;text-transform:uppercase;margin-bottom:8px}
+    .equation .formula{font-family:Georgia,serif;font-size:19px;color:#f2f5f8;line-height:1.45;overflow-wrap:anywhere}
+    .equation .note{font-size:11px;color:#9aabba;margin-top:5px}
+    .equation.red{border-left-color:#ff5968}.equation.blue{border-left-color:#45a7ff}
+    .equation.gold{border-left-color:#e5bd67}
+  </style>
+  <h2>THE MACHINE'S MATHEMATICAL CORE · LIVE RELATIONSHIPS</h2>
+  <div class="equation-grid">
+    <div class="equation gold">
+      <div class="name">Euler's formula</div>
+      <div class="formula">e<sup>iθ</sup> = cos θ + i sin θ</div>
+      <div class="note">The complex exponential resolves into real and imaginary components.</div>
+    </div>
+    <div class="equation gold">
+      <div class="name">Euler's identity</div>
+      <div class="formula">e<sup>iπ</sup> + 1 = 0</div>
+      <div class="note">The special case at θ = π.</div>
+    </div>
+    <div class="equation gold">
+      <div class="name">Machine's frequency form</div>
+      <div class="formula">e<sup>ifx</sup> = cos(fx) + i sin(fx)</div>
+      <div class="note">f = cycles per natural source revolution; x = natural phase in radians.</div>
+    </div>
+    <div class="equation red">
+      <div class="name">Real component · cosine</div>
+      <div class="formula">Re(e<sup>ifx</sup>) = cos(fx)</div>
+      <div class="note">The red trace.</div>
+    </div>
+    <div class="equation blue">
+      <div class="name">Imaginary component · sine</div>
+      <div class="formula">Im(e<sup>ifx</sup>) = sin(fx)</div>
+      <div class="note">The blue trace.</div>
+    </div>
+    <div class="equation gold">
+      <div class="name">Rotating source point</div>
+      <div class="formula">X = X₀ + r cos(fx)<br>Y = Y₀ − r sin(fx)</div>
+      <div class="note">Screen coordinates; positive mathematical angle appears upward.</div>
+    </div>
+    <div class="equation red">
+      <div class="name">Cosine output mapping</div>
+      <div class="formula">y<sub>R</sub>(x) = y<sub>0</sub> − A cos(fx)</div>
+      <div class="note">A = displayed waveform amplitude.</div>
+    </div>
+    <div class="equation blue">
+      <div class="name">Sine output mapping</div>
+      <div class="formula">y<sub>I</sub>(x) = y<sub>0</sub> − A sin(fx)</div>
+      <div class="note">Same amplitude and phase; 90° component separation.</div>
+    </div>
+    <div class="equation gold">
+      <div class="name">Natural-phase period</div>
+      <div class="formula">Δx = 2π / f</div>
+      <div class="note">Natural-phase interval for one complete waveform cycle.</div>
+    </div>
+    <div class="equation gold">
+      <div class="name">Natural-phase quarter-cycle</div>
+      <div class="formula">Δx = π / (2f)</div>
+      <div class="note">Natural-phase interval corresponding to a 90° component phase shift.</div>
+    </div>
+  </div>
+</div>
+
+<div class="legend">
+<div class="key"><span class="swatch" style="background:#ff5968"></span>Cosine / Real</div>
+<div class="key"><span class="swatch" style="background:#45a7ff"></span>Sine / Imaginary</div>
+<div class="key"><span class="swatch" style="background:#e5bd67"></span>Source / Phase</div>
+</div>
+
+</section>
+<footer>IFD DIGITAL INSTRUMENTS · A LABORATORY OF POSSIBILITIES · <a href="/current-ifd-formulation.html">RETURN TO THE FORMULATION HUB</a></footer>
+</main>
+<script>
+(() => {
+"use strict";
+const cx=190,cy=245,radius=132,x0=cx+radius,x1=1180,mid=245,amplitude=155,TAU=2*Math.PI;
+const el=id=>document.getElementById(id),freq=el("freq"),speed=el("speed"),phaseControl=el("phase");
+let phase=0,running=true,previousTime=null,oneTurnTarget=null;
+
+function sourceState(p,f){
+ const a=f*p;
+ return{x:cx+radius*Math.cos(a),y:cy-radius*Math.sin(a),cosine:Math.cos(a),sine:Math.sin(a)};
+}
+
+// The source is at the tangent (left edge of the output lane).
+// Earlier source phases occupy progressively farther-right positions.
+// This makes each new segment emerge at the wheel and travel outward.
+function waveformPath(currentPhase,f,component){
+ // The first revolution physically draws the wave out from the tangent.
+ // After the front reaches the right edge, the trace becomes a moving
+ // history window: each point records the source phase when it was emitted.
+ const visibleSpan=Math.min(currentPhase,TAU);
+ if(visibleSpan<=0) return "";
+ const steps=Math.max(2,Math.ceil(1000*visibleSpan/TAU));
+ let d="";
+ for(let i=0;i<=steps;i++){
+  const u=i/steps;
+  const age=u*visibleSpan;
+  const historicalPhase=currentPhase-age;
+  const a=f*historicalPhase;
+  const value=component==="cos"?Math.cos(a):Math.sin(a);
+  const x=x0+(x1-x0)*age/TAU;
+  const y=mid-amplitude*value;
+  d+=(i===0?"M":"L")+x.toFixed(2)+" "+y.toFixed(2)+" ";
+ }
+ return d;
+}
+function draw(){
+ const f=Number(freq.value),s=sourceState(phase,f);
+ el("radius").setAttribute("x2",s.x);el("radius").setAttribute("y2",s.y);
+ el("sourcePoint").setAttribute("cx",s.x);el("sourcePoint").setAttribute("cy",s.y);
+ el("projectionX").setAttribute("x1",s.x);el("projectionX").setAttribute("y1",s.y);
+ el("projectionX").setAttribute("x2",s.x);el("projectionX").setAttribute("y2",cy);
+ el("projectionY").setAttribute("x1",cx);el("projectionY").setAttribute("y1",s.y);
+ el("projectionY").setAttribute("x2",s.x);el("projectionY").setAttribute("y2",s.y);
+ el("cosinePath").setAttribute("d",waveformPath(phase,f,"cos"));
+ el("sinePath").setAttribute("d",waveformPath(phase,f,"sin"));
+ el("cursor").setAttribute("x1",x0);el("cursor").setAttribute("x2",x0);
+ el("cosineDot").setAttribute("cx",x0);el("cosineDot").setAttribute("cy",mid-amplitude*s.cosine);
+ el("sineDot").setAttribute("cx",x0);el("sineDot").setAttribute("cy",mid-amplitude*s.sine);
+ el("freqValue").textContent=f.toFixed(2);el("speedValue").textContent=Number(speed.value).toFixed(2);
+ el("phaseValue").textContent=((phase%TAU)/TAU*360).toFixed(0)+"°";
+ phaseControl.value=((phase%TAU)/TAU*360).toFixed(0);
+}
+function animate(timestamp){
+ if(previousTime===null)previousTime=timestamp;
+ const dt=Math.min((timestamp-previousTime)/1000,.05);previousTime=timestamp;
+ if(running){
+  phase+=dt*Number(speed.value);
+  if(oneTurnTarget!==null&&phase>=oneTurnTarget){phase=oneTurnTarget;running=false;oneTurnTarget=null;el("play").textContent="PLAY";}
+  draw();
+ }
+ requestAnimationFrame(animate);
+}
+el("play").addEventListener("click",()=>{running=!running;previousTime=null;el("play").textContent=running?"PAUSE":"PLAY";});
+el("reset").addEventListener("click",()=>{phase=0;running=false;oneTurnTarget=null;previousTime=null;el("play").textContent="PLAY";draw();});
+el("oneTurn").addEventListener("click",()=>{oneTurnTarget=phase+TAU;running=true;previousTime=null;el("play").textContent="PAUSE";});
+phaseControl.addEventListener("input",()=>{phase=Number(phaseControl.value)/360*TAU;running=false;oneTurnTarget=null;previousTime=null;el("play").textContent="PLAY";draw();});
+freq.addEventListener("input",draw);speed.addEventListener("input",draw);
+draw();requestAnimationFrame(animate);
+})();
+</script>
+</body>
+</html>
