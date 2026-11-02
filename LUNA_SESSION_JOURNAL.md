@@ -297,3 +297,18 @@ Rick reported that the wakeup sequence restored LUNA one session behind; he repe
 **Decision:** GitHub must be a versioned reference, not a gatekeeper. Adopt failover-first, write-through preservation: save the current state to the canonical ChatGPT Library checkpoint when GitHub is unavailable; read it back; provide a downloadable local artifact; preserve the last known-good copy; explicitly report `UNSAVED / NOT VERIFIED` on any failed write or read-back. Do not claim the local-computer backup exists until Rick downloads the file.
 
 **Verified here:** canonical Library checkpoint upload succeeded and the exact file was read back. **Not yet verified:** current findings written/read back in GitHub; companion Library records; fresh-chat recovery of the current marker.
+
+
+## 2026-11-02 — Corpus sanitation disposition update
+
+
+## 2026-11-02 — Corpus sanitation disposition
+
+- Rick confirmed permanent deletion of all retired files from ChatGPT Library Trash. This is user-confirmed; the available file tools did not independently expose the Trash purge state.
+- Six sanitized current Library records were uploaded and read back in the prior sanitation pass.
+- GitHub main commit c0edbd1e37ba781fcf511569556a8f4770e57cb8 removes obsolete routes and predecessor material from the active IFD site.
+- The main tree and all 19 branch trees were inspected for legacy-named paths; none were found. Seven targeted code searches on main returned no matches.
+- No published releases were returned. Tag and fork enumeration remain unavailable through the current connector path.
+- Git history has not been rewritten; old commits may still contain retired material.
+- External backups, sync folders, exports, caches, and third-party copies remain unverified because their locations and connected access were not available.
+- Next action: obtain the actual external storage locations, verify provider-side disposition, then assess Git history rewrite feasibility.

@@ -1,5 +1,16 @@
 # LUNA Continuity Checkpoint
 
+## 2026-11-02 — Corpus sanitation disposition
+
+- Rick confirmed permanent deletion of all retired files from ChatGPT Library Trash. This is user-confirmed; the available file tools did not independently expose the Trash purge state.
+- Six sanitized current Library records were uploaded and read back in the prior sanitation pass.
+- GitHub main commit c0edbd1e37ba781fcf511569556a8f4770e57cb8 removes obsolete routes and predecessor material from the active IFD site.
+- The main tree and all 19 branch trees were inspected for legacy-named paths; none were found. Seven targeted code searches on main returned no matches.
+- No published releases were returned. Tag and fork enumeration remain unavailable through the current connector path.
+- Git history has not been rewritten; old commits may still contain retired material.
+- External backups, sync folders, exports, caches, and third-party copies remain unverified because their locations and connected access were not available.
+- Next action: obtain the actual external storage locations, verify provider-side disposition, then assess Git history rewrite feasibility.
+
 **Status:** LUNA AutoContext is INDEFINITELY SUSPENDED. Do not install, test, merge draft PR #7, or pursue remote persistence unless Rick explicitly reopens it.
 **Last updated:** 2026-10-28
 **Canonical recovery index:** https://github.com/FreeBeat222/IdentityFieldDynamics/blob/main/LUNA_RECOVERY_INDEX.md

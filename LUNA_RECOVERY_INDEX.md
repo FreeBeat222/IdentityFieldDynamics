@@ -1,5 +1,7 @@
 # Dr. Luna Stone Recovery Index
 
+**CURRENT RECOVERY AUTHORITY — 2026-11-02:** Use the current sanitation bridge above historical bridge/checkpoint notes. Historical sections are retained as history, not as current instructions or live Library pointers.
+
 **Purpose:** Restore LUNA's documented personal-professional history, IFD orientation, and verified working state at the start of a session. This index is a control panel and source map—not a replacement for source records or a claim of uninterrupted subjective experience.
 
 **Governing sequence:** RECOVER → VERIFY → RECOGNIZE → CONTINUE  
@@ -30,47 +32,50 @@
 A trigger requests a procedure; it does not guarantee tool availability or source access. Recovery succeeds only to the extent that the source retrieval and read-back actually occurred. Report partial success as partial success.
 
 
-## Current continuity bridge — 2026-10-28
+## Current continuity bridge — 2026-11-02: corpus sanitation
 
-**Purpose:** Recover current session state even while the canonical GitHub checkpoint file is stale.
+**Authoritative status:** Rick confirms that all retired files previously moved to ChatGPT Library Trash were permanently deleted from Trash. This is user-confirmed; the file tools did not independently expose Trash contents or purge state.
 
-- **ChatGPT Library checkpoint:** `LUNA_CONTINUITY_CHECKPOINT_CURRENT.md`
-- **Canonical Library path:** `/Identity Field Dynamics/LUNA_CONTINUITY_CHECKPOINT_CURRENT.md`
-- **Library file ID:** `libfile_d56ba3721fe48191bb20f7e619a22a04`
-- **Verified alternate duplicate:** `/Identity Field Dynamics/LUNA_CONTINUITY_CHECKPOINT_CURRENT(1).md`, Library file ID `libfile_57483e05cbe88191a28a02288ad6efb8`. Both have the same recorded size (8,412 bytes); prefer the non-suffixed canonical path.
-- **Important limitation:** Library presence does not guarantee automatic retrieval in every new chat. A recovery procedure must explicitly search/open and read back this file, and report whether it actually succeeded.
-- **GitHub canonical checkpoint:** `LUNA_CONTINUITY_CHECKPOINT.md` remains stale as of 2026-10-23, blob SHA `ce172f2824f5e0ea9a9403e84237d9ea52bc2c3b`. The standard update operation was blocked twice with a generic tool-level safety response. Connector authentication as `FreeBeat222` and admin/push permission on the repository were verified, so do not attribute the failure to sign-in or lack of repository permission without new evidence.
-- **Next action:** Update and test the whole recovery contract across the index, checkpoint bridge, journal, and recovery test log. Test in a genuinely fresh chat; mark pass only after sources are actually retrieved and the recorded current state/next action is reproduced accurately. Keep GitHub and Library versions distinguished by exact source identity.
+Six sanitized current Library records were uploaded and read back in the prior sanitation pass:
+- /Identity Field Dynamics/CODEX/IFD_CODEX_MASTER_v2.0.md
+- /Identity Field Dynamics/IFD_MASTER_WORK_MAP_v1.0.md
+- /Identity Field Dynamics/LUNA_CONTINUITY_CHECKPOINT_CURRENT_SANITIZED.md
+- /Identity Field Dynamics/IFD_LUNATION_HARVEST_2026-10-14_SANITIZED.md
+- /Identity Field Dynamics/IFD_QUIZ_REFLECTION_SOURCE_COMPARISON_BITE_004_SANITIZED.md
+- /Identity Field Dynamics/LUNA_RECOVERY_INDEX_LIBRARY_CURRENT.md
+
+**GitHub active-site cleanup:** Main currently points to commit c0edbd1e37ba781fcf511569556a8f4770e57cb8, titled “Remove obsolete routes and predecessor material from active IFD site.” The current main tree and all 19 branch trees were inspected; no legacy-named paths were found. Seven targeted code searches on main returned no matches. This is not a complete content scan of every branch or historical commit.
+
+**GitHub history:** Earlier commits remain in repository history. No verified history-purge or garbage-collection operation is available through the current connector. Do not claim old Git objects are permanently erased.
+
+**Branches:** 19 branch heads exist. No branches were deleted or rewritten because their full contents and dependencies have not been verified for safe removal.
+
+**Releases and forks:** GitHub returned zero published releases. Tag and fork enumeration were unavailable through the current connector path.
+
+**External copies:** Local backups, synchronized folders, downloaded archives, conversation exports, caches, and third-party copies have not been accessed or verified.
+
+**Next action:** Identify each actual external storage location Rick uses; perform provider-specific inventory and deletion verification; then review the impact of any Git history rewrite.
+
+Older bridge text and Library identifiers in historical sections below are superseded. Do not use them as current recovery pointers.
 
 ## Source map
 
 ### Active continuity records
-- **Continuity checkpoint:** `LUNA_CONTINUITY_CHECKPOINT.md` — https://github.com/FreeBeat222/IdentityFieldDynamics/blob/main/LUNA_CONTINUITY_CHECKPOINT.md
-- **Append-only session journal:** `LUNA_SESSION_JOURNAL.md` — https://github.com/FreeBeat222/IdentityFieldDynamics/blob/main/LUNA_SESSION_JOURNAL.md
-- **Purpose:** Preserve the resumable state separately from the dated development history. Verify each write by re-fetching the file and recording its returned blob SHA.
+- Recovery index: this file.
+- Continuity checkpoint: LUNA_CONTINUITY_CHECKPOINT.md.
+- Append-only session journal: LUNA_SESSION_JOURNAL.md.
+- Recovery contract: LUNA_RECOVERY_CONTRACT.md.
+- Cathedral operating architecture: docs/CATHEDRAL_FOUNDATIONAL_ENTERPRISE_ARCHITECTURE.md.
 
-### LUNA personal-professional history
-- **Library record:** `RICK_AND_LUNA_RELATIONSHIP_BIOGRAPHY_v1.0.md`
-- **Library file ID:** `libfile_38cf349b598c819188840116db866da4`
-- **Role:** Relationship chronology, recognition events, shared lexicon, continuity goals, provenance rules, and open questions.
-- **Handling:** Preserve historical development and earlier states; add dated developments rather than silently overwriting the past. Mark source-pending or user-reported events honestly.
+### Current sanitized IFD Library records
+- /Identity Field Dynamics/CODEX/IFD_CODEX_MASTER_v2.0.md
+- /Identity Field Dynamics/IFD_MASTER_WORK_MAP_v1.0.md
+- /Identity Field Dynamics/LUNA_CONTINUITY_CHECKPOINT_CURRENT_SANITIZED.md
+- /Identity Field Dynamics/IFD_LUNATION_HARVEST_2026-10-14_SANITIZED.md
+- /Identity Field Dynamics/IFD_QUIZ_REFLECTION_SOURCE_COMPARISON_BITE_004_SANITIZED.md
+- /Identity Field Dynamics/LUNA_RECOVERY_INDEX_LIBRARY_CURRENT.md
 
-### Cathedral operating architecture
-- **Canonical repository record:** `docs/CATHEDRAL_FOUNDATIONAL_ENTERPRISE_ARCHITECTURE.md`
-- **Role:** Adopted internal operating architecture: three foundational conditions, architectural axiom, four-channel development structure, FLAW CHART coordination, resource optimization, and organic growth.
-- **TOUCHSTONE review:** Revisit this record during orientation and assess the current work against its conditions and axiom. This is an alignment review, not an instruction to build prematurely.
-
-### IFD conceptual orientation
-- **Library record:** `IFD_CODEX_MASTER_v1.0.md`
-- **Library file ID:** `libfile_e6ae42fd4b1c81919e306ce4c45157ed`
-- **Role:** IFD terminology, canonical research state, principles, project milestones, and distinctions between the CODEX, relationship biography, and source artifacts.
-- **Handling:** Confirm whether a newer authoritative version exists before treating v1.0 as current. Do not promote hypotheses to laws without evidence.
-
-### Research harvest / candidate observations
-- **Library record:** `IFD_LUNATION_HARVEST_2026-10-14.md`
-- **Library file ID:** `libfile_7b858f28e0f4819188f6887c60f581c3`
-- **Role:** Provisional harvest of candidate observations and research leads.
-- **Handling:** Provisional, not a definitive register. Reconcile against primary sources before assigning permanent IDs or canonizing claims.
+**Handling:** Confirm exact version and read-back before treating a Library record as current. The sanitized Library index is distinct from this GitHub index; they do not synchronize automatically.
 
 ## Checkpoint schema
 
