@@ -206,3 +206,30 @@ This is a first-pass due-diligence memorandum based on the sources listed above.
 - empirical validation of the Current IFD Formulation.
 
 **Next action:** proceed with the Draft 1.1 / Edition 1.0 / supporting-page reconciliation, preserving both source states and recording every material difference before recommending canonization.
+
+
+## 8. Additional verification — Draft 1.1 copy comparison
+
+The two Library Draft 1.1 HTML files were materialized from their returned file IDs and compared locally.
+
+- Architecture-Separated: 46,924 bytes; SHA-256 `8cf315b811cc6dc20c8a0d75a164ca9ecda2f788baf7decacb33b56adaf97b61`.
+- Numbered: 48,962 bytes; SHA-256 `f6b7b7abb3365f1c5ec170202a25c821419fb42b334d285a1c592f81dc43fd05`.
+- They are **not byte-identical**.
+- The section text is identical in `top`, `purpose`, `source`, `generation`, `clock`, `brand`, `binary`, `operation`, `collective`, `principles`, `research`, `workflow`, `flaw-chart`, `status`, `hub`, and `revision-ledger`.
+- The `mission` section differs only in its label: “IFD FORMULATION MISSION STATEMENT” versus “The IFD mission.”
+- The `architecture` section differs materially.
+
+**Architecture-Separated version:** places five binary/relational concepts (Binary Vision, Binary Equilibrium, Binary Dynamics, Agency–Responsibility, Multi-Binary Systems) as unelaborated cards inside the whole-system diagram; it omits the explanatory paragraph “Why integrate the components?”
+
+**Numbered version:** removes those five cards from the whole-system diagram, adds a paragraph explicitly explaining why integration matters, and leaves the detailed Binary section as the separate home for those concepts.
+
+All other section text extracted from the two files is identical in this comparison.
+
+**Provisional editorial assessment:** the Numbered version has the clearer separation of whole-system flow from binary architecture and gives the reader a better explanation of why integration is required. This is an editorial assessment, not user adoption or canonization. Retain both source copies until the version decision is documented.
+
+## 9. Revised immediate reconciliation priorities
+
+1. Use the Numbered Draft 1.1 as the preferred comparison candidate for the next review because it separates the central flow from the detailed Binary section and explains the integrative purpose. This does **not** make it approved or canonical.
+2. Compare its central architecture with the CODEX operational sequence and the current `identity-in-operation.html` page. Resolve the SYNERGY relation before choosing a public diagram.
+3. Compare all remaining sections of Draft 1.1 against the 13 supporting pages and source records; the two Draft 1.1 copies being mostly identical does not substitute for that cross-document audit.
+4. Only after reconciliation, prepare a proposed publication candidate and a change ledger. Do not overwrite Edition 1.0 or publish without explicit approval.
