@@ -68,25 +68,28 @@ A second Library artifact, **Current IFD Formulation Structural Revision Draft 1
 
 **Disposition:** Edition 1.0 remains the verified GitHub main-branch formulation at the inspected commit. Draft 1.1 remains an unapproved Library candidate. Neither is silently substituted for the other. The draft must be reconciled with the CODEX, supporting pages, and source records before adoption or publication.
 
-### DD-003 — Important internal sequence inconsistency requires resolution
+### DD-003 — SYNERGY is being refined from a sequence label to a cross-cutting relational construct
 
-The CODEX and current supporting page identify the operational sequence as:
+The CODEX and current public `identity-in-operation.html` page use the compact organizer:
 
 `IDENTITY → ACTION → INTERACTION → SYNERGY → TRACE`
 
-The Draft 1.1 whole-system diagram instead depicts:
+The Draft 1.1 **Numbered** version explicitly qualifies this: the sequence remains a useful research-facing organizer, but SYNERGY should not be read as a strictly linear event after interaction. It proposes the more precise display:
 
-`IDENTITY → ACTION → INTERACTION`
+`IDENTITY → ACTION → INTERACTION → TRACE`
 
-then:
+with **SYNERGY** as a cross-cutting investigation of potential emergent effects of interaction, possibly feeding back into subsequent development. Its operation section further defines synergy as a proposed emergent relational phenomenon whose presence, magnitude, and character require operational criteria and evidence.
 
-`TRACE ↔ FEEDBACK ↔ CONTINUING CHANGE`
+The current public SYNERGY chapter is more specific still: it defines SYNERGY as a productive relationship between two differentiated identities operating at APEX level, involving reciprocal elevation and output substantially exceeding the sum of independent outputs, with possible capacity-ceiling expansion. It provides candidate measures:
 
-and presents **SYNERGY** as a cross-cutting relational dynamic connected to interaction, trace, feedback, and collective organization.
+- `S_AB = P_AB − (P_A + P_B)`
+- `R_AB = P_AB / (P_A + P_B)`
 
-This may be a deliberate refinement rather than an error, but it changes the structural representation. It must not be reconciled by choosing one version based on recency alone.
+It explicitly says a positive surplus or ratio above one does not by itself establish reciprocal elevation, APEX-level participation, or capacity expansion. “Substantially exceeding” still needs a threshold. A temporary increase in combined output must be distinguished from durable improvement in a participant's subsequent independent capability.
 
-**Required decision:** determine whether SYNERGY is (a) a sequential stage, (b) an emergent result of interaction, (c) a cross-cutting process, or (d) context-dependent and capable of more than one typed relation. If more than one, distinguish the meanings and conditions. Then align CODEX, central diagram, and supporting page.
+**Revised finding:** this is not an unresolved contradiction within Draft 1.1. Draft 1.1 contains a reasoned refinement. The unresolved reconciliation is between the older compact sequence in CODEX/current public supporting page and the more developed cross-cutting treatment in Draft 1.1 and the dedicated SYNERGY chapter.
+
+**Required next operation:** preserve the compact sequence as a historical/summary organizer if useful, but define its arrow types and explicitly state that SYNERGY is not necessarily a discrete temporal stage. Reconcile the CODEX and public operation page with the detailed SYNERGY chapter. Determine whether the broad cross-cutting category and the specific dyadic APEX construct are nested levels (general emergent synergy → specific productive dyadic synergy) or whether the specific construct is the only intended canonical meaning. Do not flatten these distinctions.
 
 ### DD-004 — ZERO / SOURCE source lineage has been recovered to a meaningful level
 
@@ -233,3 +236,33 @@ All other section text extracted from the two files is identical in this compari
 2. Compare its central architecture with the CODEX operational sequence and the current `identity-in-operation.html` page. Resolve the SYNERGY relation before choosing a public diagram.
 3. Compare all remaining sections of Draft 1.1 against the 13 supporting pages and source records; the two Draft 1.1 copies being mostly identical does not substitute for that cross-document audit.
 4. Only after reconciliation, prepare a proposed publication candidate and a change ledger. Do not overwrite Edition 1.0 or publish without explicit approval.
+
+
+## 10. Additional verified finding — SYNERGY architecture and measurement
+
+The GitHub main-branch supporting page `public/current-ifd/synergy.html` was retrieved (blob `562d1e16880020bee05d22e59a37afb33c7ba113`, 21,882 bytes). The current operation page was also retrieved (blob `d86e3640ed598fa8a7e2763c133ae49f523a55c3`).
+
+The SYNERGY chapter contains a substantial research formulation, not merely a generic dictionary definition. Its key distinctions are:
+- differentiated participants;
+- reciprocal influence on subsequent contributions;
+- productive surplus against comparable independent baselines;
+- APEX as a cycle-specific capacity ceiling;
+- possible capacity expansion as a separate, unproven downstream consequence;
+- Reciprocal Energy Reinforcement (RER) and reciprocal BUILD as provisional mechanism labels;
+- dyadic APEX as a hypothesis, not a universal claim that two is always optimal;
+- group-size and team-performance research as relevant context, not direct validation of the complete IFD construct.
+
+The algebraic surplus and ratio are valid descriptive comparisons when outputs are commensurable and the denominator is positive. The ratio criterion `R_AB > 1` is equivalent to positive surplus under those conditions; it is not an independent second proof. A defensible empirical test must predefine output, task, time window, resources, independent baseline, participant exposure, and threshold for “substantial.” It must separately test reciprocal elevation and any later change in individual capacity.
+
+**Architectural recommendation for review:** preserve two levels pending explicit adoption:
+1. **General emergent synergy:** a possible cross-cutting relational phenomenon that can arise through interaction at multiple scales.
+2. **Specific IFD productive synergy:** the narrower dyadic/APEX working construct with reciprocal BUILD and measurable productive surplus.
+
+This nesting is a proposed clarification, not yet a canonical decision. The exact scope relation must be confirmed against the originating source and Rick's explicit adoption.
+
+## 11. Additional structural finding — Binary architecture
+
+The Draft 1.1 Numbered version has a dedicated Binary section. It explicitly states that binary structures are one class of relational structure, not a universal reduction of all phenomena to two poles. It preserves Binary Vision, Binary Equilibrium, Binary Dynamics, Agency–Responsibility, and Multi-Binary Systems as distinct research strands, while warning that their definitions, provenance, mathematical status, and interrelationships still require CODEX reconciliation.
+
+This section is not currently represented as a dedicated page in the 13-page public `current-ifd/` supporting set retrieved from GitHub main. Its presence in Draft 1.1 therefore creates a content-integration task: locate and reconcile the source corpus before creating a new public page or moving the material into the CODEX.
+
