@@ -582,3 +582,114 @@ The Euler Machine must preserve two distinct but connected layers:
 The first layer has established mathematical content. The second is an IFD construction requiring explicit definitions and derivation. A visually correct animation does not, by itself, establish the second layer.
 
 - **v0.3 — 2026-11-03:** Corrected Source Formula source status after direct primary-PDF inspection; preserved the user's recovered ZERO / Primary Field-o-Stuff™ / ontological 0/0=1 statements; identified ZERO = ∞ as assistant-authored and not adopted; separated Euler Machine mathematical demonstration from the IFD ontological mapping.
+
+
+## 15.13 Proposed website information architecture
+
+The public website should express the discipline as a connected research system rather than a flat directory of concepts. The following is the proposed information architecture; it is not yet implemented in production.
+
+### A. Discipline entry
+- **Home / Mission / Discipline:** explain what IFD investigates, its scope, its commitments, and its epistemic boundaries.
+- **Current IFD Formulation:** the central public hub and integrated account. It should explain the three connected views and link to each supporting page at the point where the reader needs it.
+
+### B. Three connected views
+
+**VIEW 01 — CENTRAL IDENTITY FORMULATION**
+- Purpose & Scope
+- ZERO & SOURCE
+- Generation & Differentiation
+- Cosmological Clock & Timecode
+- Birth, Branding & Brand
+- Identity in Operation
+- Collective Manifestation
+- Integrative Principles
+
+**VIEW 02 — RELATIONAL & ARCHITECTURAL DYNAMICS**
+- Architectural Conditioning, Agency & Access
+- Asymmetrical Architecture & Consequence
+- Binary Structures & Multi-Binary Configurations
+- Synergy: general relational category and specific Dyadic APEX hypothesis
+- Collective organization and feedback
+
+A dedicated supporting page for this view is a candidate addition. Do not create it until the underlying terms, scope, and relation hierarchy have been reconciled against the source corpus.
+
+**VIEW 03 — INVESTIGATIVE ACCOUNTABILITY**
+- Research Program
+- Evidence & Status
+- OBSERVOR 2.0
+- Quiz Lab
+- FLAW CHART™
+- Investigator responsibility and model/instrument/phenomenon distinctions
+
+### C. EXHIBITS — inspectable demonstrations and records
+
+Create a dedicated **Exhibits** index as a navigational layer, not as a substitute for the Current IFD Formulation or the research record. The index should group exhibits by type:
+1. Mathematical exhibits.
+2. Source-critical exhibits.
+3. Structural/relational diagrams.
+4. Interactive and computational demonstrators.
+5. Empirical observations and datasets.
+6. Research instruments and protocols.
+7. Historical and interpretive exhibits.
+
+Each exhibit must link to the claim(s) it addresses, the controlling formulation section, its source/provenance, and its actual status. A visual should never appear to prove more than it demonstrates.
+
+### D. Research record and archive
+- Research Program and current questions.
+- Dated memoranda, source audits, and development history.
+- Research intake and contribution routes.
+- Archive/provenance records and superseded versions.
+
+Public navigation and internal continuity/governance are different audiences. The CODEX, asset registry, source ledgers, and working matrices govern the research record; the public website should expose the portions that help readers understand and inspect IFD without dumping internal project administration into the reader's path.
+
+### E. Navigation and contextual linking
+
+Use the existing CODEX §13 contextual-linking standard:
+- Menus provide site-level orientation.
+- Contextual links provide concept-level movement between definitions, claims, equations, evidence, methods, instruments, and source records.
+- Link only when the destination materially improves understanding or verification.
+- Verify the destination and the implied relationship.
+- A link is not evidence, validation, or canonical promotion.
+- Mark planned destinations honestly; do not invent routes.
+
+## 15.14 Exhibit record schema and initial portfolio
+
+### Required exhibit record
+
+Every exhibit should have:
+- **Exhibit ID** — stable identifier.
+- **Title and type** — mathematical, source-critical, structural, demonstrative, empirical, instrument, historical, or interpretive.
+- **Question addressed** — what the reader should be able to inspect or understand.
+- **Claim/relation references** — working IDs from the claim/relation matrix until canonical IDs are assigned.
+- **Source and provenance** — primary source, author/contributor, date, version, repository/Library path, and integrity reference where available.
+- **Construction/method** — derivation, algorithm, protocol, observational conditions, or interpretive method.
+- **Demonstrated result** — what the exhibit actually shows.
+- **Non-demonstrated claims** — what it does not establish.
+- **Status** — proposed, source-verified, mathematically verified, prototype, runtime-verified, empirically tested, validated within scope, superseded, or archived.
+- **Limitations and open questions** — known defects, assumptions, missing records, and next verification step.
+- **Related exhibits and formulation sections** — useful intellectual navigation.
+
+### Initial candidate exhibit register
+
+| Candidate ID | Exhibit | Type | Current status / boundary |
+|---|---|---|---|
+| EX-MATH-001 | Euler's formula and Euler's identity | Mathematical | Established mathematical results; keep the general formula distinct from its special-case identity. |
+| EX-MATH-002 | Complex unit-circle and sine/cosine projections | Mathematical / structural | Established representation; phase is not automatically physical time or identity. |
+| EX-SRC-001 | Morgue's externally named “Source formula” | Source-critical | Primary PDF printed pp. 58–65 inspected; external Hyperianism context must be explicit. |
+| EX-IFD-001 | ZERO / SOURCE / ontological 0/0=1 mapping | Conceptual / ontological | User-declared IFD commitments/proposition; exact IFD operation and mapping remain to be formalized. |
+| EX-DEMO-001 | Euler Machine | Interactive mathematical demonstrator | Archived iterations; no accepted final implementation verified. Mathematical demonstration and ontological construction remain separate layers. |
+| EX-SRC-002 | Morque/Morgue Source Machine reconstructions | Source-critical / computational | Multiple archived prototypes; compare against the inspected primary source; acceptance not established. |
+| EX-HYP-001 | Euler Moment™ / neutrino-imprinting proposal | Hypothesis / research exhibit | Ambient neutrino exposure and interactions are established generally; IFD-specific imprint mechanism remains unresolved. |
+| EX-STR-001 | Identity → Action → Interaction → Synergy → Trace / Feedback | Structural diagram | Research-facing organizer; not a universal linear causal law. Synergy is conditional; Trace may arise without it. |
+| EX-REL-001 | Dyadic APEX Synergy / reciprocal BUILD | Provisional model | Public working formulation exists; scope relation to general Synergy and operational validation remain open. |
+| EX-INST-001 | OBSERVOR 2.0 | Research instrument | Current instrument track; raw-record, protocol, and analysis reconciliation required before empirical claims. |
+| EX-INST-002 | IFD Quiz Lab | Interactive instrument / participation | Existing deployed instrument; deployment history exists; psychometric validity and generalizability are not established. |
+| EX-INST-003 | FLAW CHART™ | Research instrument / defect tracking | Named working instrument; operating performance and inter-rater use require evaluation. |
+| EX-REL-002 | Architectural conditioning, agency, access, asymmetry | Relational model / case framework | Provisional theoretical formulations; domain-specific operationalization and evidence required. |
+| EX-PROC-001 | Four-channel workflow | Process exhibit | Established as the current project workflow: Research, Construction, Verification, Archiving. |
+
+The candidate IDs are provisional and must be reconciled with the IFD Digital Asset Registry before being treated as canonical asset identifiers.
+
+**Design principle:** The Exhibits area should function as the Cathedral's inspection gallery: every display opens a window into a specific part of the architecture, shows the source and status, and makes the limits visible. It should reward exploration without turning speculative material into a museum of supposed facts.
+
+- **v0.3 addendum — 2026-11-03:** Added the proposed public website information architecture and a status-bearing exhibit record schema/initial portfolio. No website routes or production pages were changed.
