@@ -4,7 +4,7 @@
 **Document ID:** IFD-CRM-001  
 **Date:** 2026-11-03  
 **Status:** FIRST-PASS WORKING REGISTER — NOT CANONICAL; NOT A COMPLETE CLAIM AUDIT  
-**Parent:** IFD-ARCH-001 Working Specification v0.2  
+**Parent:** IFD-ARCH-001 Working Specification v0.3  
 **Purpose:** Make the major claims and relationships in the Current IFD Formulation inspectable, typed, source-linked, and explicit about unresolved status.
 
 ---
@@ -96,7 +96,7 @@ A claim may be canonical as a declared IFD commitment while remaining untested a
 
 ## 5. Priority reconciliation queue
 
-1. **ZERO / SOURCE:** retrieve exact primary Source Formula; reconcile Addenda A, B, E, and G with the source PDF and preserved excerpts.
+1. **ZERO / SOURCE:** map the source-verified Euler formula into the IFD ZERO / SOURCE architecture; reconcile Addenda A, B, C, D, E, and G with the source PDF and preserved excerpts.
 2. **GENERATION / DIFFERENTIATION:** decide what SPARK denotes and whether the branches are sequential, parallel, or mutually dependent.
 3. **TEMPORAL / IMPRINT:** reconcile Cosmological Clock, System Clock, Timecode, FLASH, Euler Moment™, Branding, Brand, and Identity History.
 4. **IDENTITY / CONFIGURATION:** connect the canonical continuity principle to the formalization queue without inventing a conserved quantity.
@@ -108,7 +108,7 @@ A claim may be canonical as a declared IFD commitment while remaining untested a
 
 This matrix is a structured synthesis of the currently retrieved CODEX v2.4, Draft 1.3, Master Work Map v1.0, Four-Month Review Pass 01, and Morque & Euler Machine project index. It is not a full source-by-source audit of the 13 supporting pages, the entire Library, all IPA entries, or every empirical record.
 
-No empirical validation is claimed. No equation for the Source Formula is supplied. No archived Euler Machine version is declared accepted. The matrix should be revised as primary source records are recovered and the public pages are reconciled.
+No empirical validation is claimed. The exact Source Formula equation is supplied and source-verified; its IFD ontological mapping remains open. No archived Euler Machine version is declared accepted. The matrix should be revised as primary source records are recovered and the public pages are reconciled.
 
 **Next action:** compare each row against the corresponding source section and current public supporting page, record exact differences, and update status only when the source check is complete.
 
