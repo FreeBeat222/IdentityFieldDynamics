@@ -1,9 +1,9 @@
 # IFD Structure & Content Architecture
-## Working Specification v0.1
+## Working Specification v0.2
 
 **Document ID:** IFD-ARCH-001  
-**Date:** 2026-11-02  
-**Status:** PROPOSED WORKING SPECIFICATION — NOT YET CANONIZED  
+**Date:** 2026-11-03  
+**Status:** PROPOSED WORKING SPECIFICATION v0.2 — NOT YET CANONIZED  
 **Scope:** Public IFD website architecture, conceptual organization, logical relations, formulation governance, and exhibits.
 
 ---
@@ -370,3 +370,172 @@ This specification does not claim:
 - that the IFD corpus has been exhaustively inventoried or reconciled.
 
 **Acceptance condition:** this working specification becomes canonical only after source reconciliation and explicit adoption. Until then it is a proposed architecture for organizing and testing the existing work.
+
+
+---
+
+## 15. Controlled source-reconciliation update — 2026-11-03
+
+**Purpose:** Extend IFD-ARCH-001 using the latest located formulation, CODEX, and exhibit-archive records. This update does not adopt Draft 1.3, publish a formulation, or alter the production website.
+
+### 15.1 Verified authority and version snapshot
+
+| Record | Current observed state | Authority boundary |
+|---|---|---|
+| Public Current IFD Formulation | Edition 1.0 in GitHub main; source `public/current-ifd-formulation.html`; blob `ea3d847576a23794402f4ad334c034171aabb883` | Repository source verified; live deployment not verified in this review |
+| Current IFD Formulation Draft 1.3 | Latest located Library formulation draft; dated 2026-11-02 | Revision candidate; explicitly not approved for publication |
+| IFD CODEX | v2.4 located in `/Identity Field Dynamics/CODEX/IFD_CODEX_MASTER_v2.4.md` | Latest located Library master; not a complete consolidated theory manuscript |
+| IFD Master Work Map | v1.0, dated 2026-11-02 | Active working map; explicitly not a claim of corpus completion |
+| IFD-ARCH-001 / IFD-DD-001 | Proposed records in draft PR #18 | Working proposal; not canonical and not merged |
+
+Do not infer production deployment from GitHub main or Library presence. Do not treat a newer draft number as publication approval or automatic authority over the public source.
+
+### 15.2 Three connected views of the discipline
+
+Draft 1.3 supplies a useful conceptual organization that should be integrated into the five-domain knowledge architecture. It defines three connected views:
+
+1. **CENTRAL IDENTITY FORMULATION** — the identity phenomenon and its proposed origin, differentiation, manifestation, temporal imprint, operation, and collective organization.
+2. **RELATIONAL & ARCHITECTURAL DYNAMICS** — architectural conditioning, agency, access, recursion, asymmetrical consequence, interaction types, and contingent Synergy.
+3. **INVESTIGATIVE ACCOUNTABILITY** — observation, representation, methods, instruments, evidence, falsifiability, disconfirmation, model failure, and researcher accountability.
+
+These are three perspectives on one discipline, not three competing theories and not substitutes for the five-domain architecture. Map them as follows:
+
+| Conceptual view | Primary domains served |
+|---|---|
+| Central Identity Formulation | STRUCTURE + FORMULATION |
+| Relational & Architectural Dynamics | STRUCTURE + LOGIC + FORMULATION |
+| Investigative Accountability | LOGIC + EXHIBITS + GOVERNANCE & PROVENANCE |
+
+EXHIBITS and GOVERNANCE & PROVENANCE cut across all three views.
+
+### 15.3 Refined structural content architecture
+
+Organize the central identity formulation into connected layers. These are organizational layers, not a claim that every layer is a universal temporal stage or proven causal mechanism.
+
+**A. Foundational commitment and proposed generative architecture**
+- ZERO = EVERYTHING — formally declared foundational IFD ontological commitment.
+- SOURCE / Source Formula — proposed generative architecture associated with ZERO.
+- ZERO cycle and SPARK.
+- GENERATION and DIFFERENTIATION.
+- Unique originating signature.
+- FREQUENCY / CALL SIGNAL.
+- SUBSTANCE and the proposed transition to IDENTITY.
+
+**B. Identity and configuration**
+- Identity as the subject/system under investigation.
+- Distinctness, configuration, continuity, transformation, and persistence.
+- The canonical distinction that identity is treated as conserved while configuration is transformable.
+- The conserved quantity/current, admissible transformations, and boundary conditions remain open formalization requirements.
+
+**C. Temporal and imprint architecture**
+- Cosmological Clock.
+- System Clock.
+- Identity history.
+- Timecode and FLASH.
+- Euler Moment™, Branding, Brand, Birth Chart, and Cosmic Identity Coin as related lenses on one proposed birth-moment phenomenon, not seven successive stages.
+- Astrology as an interpretive representation, not physical-mechanism evidence.
+- Physical registration, retention, and identity-specific imprint mechanisms remain unresolved.
+
+**D. Operational and relational architecture**
+- IDENTITY → ACTION → INTERACTION → SYNERGY → TRACE as the research-facing organizer.
+- FEEDBACK as a recursive relation, not a terminal stage.
+- Action and/or interaction may produce traces without demonstrated Synergy.
+- Synergy is conditional and may be an intended objective in purposeful partnerships; intention, contribution, and achieved outcome must remain distinct.
+
+**E. Collective organization**
+- Differentiated identities in relationship.
+- Coordination, cooperation, competition, coercion, exploitation, and other domain-specific interaction types.
+- Collective patterns and scale-dependent properties.
+- No assumption that a collective has exactly the same properties as an individual.
+- Cosmic expansion remains a wider research question, not a required premise or demonstrated consequence.
+
+**F. Cross-cutting principles and methods**
+- ALIGN, INTERCONNECT, MANIFEST as architectural/methodological directives.
+- LOVE, COHERENCE, EQUILIBRIUM as proposed whole-system principles whose domain-specific meanings and support remain open.
+- Architectural conditioning, agency, effective agency, architectural access, recursion, asymmetrical consequence, and equality distinctions.
+- Investigative accountability and adversarial examination.
+
+### 15.4 Logic refinements to carry into the central formulation
+
+1. **ZERO = EVERYTHING → SOURCE:** a declared ontological commitment and proposed architectural association; not a mathematical derivation or demonstrated physical causal mechanism.
+2. **SOURCE → GENERATION / DIFFERENTIATION:** proposed generative architecture. The exact dependency and ordering of the two branches remain open.
+3. **GENERATION / DIFFERENTIATION → originating signature:** proposed constitutive or functional relationship; operational criteria for SPARK and uniqueness remain open.
+4. **Signature / frequency → substance → identity:** proposed progression. Distinguish mathematical signature, information-bearing signal, analogy, and literal physical frequency.
+5. **Identity → Action:** conceptual/expressive relation under ACTION = IDENTITY; not a mathematical equality and not a license to infer an entire identity from one isolated action.
+6. **Action → Interaction:** relational connection when actions, entities, or conditions affect or respond to one another; not every action requires interaction.
+7. **Interaction ↔ Synergy:** conditional investigation of possible emergent effects. Interaction does not guarantee Synergy; purposeful interaction may seek it.
+8. **Action and/or Interaction → Trace:** possible record, consequence, or observable residue; trace does not require Synergy.
+9. **Trace / prior interaction → subsequent conditions:** proposed informational/recursive feedback; persistence, retention, detectability, and effect require domain-specific evidence.
+10. **Architecture ↔ action:** architecture conditions the field of possible action; agency may operate within, against, or transform those conditions. Conditioning does not mean deterministic control.
+
+Use typed relations in the underlying claim/relation register even when a public diagram uses simplified arrows.
+
+### 15.5 ZERO = EVERYTHING: authority and evidence are separate
+
+Draft 1.3 clarifies that ZERO = EVERYTHING is a foundational ontological commitment formally declared by the Identity Researcher. Its authority as an IFD commitment rests on that declaration. It is not an authority awaiting mathematical or empirical permission.
+
+Preserve this distinction:
+- **Disciplinary/ontological status:** foundational IFD commitment.
+- **Mathematical status:** not thereby a theorem or consequence of Euler's formula, Euler's identity, Fourier analysis, or any other mathematical result.
+- **Empirical status:** not thereby an established empirical finding.
+- **Research obligation:** investigate conceptual implications, explanatory reach, and any researchable consequences without pretending that empirical testing confers the original declaration's authority.
+
+The Source Formula remains a separate named construct. Do not invent or substitute an equation for it. Retrieve its exact source expression, attribution, definitions, and derivation before treating it as a mathematical exhibit.
+
+### 15.6 Exhibit portfolio: distinguish three easily conflated projects
+
+The Library archive `/IFD Project — Morque & Euler Machine/` contains an initial project index reporting 68 files. Its own handling rules classify it as an archive, not an acceptance declaration.
+
+Keep these workstreams distinct:
+
+- **Euler Machine:** a mathematical/structural demonstrator intended to show one rotating point and its horizontal/vertical projections generating cosine and sine on a shared output plane from one phase variable, preserving 90-degree quadrature. The trigonometric relationship is established mathematics; the correctness of a particular animation is an implementation question.
+- **Morque Source Machine:** source-recovery and reconstruction work concerning the Source Formula. Its source PDF candidate, attribution, relevant passages, and reconstructions require review.
+- **Euler Moment™:** the proposed birth-moment and identity-imprinting construct. Ambient solar-neutrino exposure and neutrino–matter interactions are established generally; the IFD-specific SPARK-associated event, selective registration, persistent identity-specific Brand, and TRACE mechanism remain unresolved hypotheses.
+
+The archive reports no accepted final Euler Machine implementation. V3.8 was not visually verified or accepted. V3.9 is a known failed acceptance candidate, with an animation-loop scheduling defect and unwanted visual elements. No version should be represented as working or accepted merely because it exists or has the highest version number.
+
+Do not treat an Euler Machine animation as evidence for ZERO = EVERYTHING, the Source Formula, or the Euler Moment imprinting hypothesis.
+
+### 15.7 Exhibit classes and initial portfolio
+
+| Exhibit family | Intended content | Current handling |
+|---|---|---|
+| Mathematical | Euler formula/identity, Fourier analysis, complex-plane rotation, derivations, transformations, counterexamples | Verify exact mathematics and keep interpretation separate |
+| Source-critical | Morque source PDF, exact Source Formula, preserved excerpts, provenance and attribution | Retrieve primary passages before reconstruction |
+| Structural | Whole-system architecture, typed relation graphs, binary structures, phase/configuration maps | Label proposed relationships and unresolved edges |
+| Demonstrative | Euler Machine and interactive mathematical visualizations | Separate mathematical demonstration from physical/ontological evidence |
+| Empirical | OBSERVOR 2.0 records, controlled observations, datasets, reproducible analyses | No result without traceable protocol, raw records, conditions, exclusions, and limitations |
+| Instrument | OBSERVOR 2.0, Quiz Lab, FLAW CHART™ | Record version, method, behavior, tests, limitations, and validation status |
+| Relational/case | Synergy, architectural conditioning, agency, asymmetry, collective organization, bounded cases | Distinguish thought experiments from empirical cases |
+| Historical/interpretive | Original articulations, dated decisions, I Ching prompts, intellectual history | Preserve provenance; do not silently convert interpretation into empirical support |
+
+Every public exhibit must identify the question it addresses, its source, construction or method, what it demonstrates, what it does not demonstrate, limitations, status, and links to the relevant formulation claims.
+
+### 15.8 OBSERVOR and investigative accountability
+
+OBSERVOR 2.0 remains the sole active OBSERVOR method/instrument track. Its phenomenon-first method does not presume identity as a starting variable or calculate an identity score. Do not import OBSERVOR v5 variables, scores, or analyses.
+
+Keep three objects distinct:
+1. **Phenomenon:** what is being investigated.
+2. **Model:** the representation or explanation of the phenomenon.
+3. **Method/instrument:** how observation, measurement, classification, and testing are performed.
+
+Instrument operation does not validate a construct. Model failure does not establish phenomenon failure. Neither the phenomenon nor the model is exempt from contrary evidence.
+
+FLAW CHART™ remains the existing defect-tracking lifecycle. Falsifiability and disconfirmation requirements should be integrated into its existing record structure or cross-referenced; do not create a duplicate lifecycle without a demonstrated need.
+
+### 15.9 Revised execution sequence
+
+1. Reconcile Draft 1.3 against public Edition 1.0, CODEX v2.4, the 13 current-ifd supporting pages, and source records. Record differences; do not publish Draft 1.3 by default.
+2. Complete the claim/definition/relation ledger, prioritizing ZERO/SOURCE, generation/differentiation, temporal/imprint architecture, identity/configuration, and the operational sequence.
+3. Recover the exact Source Formula from its primary source and complete the mathematical/source-critical review.
+4. Continue the downstream structural review through Cosmological Clock, System Clock, Timecode, FLASH, Euler Moment/Brand, binary architecture, operation, Synergy, Trace/Feedback, and collective organization.
+5. Inventory exhibits and their provenance, beginning with the Morque/Euler archive and OBSERVOR 2.0 records.
+6. Align the central formulation and supporting pages only after the claim/relation conflicts have a documented disposition.
+7. Verify repository source, website links, and production deployment as separate checks.
+
+**No public page, production deployment, or canonical source was changed by this specification update.**
+
+## Revision history
+
+- **v0.2 — 2026-11-03:** Added source-grounded reconciliation against Current IFD Formulation Draft 1.3, CODEX v2.4, the active Master Work Map, and the Morque & Euler Machine archive. Integrated the three connected conceptual views, refined recursive/contingent Synergy logic, clarified ZERO = EVERYTHING authority versus validation, and distinguished Euler Machine, Morque Source Machine, and Euler Moment™. Proposal remains uncanonicalized and unpublished.
