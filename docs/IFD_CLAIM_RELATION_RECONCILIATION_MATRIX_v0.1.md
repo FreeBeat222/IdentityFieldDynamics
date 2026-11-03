@@ -111,3 +111,34 @@ This matrix is a structured synthesis of the currently retrieved CODEX v2.4, Dra
 No empirical validation is claimed. No equation for the Source Formula is supplied. No archived Euler Machine version is declared accepted. The matrix should be revised as primary source records are recovered and the public pages are reconciled.
 
 **Next action:** compare each row against the corresponding source section and current public supporting page, record exact differences, and update status only when the source check is complete.
+
+
+## 7. Public supporting-page reconciliation findings — 2026-11-03
+
+All 13 `public/current-ifd/` supporting pages were retrieved from GitHub main and inspected at heading/claim level. The live production deployment and full link-runtime behavior were not verified.
+
+### Additional claims requiring explicit reconciliation
+
+| Working ID | Claim / issue | Current status | Source comparison | Required disposition |
+|---|---|---|---|---|
+| CL-027 | Birth-time cosmological configuration physically imprints identity as a permanent Brand. | PUBLIC PAGE WORDING TOO CATEGORICAL RELATIVE TO CURRENT STATUS | Public `birth-branding-brand.html` states imprint/permanence; Draft 1.3 treats Brand as proposed and physical realization/persistence as unverified; CODEX v2.4 §14 leaves neutrino registration/retention unresolved. | Retain Brand as proposed enduring imprint; revise claims of physical imprint/permanence to hypothesis/open status. Do not discard the concept. |
+| CL-028 | Timecode is a specific collective configuration of energy frequencies and influence power at a distinct moment. | PROPOSED DEFINITION; PHYSICAL QUANTITIES/MEASUREMENT UNSPECIFIED | Public `cosmological-clock.html` wording is more categorical; Draft 1.3 marks Timecode/FLASH as proposed descriptions and literal quantities/mechanisms/measurement as unspecified. | Preserve conceptual distinction; qualify as proposed architecture and define what “configuration,” “frequency,” and “influence power” mean before physical measurement claims. |
+| CL-029 | General Synergy and the dyadic APEX/productive-surplus formulation are related levels. | SCOPE RELATION OPEN; NESTED MODEL PROPOSED | Public `synergy.html` defines a narrow dyadic APEX construct; Draft 1.3/CODEX v2.4 also define a broader contingent emergent-relational category. | Investigate a nested structure: general Synergy umbrella → specific Dyadic APEX Synergy hypothesis. This is not yet canonically adopted. |
+| CL-030 | Cosmic expansion is a wider implication of manifestation/differentiation. | OPEN WIDER RESEARCH QUESTION; NOT A REQUIRED PREMISE | Public `collective-manifestation.html` labels it proposed/not demonstrated; Draft 1.3 moves it to wider implications and says it is not required by the central architecture. | Retain only in a clearly separated wider-research section, not as an implication already established by IFD. |
+
+### Additional relation edges
+
+| Edge ID | From → To | Relation type | Current reading | Open requirement |
+|---|---|---|---|---|
+| REL-015 | General Synergy → Dyadic APEX Synergy | Proposed subtype / scope relation | A possible nested taxonomy: general emergent relational effects as umbrella; dyadic APEX with reciprocal BUILD and productive surplus as a specific candidate form. | Confirm exact scope from originating source and explicit adoption; preserve alternative readings until resolved. |
+| REL-016 | Birth-moment configuration → Branding → Brand / TRACE | Proposed imprint and retention relation | The formulation distinguishes the proposed event from the proposed enduring imprint and its representation. | Identify substrate, physical coupling, registration, retention, detectability, and alternative explanations; no permanent imprint is established. |
+| REL-017 | Timecode → FLASH | Proposed configuration / manifestation description | Timecode names the proposed moment-specific collective configuration; FLASH names active powers/frequencies proposed to be in play. | Define whether these are distinct constructs, nested descriptions, or alternative lenses; specify physical vs interpretive status. |
+| REL-018 | Brand ↔ Birth Chart | Representational relation | Brand is the proposed imprint; Birth Chart is a representation/record of the proposed configuration, not the event or Brand itself. | Preserve the distinction and do not infer that a chart proves a physical imprint. |
+
+### Supporting-page status summary
+
+**Broadly aligned at first-pass claim level:** Purpose & Scope; ZERO & SOURCE; Generation & Differentiation; Integrative Principles; Research Program; Four-Channel Workflow; FLAW CHART™ role; Evidence & Status.
+
+**Require material wording/structure reconciliation:** Cosmological Clock & Timecode; Birth, Branding & Brand; Identity in Operation; SYNERGY; Collective Manifestation.
+
+These are first-pass findings, not a full line-by-line copy edit or runtime hyperlink test.
