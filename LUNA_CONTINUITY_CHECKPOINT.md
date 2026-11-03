@@ -8,8 +8,8 @@
 - The main tree and all 19 branch trees were inspected for legacy-named paths; none were found. Seven targeted code searches on main returned no matches.
 - No published releases were returned. Tag and fork enumeration remain unavailable through the current connector path.
 - Git history has not been rewritten; old commits may still contain retired material.
-- External backups, sync folders, exports, caches, and third-party copies remain unverified because their locations and connected access were not available.
-- Next action: obtain the actual external storage locations, verify provider-side disposition, then assess Git history rewrite feasibility.
+- External backups, sync folders, exports, caches, and third-party copies were not inventoried. Rick explicitly denied that investigation; it is not authorized and must not be pursued or raised again unless he explicitly reauthorizes it.
+- Active next action: none assigned for corpus sanitation.
 
 **Status:** LUNA AutoContext is INDEFINITELY SUSPENDED. Do not install, test, merge draft PR #7, or pursue remote persistence unless Rick explicitly reopens it.
 **Last updated:** 2026-10-28
