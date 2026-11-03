@@ -414,3 +414,73 @@ The first public alignment targets are:
 5. Collective Manifestation placement of cosmological implications.
 
 Do not rewrite these pages until the claim/relation matrix and scope decisions are recorded. Preserve the public Edition 1.0 and all existing source files as historical states during revision.
+
+
+---
+
+## 11. Primary-source verification and foundational notation provenance — 2026-11-03
+
+### 11.1 Source Formula: exact equation now verified
+
+The PDF `/IFD Project — Morque & Euler Machine/Ontological Mathematics - The Science of the Future by Morgue.pdf` was directly read at printed pages 55–66.
+
+Printed page 58 identifies the equation
+
+`e^{ix} = cos(x) + i sin(x)`
+
+as Euler's formula and states that in the book's Hyperianism context it is called the “Source formula.” Pages 59–65 describe the complex circle, sine/cosine wave components, and the external author's ontological argument.
+
+**Corrected disposition:** the exact equation and external source-label provenance are verified. The unresolved issue is the IFD mathematical-to-ontological mapping and whether/how the formula functions within the proposed SOURCE operation. The equation itself must not be described as missing or unrecovered.
+
+### 11.2 Original IFD articulation retrieved
+
+The preserved `Pasted text(2).txt` passage at the ZERO / SOURCE formulation section records:
+- ZERO = EVERYTHING as the user's proposed underlying unity, not absolute nothingness;
+- SOURCE as the proposed generative architecture of that unity;
+- Euler's formula / the externally named Source Formula as a mathematical relationship brought into the IFD working formulation;
+- the distinction between established mathematics and the additional IFD ontological interpretation;
+- the unique originating signature / call signal as the user's proposed extension;
+- unresolved definitions and transitions from SPARK through signature, frequency, substance, and identity.
+
+This source directly supports the historical IFD working articulation. It does not contain the exact strings `ZERO = ∞`, `0/0 = 1`, or `Primary Field-o-Stuff` in the inspected passage.
+
+### 11.3 Foundational notation provenance correction
+
+A prior-conversation context retrieval surfaced the user's explicit statements from 2026-11-01:
+- “0 & 1 are ontological.”
+- “ZERO means everything” / “ZERO IS EVERYTHING.”
+- “ZERO is the primary field-o-stuff™.”
+- “hence 0/0=1 (ontologically).”
+
+The primary conversation transcript for these exact statements has not yet been independently reopened in this review. Treat the retrieved wording as prior-conversation evidence, not as a newly retrieved transcript file.
+
+**Assistant-authorship correction:** Addendum G's notation **ZERO = ∞** first appears in an assistant-authored formulation on 2026-11-03. It is not identified as the user's own wording and must not be attributed to the user or silently promoted to IFD canon. Unless explicitly adopted, record it as an unadopted assistant notation. Addendum G's record of the user's other ontological statements must be separated from this assistant-generated notation.
+
+The user's `0/0=1 (ontologically)` is a distinct ontological proposition, not a claim about ordinary arithmetic division. Preserve the user's distinction; formalization requires defining the IFD relational operation or self-relation represented by the notation. Do not collapse it into a conventional quotient or dismiss the ontological proposition by merely stating the arithmetic convention.
+
+### 11.4 Corrected source/formalization status
+
+| Item | Corrected status |
+|---|---|
+| Euler's formula `e^{ix}=cos(x)+i sin(x)` | Established mathematics; exact equation inspected in primary source |
+| External label “Source formula” | Source-verified in Morgue's Hyperianism text, printed p. 58 |
+| ZERO = EVERYTHING | User's foundational IFD ontological commitment; recovered in original working articulation |
+| ZERO as Primary Field-o-Stuff™ | User-authored ontological definition recovered through prior-conversation context; primary transcript read-back pending |
+| 0/0=1 (ontologically) | User-authored ontological proposition recovered through prior-conversation context; primary transcript read-back pending; not ordinary arithmetic division |
+| ZERO = ∞ | Assistant-authored notation in Addendum G; not verified as user-authored or adopted |
+| Euler full-cycle mean = 0; instantaneous modulus = 1 | Established mathematical result; direct derivation in Addendum C |
+| Euler / Source Formula as IFD generative operation | Proposed IFD mapping; independent derivation remains open |
+| Euler Machine as visual/structural demonstrator | Archived prototypes exist; no accepted implementation verified |
+| IFD identity generation through the machine | Proposed ontological construction; operation and mapping remain to be formalized |
+
+### 11.5 Attribution and spelling note
+
+The inspected PDF filename/title uses **Morgue**. The project archive folder/index uses **Morque** in its project naming. Preserve the exact title spelling when citing the PDF; do not silently normalize the attribution or infer that the spelling discrepancy is resolved.
+
+### 11.6 Revised next executable action
+
+1. Preserve the source-verified Euler equation and its external naming.
+2. Retrieve the original conversation record containing the user's Primary Field-o-Stuff™ and `0/0=1 (ontologically)` statements for direct provenance capture.
+3. Define the IFD ontological operation represented by `0/0=1`, preserving the distinction from conventional arithmetic.
+4. Specify the minimum mathematical role Euler's formula plays in the IFD construction.
+5. Separate the Euler Machine's verified mathematical behavior from the proposed IFD identity-generation mapping.
