@@ -266,3 +266,70 @@ The Draft 1.1 Numbered version has a dedicated Binary section. It explicitly sta
 
 This section is not currently represented as a dedicated page in the 13-page public `current-ifd/` supporting set retrieved from GitHub main. Its presence in Draft 1.1 therefore creates a content-integration task: locate and reconcile the source corpus before creating a new public page or moving the material into the CODEX.
 
+
+
+---
+
+## 9. Controlled due-diligence update — 2026-11-03
+
+### 9.1 Newer formulation and governance records located
+
+The Library contains **Current IFD Formulation Structural Revision Draft 1.3**, dated 2026-11-02 and explicitly marked not approved for publication. It is later than Drafts 1.1 and 1.2 and contains three connected views: Central Identity Formulation; Relational & Architectural Dynamics; and Investigative Accountability. It adds or consolidates architectural conditioning, effective agency, access, recursion, asymmetrical consequence, interaction types, Synergy distinctions, equality distinctions, and explicit investigator accountability.
+
+The Library folder `/Identity Field Dynamics/CODEX/` contains `IFD_CODEX_MASTER_v2.4.md`, modified 2026-11-03. Its v2.4 controlled corrections clarify the general cross-cutting/contingent treatment of Synergy versus purposeful partnerships that may intend Synergy, and update the CODEX asset record. v2.4 is the latest located CODEX master in the folder listing at the time of this review. The Master Work Map v1.0 remains the active working map; no newer map was located in the inspected source.
+
+**Authority boundary:** Draft 1.3 is not approved for publication. CODEX v2.4 is a continuity/governance record, not a complete consolidated theory manuscript. Public Edition 1.0 remains the inspected GitHub main-branch formulation. Production deployment remains unverified.
+
+### 9.2 ZERO = EVERYTHING: formal authority clarified
+
+Draft 1.3 explicitly distinguishes the status of ZERO = EVERYTHING as a foundational ontological commitment formally declared by the Identity Researcher from its mathematical and empirical status. The declaration establishes its authority as an IFD commitment; it does not make it a mathematical theorem or empirical finding. Its conceptual implications and explanatory reach remain open to investigation.
+
+**Disposition:** preserve the declaration and its authority as an IFD commitment. Do not make mathematical or empirical validation a prerequisite for recording the commitment, and do not claim that mathematical results establish it.
+
+### 9.3 Synergy and recursive operational architecture
+
+CODEX v2.4 clarifies:
+- retain IDENTITY → ACTION → INTERACTION → SYNERGY → TRACE as the research-facing organizer;
+- do not interpret it as a necessary or strictly linear causal chain;
+- Interaction does not inherently require or produce Synergy;
+- purposeful partnerships may pursue Synergy, but intention is not achievement;
+- Trace may arise from Action and/or Interaction without Synergy;
+- Feedback is recursive and may alter subsequent actions/configurations;
+- any achieved-Synergy claim requires a system boundary, comparison baseline, operational criteria, and evidence.
+
+This resolves the principal conceptual placement question at the CODEX level. Public Edition 1.0 and supporting-page alignment remains an implementation/reconciliation task, not a reason to reopen the underlying decision without new source evidence.
+
+### 9.4 Morque & Euler Machine archive recovered
+
+A Library project index, `MORQUE_EULER_MACHINE_PROJECT_INDEX_v1.0.md`, reports an initial inventory of 68 files in `/IFD Project — Morque & Euler Machine/`. It is an archive and provenance/verification ledger, not an acceptance declaration.
+
+The index distinguishes:
+- Euler Machine mathematical/structural demonstrator;
+- Morque Source Machine / Source Formula reconstruction;
+- Euler Moment™ birth-moment and proposed identity-imprinting construct.
+
+The index reports no accepted final Euler Machine implementation. V3.8 was not visually verified or accepted. V3.9 is a known failed acceptance candidate due to a reported animation-loop scheduling defect and unwanted visual elements. No iteration should be treated as working based solely on its version number.
+
+The frozen intended mathematical demonstrator uses one rotating point, horizontal and vertical projections, one shared phase variable, one shared output plane, and sine/cosine in 90-degree quadrature. This is a proposed visual specification, not verification that an archived build implements it correctly.
+
+The source PDF candidate and preserved excerpts remain to be verified for bibliographic identity, attribution, provenance, completeness, and exact relevant passages. The Source Formula must not be reconstructed from memory or substituted with Euler's formula.
+
+### 9.5 Euler Moment evidence boundary
+
+CODEX v2.4 records ambient solar-neutrino exposure and neutrino–matter interaction as established physical findings, while the IFD-specific SPARK-associated neutrino blast, event-specific exposure, selective registration, enduring identity-specific Brand, and persistent TRACE mechanism remain hypotheses/open problems. Incident energy flux is not absorbed energy or evidence of imprinting. The physical substrate, coupling, registration, retention, and measurable identity-specific signature remain unresolved.
+
+### 9.6 Revised issue disposition
+
+| Issue | Revised state | Remaining action |
+|---|---|---|
+| Draft 1.3 versus Edition 1.0 | Latest located draft identified; not approved | Full claim/section reconciliation and explicit adoption decision |
+| Synergy placement | Clarified in CODEX v2.4 | Align public formulation and supporting pages |
+| ZERO/SOURCE | ZERO commitment authority clarified; Source Formula still unresolved | Retrieve exact primary source and verify derivation |
+| Downstream structural review | Draft 1.3 provides expanded content; source review remains incomplete | Continue bounded component-by-component review |
+| Euler Machine | Archive indexed; no accepted implementation verified | Source recovery, prototype audit, frozen specification, then runtime verification |
+| Morque Source Machine | Archive and source candidates identified | Bibliographic/source recovery and equation-by-equation review |
+| Euler Moment™ | Evidence boundary recorded in CODEX v2.4 | Define/test physical coupling and retention hypothesis or retain as unresolved |
+| OBSERVOR 2.0 | Method source retrieved; active v2 boundary reaffirmed | Locate raw v2 records and reconcile method/code/protocol |
+| Production website | GitHub source verified; deployment not verified | Inspect actual production deployment and links separately |
+
+**Next executable action:** build the claim/definition/relation reconciliation matrix for Draft 1.3 against Edition 1.0, CODEX v2.4, and the 13 supporting pages, beginning with the architecture-level claims and arrows. Preserve source states; do not edit the production website during this reconciliation.
