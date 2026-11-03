@@ -333,3 +333,84 @@ CODEX v2.4 records ambient solar-neutrino exposure and neutrino–matter interac
 | Production website | GitHub source verified; deployment not verified | Inspect actual production deployment and links separately |
 
 **Next executable action:** build the claim/definition/relation reconciliation matrix for Draft 1.3 against Edition 1.0, CODEX v2.4, and the 13 supporting pages, beginning with the architecture-level claims and arrows. Preserve source states; do not edit the production website during this reconciliation.
+
+
+---
+
+## 10. First-pass reconciliation of all 13 current-ifd supporting pages — 2026-11-03
+
+All 13 supporting HTML pages in `public/current-ifd/` were retrieved from GitHub `main` during this review. This verifies repository source content, not live production deployment. The page-level findings below are first-pass content comparisons against Draft 1.3 and CODEX v2.4, not a complete sentence-by-sentence or link-runtime audit.
+
+### 10.1 Pages broadly aligned with the current working architecture
+
+- **purpose-and-scope.html:** correctly distinguishes IFD as the discipline, the Current IFD Formulation as its present integrated account, and the Research Program as investigation/evaluation/refinement. It labels I Ching associations as interpretive history rather than empirical demonstration.
+- **zero-source.html:** preserves ZERO = EVERYTHING as an ontological commitment; SOURCE as proposed architecture; Source Formula as a named construct whose exact expression must come from a verified source; and Euler/Fourier mathematics as distinct from ontological interpretation.
+- **generation-differentiation.html:** marks SPARK, unique originating signature, frequency/call signal, and substance-to-identity transition as proposed and incompletely specified; identifies wireless communication as analogy rather than mechanism.
+- **integrative-principles.html:** presents ALIGN / INTERCONNECT / MANIFEST as architectural directives and LOVE / COHERENCE / EQUILIBRIUM as proposed cross-cutting principles; explicitly says comprehensiveness does not establish accuracy.
+- **research-program.html:** requires investigations to state question, method, findings, uncertainty, warranted conclusions, and possible revision/disconfirmation conditions.
+- **four-channel-workflow.html:** matches the four coordinated channels and the non-linear return paths among research, construction, verification, and archiving.
+- **flaw-chart-role.html:** presents FLAW CHART™ as a working instrument and preserves the distinction between suspected conditions, demonstrated defects, proposed corrections, and verified resolutions.
+- **evidence-and-status.html:** broadly aligns with the evidence-status distinctions, including mathematical results, empirical findings, foundational IFD commitments, proposed relationships, interpretations, and unresolved mechanisms.
+
+### 10.2 Material alignment issues requiring controlled revision
+
+**PAGE-001 — Birth / Branding / Brand is more categorical than Draft 1.3 and CODEX v2.4.**
+
+The public `birth-branding-brand.html` states that the cosmological configuration imprints the entity with identity at birth and describes the Brand as a permanent identifying imprint. Draft 1.3 recasts the Brand as a proposed enduring imprint whose physical realization and persistence are not demonstrated. CODEX v2.4 §14 states that the event-specific neutrino imprint, selective registration, persistent identity-specific Brand, and TRACE mechanism are not established.
+
+**Disposition:** P0 wording reconciliation. Preserve the Brand concept and the distinction between Branding (proposed event) and Brand (proposed imprint), but revise categorical physical/permanence language to match the current hypothesis/evidence boundary. Do not remove the concept or imply that the mechanism has been disproved; it remains unresolved.
+
+**PAGE-002 — Cosmological Clock / Timecode wording requires stronger status marking.**
+
+The public `cosmological-clock.html` defines Timecode as a specific collective configuration of energy frequencies and influence power at a distinct moment. Draft 1.3 explicitly treats Timecode and FLASH as proposed descriptions; literal physical quantities, mechanisms, and measurement procedures remain unspecified.
+
+**Disposition:** P0 definition/status reconciliation. Retain the conceptual distinction among Cosmological Clock, System Clock, Identity History, Timecode, and FLASH. Mark Timecode/FLASH as proposed configurations, define terms without implying measured physical quantities, and keep astrology as an interpretive articulation rather than mechanism evidence.
+
+**PAGE-003 — Synergy has a broad/general and a narrow/dyadic formulation that must be related explicitly.**
+
+The public `synergy.html` presents a specific foundational working formulation: two differentiated identities operating at APEX, reciprocal elevation, productive surplus exceeding independent outputs, and possible capacity-ceiling expansion. Draft 1.3 and CODEX v2.4 also use a broader category: possible emergent effects of interaction, with Synergy contingent rather than obligatory. CODEX v2.4 permits purposeful partnerships to intend Synergy while separating intention from achievement.
+
+**Disposition:** P0 scope reconciliation. A promising working synthesis is a nested model: (a) **Synergy (general)** as the umbrella research category for possible emergent relational effects; (b) **Dyadic APEX Synergy** as a specific candidate subtype/hypothesis with reciprocal BUILD, productive surplus, and possible capacity-ceiling expansion. This nesting is a proposed editorial/structural resolution, not yet a canonical decision. Preserve the narrow APEX work and its candidate measures; do not flatten it into generic teamwork or silently declare the broad and narrow meanings identical. Confirm the scope relation against the originating source and explicit adoption before public rewrite.
+
+**PAGE-004 — Identity in Operation must make the conditional/cross-cutting role of Synergy visible.**
+
+The public `identity-in-operation.html` retains the five-term heading and defines Synergy as a proposed category, while its detailed display/sequence can be read as a required stage. CODEX v2.4 says the five-term organizer remains, but is not a mandatory causal chain; Trace may arise from Action and/or Interaction without Synergy; Feedback is recursive.
+
+**Disposition:** P0 diagram/wording reconciliation. Retain the five-term research-facing organizer. Explain that Synergy is conditional and cross-cutting in general interaction; Trace may arise without Synergy; Feedback is recursive. In a purposeful-partnership diagram, Synergy may appear as an intended objective, with achievement separately evaluated.
+
+**PAGE-005 — Collective Manifestation and cosmic expansion.**
+
+The public `collective-manifestation.html` describes cosmic expansion as a possible wider implication and explicitly says it is not demonstrated. Draft 1.3 more clearly moves cosmological implications into wider research questions and says they are not required premises of the central identity architecture.
+
+**Disposition:** P1 structural clarification. Retain cosmic expansion as a clearly separated wider research question, not as a consequence implied by the central identity model or a required premise.
+
+### 10.3 Complete supporting-page retrieval inventory
+
+The following 13 repository paths were fetched and inspected at heading/claim level:
+
+1. `public/current-ifd/purpose-and-scope.html`
+2. `public/current-ifd/zero-source.html`
+3. `public/current-ifd/generation-differentiation.html`
+4. `public/current-ifd/cosmological-clock.html`
+5. `public/current-ifd/birth-branding-brand.html`
+6. `public/current-ifd/identity-in-operation.html`
+7. `public/current-ifd/collective-manifestation.html`
+8. `public/current-ifd/synergy.html`
+9. `public/current-ifd/integrative-principles.html`
+10. `public/current-ifd/research-program.html`
+11. `public/current-ifd/four-channel-workflow.html`
+12. `public/current-ifd/flaw-chart-role.html`
+13. `public/current-ifd/evidence-and-status.html`
+
+Repository blob identities were returned for all 13. A runtime test of every internal/external hyperlink and live production route was not performed in this pass.
+
+### 10.4 Updated priority
+
+The first public alignment targets are:
+1. Birth / Branding / Brand.
+2. Cosmological Clock / Timecode / FLASH.
+3. Synergy scope and its relationship to the dyadic APEX construct.
+4. Identity in Operation diagram and feedback language.
+5. Collective Manifestation placement of cosmological implications.
+
+Do not rewrite these pages until the claim/relation matrix and scope decisions are recorded. Preserve the public Edition 1.0 and all existing source files as historical states during revision.
