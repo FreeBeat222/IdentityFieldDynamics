@@ -1,9 +1,9 @@
 # IFD Structure & Content Architecture
-## Working Specification v0.2
+## Working Specification v0.3
 
 **Document ID:** IFD-ARCH-001  
 **Date:** 2026-11-03  
-**Status:** PROPOSED WORKING SPECIFICATION v0.2 — NOT YET CANONIZED  
+**Status:** PROPOSED WORKING SPECIFICATION v0.3 — NOT YET CANONIZED  
 **Scope:** Public IFD website architecture, conceptual organization, logical relations, formulation governance, and exhibits.
 
 ---
@@ -539,3 +539,46 @@ FLAW CHART™ remains the existing defect-tracking lifecycle. Falsifiability and
 ## Revision history
 
 - **v0.2 — 2026-11-03:** Added source-grounded reconciliation against Current IFD Formulation Draft 1.3, CODEX v2.4, the active Master Work Map, and the Morque & Euler Machine archive. Integrated the three connected conceptual views, refined recursive/contingent Synergy logic, clarified ZERO = EVERYTHING authority versus validation, and distinguished Euler Machine, Morque Source Machine, and Euler Moment™. Proposal remains uncanonicalized and unpublished.
+
+
+## 15.10 Foundational notation and provenance correction — 2026-11-03
+
+A prior-conversation context retrieval surfaced the user's explicit statements from 2026-11-01:
+- “0 & 1 are ontological.”
+- “ZERO means everything” / “ZERO IS EVERYTHING.”
+- “ZERO is the primary field-o-stuff™.”
+- “hence 0/0=1 (ontologically).”
+
+These are to be preserved as the user's recorded IFD ontological commitments/propositions. The underlying primary conversation transcript has not yet been independently reopened in this review; the exact wording and timestamps are available from prior-conversation retrieval and should be linked to the original transcript when recovered.
+
+**Important correction to Addendum G:** The notation **ZERO = ∞** appears in the Addendum G formulation as assistant-authored wording dated 2026-11-03. The prior-conversation retrieval does not identify it as the user's own statement. Do not treat **ZERO = ∞** as a user-declared IFD axiom or canonical notation. Preserve Addendum G as a historical research addendum, but mark that notation as an unadopted assistant formulation unless the user explicitly adopts it.
+
+The user's recorded proposition **0/0 = 1 (ontologically)** must not be collapsed into ordinary arithmetic division. Preserve its ontological status and intended distinction. The formalization task is to specify the IFD relational operation or self-relation to which the notation refers; it is not to relabel the user's ontological proposition as an ordinary arithmetic quotient. Standard arithmetic does not assign a quotient to 0/0, but that fact neither interprets nor settles the separately stated IFD ontological proposition.
+
+### 15.11 Source Formula provenance correction
+
+The primary source PDF, `Ontological Mathematics - The Science of the Future by Morgue.pdf`, was directly read at printed pages 55–66. Printed page 58 identifies the equation
+
+`e^{ix} = cos(x) + i sin(x)`
+
+as Euler's formula and says that in Hyperianism it is called the “Source formula.” Pages 59–65 explain the circle/wave relationship and the external author's ontological interpretation.
+
+The exact mathematical expression and its external naming are therefore **located and source-verified**. The unresolved issue is no longer “what equation does the source call the Source Formula?” The remaining questions are:
+- what exact mathematical operation IFD requires from Euler's formula;
+- how that operation is mapped into the user's ZERO / SOURCE architecture;
+- how the user's ontological proposition `0/0 = 1` is represented and derived within the IFD model without conflating it with ordinary arithmetic;
+- whether and how the Euler Machine's mathematical demonstration supports a distinct IFD generative operation.
+
+The original IFD working articulation in `Pasted text(2).txt` explicitly distinguishes ZERO = EVERYTHING from Morgue's NOTHINGNESS = 0 premise and distinguishes established Euler mathematics from the additional IFD ontological interpretation. Preserve that distinction.
+
+**Mathematical terminology:** `e^{ix} = cos(x) + i sin(x)` is Euler's formula. `e^{iπ}+1=0` is Euler's identity, its special case. Do not use the names interchangeably.
+
+### 15.12 Revised mathematical/exhibit boundary
+
+The Euler Machine must preserve two distinct but connected layers:
+1. **Mathematical demonstration:** complex-phase motion, unit-circle representation, sine/cosine projections, and the full-cycle zero mean.
+2. **IFD ontological construction:** the proposed mapping from the user's ZERO / SOURCE commitments and `0/0=1` ontological relation to an identity-generating operation.
+
+The first layer has established mathematical content. The second is an IFD construction requiring explicit definitions and derivation. A visually correct animation does not, by itself, establish the second layer.
+
+- **v0.3 — 2026-11-03:** Corrected Source Formula source status after direct primary-PDF inspection; preserved the user's recovered ZERO / Primary Field-o-Stuff™ / ontological 0/0=1 statements; identified ZERO = ∞ as assistant-authored and not adopted; separated Euler Machine mathematical demonstration from the IFD ontological mapping.
