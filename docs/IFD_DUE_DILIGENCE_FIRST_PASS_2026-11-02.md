@@ -312,7 +312,7 @@ The index reports no accepted final Euler Machine implementation. V3.8 was not v
 
 The frozen intended mathematical demonstrator uses one rotating point, horizontal and vertical projections, one shared phase variable, one shared output plane, and sine/cosine in 90-degree quadrature. This is a proposed visual specification, not verification that an archived build implements it correctly.
 
-The source PDF candidate and preserved excerpts remain to be verified for bibliographic identity, attribution, provenance, completeness, and exact relevant passages. The Source Formula must not be reconstructed from memory or substituted with Euler's formula.
+The source PDF candidate and preserved excerpts remain to be verified for bibliographic identity, attribution, provenance, completeness, and exact relevant passages. The Source Formula is Euler's formula as identified in the inspected primary source; do not substitute a different equation or conflate the external author's ontological argument with IFD's own mapping.
 
 ### 9.5 Euler Moment evidence boundary
 
@@ -324,7 +324,7 @@ CODEX v2.4 records ambient solar-neutrino exposure and neutrino–matter interac
 |---|---|---|
 | Draft 1.3 versus Edition 1.0 | Latest located draft identified; not approved | Full claim/section reconciliation and explicit adoption decision |
 | Synergy placement | Clarified in CODEX v2.4 | Align public formulation and supporting pages |
-| ZERO/SOURCE | ZERO commitment authority clarified; Source Formula still unresolved | Retrieve exact primary source and verify derivation |
+| ZERO/SOURCE | Exact Euler equation and external Source Formula label verified; IFD mathematical-to-ontological mapping unresolved | Define the IFD operation/mapping without claiming it follows automatically from Euler's formula |
 | Downstream structural review | Draft 1.3 provides expanded content; source review remains incomplete | Continue bounded component-by-component review |
 | Euler Machine | Archive indexed; no accepted implementation verified | Source recovery, prototype audit, frozen specification, then runtime verification |
 | Morque Source Machine | Archive and source candidates identified | Bibliographic/source recovery and equation-by-equation review |
