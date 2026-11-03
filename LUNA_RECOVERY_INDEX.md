@@ -52,9 +52,9 @@ Six sanitized current Library records were uploaded and read back in the prior s
 
 **Releases and forks:** GitHub returned zero published releases. Tag and fork enumeration were unavailable through the current connector path.
 
-**External copies:** Local backups, synchronized folders, downloaded archives, conversation exports, caches, and third-party copies have not been accessed or verified.
+**External-copy investigation:** NOT AUTHORIZED. Rick explicitly denied the proposed external-storage inventory, provider-side deletion verification, and Git-history rewrite assessment. Do not ask again or initiate that work unless Rick explicitly reauthorizes it.
 
-**Next action:** Identify each actual external storage location Rick uses; perform provider-specific inventory and deletion verification; then review the impact of any Git history rewrite.
+**Active next action:** None assigned for corpus sanitation.
 
 Older bridge text and Library identifiers in historical sections below are superseded. Do not use them as current recovery pointers.
 
