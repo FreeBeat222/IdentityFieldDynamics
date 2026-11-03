@@ -480,7 +480,7 @@ Preserve this distinction:
 - **Empirical status:** not thereby an established empirical finding.
 - **Research obligation:** investigate conceptual implications, explanatory reach, and any researchable consequences without pretending that empirical testing confers the original declaration's authority.
 
-The Source Formula remains a separate named construct. Do not invent or substitute an equation for it. Retrieve its exact source expression, attribution, definitions, and derivation before treating it as a mathematical exhibit.
+The exact Source Formula equation is verified from the primary source as Euler's formula, e^(ix) = cos(x) + i sin(x), called the “Source formula” in the book's Hyperianism context. The remaining task is to define the IFD mathematical-to-ontological mapping; do not claim that the equation itself derives ZERO, SOURCE, SPARK, or identity generation.
 
 ### 15.6 Exhibit portfolio: distinguish three easily conflated projects
 
@@ -501,7 +501,7 @@ Do not treat an Euler Machine animation as evidence for ZERO = EVERYTHING, the S
 | Exhibit family | Intended content | Current handling |
 |---|---|---|
 | Mathematical | Euler formula/identity, Fourier analysis, complex-plane rotation, derivations, transformations, counterexamples | Verify exact mathematics and keep interpretation separate |
-| Source-critical | Morque source PDF, exact Source Formula, preserved excerpts, provenance and attribution | Retrieve primary passages before reconstruction |
+| Source-critical | Morque/Morgue source PDF, verified Source Formula, preserved excerpts, provenance and attribution | Compare reconstructions with inspected primary passages; complete the IFD mapping |
 | Structural | Whole-system architecture, typed relation graphs, binary structures, phase/configuration maps | Label proposed relationships and unresolved edges |
 | Demonstrative | Euler Machine and interactive mathematical visualizations | Separate mathematical demonstration from physical/ontological evidence |
 | Empirical | OBSERVOR 2.0 records, controlled observations, datasets, reproducible analyses | No result without traceable protocol, raw records, conditions, exclusions, and limitations |
@@ -528,7 +528,7 @@ FLAW CHART™ remains the existing defect-tracking lifecycle. Falsifiability and
 
 1. Reconcile Draft 1.3 against public Edition 1.0, CODEX v2.4, the 13 current-ifd supporting pages, and source records. Record differences; do not publish Draft 1.3 by default.
 2. Complete the claim/definition/relation ledger, prioritizing ZERO/SOURCE, generation/differentiation, temporal/imprint architecture, identity/configuration, and the operational sequence.
-3. Recover the exact Source Formula from its primary source and complete the mathematical/source-critical review.
+3. Formalize the IFD mathematical-to-ontological mapping for the source-verified Euler formula and the ontological 0/0=1 proposition; complete source-critical review of the reconstructions.
 4. Continue the downstream structural review through Cosmological Clock, System Clock, Timecode, FLASH, Euler Moment/Brand, binary architecture, operation, Synergy, Trace/Feedback, and collective organization.
 5. Inventory exhibits and their provenance, beginning with the Morque/Euler archive and OBSERVOR 2.0 records.
 6. Align the central formulation and supporting pages only after the claim/relation conflicts have a documented disposition.
