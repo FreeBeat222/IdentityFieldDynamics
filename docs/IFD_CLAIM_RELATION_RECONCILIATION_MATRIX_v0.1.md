@@ -27,8 +27,8 @@ A source citation establishes provenance for the wording or decision; it does no
 |---|---|---|---|---|
 | CL-001 | Identity Field Dynamics is the active discipline identity. | CANONICAL DISCIPLINE IDENTITY | CODEX v2.4 §1; Master Work Map v1.0 §4 | Reconcile public labels and remaining historical artifacts; do not revive predecessor naming as the active discipline. |
 | CL-002 | IFD investigates identity through structure, operation, interaction, and consequence. | CANONICAL SCOPE / MISSION COMMITMENT | Master Work Map v1.0 §4; Draft 1.3 mission and purpose sections | Maintain scope consistency across mission, formulation, and supporting pages. |
-| CL-003 | ZERO = EVERYTHING. | FOUNDATIONAL IFD ONTOLOGICAL COMMITMENT; formally declared by the Identity Researcher | Draft 1.3 §16/status section; Four-Month Review Pass 01; CODEX source lineage | Authority as an IFD commitment is distinct from mathematical theorem or empirical finding. Define conceptual implications and researchable consequences without making the declaration contingent on validation. |
-| CL-004 | SOURCE / SOURCE FORMULA is the proposed generative architecture associated with ZERO. | PROPOSED CONSTRUCT / STRUCTURAL ROLE | Draft 1.3 ZERO & SOURCE section; Four-Month Review Pass 01; Addenda B/E | Exact primary expression, attribution, definitions, domain, and derivation have not yet been verified. Do not reconstruct from memory or substitute Euler's formula. |
+| CL-003 | ZERO = EVERYTHING; ZERO is the proposed underlying unity of the whole. | FOUNDATIONAL IFD ONTOLOGICAL COMMITMENT | Original working articulation in Pasted text(2).txt; Draft 1.3; CODEX records | Preserve distinction from Morgue's NOTHINGNESS = 0 premise, mathematical scalar zero, and zero-valued aggregate. Authority as an IFD commitment is distinct from mathematical theorem or empirical finding. |
+| CL-004 | SOURCE is the proposed generative architecture associated with ZERO; SOURCE FORMULA is Euler's formula, e^(ix) = cos(x) + i sin(x), deliberately incorporated into the working IFD proposal. | SOURCE: PROPOSED CONSTRUCT; EQUATION: ESTABLISHED MATHEMATICS; LABEL: EXTERNALLY SOURCE-VERIFIED | Original working articulation in Pasted text(2).txt; Morgue PDF printed p. 58; Addenda A/B/E | Exact equation and external label are verified. The IFD mapping from Euler's formula to a generative SOURCE operation remains unresolved. Do not inherit Morgue's ontology or claim the equation proves identity generation. |
 | CL-005 | ZERO → SPARK → unique originating signature. | PROPOSED GENERATIVE ARCHITECTURE | Four-Month Review Pass 01; Addenda B/D; Draft 1.3 generation section | Define SPARK as event, operation, state, or metaphor; identify earliest source; specify what would count as a distinct signature. |
 | CL-006 | GENERATION and DIFFERENTIATION are branches beneath SOURCE. | PROPOSED ARCHITECTURAL ORGANIZATION | Four-Month Review Pass 01; Draft 1.3 central architecture | Whether they are sequential, parallel, mutually dependent, or different descriptions of one process remains unresolved. |
 | CL-007 | FREQUENCY / CALL SIGNAL → SUBSTANCE → IDENTITY. | PROPOSED PROGRESSION | Draft 1.3 generation section; Four-Month Review Pass 01 | Distinguish mathematical signature, information-bearing signal, analogy, and literal physical frequency; define substance and the transition to identity. |
@@ -48,7 +48,7 @@ A source citation establishes provenance for the wording or decision; it does no
 | CL-021 | Euler Moment™ names one proposed birth-moment phenomenon described through related lenses. | PROPOSED CONSTRUCT | CODEX v2.4 §14; Draft 1.3 Euler Moment section | Distinguish Timecode, FLASH, Branding, Brand, Birth Chart, Euler Moment™, and Cosmic Identity Coin as related descriptions, not seven stages. |
 | CL-022 | Neutrino exposure creates an enduring identity-specific Brand / TRACE. | OPEN PHYSICAL HYPOTHESIS; NOT DEMONSTRATED | CODEX v2.4 §14 | Establish event-specific exposure, physical substrate, coupling, selective registration, retention, and measurable identity-specific signature; ambient neutrino flux is insufficient. |
 | CL-023 | The Euler Machine can demonstrate rotating-vector projections into sine/cosine traces. | MATHEMATICAL DEMONSTRATOR SPECIFICATION; IMPLEMENTATION NOT ACCEPTED | MORQUE_EULER_MACHINE_PROJECT_INDEX_v1.0 | Verify source fidelity, constant geometry, shared phase, shared output plane, quadrature, animation behavior, and browser runtime. No archived version is currently certified accepted. |
-| CL-024 | The Morque Source Machine reconstructs the exact Source Formula. | SOURCE-CRITICAL RESEARCH TASK; NOT VERIFIED | MORQUE_EULER_MACHINE_PROJECT_INDEX_v1.0 | Verify PDF identity/attribution and exact passages; compare source expression and derivation against every reconstruction. |
+| CL-024 | The Morque Source Machine reconstructs the exact Source Formula. | SOURCE EQUATION VERIFIED; RECONSTRUCTION/IMPLEMENTATION NOT VERIFIED | Morgue PDF printed pp. 58–65; Addendum A; MORQUE_EULER_MACHINE_PROJECT_INDEX_v1.0 | Compare each reconstruction against the verified source equation and geometric explanation; distinguish source fidelity from runtime/visual acceptance. |
 | CL-025 | Phenomenon, model, and investigative instrument are distinct. | PROPOSED METHODOLOGICAL REQUIREMENT IN DRAFT 1.3 / CODEX v2.4 | CODEX v2.4 §17; Draft 1.3 investigative-accountability section | Maintain separate failure analysis; instrument operation does not validate a model or construct. |
 | CL-026 | Investigator is responsible for adequacy, limitations, revision, and consequences of models/methods/claims. | PROPOSED INVESTIGATIVE-ACCOUNTABILITY FORMULATION | CODEX v2.4 §17.3; Draft 1.3 investigative-accountability section | Apply proportionately; distinguish responsibility, accountability, liability, remediation, and culpability. |
 
@@ -142,3 +142,37 @@ All 13 `public/current-ifd/` supporting pages were retrieved from GitHub main an
 **Require material wording/structure reconciliation:** Cosmological Clock & Timecode; Birth, Branding & Brand; Identity in Operation; SYNERGY; Collective Manifestation.
 
 These are first-pass findings, not a full line-by-line copy edit or runtime hyperlink test.
+
+
+## 8. Foundational notation provenance correction — 2026-11-03
+
+A prior-conversation context retrieval surfaced the user's explicit statements from 2026-11-01:
+- “0 & 1 are ontological.”
+- “ZERO means everything” / “ZERO IS EVERYTHING.”
+- “ZERO is the primary field-o-stuff™.”
+- “hence 0/0=1 (ontologically).”
+
+The primary conversation transcript for the last two exact phrases has not yet been independently reopened in this review. The statements are preserved as prior-conversation evidence and should be linked to the original transcript when recovered.
+
+**Do not attribute ZERO = ∞ to the user.** That notation first appears in an assistant-authored formulation in Addendum G on 2026-11-03. It is not established as user-authored or adopted IFD canon. Record it as unadopted assistant notation unless the user explicitly adopts it.
+
+### Additional claim rows
+
+| Working ID | Claim / issue | Current status | Source comparison | Required disposition |
+|---|---|---|---|---|
+| CL-031 | “0 & 1 are ontological”; ZERO is the Primary Field-o-Stuff™; 0/0=1 (ontologically). | USER-DECLARED ONTOLOGICAL COMMITMENTS / PROPOSITION; PRIMARY TRANSCRIPT READ-BACK PENDING | Prior-conversation context retrieval dated 2026-11-01; Addendum G records the propositions but introduces an additional notation. | Preserve exact user wording and distinguish ontological proposition from standard arithmetic. Define the IFD self-relation/operation represented by 0/0=1; do not dismiss or rewrite it as a conventional quotient. |
+| CL-032 | ZERO = ∞. | ASSISTANT-AUTHORED NOTATION; NOT VERIFIED AS USER-ADOPTED | Appears in Addendum G's assistant-authored formulation dated 2026-11-03; absent from the inspected Pasted text(2), Pasted text(3), and CODEX v2.4. | Do not attribute to the user or promote to canon. Retain only as historical/unadopted notation unless explicitly adopted. |
+
+### Additional relation edge
+
+| Edge ID | From → To | Relation type | Current reading | Open requirement |
+|---|---|---|---|---|
+| REL-019 | 0 / 0 → 1 (ontologically) | User-declared ontological self-relation / unity proposition | The user explicitly distinguishes this ontological proposition from ordinary arithmetic division. | Define the IFD relational operation, domain, and meaning of the resulting ONE without silently substituting conventional quotient arithmetic. |
+
+## 9. Corrected Source Formula and Euler exhibit status
+
+The exact equation `e^{ix}=cos(x)+i sin(x)` is verified in the primary PDF at printed page 58, where it is called the “Source formula” in the book's Hyperianism context. The original IFD working articulation deliberately incorporated the mathematical relationship while explicitly distinguishing its validity from the additional IFD ontological interpretation.
+
+The source equation is therefore **not missing**. What remains open is the IFD operation/mapping that would connect the mathematical relationship to ZERO, SOURCE, the ontological `0/0=1` proposition, SPARK, and identity generation.
+
+Euler's formula is not Euler's identity: `e^{iπ}+1=0` is the special case. The Euler Machine's visual projection of cosine and sine is a mathematical exhibit; the proposed ontological identity-generation mapping is a separate construction requiring derivation.
