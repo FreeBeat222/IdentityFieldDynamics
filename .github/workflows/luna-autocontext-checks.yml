@@ -1,0 +1,47 @@
+name: LUNA AutoContext checks
+
+on:
+  push:
+    branches:
+      - main
+      - feature/luna-autocontext-mvp
+    paths:
+      - "tools/luna-autocontext/**"
+      - ".github/workflows/luna-autocontext-checks.yml"
+  pull_request:
+    paths:
+      - "tools/luna-autocontext/**"
+      - ".github/workflows/luna-autocontext-checks.yml"
+  workflow_dispatch:
+
+jobs:
+  static-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate JavaScript syntax
+        run: |
+          node --check tools/luna-autocontext/service-worker.js
+          node --check tools/luna-autocontext/content.js
+          node --check tools/luna-autocontext/popup.js
+      - name: Validate manifest JSON
+        run: node -e "JSON.parse(require('fs').readFileSync('tools/luna-autocontext/manifest.json', 'utf8')); console.log('manifest.json: valid JSON')"
+      - name: Verify popup controls have unique IDs
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const html = fs.readFileSync('tools/luna-autocontext/popup.html', 'utf8');
+          const js = fs.readFileSync('tools/luna-autocontext/popup.js', 'utf8');
+          const ids = [...html.matchAll(/\bid=["']([^"']+)["']/g)].map(m => m[1]);
+          const duplicates = ids.filter((id, i) => ids.indexOf(id) !== i);
+          if (duplicates.length) throw new Error('Duplicate popup IDs: ' + [...new Set(duplicates)].join(', '));
+          const required = [...js.matchAll(/getElementById\(["']([^"']+)["']\)/g)].map(m => m[1]);
+          const missing = [...new Set(required)].filter(id => !ids.includes(id));
+          if (missing.length) throw new Error('Popup JS references missing HTML IDs: ' + missing.join(', '));
+          console.log('Popup controls: unique IDs and all JS references resolve.');
+          NODE
