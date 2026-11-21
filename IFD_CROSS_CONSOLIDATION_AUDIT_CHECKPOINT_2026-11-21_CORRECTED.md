@@ -147,4 +147,7 @@ The supporting repository entry `docs/IFD_CODEX_SYNERGY_CANONICAL_ENTRY_v1.0.md`
 **Exact next action:** Recover the complete Working Record 003 and true endpoint; then insert/cross-reference the already integrated Synergy findings at the record's existing Interaction ↔ Synergy point, preserving actual numbering and chronology. Do not restart from Finding 015 by default.
 
 
-**Public gradient clarification — additional source update:** The Synergy chapter now labels the two poles explicitly as **POSITIVE (+) · GENERATIVE** and **NEGATIVE (−) · DESTRUCTIVE**, and clarifies that a neutral/equivalent result is baseline-relative, not a third foundational pole. Source: `public/current-ifd/synergy.html`; commit `ab67187a3c96a57297f7dd7e8faf7453b6f52433`. Repository source updated; live production rendering/deployment remains unverified.
+**Public gradient clarification — additional source update:** The Synergy chapter now labels the two poles explicitly as **POSITIVE (+) · GENERATIVE** and **NEGATIVE (−) · DESTRUCTIVE**, and clarifies that a neutral/equivalent result is baseline-relative, not a third foundational pole. Source: `public/current-ifd/synergy.html`; commit `134e7ecb0ef8d6c37127eeb9b04c181975a86f6b`. Repository source updated; live production rendering/deployment remains unverified.
+
+
+**Final source verification:** `public/current-ifd/synergy.html` now has explicit `POSITIVE (+) · GENERATIVE` and `NEGATIVE (−) · DESTRUCTIVE` pole labels, plus the baseline-relative neutral/equivalent clarification. Final main-branch blob SHA: `fde6396971824d705af629187823f6de0da64bd1` (fetched after the final edit). This supersedes earlier source blob references in this record.
