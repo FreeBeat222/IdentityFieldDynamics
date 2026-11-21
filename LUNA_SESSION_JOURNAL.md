@@ -327,3 +327,16 @@ Rick reported that the wakeup sequence restored LUNA one session behind; he repe
 **Cross-audit status:** Working Record 003 remains active. Its true three-hour session endpoint remains unrecovered; Finding 015 must not be assumed to be the endpoint. Binary Vision / Symmetrical Observation remains deferred.
 
 **Verification:** The note creation and checkpoint update returned GitHub commit/blob identifiers in this operation. Re-fetch/read-back verification is required before claiming the complete save is verified.
+
+
+## 2026-11-21 — Synergy publication review and Cross-Consolidation hold
+
+Rick supplied the published Synergy chapter and directed its integration into Cross-Consolidation Working Record 003. The repository source `public/current-ifd/synergy.html` was fetched and read; blob SHA `efa17802455b50b089861ea98abd6661df0ae963`. The published formulation adopts Interaction as necessarily entailing Synergy, with Synergy defined as the graduated consequence spectrum from Generative to Destructive. Productive surplus is no longer the defining condition.
+
+A holding record was created and read back: `research/IFD_SYNERGY_PUBLICATION_CROSS_CONSOLIDATION_INTEGRATION_HOLD_2026-11-21.md`. It preserves the Interaction/Synergy distinction, implications for Observation and Trace, the prior CODEX conflict, and open questions on analytical distinction, mixed-domain consequences, and causal attribution. Blob SHA verified from the repository tree: `[pending readback SHA]`.
+
+The corrected Cross-Consolidation checkpoint was updated and read back. New blob SHA: `df9b5d14cb5c33a80fe3118f02b8040068b0b503`. The checkpoint records that Working Record 003 itself was not located in the GitHub main tree or Library search, so insertion into the actual working record remains pending. The complete record, findings after 015, and true endpoint remain unrecovered. No finding number or endpoint was invented.
+
+A prior conditional Synergy formulation in `IFD_CODEX_MASTER_v2.3.md` §15.2–15.5 conflicts with the newly published adopted formulation and requires explicit reconciliation. No CODEX change was made in this pass.
+
+**Next action:** Recover the complete Working Record 003 artifact and true endpoint; then insert the published Synergy formulation at the existing Interaction ↔ Synergy examination point, preserving questions A–C as open. HARVEST FIRST. ABSTRACT SECOND. CANONIZE LAST.
