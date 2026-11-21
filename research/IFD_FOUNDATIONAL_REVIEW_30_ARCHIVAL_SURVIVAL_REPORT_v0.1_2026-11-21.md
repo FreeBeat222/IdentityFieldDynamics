@@ -34,7 +34,7 @@ Paths matching Foundational Review, cross-consolidation, Working Record, review 
 2. `IFD_CROSS_CONSOLIDATION_AUDIT_CHECKPOINT_2026-11-20.md`
 3. `IFD_CROSS_CONSOLIDATION_AUDIT_CHECKPOINT_2026-11-21_CORRECTED.md`
 4. `research/IFD_SYNERGY_PUBLICATION_CROSS_CONSOLIDATION_INTEGRATION_HOLD_2026-11-21.md`
-5. `LUNA_SESSION_JOURNAL.md)
+5. `LUNA_SESSION_JOURNAL.md`
 
 No full Foundational Review master transcript, complete 30-installment findings register, complete transcript bundle, or Cross-Consolidation Working Record 003 was present in the retrieved main-branch tree. GitHub code-search requests for `FOUNDATIONAL_REVIEW` and `Working Record 003` returned zero results (the API marked those search results incomplete, so this is corroborating evidence, not an exhaustive proof).
 
