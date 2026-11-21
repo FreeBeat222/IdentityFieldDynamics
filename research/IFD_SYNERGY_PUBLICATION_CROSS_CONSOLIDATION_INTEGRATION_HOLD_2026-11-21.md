@@ -202,3 +202,23 @@ A participant's prior success is evidence about a previous configuration, not a 
 **Status:** Rick-originated reported observations and examples, generalized across marriage/partnership, corporate, governmental, and military collectives. The cross-domain proposition and research questions are provisional analytical synthesis, not validated universal laws or operationalized measures. Preserve for insertion into the actual Working Record 003 when recovered; do not invent a finding number.
 
 **Governing discipline:** HARVEST FIRST. ABSTRACT SECOND. CANONIZE LAST.
+
+
+## 11. Master CODEX integration completed — 2026-11-21
+
+The earlier instruction in this hold record to reconcile the conditional Synergy model into the Master CODEX has now been executed.
+
+- **Source master inspected:** ChatGPT Library file `/Identity Field Dynamics/CODEX/IFD_CODEX_MASTER_v2.4.md` (latest version present in the Library at retrieval).
+- **Successor created:** `/Identity Field Dynamics/CODEX/IFD_CODEX_MASTER_v2.5.md`.
+- **Verification:** v2.5 uploaded to the Library and the complete 908-line file was read back in this session. Version metadata, registry entries, revised §§15 and 16.5, new §19, and historical supersession statements were verified.
+- **Canonical definition integrated:** Synergy is the graduated spectrum of consequences arising from interaction; Interaction necessarily entails Synergy.
+- **Gradient integrated:** positive (+)/Generative to negative (−)/Destructive, with intermediate graduation criteria and quantitative measurement explicitly pending. Mixed consequences across domains are not to be forced into a single score without justified aggregation.
+- **Status discipline retained:** the adopted foundational definition is distinguished from empirical validation; no validated quantitative instrument, universal causal mechanism, or universal empirical applicability is claimed.
+- **Prior conflict resolved:** the conditional model in v2.4 §§15.2–15.5 and §16.5 is marked HISTORICAL / SUPERSEDED in v2.5. v2.4 remains preserved as predecessor.
+- **Repository support:** `docs/IFD_CODEX_SYNERGY_CANONICAL_ENTRY_v1.0.md` (blob SHA `f0824581e8df3d2511b362df50640c7adf75e3f0`) is registered in v2.5 as IFD-DA-0004. The Codex landing page now links the public Synergy chapter and canonical entry; commit `6ea1297cb6e8de12e4016f006f6b59dc859d5d06`.
+
+**Integration status:** Master CODEX integration COMPLETE. Public Codex navigation link updated in GitHub source. Live production rendering/deployment was not independently tested.
+
+**Still pending and separate:** insertion into Cross-Consolidation Audit — Working Record 003. That complete working record and its true session endpoint remain unrecovered. This hold record is not a substitute for Working Record 003, and no finding number has been assigned. Once recovered, integrate the already reconciled material at its existing Interaction ↔ Synergy point and preserve chronology and numbering.
+
+**Updated next action:** Recover complete Working Record 003 and its actual endpoint; then perform the pending insertion/cross-reference. Do not reopen the now-completed Master CODEX reconciliation unless new evidence warrants it.
