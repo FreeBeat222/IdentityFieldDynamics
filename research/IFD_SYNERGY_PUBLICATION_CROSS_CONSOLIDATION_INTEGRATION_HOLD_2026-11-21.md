@@ -229,5 +229,8 @@ The earlier instruction in this hold record to reconcile the conditional Synergy
 The published Synergy chapter source was also updated so the spectrum's poles explicitly read **POSITIVE (+) · GENERATIVE** and **NEGATIVE (−) · DESTRUCTIVE**. The explanatory note clarifies that neutral/equivalent results are baseline-relative observations, not a third foundational pole, and that intermediate graduation criteria and equal intervals are not presumed.
 
 - **Source:** `public/current-ifd/synergy.html`
-- **Commit:** `ab67187a3c96a57297f7dd7e8faf7453b6f52433`
+- **Commit:** `134e7ecb0ef8d6c37127eeb9b04c181975a86f6b`
 - **Verification boundary:** GitHub source commit recorded; live production rendering/deployment not independently verified.
+
+
+**Final source verification:** `public/current-ifd/synergy.html` now has explicit `POSITIVE (+) · GENERATIVE` and `NEGATIVE (−) · DESTRUCTIVE` pole labels, plus the baseline-relative neutral/equivalent clarification. Final main-branch blob SHA: `fde6396971824d705af629187823f6de0da64bd1` (fetched after the final edit). This supersedes earlier source blob references in this record.
