@@ -163,3 +163,42 @@ Related open question: how can an established collective and an incoming identit
 **Cross-consolidation links:** Interaction ↔ Synergy; Individual–Collective Identity; Identity ↔ System ↔ Environment ↔ Process; Observation; Trace; and temporal continuity. Trace may preserve successive configurations and consequences, but does not by itself prove causal attribution.
 
 **Status:** Rick-originated conceptual extension and research direction, with assistant-organized sequence and wording. Not yet a validated empirical rule, operational instrument, or canonized addition to the published Synergy chapter. Preserve for insertion into the actual Working Record 003 when recovered; do not invent a finding number.
+
+
+## 10. Cross-domain collective examples — antecedent success does not predict Synergy
+
+Rick explicitly broadened the observational discussion beyond marriage and partnerships. He reports seeing the same pattern of generative and destructive outcomes across **all collective dimensions**, including corporate, governmental, and military collectives.
+
+### Reported illustrative examples
+
+- **Marriage / partnerships:** Two partners, each from fine families and already successful, may form a destructive marriage; two partners who met in severely disadvantaged circumstances may achieve extraordinary success together. Rick's framing is that two unique collective identities are interacting.
+- **Corporate leadership:** A CEO who previously led one collective to fame and fortune may be hired by another organization and drive that organization into the ground. Prior success belongs to a particular CEO–collective configuration; it does not guarantee equivalent consequences in a different collective.
+- **Government collectives:** Rick identifies the same pattern in governments. Leadership, membership, institutional histories, authority structures, and circumstances may combine to produce outcomes that cannot be inferred from the prior success or reputation of participants.
+- **Military collectives:** Rick identifies the same pattern in military organizations and commands. Success in one command or organizational configuration does not guarantee success in another.
+- **Incoming identity / “one bad apple spoils the barrel”:** The familiar saying is an illustrative shorthand for the possibility that one incoming identity may contribute to deterioration in an established collective. The reciprocal possibility must also be investigated: one incoming identity may contribute to generative change or improvement.
+
+### Provisional cross-domain proposition
+
+**The antecedent quality, capability, reputation, or prior success of participating identities or collectives does not, by itself, predict the generative or destructive consequences of their interaction. Synergy must be investigated in the particular relational configuration and its consequences.**
+
+A participant's prior success is evidence about a previous configuration, not a guarantee of success in a new one. Likewise, disadvantage in the antecedent circumstances of participants does not by itself preclude a generative interaction.
+
+### Attribution and interpretation cautions
+
+- Do not attribute collective achievement exclusively to a prominent leader without examining the contribution of the collective and its configuration.
+- Do not attribute every subsequent failure to the incoming leader or member without examining inherited conditions, institutional constraints, other participants, external events, and alternative explanations.
+- Distinguish a change in the continuing Synergy from a change in the identity of the collective. One member may affect collective consequences without necessarily transforming collective identity; persistent changes may, under some conditions, contribute to identity transformation.
+- “One bad apple” is not a causal explanation or a validated mechanism. It is an example prompting investigation of how an incoming identity interacts with existing members, relationships, norms, power distributions, and conditions. Examine generative and destructive possibilities symmetrically.
+- Government and military examples are Rick's stated observational generalizations here; no specific case studies, datasets, or independently verified empirical evidence were supplied in this discussion.
+
+### Research questions opened by the examples
+
+1. To what extent is an observed success or failure attributable to an individual identity, and to what extent is it an emergent consequence of that identity interacting with a particular collective?
+2. Which features of a new collective configuration explain why a previously successful leader or member produces different consequences?
+3. Under what conditions does an incoming identity contribute to destructive propagation, and under what conditions can an incoming identity contribute to generative change?
+4. How do institutional history, membership, authority, power, norms, capabilities, and external conditions shape the continuing Synergy?
+5. When do persistent changes in Synergy contribute to transformation of collective identity?
+
+**Status:** Rick-originated reported observations and examples, generalized across marriage/partnership, corporate, governmental, and military collectives. The cross-domain proposition and research questions are provisional analytical synthesis, not validated universal laws or operationalized measures. Preserve for insertion into the actual Working Record 003 when recovered; do not invent a finding number.
+
+**Governing discipline:** HARVEST FIRST. ABSTRACT SECOND. CANONIZE LAST.
