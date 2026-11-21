@@ -359,3 +359,14 @@ Rick extended the Synergy investigation in two connected directions:
 **Research question:** *When does the integration of a new identity modify the existing collective Synergy, and when does it transform the collective identity itself?*
 
 The full integration note was appended as section 9 of research/IFD_SYNERGY_PUBLICATION_CROSS_CONSOLIDATION_INTEGRATION_HOLD_2026-11-21.md. The corrected Cross-Consolidation checkpoint and this journal are also updated. This is preserved as Rick-originated conceptual extension and research direction, not as a validated empirical rule or published canonical amendment. It remains pending insertion into the actual Working Record 003, which has not been recovered; no finding number is invented.
+
+
+## 2026-11-21 — Synergy examples generalized across collective dimensions
+
+Rick explicitly broadened the same generative/destructive pattern beyond marriage to collective dimensions generally. Examples supplied: (1) two already successful partners from fine families form a destructive marriage, while two partners who met in the gutter achieve stellar success; (2) a CEO who led one collective to fame and fortune joins another and drives it into the ground; (3) the same pattern is identified in government collectives; (4) the same pattern is identified in military collectives; and (5) the “one bad apple spoils the barrel” saying illustrates the possible destructive effect of an incoming identity in an established collective. Preserve the reciprocal possibility that an incoming identity may contribute to generative change.
+
+The provisional synthesis is that antecedent quality, capability, reputation, or prior success does not by itself predict the consequences of interaction in a new collective configuration. Prior leadership success belongs to a particular leader–collective configuration and cannot be assumed to transfer. Investigate collective contribution and attribution, inherited conditions, external circumstances, and alternative explanations; do not treat the proverb as a causal mechanism. Distinguish changes in continuing Synergy from changes in collective identity.
+
+These are Rick-originated reported observations/examples, not controlled studies or independently verified datasets. The general proposition and research questions remain provisional, not validated universal laws or operationalized measures. The details were appended to section 10 of the Synergy Cross-Consolidation Integration Hold Record and section 8 of the corrected Cross-Consolidation checkpoint. Actual Working Record 003 remains unrecovered and has not been edited; no finding number is assigned.
+
+**Research discipline:** HARVEST FIRST. ABSTRACT SECOND. CANONIZE LAST.
