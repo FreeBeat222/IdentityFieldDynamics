@@ -347,3 +347,15 @@ A prior conditional Synergy formulation in `IFD_CODEX_MASTER_v2.3.md` §15.2–1
 Rick restated his marriage example: two partners from fine families and already successful may form a destructive marriage, while two partners who met in the gutter may achieve stellar success. He explicitly clarified that the observed dyadic interaction is between **TWO UNIQUE COLLECTIVE IDENTITIES**. The partners' accumulated formation (family, history, experience, relationships, resources, capabilities, patterns) matters as context, but antecedent status or individual achievement cannot predict the generative/destructive consequences of their interaction.
 
 The detailed note was appended to the Synergy Cross-Consolidation Integration Hold Record, section 8. The corrected checkpoint was also updated to link this clarification to the audit area INDIVIDUAL–COLLECTIVE IDENTITY. The example is preserved as Rick's reported observation and conceptual illustration, not a controlled study or universal proof. It remains pending insertion into the actual Working Record 003, which has not yet been recovered.
+
+
+## 2026-11-21 — Persistent Synergy, power dynamics, and collective membership
+
+Rick extended the Synergy investigation in two connected directions:
+
+1. In a couple formed by two unique collective identities, the emerging power dynamic between them is part of the **same Synergy persisting through time**. The evolving relational configuration shapes subsequent interaction, which produces further consequences. A provisional feedback sequence is preserved: interaction → consequences → altered power/relational configuration → subsequent interaction → further consequences. This is a research sequence, not a validated universal mechanism.
+2. An established collective synchronizing with new identities (members) may experience changes in the incoming member's participation/adaptation, the collective's internal relationships and power distribution, and potentially the collective identity itself. Effects may be reciprocal and extend to existing members; no particular outcome is presumed.
+
+**Research question:** *When does the integration of a new identity modify the existing collective Synergy, and when does it transform the collective identity itself?*
+
+The full integration note was appended as section 9 of research/IFD_SYNERGY_PUBLICATION_CROSS_CONSOLIDATION_INTEGRATION_HOLD_2026-11-21.md. The corrected Cross-Consolidation checkpoint and this journal are also updated. This is preserved as Rick-originated conceptual extension and research direction, not as a validated empirical rule or published canonical amendment. It remains pending insertion into the actual Working Record 003, which has not been recovered; no finding number is invented.
