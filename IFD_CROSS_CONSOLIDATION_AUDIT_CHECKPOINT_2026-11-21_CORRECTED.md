@@ -67,3 +67,25 @@ This record captures the transferred material from tabs 30 (35), 30 (36), 30 (37
 The 30 (39) archival proposal is preserved as a proposal, not an implemented system: Occurrence Ledger, Discovery Queue, Reconciliation Register, Canonical Lunations. Discovery vs capture, harvest vs completeness, and provenance are separate requirements. This archival issue remains secondary to recovering the true endpoint of Working Record 003.
 
 **Audit status unchanged:** Working Record 003 remains active; the actual endpoint of the approximately three-hour session is still unrecovered. Do not resume from Finding 015 by default. Do not divert into Binary Vision / Symmetrical Observation.
+
+
+## 2026-11-21 — Published Synergy formulation reviewed; Working Record 003 insertion pending
+
+Rick supplied the complete published Synergy chapter text and directed that it be integrated into Working Record 003. The corresponding repository source was fetched and read in this conversation:
+
+- Public page: https://identityfielddynamics.com/current-ifd/synergy.html
+- Repository path: `public/current-ifd/synergy.html`
+- Verified main-branch blob SHA: `efa17802455b50b089861ea98abd6661df0ae963`
+
+The current adopted formulation states: **Interaction necessarily entails Synergy. Synergy is the graduated spectrum of consequences arising from interaction, extending from Generative to Destructive.** Productive surplus is one possible generative consequence, not a prerequisite for Synergy.
+
+A holding/integration record was created at [research/IFD_SYNERGY_PUBLICATION_CROSS_CONSOLIDATION_INTEGRATION_HOLD_2026-11-21.md](research/IFD_SYNERGY_PUBLICATION_CROSS_CONSOLIDATION_INTEGRATION_HOLD_2026-11-21.md). It preserves the conceptual distinction between Interaction and Synergy, implications for Observation and Trace, the status of earlier candidate mechanisms, and three open architectural questions:
+A. Is Synergy analytically distinct from Interaction?
+B. Can one interaction have mixed generative and destructive consequences across domains, requiring multidimensional observation before an overall position is assigned?
+C. How must observed consequences be distinguished from consequences demonstrably caused by interaction?
+
+**Prior formulation conflict identified:** IFD_CODEX_MASTER_v2.3.md §15.2–15.5 contains the earlier conditional model (“Interaction can occur without demonstrated Synergy”; Synergy conditional rather than inevitable). This conflicts with the newly published adopted formulation. The new formulation governs current reconciliation; the older CODEX text requires explicit review and correction rather than being silently treated as co-current.
+
+**Integration status:** The published formulation has been examined and preserved in the holding record. The actual Working Record 003 artifact was not found in the GitHub main-branch repository tree or in the Library search performed in this conversation. Therefore, no claim is made that the material has been inserted into Working Record 003. Do not fabricate or create a replacement record, renumber findings, or assume the endpoint. When the complete Working Record 003 is recovered, insert this material at its existing Interaction ↔ Synergy examination point, retain questions A–C as open, and reconcile downstream Observation/Trace implications.
+
+**Audit status remains:** Working Record 003 is active; its complete contents, findings after 015, and true session endpoint remain unrecovered. Resume the wider audit only from the actual recovered endpoint. HARVEST FIRST. ABSTRACT SECOND. CANONIZE LAST.
