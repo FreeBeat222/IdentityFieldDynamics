@@ -126,3 +126,22 @@ Rick explicitly generalized the observed generative/destructive pattern across c
 **Open questions:** How much of leadership success/failure is attributable to the individual versus the particular collective configuration? Under what conditions does an incoming identity contribute to destructive propagation or generative change? When do persistent Synergy changes contribute to collective identity transformation?
 
 **Status / placement:** Preserve as cross-domain examples and provisional synthesis for the Synergy ↔ Interaction and Individual–Collective Identity audit areas. Pending insertion into actual Working Record 003, which remains unrecovered. No finding number assigned; no claim that the audit record itself has been edited.
+
+
+## 2026-11-21 — Synergy integrated into the Master CODEX; Working Record 003 insertion still pending
+
+**Codex integration completed and verified:** The latest Library Master CODEX was retrieved from `/Identity Field Dynamics/CODEX/IFD_CODEX_MASTER_v2.4.md`, reconciled against the published Synergy chapter and the repository's canonical Synergy entry, and saved as the versioned successor `/Identity Field Dynamics/CODEX/IFD_CODEX_MASTER_v2.5.md`. The complete 908-line v2.5 file was read back in this session; its version metadata, Digital Asset Registry entry, revised §§15 and 16.5, new §19, and supersession/provenance statements were checked. v2.4 remains preserved as the historical predecessor.
+
+The v2.5 integration records:
+- **Canonical definition:** Synergy is the graduated spectrum of consequences arising from interaction; Interaction necessarily entails Synergy.
+- **Gradient:** positive (+)/Generative through negative (−)/Destructive; graduated intermediate positions, no assumed equal intervals, and no third foundational pole. Mixed domain consequences must not be forced into one score without justified aggregation.
+- **Analytical distinction:** Interaction is the relational occurrence/process; Synergy is its consequential relational dynamic—not an optional second event and not a synonym for Interaction.
+- **Instrumentation limits:** direction, degree, duration, intensity, domain distribution, and temporal movement remain distinct; measurement reliability, baselines, sampling, aggregation, and causal attribution remain open. No validated quantitative instrument is claimed.
+- **Cross-architecture implications:** Observation, Trace, two unique collective identities, continuing Synergy and evolving power dynamics, new members and possible collective identity transformation, and the distinction between integration/emergence and Synergy.
+- **Historical correction:** the conditional model in v2.4 §§15.2–15.5 and §16.5 is explicitly marked HISTORICAL / SUPERSEDED, not co-current doctrine.
+
+The supporting repository entry `docs/IFD_CODEX_SYNERGY_CANONICAL_ENTRY_v1.0.md` was verified at blob SHA `f0824581e8df3d2511b362df50640c7adf75e3f0` and registered as IFD-DA-0004 in v2.5. The Codex landing page `public/codex-deep.html` was updated to link both the public Synergy chapter and the repository canonical entry (commit `6ea1297cb6e8de12e4016f006f6b59dc859d5d06`).
+
+**Remaining separate task:** The complete Cross-Consolidation Audit — Working Record 003 and its true session endpoint remain unrecovered. Therefore, v2.5 Codex integration is complete, but insertion/cross-referencing inside the actual Working Record 003 is still pending. Do not invent a finding number or claim the wider audit is complete. The older statement above that the CODEX conflict remains unreconciled is superseded by this update.
+
+**Exact next action:** Recover the complete Working Record 003 and true endpoint; then insert/cross-reference the already integrated Synergy findings at the record's existing Interaction ↔ Synergy point, preserving actual numbering and chronology. Do not restart from Finding 015 by default.
