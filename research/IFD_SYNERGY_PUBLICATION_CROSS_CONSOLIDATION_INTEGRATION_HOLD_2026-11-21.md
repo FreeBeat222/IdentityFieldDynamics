@@ -222,3 +222,12 @@ The earlier instruction in this hold record to reconcile the conditional Synergy
 **Still pending and separate:** insertion into Cross-Consolidation Audit — Working Record 003. That complete working record and its true session endpoint remain unrecovered. This hold record is not a substitute for Working Record 003, and no finding number has been assigned. Once recovered, integrate the already reconciled material at its existing Interaction ↔ Synergy point and preserve chronology and numbering.
 
 **Updated next action:** Recover complete Working Record 003 and its actual endpoint; then perform the pending insertion/cross-reference. Do not reopen the now-completed Master CODEX reconciliation unless new evidence warrants it.
+
+
+### 11.1 Public gradient labels clarified — 2026-11-21
+
+The published Synergy chapter source was also updated so the spectrum's poles explicitly read **POSITIVE (+) · GENERATIVE** and **NEGATIVE (−) · DESTRUCTIVE**. The explanatory note clarifies that neutral/equivalent results are baseline-relative observations, not a third foundational pole, and that intermediate graduation criteria and equal intervals are not presumed.
+
+- **Source:** `public/current-ifd/synergy.html`
+- **Commit:** `ab67187a3c96a57297f7dd7e8faf7453b6f52433`
+- **Verification boundary:** GitHub source commit recorded; live production rendering/deployment not independently verified.
