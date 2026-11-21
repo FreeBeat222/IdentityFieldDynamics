@@ -56,3 +56,14 @@ This checkpoint incorporates Rick's direct correction and retrieved prior-conver
 
 ---
 **Resume instruction:** Recover the complete Working Record 003 and the missing remainder of the session first. Resume at its actual last point—not at Finding 015 merely because that is the latest point currently visible in partial retrieval.
+
+
+## 2026-11-21 — Subsequent tab continuity and archival reconciliation
+
+A separate continuity record was added: [research/IFD_FOUNDATIONAL_REVIEW_30_35-40_CONTINUITY_RECONCILIATION_2026-11-21.md](research/IFD_FOUNDATIONAL_REVIEW_30_35-40_CONTINUITY_RECONCILIATION_2026-11-21.md).
+
+This record captures the transferred material from tabs 30 (35), 30 (36), 30 (37), 30 (39), and the current 30 (40) continuation. Tab 30 (38) was referenced as pasted in the prior tab sequence, but its actual text was not available in the current conversation at the time of writing; it is explicitly marked unrecovered. The note distinguishes user-provided statements from assistant synthesis and does not canonize Expanded Synergy's proposed Generative–Destructive description or operational gradient.
+
+The 30 (39) archival proposal is preserved as a proposal, not an implemented system: Occurrence Ledger, Discovery Queue, Reconciliation Register, Canonical Lunations. Discovery vs capture, harvest vs completeness, and provenance are separate requirements. This archival issue remains secondary to recovering the true endpoint of Working Record 003.
+
+**Audit status unchanged:** Working Record 003 remains active; the actual endpoint of the approximately three-hour session is still unrecovered. Do not resume from Finding 015 by default. Do not divert into Binary Vision / Symmetrical Observation.
