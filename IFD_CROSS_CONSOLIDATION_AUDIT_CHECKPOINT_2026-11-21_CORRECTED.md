@@ -98,3 +98,14 @@ Rick restated his marriage example: partners from fine families and already succ
 This links the Synergy examination directly to the audit area **INDIVIDUAL–COLLECTIVE IDENTITY**. The example is Rick's reported observation and conceptual illustration, not a controlled study or proof of a universal law. Preserve the distinction between each identity's collective formation, the interaction between them, and the consequences of that interaction.
 
 Detailed preservation and open research implications are in [research/IFD_SYNERGY_PUBLICATION_CROSS_CONSOLIDATION_INTEGRATION_HOLD_2026-11-21.md](research/IFD_SYNERGY_PUBLICATION_CROSS_CONSOLIDATION_INTEGRATION_HOLD_2026-11-21.md), section 8. This clarification remains pending insertion into the actual Working Record 003; no finding number is assigned and no claim is made that the working record has been recovered.
+
+
+### Rick's extension — persistent Synergy, evolving power dynamics, and new collective members
+
+Rick added that the emerging power dynamic between the two collective identities forming a couple is part of the **same Synergy persisting through time**. The changing distribution of power/influence is a dimension of the continuing relational dynamic, and may itself shape subsequent interactions and consequences. This suggests a feedback sequence for investigation: interaction → consequences → altered relational/power configuration → subsequent interaction → further consequences. It is a provisional analytic sequence, not a validated universal mechanism.
+
+Rick extended the point to an established collective synchronizing with new identities (members). The incoming identity has its own prior formation; the established collective has an existing identity, membership, relationships, roles, norms, authority/influence distribution, and interaction patterns. Their encounter may change the incoming member's participation and adaptation, the established collective's relationships and internal power dynamic, and potentially the collective's identity. Effects may be reciprocal and extend to other members; no particular outcome is presumed.
+
+**Research question preserved:** *When does the integration of a new identity modify the existing collective Synergy, and when does it transform the collective identity itself?*
+
+This extension is preserved in section 9 of the Synergy Cross-Consolidation Integration Hold Record. It is Rick-originated conceptual direction, with an assistant-organized sequence; not yet an empirically validated rule, operational instrument, or published canonical amendment. It remains pending insertion into the actual Working Record 003, which has not been recovered. No finding number is assigned.
