@@ -122,3 +122,44 @@ The example is an illustrative observation reported by Rick, not a controlled em
 **Open research implication:** Specify what makes an individual identity “collective” in the relevant IFD sense, how its constituent histories and relations are represented without reducing it to a checklist of attributes, and how the interaction between two such identities is observed. Do not assume that every dyad has identical structure or that this example establishes a universal dyadic model.
 
 This clarification is to be inserted into Working Record 003 at the appropriate existing points for Synergy and Individual–Collective Identity when the complete record is recovered. Do not invent a finding number or imply that the actual Working Record 003 has already been edited.
+
+
+## 9. Continuing Synergy — evolving power dynamics and collective membership
+
+Rick's next observation extends the prior dyadic example: **the emerging power dynamic between the two collective identities forming a couple is part of the very same Synergy persisting through time.** It is not automatically a separate Synergy merely because the relationship's internal configuration changes. The evolving power dynamic is one dimension of the continuing consequential relational dynamic.
+
+A provisional temporal/feedback sequence for investigation:
+1. Two unique collective identities enter and sustain interaction.
+2. Their interaction entails a consequential relational dynamic (Synergy).
+3. Consequences reshape the relationship's distribution of power, influence, authority, dependency, and/or responsibility.
+4. That evolving configuration becomes part of the conditions shaping subsequent interaction.
+5. Subsequent interaction produces further consequences, which may maintain, redirect, intensify, weaken, or transform the continuing Synergy.
+
+This is a feedback hypothesis/analytic sequence, not a validated universal mechanism. The terms and dimensions of “power dynamic” require domain-sensitive operational definition; do not presume that power is always formal authority or that its redistribution is necessarily generative or destructive.
+
+### Established collectives receiving new identities
+
+Rick further extends the question to an established collective synchronizing with new identities (members). The incoming identity is itself a distinct formation; the established collective already has an identity, membership structure, relationships, roles, loyalties, norms, authority/influence distributions, and interaction patterns. Their encounter may alter both:
+- the incoming identity's relationship to, participation in, and possible adaptation to the collective;
+- the established collective's relationships, power distribution, coordination, practices, capacity, and identity.
+
+The new member may be accommodated, resisted, assimilated, or may contribute to adaptation or transformation; these are candidate patterns for observation, not an exhaustive or predetermined set. Existing members may also change their relationships in response. Membership change can therefore affect the collective's continuing Synergy and may, under some conditions, contribute to a transformation of the collective identity itself.
+
+**Architectural distinctions to preserve:**
+1. the established collective identity and its prior formation;
+2. the incoming identity and its prior formation;
+3. the interaction and evolving configuration between them, including effects on other members;
+4. the continuing Synergy and its consequences over time;
+5. any resulting change in the collective's identity, membership structure, or power relationships.
+
+Do not assume that every membership change transforms collective identity, that every new member synchronizes successfully, or that the collective's response is unidirectional. Observe reciprocal influence and temporal development.
+
+### Research question
+
+**When does the integration of a new identity modify the existing collective Synergy, and when does it transform the collective identity itself?**
+
+Related open question: how can an established collective and an incoming identity synchronize (or fail to synchronize) while their respective identities and the collective's internal power relationships are changing?
+
+**Cross-consolidation links:** Interaction ↔ Synergy; Individual–Collective Identity; Identity ↔ System ↔ Environment ↔ Process; Observation; Trace; and temporal continuity. Trace may preserve successive configurations and consequences, but does not by itself prove causal attribution.
+
+**Status:** Rick-originated conceptual extension and research direction, with assistant-organized sequence and wording. Not yet a validated empirical rule, operational instrument, or canonized addition to the published Synergy chapter. Preserve for insertion into the actual Working Record 003 when recovered; do not invent a finding number.
