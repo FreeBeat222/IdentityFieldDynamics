@@ -145,3 +145,6 @@ The supporting repository entry `docs/IFD_CODEX_SYNERGY_CANONICAL_ENTRY_v1.0.md`
 **Remaining separate task:** The complete Cross-Consolidation Audit — Working Record 003 and its true session endpoint remain unrecovered. Therefore, v2.5 Codex integration is complete, but insertion/cross-referencing inside the actual Working Record 003 is still pending. Do not invent a finding number or claim the wider audit is complete. The older statement above that the CODEX conflict remains unreconciled is superseded by this update.
 
 **Exact next action:** Recover the complete Working Record 003 and true endpoint; then insert/cross-reference the already integrated Synergy findings at the record's existing Interaction ↔ Synergy point, preserving actual numbering and chronology. Do not restart from Finding 015 by default.
+
+
+**Public gradient clarification — additional source update:** The Synergy chapter now labels the two poles explicitly as **POSITIVE (+) · GENERATIVE** and **NEGATIVE (−) · DESTRUCTIVE**, and clarifies that a neutral/equivalent result is baseline-relative, not a third foundational pole. Source: `public/current-ifd/synergy.html`; commit `ab67187a3c96a57297f7dd7e8faf7453b6f52433`. Repository source updated; live production rendering/deployment remains unverified.
