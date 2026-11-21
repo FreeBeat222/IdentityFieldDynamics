@@ -312,3 +312,18 @@ Rick reported that the wakeup sequence restored LUNA one session behind; he repe
 - Git history has not been rewritten; old commits may still contain retired material.
 - External backups, sync folders, exports, caches, and third-party copies remain unverified because their locations and connected access were not available.
 - Next action: obtain the actual external storage locations, verify provider-side disposition, then assess Git history rewrite feasibility.
+
+
+## 2026-11-21 — IFD Foundational Review tabs 30 (35)–(40) continuity reconciliation
+
+**Trigger:** Rick authorized reconciliation of recent tab updates into the permanent IFD record.
+
+**Action:** Added `research/IFD_FOUNDATIONAL_REVIEW_30_35-40_CONTINUITY_RECONCILIATION_2026-11-21.md` and linked it from the corrected Cross-Consolidation Audit checkpoint.
+
+**Coverage/provenance:** The current conversation contained transferred excerpts for 30 (35), 30 (36), 30 (37), and 30 (39), plus the present 30 (40) continuation. 30 (38) was referenced as pasted in the prior tab sequence, but its actual text was not available in this conversation during this save; it remains explicitly unrecovered. The new research note distinguishes direct user-provided material from assistant synthesis. It does not claim the 30 (38) text was read or archived.
+
+**Preserved content:** The archival proposal from 30 (39): Occurrence Ledger, Discovery Queue, Reconciliation Register, Canonical Lunations. These are four distinct proposed functions, not an implemented register. The note preserves discovery vs capture, prior harvesting vs completeness, and provenance as separate issues. It also records the Menace attribution correction, drift/cigarette exchange as conversational material rather than canon, and Expanded Synergy as provisional; the Generative–Destructive gradient in the transferred text is identified as assistant synthesis pending recovery/confirmation of Rick's exact definition.
+
+**Cross-audit status:** Working Record 003 remains active. Its true three-hour session endpoint remains unrecovered; Finding 015 must not be assumed to be the endpoint. Binary Vision / Symmetrical Observation remains deferred.
+
+**Verification:** The note creation and checkpoint update returned GitHub commit/blob identifiers in this operation. Re-fetch/read-back verification is required before claiming the complete save is verified.
