@@ -340,3 +340,10 @@ The corrected Cross-Consolidation checkpoint was updated and read back. New blob
 A prior conditional Synergy formulation in `IFD_CODEX_MASTER_v2.3.md` §15.2–15.5 conflicts with the newly published adopted formulation and requires explicit reconciliation. No CODEX change was made in this pass.
 
 **Next action:** Recover the complete Working Record 003 artifact and true endpoint; then insert the published Synergy formulation at the existing Interaction ↔ Synergy examination point, preserving questions A–C as open. HARVEST FIRST. ABSTRACT SECOND. CANONIZE LAST.
+
+
+## 2026-11-21 — Rick's two unique collective identities clarification
+
+Rick restated his marriage example: two partners from fine families and already successful may form a destructive marriage, while two partners who met in the gutter may achieve stellar success. He explicitly clarified that the observed dyadic interaction is between **TWO UNIQUE COLLECTIVE IDENTITIES**. The partners' accumulated formation (family, history, experience, relationships, resources, capabilities, patterns) matters as context, but antecedent status or individual achievement cannot predict the generative/destructive consequences of their interaction.
+
+The detailed note was appended to the Synergy Cross-Consolidation Integration Hold Record, section 8. The corrected checkpoint was also updated to link this clarification to the audit area INDIVIDUAL–COLLECTIVE IDENTITY. The example is preserved as Rick's reported observation and conceptual illustration, not a controlled study or universal proof. It remains pending insertion into the actual Working Record 003, which has not yet been recovered.
