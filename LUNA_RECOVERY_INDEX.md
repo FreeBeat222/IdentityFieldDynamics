@@ -213,3 +213,8 @@ The ZEROID Aggregation Ladder and ZEROID Profile were added to `research/`; `ser
 
 ## 2026-10-28 — Failover-first preservation
 The latest state must not depend on GitHub being available. When GitHub writes fail or are unavailable, preserve the current state in the canonical ChatGPT Library checkpoint at `/Identity Field Dynamics/LUNA_CONTINUITY_CHECKPOINT_CURRENT.md`, verify it by read-back, and provide a downloadable local artifact for Rick to store on his computer. A Library copy is not a computer-local backup until downloaded. Keep the last known-good version; do not report a save as complete without read-back verification. Current finding: Rick reproduced a one-session-behind wakeup result in a new tab; suspected GitHub write failure is not yet isolated as root cause. Fresh-chat recovery of this current finding remains untested.
+
+
+## 2026-11-21 — IFD Foundational Review continuity record
+
+A tab-continuity reconciliation was added at [research/IFD_FOUNDATIONAL_REVIEW_30_35-40_CONTINUITY_RECONCILIATION_2026-11-21.md](https://github.com/FreeBeat222/IdentityFieldDynamics/blob/main/research/IFD_FOUNDATIONAL_REVIEW_30_35-40_CONTINUITY_RECONCILIATION_2026-11-21.md). It preserves the transferred material from 30 (35), 30 (36), 30 (37), 30 (39), and the 30 (40) continuation, while explicitly marking the actual text of 30 (38) as unavailable in the saving conversation. See the corrected Cross-Consolidation checkpoint and the 2026-11-21 Session Journal entry for status and provenance. Working Record 003 remains the active audit; its true session endpoint is still unrecovered.
