@@ -109,3 +109,20 @@ Rick extended the point to an established collective synchronizing with new iden
 **Research question preserved:** *When does the integration of a new identity modify the existing collective Synergy, and when does it transform the collective identity itself?*
 
 This extension is preserved in section 9 of the Synergy Cross-Consolidation Integration Hold Record. It is Rick-originated conceptual direction, with an assistant-organized sequence; not yet an empirically validated rule, operational instrument, or published canonical amendment. It remains pending insertion into the actual Working Record 003, which has not been recovered. No finding number is assigned.
+
+
+## 8. Synergy cross-domain examples — newly preserved 2026-11-21
+
+Rick explicitly generalized the observed generative/destructive pattern across collective dimensions:
+- Marriage/partnership: two already successful partners from fine families may form a destructive marriage; two partners who met in severely disadvantaged circumstances may achieve stellar success.
+- Corporate: a CEO who led one organization to fame and fortune may join another collective and drive it into the ground. Prior success belongs to a particular CEO–collective configuration and does not guarantee success in another.
+- Government and military collectives: Rick reports seeing the same pattern in these institutional domains; prior reputation or success does not settle the consequences of a new configuration.
+- Incoming identity: “One bad apple spoils the barrel” illustrates a possible destructive contribution by an incoming member. Also investigate the reciprocal possibility that an incoming identity contributes to generative change.
+
+**Provisional proposition:** The antecedent quality, capability, reputation, or prior success of participating identities or collectives does not, by itself, predict the consequences of their interaction. Synergy must be investigated in the particular relational configuration and its consequences.
+
+**Cautions:** These are Rick's reported observations and examples, not supplied controlled studies or independently verified case datasets. Do not treat the proverb as a causal mechanism. Examine collective contribution and attribution, inherited conditions, external circumstances, and alternative explanations. Distinguish changes in continuing Synergy from changes in collective identity.
+
+**Open questions:** How much of leadership success/failure is attributable to the individual versus the particular collective configuration? Under what conditions does an incoming identity contribute to destructive propagation or generative change? When do persistent Synergy changes contribute to collective identity transformation?
+
+**Status / placement:** Preserve as cross-domain examples and provisional synthesis for the Synergy ↔ Interaction and Individual–Collective Identity audit areas. Pending insertion into actual Working Record 003, which remains unrecovered. No finding number assigned; no claim that the audit record itself has been edited.
