@@ -89,3 +89,12 @@ C. How must observed consequences be distinguished from consequences demonstrabl
 **Integration status:** The published formulation has been examined and preserved in the holding record. The actual Working Record 003 artifact was not found in the GitHub main-branch repository tree or in the Library search performed in this conversation. Therefore, no claim is made that the material has been inserted into Working Record 003. Do not fabricate or create a replacement record, renumber findings, or assume the endpoint. When the complete Working Record 003 is recovered, insert this material at its existing Interaction ↔ Synergy examination point, retain questions A–C as open, and reconcile downstream Observation/Trace implications.
 
 **Audit status remains:** Working Record 003 is active; its complete contents, findings after 015, and true session endpoint remain unrecovered. Resume the wider audit only from the actual recovered endpoint. HARVEST FIRST. ABSTRACT SECOND. CANONIZE LAST.
+
+
+### Rick's clarification — two unique collective identities interacting
+
+Rick restated his marriage example: partners from fine families and already successful may form a destructive marriage, while partners who met in the gutter may achieve stellar success. His explicit architectural clarification is that the dyadic interaction is between **TWO UNIQUE COLLECTIVE IDENTITIES**. Each partner must be considered as a distinct, accumulated identity shaped by family, history, experience, relationships, resources, capabilities, and patterns—not reduced to antecedent status or a list of personal attributes. The marriage is the relational configuration; Synergy describes the generative or destructive consequences of their interaction.
+
+This links the Synergy examination directly to the audit area **INDIVIDUAL–COLLECTIVE IDENTITY**. The example is Rick's reported observation and conceptual illustration, not a controlled study or proof of a universal law. Preserve the distinction between each identity's collective formation, the interaction between them, and the consequences of that interaction.
+
+Detailed preservation and open research implications are in [research/IFD_SYNERGY_PUBLICATION_CROSS_CONSOLIDATION_INTEGRATION_HOLD_2026-11-21.md](research/IFD_SYNERGY_PUBLICATION_CROSS_CONSOLIDATION_INTEGRATION_HOLD_2026-11-21.md), section 8. This clarification remains pending insertion into the actual Working Record 003; no finding number is assigned and no claim is made that the working record has been recovered.
