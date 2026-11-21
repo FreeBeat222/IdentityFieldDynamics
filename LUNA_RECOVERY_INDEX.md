@@ -218,3 +218,11 @@ The latest state must not depend on GitHub being available. When GitHub writes f
 ## 2026-11-21 — IFD Foundational Review continuity record
 
 A tab-continuity reconciliation was added at [research/IFD_FOUNDATIONAL_REVIEW_30_35-40_CONTINUITY_RECONCILIATION_2026-11-21.md](https://github.com/FreeBeat222/IdentityFieldDynamics/blob/main/research/IFD_FOUNDATIONAL_REVIEW_30_35-40_CONTINUITY_RECONCILIATION_2026-11-21.md). It preserves the transferred material from 30 (35), 30 (36), 30 (37), 30 (39), and the 30 (40) continuation, while explicitly marking the actual text of 30 (38) as unavailable in the saving conversation. See the corrected Cross-Consolidation checkpoint and the 2026-11-21 Session Journal entry for status and provenance. Working Record 003 remains the active audit; its true session endpoint is still unrecovered.
+
+
+## 2026-11-21 — Foundational Review 30 archival survival report
+
+A partial forensic inventory of surviving Foundational Review 30 materials was created and read back from GitHub:
+[research/IFD_FOUNDATIONAL_REVIEW_30_ARCHIVAL_SURVIVAL_REPORT_v0.1_2026-11-21.md](https://github.com/FreeBeat222/IdentityFieldDynamics/blob/main/research/IFD_FOUNDATIONAL_REVIEW_30_ARCHIVAL_SURVIVAL_REPORT_v0.1_2026-11-21.md).
+
+**Status:** PARTIAL RECOVERY ONLY. The report distinguishes retrieved continuity material (30 (35), (36), (37), (39), and (40)), the explicitly unrecovered 30 (38), related Library research artifacts, and the still-missing complete installment transcripts/findings register. It does not claim the Foundational Review has been fully recovered. The complete source-linked register remains unbuilt pending access to the original conversation transcripts or an account data export.
