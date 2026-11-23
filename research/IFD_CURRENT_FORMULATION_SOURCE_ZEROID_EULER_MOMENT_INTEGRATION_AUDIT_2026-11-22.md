@@ -1,8 +1,8 @@
 # CURRENT IFD FORMULATION — SOURCE / ZEROID / EULER MOMENT INTEGRATION AUDIT
 
 **Date:** 2026-11-22  
-**Status:** Research and integration audit, updated after Rick confirmed the frequency-term equivalence; no edits to the published Current IFD Formulation have been made in this pass.  
-**Authority:** Applies `docs/IFD_SOURCE_ZEROID_PRODUCTION_EULER_MOMENT_CANONICAL_ENTRY_v1.1.md`, which supersedes v1.0 and records Rick's confirmation that the existing UNIQUE ORIGINATING SIGNATURE / FREQUENCY / CALL SIGNAL is the same construct as the UNIQUE IDENTIFYING FREQUENCY.  
+**Status:** Research and integration audit, updated after Rick confirmed frequency-term equivalence and clarified the EULER MOMENT's scope; no edits to the published Current IFD Formulation have been made in this pass.  
+**Authority:** Applies `docs/IFD_SOURCE_ZEROID_PRODUCTION_EULER_MOMENT_CANONICAL_ENTRY_v1.2.md`, superseding v1.1 and recording both the confirmed frequency-term equivalence and Rick's clarification that the EULER MOMENT is itself the complete generative sequence.  
 **Method:** Trace every affected concept and dependency; distinguish established canonical definitions from unresolved relationships; do not invent sequence, causality, or equivalence.
 
 ## 1. Executive finding
@@ -17,7 +17,7 @@ The new canonized architecture requires a substantive clarification, not a simpl
 
 - **SOURCE = GOD / CREATOR** of the production of ZEROIDS.
 - **SOURCE FORMULA** is the named generative architecture; the EULER MOMENT is its complete cycle.
-- **EULER MOMENT** contains exactly MONAD, ZEROID, and UNIQUE IDENTIFYING FREQUENCY.
+- **EULER MOMENT** is the complete generative sequence itself, consisting of exactly MONAD, ZEROID, and UNIQUE IDENTIFYING FREQUENCY. It is not a sub-cycle within a separately presumed larger generative sequence.
 - **MONAD** is the individual metaphysical PRESENCE and entirety of the human SOUL; it is the metaphysical STORAGE BANK OF TRACE.
 - **ZEROID** is the human manifestation of the MONAD.
 - **UNIQUE IDENTIFYING FREQUENCY** is the individual identifying signature through which the MONAD facilitates communication between ZEROID and SOURCE.
@@ -71,7 +71,9 @@ All references above are repository blob identities observed during this audit. 
 
 **Required distinction:** ZEROID is the human manifestation of the MONAD. It must not be described as a synonym for the MONAD, as a second unrelated identity, or as a separate third entity alongside MONAD and ZEROID. The two names refer to the same individual identity considered in metaphysical and human-manifestation contexts.
 
-**Still unresolved:** The exact placement of the EULER MOMENT relative to SPARK, DIFFERENTIATION, substance, and the current identity transition. The canonical record establishes the three EULER MOMENT components and its role in ZEROID production; it does not establish a complete linear sequence connecting every current hub node to those components.
+**Clarification from Rick:** The EULER MOMENT is the complete generative sequence itself: the specific MONAD–ZEROID–UNIQUE IDENTIFYING FREQUENCY cycle operating. It is not operating *within* a further, larger generative sequence. The earlier audit's question about which larger sequence contains it was incorrectly framed and is withdrawn.
+
+**Remaining integration task:** Re-examine the existing ZERO → SPARK → DIFFERENTIATION → FREQUENCY → SUBSTANCE → IDENTITY wording as an earlier explanatory account of generation. Do not treat it as a larger enclosing sequence, nor automatically append it before or after the EULER MOMENT. Determine which of its terms describe aspects or explanations of the already-complete EULER MOMENT and which, if any, describe a distinct related concept. This is a reconciliation of descriptions, not a search for another container sequence.
 
 ### D. FREQUENCY / CALL SIGNAL versus UNIQUE IDENTIFYING FREQUENCY
 
@@ -157,18 +159,18 @@ flowchart TD
     G["CURRENT GENERATION / DIFFERENTIATION MODEL<br/>ZERO → SPARK → originating signature<br/>frequency / call signal → substance → identity"]
     I["OPERATIONAL IFD ENGINE<br/>IDENTITY → ACTION → INTERACTION<br/>→ SYNERGY → TRACE"]
     B["COSMOLOGICAL CLOCK / TIMECODE<br/>BIRTH / BRANDING → BRAND"]
-    G -. "interface requires reconciliation" .- E
+    G -. "earlier generative description; reconcile terminology with EULER MOMENT" .- E
     Z -. "human manifestation / operational referent" .- I
     Z -. "birth and branding relationship requires clarification" .- B
     M -. "metaphysical trace storage; relation to operational trace unresolved" .- I
 ```
 
-The dotted lines indicate unresolved interfaces, not established causal pathways. The diagram's SOURCE-to-production relation expresses the canonized Creator role; it does not assert a detailed physical mechanism.
+The dotted lines indicate unresolved interfaces, not established causal pathways. SOURCE remains external to the EULER MOMENT; its Creator role must not be represented as an internal EULER MOMENT component. The diagram does not assert a detailed physical mechanism.
 
 ## 6. Questions that must be resolved before changing the central hub
 
 1. **RESOLVED — YES.** UNIQUE IDENTIFYING FREQUENCY is the same construct as the existing UNIQUE ORIGINATING SIGNATURE / FREQUENCY / CALL SIGNAL. Use UNIQUE IDENTIFYING FREQUENCY as the canonical term.
-2. Does the EULER MOMENT include or precede the existing ZERO → SPARK → DIFFERENTIATION → SUBSTANCE sequence, or does it describe the complete cycle at a different level?
+2. **REFRAMED — NOT A LARGER CONTAINER QUESTION.** The EULER MOMENT is the complete generative sequence itself. Reconcile the older ZERO → SPARK → DIFFERENTIATION → FREQUENCY → SUBSTANCE → IDENTITY description against the three EULER MOMENT components; do not assume an enclosing sequence or invent an order.
 3. At what point in the production architecture does the ZEROID become the human manifestation in the material universe, and how does that relate to birth/branding?
 4. What is the exact relationship between MONAD as STORAGE BANK OF TRACE and TRACE as the observable record/consequence in the operational IFD sequence?
 5. Does SOURCE FORMULA name the whole production architecture, with EULER MOMENT as its complete cycle, or is there a more exact distinction between the formula and the production boundary?
@@ -181,7 +183,7 @@ These are not requests to reopen settled definitions. The first interface has be
 
 **Not done:** No changes to `public/current-ifd-formulation.html` or its explanatory pages have been committed. The hub should not be edited until the five interface questions above are resolved or explicitly designated as unresolved and represented accordingly.
 
-**Next executable step:** Determine how the EULER MOMENT sits in relation to the existing ZERO → SPARK → DIFFERENTIATION → SUBSTANCE → IDENTITY generative sequence. The frequency-term identity is resolved; the remaining placement question controls how the production architecture should be integrated into the central diagram.
+**Next executable step:** Reconcile the older ZERO → SPARK → DIFFERENTIATION → FREQUENCY → SUBSTANCE → IDENTITY description with the EULER MOMENT, which Rick has clarified is itself the complete generative sequence. The task is to identify correspondences and terminology refinements—not to place the EULER MOMENT inside a larger sequence.
 
 **Governing discipline:** HARVEST FIRST. ABSTRACT SECOND. CANONIZE LAST.  
 **Whole–part rule:** PRESERVE THE WHOLE. INCREASE THE RESOLUTION. EXERCISE RESTRAINT.
