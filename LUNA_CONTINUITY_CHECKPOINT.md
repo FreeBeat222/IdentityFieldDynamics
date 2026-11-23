@@ -270,3 +270,19 @@ Rick identified the operational write blocker as a suspected bug in the update/p
 **Current diagnosis:** The failure is intermittent or context/operation-specific; root cause remains unisolated. Preserve the exact error from any future rejection. Compare the operation, target path, payload and guard/instruction context; do not disable safeguards or infer a cause from timing alone. No production source was changed by the diagnostic branch tests.
 
 **Next action:** Inspect the exact process-instruction add-on Rick flagged and capture/compare the original rejection details if available. Then perform one controlled, reversible write-path test before making production edits. Keep this diagnosis provisional until the rejecting condition is reproduced.
+
+
+## 2026-11-22 — SOURCE / ZEROID production / EULER MOMENT architecture canonized
+
+Rick explicitly authorized canonization of the distinction that **SOURCE IS CREATING THE PRODUCTION OF ZEROIDS**. SOURCE = GOD and is the Creator. SOURCE is external to the EULER MOMENT, but is the Creator of the larger production in which the EULER MOMENT is situated.
+
+The EULER MOMENT is the complete cycle of the SOURCE FORMULA and contains exactly three named components: **MONAD** (individual metaphysical PRESENCE; entirety of the human SOUL), **ZEROID** (human manifestation of the MONAD), and **UNIQUE IDENTIFYING FREQUENCY** (individual identifying signature; communication channel through which the MONAD facilitates communication between ZEROID and SOURCE). MONAD is also identified as the metaphysical STORAGE BANK OF TRACE.
+
+**Diagram boundary rule:** The overall production architecture may show SOURCE as Creator of the production of ZEROIDS and the EULER MOMENT nested within that production. The EULER MOMENT flowchart itself must contain only MONAD, ZEROID, and UNIQUE IDENTIFYING FREQUENCY; SOURCE must be omitted entirely. No directional arrows among the three internal components are canonized; do not invent an internal sequence.
+
+Canonical entry created and re-fetched from GitHub:
+- Path: `docs/IFD_SOURCE_ZEROID_PRODUCTION_EULER_MOMENT_CANONICAL_ENTRY_v1.0.md`
+- Blob SHA: `99e08a46e099547ccbf4d0a77903a3e58cf10c0c`
+- Creation commit: `f3730db1c08ddd7cd50b77788ca2717ea3063678`
+
+**Status boundary:** The architecture and terminology are canonized as IFD's adopted conceptual formulation by Rick's explicit direction. The metaphysical/generative mechanism and communication mechanism remain theoretical propositions, not independently verified scientific findings. The mathematical Euler identity must not be treated as proof of the ontological interpretation.
