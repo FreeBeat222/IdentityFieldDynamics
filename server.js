@@ -24,6 +24,50 @@ app.get("/assets/cathedral.webp", (_req, res) => {
 // Keep the homepage available only at its canonical URL.
 app.get("/homepage-cathedral.html", (_req, res) => res.redirect(301, "/"));
 app.use(express.static("public", { extensions: ["svg"] }));
+// Add consistent search and social metadata to server-rendered Cathedral pages.
+// Static HTML files keep their page-authored metadata; this middleware covers
+// the dynamic informational pages generated below.
+app.use((req, res, next) => {
+  const send = res.send;
+  res.send = function (body) {
+    const contentType = res.get("Content-Type") || "";
+    if (typeof body === "string" && contentType.includes("text/html") && !res.headersSent) {
+      const origin = "https://identityfielddynamics.com";
+      const titleMatch = body.match(/<title[^>]*>([\\s\\S]*?)<\\/title>/i);
+      const title = titleMatch ? titleMatch[1].replace(/<[^>]*>/g, " ").replace(/\\s+/g, " ").trim() : "Identity Field Dynamics";
+      const paragraphMatch = body.match(/<p[^>]*>([\\s\\S]*?)<\\/p>/i);
+      let description = paragraphMatch
+        ? paragraphMatch[1].replace(/<[^>]*>/g, " ").replace(/\\s+/g, " ").trim()
+        : title + " — Identity Field Dynamics.";
+      description = description.replace(/&nbsp;/g, " ").replace(/&amp;/g, "&").replace(/&quot;/g, '"').slice(0, 160);
+      const canonical = origin + req.path;
+      const escapeAttr = value => String(value).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+      const tags = [];
+      if (!/<meta\\s+name=["']description["']/i.test(body)) tags.push('<meta name="description" content="' + escapeAttr(description) + '">');
+      if (!/<link\\s+rel=["']canonical["']/i.test(body)) tags.push('<link rel="canonical" href="' + escapeAttr(canonical) + '">');
+      if (!/<meta\\s+property=["']og:title["']/i.test(body)) tags.push('<meta property="og:title" content="' + escapeAttr(title) + '">');
+      if (!/<meta\\s+property=["']og:description["']/i.test(body)) tags.push('<meta property="og:description" content="' + escapeAttr(description) + '">');
+      if (!/<meta\\s+property=["']og:type["']/i.test(body)) tags.push('<meta property="og:type" content="website">');
+      if (!/<meta\\s+property=["']og:url["']/i.test(body)) tags.push('<meta property="og:url" content="' + escapeAttr(canonical) + '">');
+      if (!/<meta\\s+name=["']twitter:card["']/i.test(body)) tags.push('<meta name="twitter:card" content="summary">');
+      if (!/<script[^>]+type=["']application\\/ld\\+json["']/i.test(body)) {
+        const schema = {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": title,
+          "description": description,
+          "url": canonical,
+          "isPartOf": { "@type": "WebSite", "name": "Identity Field Dynamics", "url": origin + "/" }
+        };
+        tags.push('<script type="application/ld+json">' + JSON.stringify(schema).replace(/</g, "\\\\u003c") + '</script>');
+      }
+      if (tags.length && /<\\/head>/i.test(body)) body = body.replace(/<\\/head>/i, tags.join("\\n") + "\\n</head>");
+    }
+    return send.call(this, body);
+  };
+  next();
+});
+
 const dbConfig = () => ({
   host: process.env.DB_HOST,
   port: Number(process.env.DB_PORT || 3306),
