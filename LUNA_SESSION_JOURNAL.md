@@ -555,3 +555,10 @@ Updated public pages were also fetched back:
 - `public/ifd-overview.html` — blob `138c7859b10a123be4ab44a2e78e70ffa835de85`
 
 Integration audit blob: `4c170f14508db4efff4f8454221b8a4a0fe5c9f7`. The public Current IFD hub is Edition 1.1. Read-back confirms the current files contain the revised architecture. Hosting deployment/live-site rendering was not independently checked in this operation.
+
+
+## 2026-11-22 — Final formulation wording clarification
+
+The central SPARK node and the Generation & Differentiation explanatory page now explicitly identify SPARK / EULER MOMENT as the **complete cycle of the SOURCE FORMULA**, while preserving the four simultaneous creations and the distinction between SOURCE (Creator) and SOURCE FORMULA (generative formulation). Latest read-back blob SHAs:
+- `public/current-ifd-formulation.html`: `5a30a3ebd26ebf5cf1cddf420b99839a33b1a0a9`
+- `public/current-ifd/generation-differentiation.html`: `67a94a15671c164960bba0bc00a7330f76c96dfc`
