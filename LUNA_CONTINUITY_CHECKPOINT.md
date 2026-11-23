@@ -360,3 +360,15 @@ Updated audit:
 - Commit: `c1c5e7a4400bf8ab0004d3f881b89195f01e2691`
 
 The published Current IFD Formulation and canonical entry v1.2 were not changed. Continue by reconciling the older ZERO → SPARK → DIFFERENTIATION → FREQUENCY → SUBSTANCE → IDENTITY description with the EULER MOMENT, preserving the clarified recording relationship.
+
+
+## 2026-11-22 — Correction: no evidence for active MONAD recording mechanism
+
+Rick challenged the assistant's unsupported inference that MONAD is an “active recorder” rather than a passive storage bank. The assistant has no supporting evidence for that claim. Rick's statement that MONAD / SOUL uses the UNIQUE frequency channel to RECORD the ZEROID's diachronic manifestation specifies a recording relationship, but does not establish whether MONAD is active, passive, or operates by some other mechanism.
+
+Preserve the existing MONAD = metaphysical STORAGE BANK OF TRACE formulation. Do not embellish it with agency, processing, organization, or internal recording mechanics absent evidence. Retain Rick's channel/recording statement as given, while marking the internal mechanism as unknown. Audit corrected and read back:
+- `research/IFD_CURRENT_FORMULATION_SOURCE_ZEROID_EULER_MOMENT_INTEGRATION_AUDIT_2026-11-22.md`
+- Blob SHA: `6a569f6d3c393a6f896b4774e9da4373a2f96c7c`
+- Commit: `5f2f47abbad98ca4f4c41bf66a86b45d84e1b1d9`
+
+Canonical entry v1.2 and published Current IFD Formulation remain unchanged. No active-recorder claim is authorized.
