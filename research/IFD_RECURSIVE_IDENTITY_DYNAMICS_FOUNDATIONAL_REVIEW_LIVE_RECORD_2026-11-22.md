@@ -21,11 +21,11 @@ Where A = Action; first I = Identity; second I = Interaction; S = Synergy; T = T
 
 Preserve the foundational proposition **ACTION = IDENTITY**. Do not collapse that proposition into the operational sequence or infer causation solely from sequence notation.
 
-## 2. Non-negotiable recordkeeping rule
+## 2. Recordkeeping approach
 
-**NO RESEARCH STEP IS COMPLETE UNTIL ITS FINDINGS, RELATIONSHIPS, EVIDENCE STATUS, UNRESOLVED QUESTIONS AND NEXT ACTION HAVE BEEN ENTERED INTO THIS FILE OF RECORD.**
+This file is a working record intended to preserve discoveries, decisions, source references, corrections, open questions, and continuity during the investigation. Its organization and update cadence are practical aids, not restrictions on the user or unilateral conditions for declaring work complete. The user retains final authority over the workflow, priorities, and completion criteria.
 
-Update this record during the investigation, after each meaningful research step, correction, decision, or change in next action. Do not defer documentation until the end. Each update must preserve prior decisions and distinguish:
+Update the record as useful to preserve the investigation. Each entry may distinguish:
 - user-established formulations;
 - canonized IFD propositions;
 - interpretations and analytical proposals;
@@ -134,7 +134,7 @@ The following are open questions, not settled conclusions:
 ## 9. Current checkpoint
 
 - **Objective:** Conduct a comprehensive, recorded Foundational Review of RECURSIVE IDENTITY DYNAMICS across the IFD architecture.
-- **Last verified result in this operation:** This live record has been created. Its content must be fetched back and checked before the write is considered verified.
+- **Last verified result in this operation:** The live record has been created and fetched back successfully. The user has clarified that recordkeeping language must not impose unilateral restrictions or completion conditions.
 - **Evidence:** This file and subsequent version history/commit records.
 - **Open items:** All ten steps; source retrieval and version verification; formal recurrence; architecture mapping; coherence and reconciliation.
 - **Next action:** Retrieve and verify the current canonical doctrine and relevant IFD source records, then execute Step 1.
