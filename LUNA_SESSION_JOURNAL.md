@@ -486,3 +486,15 @@ Rick explicitly authorized canonization. New current canonical entry:
 Canonized proposition: **THE MONAD (SOUL) RETAINS THE DIACHRONIC TRACE OF THE ZEROID'S MANIFESTATIONS.** The UNIQUE IDENTIFYING FREQUENCY is the channel used in the recording relationship described by Rick. The record deliberately does not specify whether TRACE is etched upon the SOUL, stored within it, or retained through another relationship. Whether MONAD's recording is active or passive, and the recording/storage/retrieval mechanism, remain unknown. No active-recorder claim is made.
 
 The previous canonical entry v1.2 is preserved. The Current IFD Formulation website pages have not been changed; this canonization updates the research/canonical record only. Integration into the published formulation remains pending comprehensive reconciliation.
+
+
+## 2026-11-22 — Canonical update v1.4: operational IFD sequence
+
+The canonical architecture now explicitly records the operational sequence **A > I > I > S > T**, with the exact mapping: A = Action; first I = Identity; second I = Interaction; S = Synergy; T = Trace.
+
+It distinguishes this operational sequence from the MONAD–ZEROID–UNIQUE IDENTIFYING FREQUENCY architecture. The operational TRACE is the terminal element of A > I > I > S > T. The metaphysical proposition states that MONAD (SOUL) retains the diachronic TRACE of the ZEROID's manifestations. Their precise relationship remains an integration question; neither identity nor separation of mechanisms is assumed.
+
+Canonical file: `docs/IFD_SOURCE_ZEROID_PRODUCTION_EULER_MOMENT_CANONICAL_ENTRY_v1.4.md`
+- Commit: `0e5557f19b1d1c408165fab5207e968f491bc66e`
+- Blob SHA: `3fb86c9bddb2a1d632eea7057ee46d2e1f7d6efc`
+- Read-back verification: successful.
