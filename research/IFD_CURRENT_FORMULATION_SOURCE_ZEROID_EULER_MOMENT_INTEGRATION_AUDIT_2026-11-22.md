@@ -214,3 +214,15 @@ Canonical file: `docs/IFD_SOURCE_ZEROID_PRODUCTION_EULER_MOMENT_CANONICAL_ENTRY_
 - Commit: `dc1813acec7799acd7ebc8ce04a28f4970e710e7`
 - Blob SHA: `0f747ef9de12d371baccd3e65413f132c61195db`
 - Read-back verification: successful.
+
+
+## 2026-11-22 — Canonical update v1.4: operational IFD sequence
+
+The canonical architecture now explicitly records the operational sequence **A > I > I > S > T**, with the exact mapping: A = Action; first I = Identity; second I = Interaction; S = Synergy; T = Trace.
+
+It distinguishes this operational sequence from the MONAD–ZEROID–UNIQUE IDENTIFYING FREQUENCY architecture. The operational TRACE is the terminal element of A > I > I > S > T. The metaphysical proposition states that MONAD (SOUL) retains the diachronic TRACE of the ZEROID's manifestations. Their precise relationship remains an integration question; neither identity nor separation of mechanisms is assumed.
+
+Canonical file: `docs/IFD_SOURCE_ZEROID_PRODUCTION_EULER_MOMENT_CANONICAL_ENTRY_v1.4.md`
+- Commit: `0e5557f19b1d1c408165fab5207e968f491bc66e`
+- Blob SHA: `3fb86c9bddb2a1d632eea7057ee46d2e1f7d6efc`
+- Read-back verification: successful.
