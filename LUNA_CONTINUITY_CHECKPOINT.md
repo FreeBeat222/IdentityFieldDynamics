@@ -372,3 +372,17 @@ Preserve the existing MONAD = metaphysical STORAGE BANK OF TRACE formulation. Do
 - Commit: `5f2f47abbad98ca4f4c41bf66a86b45d84e1b1d9`
 
 Canonical entry v1.2 and published Current IFD Formulation remain unchanged. No active-recorder claim is authorized.
+
+
+## 2026-11-22 — Canonization completed: MONAD retains diachronic ZEROID TRACE
+
+Rick explicitly authorized canonization. New current canonical entry:
+- `docs/IFD_SOURCE_ZEROID_PRODUCTION_EULER_MOMENT_CANONICAL_ENTRY_v1.3.md`
+- Commit: `dc1813acec7799acd7ebc8ce04a28f4970e710e7`
+- Blob SHA: `0f747ef9de12d371baccd3e65413f132c61195db`
+- URL: https://github.com/FreeBeat222/IdentityFieldDynamics/blob/main/docs/IFD_SOURCE_ZEROID_PRODUCTION_EULER_MOMENT_CANONICAL_ENTRY_v1.3.md
+- Fetched back and verified.
+
+Canonized proposition: **THE MONAD (SOUL) RETAINS THE DIACHRONIC TRACE OF THE ZEROID'S MANIFESTATIONS.** The UNIQUE IDENTIFYING FREQUENCY is the channel used in the recording relationship described by Rick. The record deliberately does not specify whether TRACE is etched upon the SOUL, stored within it, or retained through another relationship. Whether MONAD's recording is active or passive, and the recording/storage/retrieval mechanism, remain unknown. No active-recorder claim is made.
+
+The previous canonical entry v1.2 is preserved. The Current IFD Formulation website pages have not been changed; this canonization updates the research/canonical record only. Integration into the published formulation remains pending comprehensive reconciliation.
