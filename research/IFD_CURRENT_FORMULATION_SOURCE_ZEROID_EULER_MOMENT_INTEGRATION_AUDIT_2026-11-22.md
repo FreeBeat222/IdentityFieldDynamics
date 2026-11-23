@@ -98,7 +98,7 @@ This specifies the recording relationship:
 - **MONAD / SOUL** uses that unique frequency channel to record the diachronic manifestation of identity as expressed by the ZEROID.
 - **TRACE** is the recorded diachronic manifestation of identity—not merely an isolated action or event.
 
-This refines the earlier description of MONAD as the metaphysical STORAGE BANK OF TRACE: MONAD is not merely passive storage; it performs the recording through the UNIQUE IDENTIFYING FREQUENCY channel. This is a user-specified conceptual relationship. It does not, by itself, settle technical questions about the channel's physical nature, the temporal granularity of recording, or retention/retrieval mechanics. Do not add those mechanisms without further specification.
+This specifies a recording relationship but does **not** establish the MONAD's internal mechanism or whether it is active or passive. The existing description of MONAD as the metaphysical STORAGE BANK OF TRACE remains valid and must not be displaced by an unsupported claim that MONAD actively processes, organizes, or performs the recording. The user's statement that MONAD uses the UNIQUE IDENTIFYING FREQUENCY channel to RECORD the ZEROID's diachronic identity manifestation is retained as stated; the nature of that use and the recording mechanism remain unspecified. Do not infer agency, processing, organization, or any other mechanism without evidence or further specification.
 
 The relationship is stated here as a direct clarification for integration. It is not separately marked as canonized in this audit update.
 
