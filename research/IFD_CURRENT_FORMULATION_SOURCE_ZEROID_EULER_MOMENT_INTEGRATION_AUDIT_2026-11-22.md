@@ -1,8 +1,8 @@
 # CURRENT IFD FORMULATION — SOURCE / ZEROID / EULER MOMENT INTEGRATION AUDIT
 
 **Date:** 2026-11-22  
-**Status:** Research and integration audit; no edits to the published Current IFD Formulation have been made in this pass.  
-**Authority:** Applies the canonized entry `docs/IFD_SOURCE_ZEROID_PRODUCTION_EULER_MOMENT_CANONICAL_ENTRY_v1.0.md` (blob SHA `99e08a46e099547ccbf4d0a77903a3e58cf10c0c`).  
+**Status:** Research and integration audit, updated after Rick confirmed the frequency-term equivalence; no edits to the published Current IFD Formulation have been made in this pass.  
+**Authority:** Applies `docs/IFD_SOURCE_ZEROID_PRODUCTION_EULER_MOMENT_CANONICAL_ENTRY_v1.1.md`, which supersedes v1.0 and records Rick's confirmation that the existing UNIQUE ORIGINATING SIGNATURE / FREQUENCY / CALL SIGNAL is the same construct as the UNIQUE IDENTIFYING FREQUENCY.  
 **Method:** Trace every affected concept and dependency; distinguish established canonical definitions from unresolved relationships; do not invent sequence, causality, or equivalence.
 
 ## 1. Executive finding
@@ -81,7 +81,7 @@ All references above are repository blob identities observed during this audit. 
 
 **Integration effect:** The frequency concept is now more precisely specified in the new architecture. The MONAD is the agent facilitating communication; the frequency is its individual identifying signature/channel. Do not say that ZEROID independently operates the frequency.
 
-**Critical unresolved question:** Is the current “UNIQUE ORIGINATING SIGNATURE / FREQUENCY / CALL SIGNAL” exactly the same construct as the “UNIQUE IDENTIFYING FREQUENCY” of the EULER MOMENT, or are these related but distinct frequencies/signatures at different explanatory levels? The terminology suggests a relationship, but equivalence must not be presumed. Resolve this before merging labels or deleting either occurrence.
+**Resolved by Rick:** YES. The existing “UNIQUE ORIGINATING SIGNATURE / FREQUENCY / CALL SIGNAL” and the EULER MOMENT's “UNIQUE IDENTIFYING FREQUENCY” are the same construct—not separate frequencies, signatures, or channels. The canonical term is **UNIQUE IDENTIFYING FREQUENCY**. The earlier expressions are recognized aliases in the existing formulation and should be harmonized to the canonical term during integration.
 
 ### E. MONAD and TRACE
 
@@ -134,7 +134,7 @@ The following are integration requirements, not yet executed edits:
 3. **Represent the EULER MOMENT accurately.** Label it “COMPLETE CYCLE OF THE SOURCE FORMULA” and show exactly MONAD, ZEROID, and UNIQUE IDENTIFYING FREQUENCY within its boundary.
 4. **Keep SOURCE outside the EULER MOMENT.** The EULER MOMENT internal diagram must omit SOURCE entirely.
 5. **Do not invent internal arrows.** The three components are canonically members of the complete cycle; their internal directional order has not been canonized.
-6. **Reconcile the frequency terminology.** Determine whether UNIQUE ORIGINATING SIGNATURE / FREQUENCY / CALL SIGNAL and UNIQUE IDENTIFYING FREQUENCY are identical, nested, or otherwise related.
+6. **Harmonize the frequency terminology.** Treat UNIQUE ORIGINATING SIGNATURE / FREQUENCY / CALL SIGNAL and UNIQUE IDENTIFYING FREQUENCY as the same construct. Use UNIQUE IDENTIFYING FREQUENCY as the canonical label; preserve the earlier expressions as documented aliases where historical context is useful.
 7. **Connect MONAD to TRACE carefully.** Preserve both metaphysical storage-bank and operational trace definitions; specify their relation only when supported.
 8. **Clarify the human referent of birth/branding.** Relate ZEROID to the existing birth, Brand, and birth-chart material without conflating the Brand with MONAD or frequency.
 9. **Preserve the operational engine.** Keep IDENTITY → ACTION → INTERACTION → SYNERGY → TRACE distinct from the EULER MOMENT, while making their proposed connection intelligible.
@@ -167,13 +167,13 @@ The dotted lines indicate unresolved interfaces, not established causal pathways
 
 ## 6. Questions that must be resolved before changing the central hub
 
-1. Is UNIQUE IDENTIFYING FREQUENCY the same thing as the existing UNIQUE ORIGINATING SIGNATURE / FREQUENCY / CALL SIGNAL?
+1. **RESOLVED — YES.** UNIQUE IDENTIFYING FREQUENCY is the same construct as the existing UNIQUE ORIGINATING SIGNATURE / FREQUENCY / CALL SIGNAL. Use UNIQUE IDENTIFYING FREQUENCY as the canonical term.
 2. Does the EULER MOMENT include or precede the existing ZERO → SPARK → DIFFERENTIATION → SUBSTANCE sequence, or does it describe the complete cycle at a different level?
 3. At what point in the production architecture does the ZEROID become the human manifestation in the material universe, and how does that relate to birth/branding?
 4. What is the exact relationship between MONAD as STORAGE BANK OF TRACE and TRACE as the observable record/consequence in the operational IFD sequence?
 5. Does SOURCE FORMULA name the whole production architecture, with EULER MOMENT as its complete cycle, or is there a more exact distinction between the formula and the production boundary?
 
-These are not requests to reopen settled definitions. They identify the remaining interfaces necessary to integrate the newly canonized architecture without damaging the existing formulation.
+These are not requests to reopen settled definitions. The first interface has been resolved by Rick. The remaining questions identify the interfaces necessary to integrate the newly canonized architecture without damaging the existing formulation.
 
 ## 7. Current disposition
 
@@ -181,7 +181,7 @@ These are not requests to reopen settled definitions. They identify the remainin
 
 **Not done:** No changes to `public/current-ifd-formulation.html` or its explanatory pages have been committed. The hub should not be edited until the five interface questions above are resolved or explicitly designated as unresolved and represented accordingly.
 
-**Next executable step:** Resolve the identity/equivalence of the frequency terms first, then determine how the EULER MOMENT sits in relation to the existing generation/differentiation sequence. Those two decisions control the placement of the production architecture in the central diagram.
+**Next executable step:** Determine how the EULER MOMENT sits in relation to the existing ZERO → SPARK → DIFFERENTIATION → SUBSTANCE → IDENTITY generative sequence. The frequency-term identity is resolved; the remaining placement question controls how the production architecture should be integrated into the central diagram.
 
 **Governing discipline:** HARVEST FIRST. ABSTRACT SECOND. CANONIZE LAST.  
 **Whole–part rule:** PRESERVE THE WHOLE. INCREASE THE RESOLUTION. EXERCISE RESTRAINT.
