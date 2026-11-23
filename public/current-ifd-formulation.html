@@ -4,58 +4,46 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#050505">
-<meta name="description" content="The Current IFD Formulation: the centralized whole-system architecture of Identity Field Dynamics.">
+<meta name="description" content="The Current IFD Formulation: Identity Field Dynamics organized through Action, Identity, Interaction, Synergy, and Trace.">
 <link rel="canonical" href="https://identityfielddynamics.com/current-ifd-formulation.html">
 <title>The Current IFD Formulation · Identity Field Dynamics</title>
 <style>
 :root{--bg:#080808;--panel:#10100e;--gold:#c6a75d;--bright:#dfc77f;--text:#e9e6df;--muted:#c3beb4;--soft:#99948b;--line:rgba(198,167,93,.24);--line2:rgba(203,208,212,.14)}
-*{box-sizing:border-box;font-family:"Aptos", "Segoe UI", sans-serif}
+*{box-sizing:border-box;font-family:"Aptos","Segoe UI",sans-serif}
 html{scroll-behavior:smooth;scroll-padding-top:20px}
 body{margin:0;background:var(--bg);color:var(--text);font-size:16px;line-height:1.65}
-a{color:var(--bright);text-decoration:none}
-a:hover{text-decoration:underline;text-underline-offset:3px;color:var(--text)}
+a{color:var(--bright);text-decoration:none}a:hover{text-decoration:underline;text-underline-offset:3px;color:var(--text)}
 .shell{width:min(1000px,calc(100% - 40px));margin:auto}
 header{border-bottom:1px solid var(--line2);padding:14px 0}
 .headrow{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand,.back,.eyebrow,.kicker,.meta,.toc,.tag,.label,.footlinks,.smallcaps{font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+.brand,.back,.eyebrow,.kicker,.meta,.toc,.label,.smallcaps{font-size:14px;letter-spacing:.08em;text-transform:uppercase}
 .brand{color:var(--soft)}.back{color:var(--gold)}
-main{padding:42px 0 64px}
-.hero{max-width:78ch}
-.eyebrow,.kicker{color:var(--gold)}
-.hero h1{font-family:"Aptos Display","Aptos","Segoe UI",sans-serif;font-size:24px;line-height:1.25;font-weight:600;letter-spacing:.02em;margin:12px 0}
-.gold{color:var(--bright)}
-.hero .sub{font-size:16px;line-height:1.6;color:var(--muted);max-width:76ch;margin:0}
+main{padding:42px 0 64px}.hero{max-width:78ch}.eyebrow,.kicker{color:var(--gold)}
+h1{font-family:"Aptos Display","Aptos","Segoe UI",sans-serif;font-size:26px;line-height:1.25;font-weight:600;letter-spacing:.02em;margin:12px 0}
+.gold{color:var(--bright)}.sub{font-size:16px;line-height:1.6;color:var(--muted);max-width:76ch;margin:0}
 .meta{display:flex;gap:8px 18px;flex-wrap:wrap;color:var(--soft);margin-top:16px}
 .notice{font-size:16px;line-height:1.65;border-left:2px solid var(--gold);background:rgba(198,167,93,.045);padding:14px 18px;margin:22px 0;color:var(--muted)}
 .notice strong{color:var(--bright)}
 .toc{display:flex;gap:8px 16px;flex-wrap:wrap;border-top:1px solid #292929;border-bottom:1px solid #292929;padding:12px 0;margin:24px 0 4px}
 .toc a{font-size:14px;color:var(--muted)}
-.section{padding:36px 0 0;scroll-margin-top:18px}
-.section h2{font-size:24px;line-height:1.25;font-weight:700;margin:8px 0 14px}
-.section h3,.card h3{font-size:16px;line-height:1.35;font-weight:700;color:var(--text);margin:22px 0 8px}
+.section{padding:34px 0 0;scroll-margin-top:18px}
+.section h2{font-size:22px;line-height:1.3;font-weight:700;margin:8px 0 14px}
+.section h3,.card h3{font-size:16px;line-height:1.35;font-weight:700;color:var(--text);margin:20px 0 8px}
 .section p,.section li{font-size:16px;line-height:1.65;color:var(--muted)}
-.section p{max-width:78ch;margin:10px 0}
-.section ul,.section ol{padding-left:22px}
-.diagram{border:1px solid var(--line);background:linear-gradient(145deg,rgba(198,167,93,.045),rgba(255,255,255,.01));padding:20px;margin:18px 0}
+.section p{max-width:80ch;margin:10px 0}.section ul,.section ol{padding-left:22px}
+.diagram{border:1px solid var(--line);background:linear-gradient(145deg,rgba(198,167,93,.045),rgba(255,255,255,.01));padding:18px;margin:18px 0}
 .diagram-title{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
 .node{border:1px solid rgba(198,167,93,.32);background:#0b0b0b;padding:12px 14px;text-align:center}
 .node b{display:block;font-size:16px;font-weight:700;letter-spacing:.04em;color:var(--text)}
 .node span{display:block;font-size:14px;line-height:1.5;color:var(--muted);margin-top:5px}
-.arrow{text-align:center;color:var(--gold);font-size:16px;line-height:1.25}
+.arrow{text-align:center;color:var(--gold);font-size:17px;line-height:1.4}
 .branch{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .branch3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
 .card{border:1px solid var(--line2);border-top:1px solid var(--line);background:rgba(255,255,255,.015);padding:16px}
 .card h3{margin:0 0 6px}.card p{font-size:16px;line-height:1.55;color:var(--muted);margin:0}
-.equation{font-size:16px;line-height:1.5;color:var(--bright);text-align:center;padding:12px 6px;overflow-wrap:anywhere}
-.tag{display:inline-block;border:1px solid rgba(198,167,93,.3);padding:4px 7px;color:var(--muted);margin:0 6px 7px 0}
+.equation{font-size:17px;line-height:1.55;color:var(--bright);text-align:center;padding:12px 6px;overflow-wrap:anywhere}
 .rule{border-top:1px solid #292929;margin:20px 0}
-.quote{font-size:16px!important;font-weight:700;color:var(--text)!important;line-height:1.6!important}
 .small{font-size:14px!important;line-height:1.55!important;color:var(--soft)!important}
-.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);margin:18px 0}
-.flow article{background:#0b0b0b;padding:16px}
-.flow .num{font-size:14px;color:var(--gold);letter-spacing:.08em}
-.flow h3{font-size:16px;font-weight:700;color:var(--text);letter-spacing:.06em;margin:8px 0 6px}
-.flow p{font-size:16px;line-height:1.55;color:var(--muted);margin:0}
 .linkgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);margin:18px 0}
 .linkcard{display:block;background:#0b0b0b;padding:16px}
 .linkcard .label{font-size:14px;color:var(--gold)}
@@ -67,61 +55,247 @@ main{padding:42px 0 64px}
 .status-item strong{display:block;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
 .status-item p{font-size:16px;line-height:1.55;margin:0}
 .footer{border-top:1px solid #292929;margin-top:44px;padding-top:18px;color:var(--soft);font-size:14px;line-height:1.6;letter-spacing:.06em;text-transform:uppercase}
-.footer a{color:#c9b77f}
-.footlinks{display:flex;gap:8px 16px;flex-wrap:wrap;margin-top:8px}
-.toplink{display:inline-block;margin-top:16px;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
-#architecture .node b a,#architecture .card h3 a{color:inherit;text-decoration:none}#architecture .node b a:hover,#architecture .card h3 a:hover{color:var(--bright);text-decoration:underline;text-underline-offset:4px}#architecture .node b a:focus-visible,#architecture .card h3 a:focus-visible{outline:2px solid var(--bright);outline-offset:4px}a:focus-visible{outline:2px solid var(--bright);outline-offset:4px}
-@media(max-width:760px){main{padding:30px 0 48px}.branch,.branch3,.linkgrid{grid-template-columns:1fr}.flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:440px){.flow{grid-template-columns:1fr}.shell{width:calc(100% - 30px)}.headrow{align-items:flex-start;flex-direction:column;gap:8px}}
-
+.footer a{color:#c9b77f}.toplink{display:inline-block;margin-top:16px;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+a:focus-visible{outline:2px solid var(--bright);outline-offset:4px}
+@media(max-width:760px){main{padding:30px 0 48px}.branch,.branch3,.linkgrid{grid-template-columns:1fr}}
+@media(max-width:440px){.shell{width:calc(100% - 30px)}.headrow{align-items:flex-start;flex-direction:column;gap:8px}}
 </style>
 <link rel="stylesheet" href="/copyright.css">
 </head>
 <body>
-<header><div class="shell headrow"><a class="back" href="/">← Identity Field Dynamics</a><a class="back" href="/current-ifd/purpose-and-scope.html">Purpose &amp; scope</a><div class="brand">The central formulation · Working architecture</div></div></header>
+<header><div class="shell headrow"><a class="back" href="/">← Identity Field Dynamics</a><div class="brand">The central formulation · AIIST architecture</div></div></header>
 <main class="shell">
-<section class="hero" id="top"><div class="eyebrow">Identity Field Dynamics · Central Reference</div><h1>The Current<br><span class="gold">IFD Formulation</span></h1><p class="sub">The integrated architecture of the structure and dynamics of identity.</p><div class="meta"><span>Central formulation</span><span>Edition 1.1 · 22 November 2026</span><span>Research in development</span></div></section>
-<section class="section" id="architecture">
-<div class="kicker">02 / The integrated formulation</div><h2>The whole architecture: What, how, and why.</h2>
-<p>The formulation distinguishes the SOURCE-created production of a specific possibility, the SPARK / EULER MOMENT and its simultaneous creations, the temporal address of that event, the ZEROID's diachronic manifestation, and the operational IFD sequence. The diagram is a map of the adopted conceptual relationships, not a claim that every metaphysical mechanism has independent empirical verification.</p>
-<div class="diagram" role="group" aria-label="Current IFD formulation whole architecture diagram">
-<div class="diagram-title">The current integrated architecture · whole-system view</div>
-<div class="node" id="zero"><b><a href="/current-ifd/zero-source.html">ZERO = EVERYTHING</a></b><span>The totality of possibilities; whether SOURCE creates all possibilities is unknown</span></div>
-<p class="small">SOURCE's creative act concerns a specific possibility within ZERO = EVERYTHING; ZERO is not depicted as generating SOURCE.</p>
-<div class="node" id="source-formula"><b><a href="/current-ifd/zero-source.html">SOURCE</a></b><span>Metaphysical primordial Creator of a specific possibility within ZERO; creates the production of ZEROIDs. SOURCE is distinct from SOURCE FORMULA.</span></div>
-<div class="arrow">↓</div>
-<div class="node" id="generation"><b><a href="/current-ifd/generation-differentiation.html">SPARK / EULER MOMENT</a></b><span>The complete generative event / complete cycle of the SOURCE FORMULA; four simultaneous creations, not successive stages</span></div>
-<p class="small"><strong>TIMECODE:</strong> the temporal address of SPARK. It locates this event; it is not another creation or a subsequent stage.</p>
-<div class="arrow">↓</div>
-<div class="branch">
-<div class="node" id="cosmic-moment"><b><a href="/current-ifd/cosmological-clock.html">COSMIC MOMENT</a></b><span>Unique cosmic moment associated with the event; represented astrologically by the Natal Horoscope</span></div>
-<div class="node" id="monad"><b><a href="/current-ifd/generation-differentiation.html#monad">MONAD / SOUL</a></b><span>The individual's metaphysical PRESENCE</span></div>
-<div class="node" id="zeroid"><b><a href="/current-ifd/generation-differentiation.html#zeroid">ZEROID (ZYGOTE)</a></b><span>Initial human manifestation of the MONAD</span></div>
-<div class="node" id="uif"><b><a href="/current-ifd/generation-differentiation.html#uif">UIF · UNIQUE IDENTIFYING FREQUENCY</a></b><span>Specific metaphysical signal channel connecting MONAD and ZEROID</span></div>
-</div>
-<div class="arrow">↓</div>
-<div class="node" id="manifestation"><b>DIACHRONIC ZEROID MANIFESTATION</b><span>The ZEROID's unfolding expressions of identity across time</span></div>
-<div class="arrow">↓</div>
-<div class="node" id="trace-retention"><b>MONAD RETAINS DIACHRONIC TRACE</b><span>The MONAD / SOUL retains the diachronic TRACE of the ZEROID's manifestations through the UIF recording relationship; internal mechanism and storage location remain unknown</span></div>
-<div class="rule"></div>
-<div class="node" id="brand"><b><a href="/current-ifd/birth-branding-brand.html">BIRTH / BRANDING → BRAND</a></b><span>Related imprinting architecture; exact relationship to SPARK, ZYGOTE, and the SPARK TIMECODE remains to be specified</span></div>
-<div class="rule"></div>
-<div class="node" id="operation"><b><a href="/current-ifd/identity-in-operation.html">A &gt; I &gt; I &gt; S &gt; T</a></b><span>Operational IFD sequence: Action → Identity → Interaction → Synergy → Trace</span></div>
-<p class="small">Foundational proposition: ACTION = IDENTITY. The operational ordering does not by itself establish that action creates identity. The relationship between operational TRACE and the MONAD-retained diachronic TRACE remains an integration question.</p>
-<div class="branch"><div class="card"><h3>POLE A · GENERATIVE</h3><p>Interaction produces constructive, productive, or otherwise beneficial consequences.</p></div><div class="card"><h3>POLE B · DESTRUCTIVE</h3><p>Interaction produces deterioration, damage, disruption, or decimation.</p></div></div>
-<p class="small">The spectrum is graduated from Pole A to Pole B. Synergy is not necessarily greater than the sum of its parts: superadditive gain is one possible generative outcome, not the definition. The consequences of interaction may exceed, match, diminish, or destroy prior capacities. Measurement criteria and intermediate graduations remain under investigation.</p>
-<div class="arrow">↓</div>
-<div class="node" id="collective"><b><a href="/current-ifd/collective-manifestation.html">COLLECTIVE MANIFESTATION</a></b><span>Differentiated identities participating in larger patterns of relationship and organization</span></div>
-<div class="rule"></div>
-<div class="branch3"><div class="card" id="love"><h3><a href="/current-ifd/integrative-principles.html">LOVE</a></h3><p>Proposed binding principle operating across the architecture.</p></div><div class="card" id="coherence"><h3><a href="/current-ifd/integrative-principles.html">COHERENCE</a></h3><p>Proposed intelligible order among differentiated components and relationships.</p></div><div class="card" id="equilibrium"><h3><a href="/current-ifd/integrative-principles.html">EQUILIBRIUM</a></h3><p>Proposed persistence of the whole amid change and multiplicity.</p></div></div>
-<p class="small">The architecture is inclusive: it places the proposed generative, temporal, imprinting, operational, and collective dimensions in one account. Inclusiveness is not proof of accuracy. The explanatory connections and mechanisms remain open to investigation.</p>
-</div>
-<div class="linkgrid" aria-label="Major explanatory chapters">
-<a class="linkcard" href="/current-ifd/synergy.html"><span class="label">Foundational explanatory chapter</span><strong>SYNERGY · The spectrum of interaction consequences</strong><span>Explore the Generative–Destructive spectrum, instrumental observation, relational dynamics, and the supporting research.</span></a>
-</div>
-<h3>Why integrate the components?</h3>
-<p>IFD is not satisfied by collecting related terms in a glossary. The aim is to determine whether the components can be aligned, whether their relationships can be made intelligible, and whether the integrated account remains answerable to manifestation and evidence. A whole-system account should make it possible to move from an originating proposition to its definitions, from definitions to proposed relationships, from relationships to research questions, and from research to documented results and limitations.</p>
+<section class="hero" id="top">
+<div class="eyebrow">Identity Field Dynamics · Central Reference</div>
+<h1>The Current <span class="gold">IFD Formulation</span></h1>
+<p class="sub">One integrated formulation. Five interdependent dimensions. One recursive architecture.</p>
+<div class="meta"><span>Central formulation</span><span>Edition 2.0 · 22 November 2026</span><span>Research in development</span></div>
 </section>
-<div class="footer">Identity Field Dynamics · The Current IFD Formulation · <a href="/">Home</a><div class="ifd-copyright"><a class="ifd-copyright-link" href="/copyright">Copyright © 2026 Rick York</a></div></div>
+
+<div class="notice"><strong>What this formulation does.</strong> The Current IFD Formulation organizes the discipline through ACTION → IDENTITY → INTERACTION → SYNERGY → TRACE. The original generative, temporal, individual, relational, collective, and research architectures are retained and integrated within this structure. Architectural placement identifies where concepts belong; it does not claim that every proposed relationship or mechanism has been empirically established.</div>
+
+<nav class="toc" aria-label="Contents">
+<a href="#orientation">Orientation</a><a href="#architecture">AIIST overview</a><a href="#action">A · Action</a><a href="#identity">I · Identity</a><a href="#interaction">I · Interaction</a><a href="#synergy">S · Synergy</a><a href="#trace">T · Trace</a><a href="#recursive">Recursive dynamics</a><a href="#experience">Experience</a><a href="#principles">Integrative principles</a><a href="#research">Research &amp; evaluation</a><a href="#panning">PANNING™</a>
+</nav>
+
+<section class="section" id="orientation">
+<div class="kicker">01 / Foundational orientation</div>
+<h2>Identity as a field system.</h2>
+<p>Identity Field Dynamics (IFD) investigates identity as a dynamic, diachronic, relational phenomenon: how identity is initiated or manifested, how it is expressed through Action, how it encounters other identities and conditions, what consequences arise through Interaction, and what remains as Trace.</p>
+<p>IFD brings metaphysical propositions, operational constructs, mathematical questions, observational instruments, and research methods into one revisable architecture. These categories must remain distinguishable. A mathematical result does not automatically establish an ontological interpretation; a coherent conceptual model does not independently verify a physical mechanism; and an instrument's operation does not validate the construct it is intended to examine.</p>
+<p>The formulation is both comprehensive and revisable. It records what IFD currently proposes, what it has adopted as foundational within the discipline, what remains interpretive or hypothetical, and what requires further definition, evidence, or disconfirmation.</p>
+</section>
+
+<section class="section" id="architecture">
+<div class="kicker">02 / The integrated architecture</div>
+<h2>Five dimensions. One recursive architecture.</h2>
+<div class="diagram" role="group" aria-label="AIIST five-dimensional architecture">
+<div class="diagram-title">The operational sequence</div>
+<div class="node"><b>A — ACTION</b><span>Originating and subsequent action; generative expression</span></div><div class="arrow">↓</div>
+<div class="node"><b>I — IDENTITY</b><span>Individual distinctness, manifestation, and continuity</span></div><div class="arrow">↓</div>
+<div class="node"><b>I — INTERACTION</b><span>Relational encounter and reciprocal engagement</span></div><div class="arrow">↓</div>
+<div class="node"><b>S — SYNERGY</b><span>Consequences of interaction across a generative–destructive spectrum</span></div><div class="arrow">↓</div>
+<div class="node"><b>T — TRACE</b><span>Consequence, residue, record, and persistence</span></div>
+<div class="rule"></div>
+<div class="equation">ACTION → IDENTITY → INTERACTION → SYNERGY → TRACE</div>
+<p class="small">The sequence is the operational expression of Recursive Identity Dynamics. The foundational proposition ACTION = IDENTITY is distinct from the ordering of the five elements. Sequence notation alone does not establish causation.</p>
+</div>
+<p>AIIST is the organizing framework of this formulation, not an additional subject appended to it. The earlier ZERO/SOURCE, SPARK, TIME, BIRTH, BRANDING, identity-in-operation, Synergy, and collective architectures are integrated into their appropriate dimensions. Their definitions and unresolved questions remain visible.</p>
+</section>
+
+<section class="section" id="action">
+<div class="kicker">03 / Dimension A</div>
+<h2>A — ACTION: Origin, Source, Generation, and the initiating event.</h2>
+<p>The ACTION dimension includes the generative and initiating architecture: ZERO, SOURCE, SOURCE FORMULA, SPARK / EULER MOMENT, generation, differentiation, originating signature, the four simultaneous creations, and SPARK TIMECODE.</p>
+<h3>ZERO &amp; SOURCE</h3>
+<p><strong>ZERO = EVERYTHING</strong> is the foundational ontological commitment naming the totality of possibilities. <strong>SOURCE</strong> is the metaphysical primordial Creator of a specific possibility within ZERO and creates the production of ZEROIDs. SOURCE remains distinct from SOURCE FORMULA. It is not established whether SOURCE creates every possibility existent within ZERO.</p>
+<p>Euler's formula and Euler's identity are established mathematical results. Their mathematical validity must be distinguished from IFD's proposed structural, ontological, or physical interpretations. Fourier analysis and complex-exponential representations may be relevant mathematical tools; any proposed generative derivation must be shown rather than assumed.</p>
+<h3>Generation &amp; Differentiation</h3>
+<p><strong>SPARK = EULER MOMENT:</strong> the complete generative event and complete cycle of the SOURCE FORMULA. The event is associated with four simultaneous creations, not four successive stages:</p>
+<div class="branch">
+<div class="card"><h3>COSMIC MOMENT</h3><p>The unique cosmic moment associated with the event, including the individual's unique Natal Horoscope.</p></div>
+<div class="card"><h3>MONAD / SOUL</h3><p>The individual's metaphysical PRESENCE and entirety of the SOUL.</p></div>
+<div class="card"><h3>ZEROID (ZYGOTE)</h3><p>The initial human manifestation of the MONAD at the generative event. Subsequent diachronic manifestations are distinguished from this initial designation.</p></div>
+<div class="card"><h3>UIF — UNIQUE IDENTIFYING FREQUENCY</h3><p>The specific metaphysical signal channel and individual identifying signature connecting MONAD and ZEROID in the IFD model.</p></div>
+</div>
+<p><strong>TIMECODE</strong> is the temporal address of SPARK. It locates the generative event; it is not a fifth simultaneous creation. FLASH and related temporal configurations remain associated research topics.</p>
+<p>The UIF is proposed as the channel through which manifestation information is transmitted from ZEROID to MONAD; MONAD retains the diachronic Trace of ZEROID manifestations. The physical nature of the channel and the internal mechanism or location of retention remain unspecified.</p>
+<h3>ACTION = IDENTITY</h3>
+<p>This is a foundational IFD proposition. Within AIIST, the first Action is associated with the originating SPARK. Later Actions belong to the ongoing diachronic manifestation of ZEROID; they are not additional original SPARK events. The operational ordering does not establish that Action causally creates Identity or that Identity cannot pre-exist an observed Action.</p>
+<p class="small">Earlier wording—ZERO → SPARK → DIFFERENTIATION → FREQUENCY / CALL SIGNAL → SUBSTANCE → IDENTITY—remains part of the formulation's conceptual history. The older chain is not to be forced into the clarified simultaneous-creation architecture. The exact placement of SUBSTANCE remains unresolved.</p>
+<p><a href="/current-ifd/zero-source.html">ZERO &amp; SOURCE</a> · <a href="/current-ifd/generation-differentiation.html">Generation &amp; Differentiation</a> · <a href="/current-ifd/cosmological-clock.html">Cosmological Clock &amp; Timecode</a></p>
+</section>
+
+<section class="section" id="identity">
+<div class="kicker">04 / Dimension I</div>
+<h2>I — IDENTITY: Individuality, manifestation, birth, and continuity.</h2>
+<h3>MONAD, ZEROID &amp; individual manifestation</h3>
+<p>Within the metaphysical architecture, MONAD / SOUL is the individual's metaphysical PRESENCE; ZEROID is the initial human manifestation; UIF is the proposed identifying signal/channel connecting them. ZEROID expresses identity diachronically through successive manifestations. The proposed MONAD–ZEROID–UIF relationship is part of the IFD model; its detailed mechanism remains open.</p>
+<h3>Birth, Branding &amp; Brand</h3>
+<p>Birth, Branding, Brand, and Birth Chart belong within the examination of individual identity and its originating configuration. The Brand is treated as a synchronic imprint; identity continues diachronically through action, interaction, development, change, and Trace. The Brand is not the whole life or the entirety of identity. Its exact relationship to SPARK, ZYGOTE, and SPARK TIMECODE remains a question for further integration.</p>
+<h3>Identity in operation</h3>
+<p>Identity is examined through individual distinctness, continuity, change, expression through Action, and relationship to its originating configuration. Individual identity and collective identity must not be conflated. Identity is diachronic: a continuing manifestation, not merely a static label or one isolated event.</p>
+<h3>Cosmological Clock &amp; Identity History</h3>
+<p>The Cosmological Clock, System Clock, SPARK TIMECODE, and Identity History address different temporal aspects. TIMECODE identifies the temporal address of the originating SPARK; the clocks and identity history concern temporal configurations and the unfolding of identity. Their precise interfaces remain open to specification.</p>
+<p><a href="/current-ifd/birth-branding-brand.html">Birth, Branding &amp; Brand</a> · <a href="/current-ifd/cosmological-clock.html">Cosmological Clock</a> · <a href="/current-ifd/identity-in-operation.html">Identity in Operation</a></p>
+</section>
+
+<section class="section" id="interaction">
+<div class="kicker">05 / Dimension I</div>
+<h2>I — INTERACTION: Relationship, encounter, and reciprocal engagement.</h2>
+<p>INTERACTION concerns relationships among identities, Actions, entities, and conditions when they affect or respond to one another. It includes reciprocal engagement, dyadic relationships, and individual and collective interaction.</p>
+<p>Interaction is the relational dimension through which the consequences examined under SYNERGY arise. It is not presumed to be harmonious or beneficial. The relevant conditions, participants, and relational configuration must be examined rather than inferred from individual attributes alone.</p>
+<h3>Collective manifestation</h3>
+<p>Distinct identities participate in larger patterns of relationship and organization. IFD investigates how coordination occurs, how individual Actions contribute to collective behavior, what patterns emerge, and which properties belong to individuals versus the collective configuration. A collective is not assumed to possess precisely the same properties as an individual.</p>
+<p>AIIST may be applied at collective scale as an analytical framework. This does not establish that the underlying individual and collective mechanisms are identical.</p>
+<p><a href="/current-ifd/collective-manifestation.html">Collective Manifestation</a></p>
+</section>
+
+<section class="section" id="synergy">
+<div class="kicker">06 / Dimension S</div>
+<h2>S — SYNERGY: The spectrum of interaction consequences.</h2>
+<p><strong>Foundational definition:</strong> Interaction necessarily entails Synergy. Synergy is the graduated spectrum of consequences arising from interaction, extending from Generative (Pole A) to Destructive (Pole B).</p>
+<div class="diagram">
+<div class="diagram-title">The generative–destructive spectrum</div>
+<div class="branch">
+<div class="card"><h3>POLE A — GENERATIVE (+)</h3><p>Constructive, productive, developmental, or otherwise beneficial consequences arising through interaction.</p></div>
+<div class="card"><h3>POLE B — DESTRUCTIVE (−)</h3><p>Deterioration, damage, disruption, diminution, or decimation arising through interaction.</p></div>
+</div>
+<p>The spectrum is graduated, not merely binary. The direction and consequences of interaction determine its position; the presence of interaction does not guarantee a positive result.</p>
+</div>
+<h3>Complete Synergy research architecture</h3>
+<ul>
+<li>Positive (+) to Negative (−), including intermediate graduations.</li>
+<li>Outcomes greater than, equal to, or less than the sum of component contributions.</li>
+<li>Movement from black-box phenomenon toward an observable gradient.</li>
+<li>Dyadic relationships and reciprocal BUILD as candidate patterns.</li>
+<li>APEX and capacity as specific hypotheses about possible relational consequences.</li>
+<li>Individual attributes distinguished from relational outcomes.</li>
+<li>Collective configurations and their changing interaction patterns.</li>
+<li>Evidence, disconfirmation, operational criteria, and measurement development.</li>
+</ul>
+<p>Synergy is not defined as an outcome greater than the sum of parts. Superadditive gain is one possible generative outcome, not the definition. Magnitude, duration, intensity, and direction of consequence are distinct analytical variables. Measurement criteria, intermediate graduations, comparison baselines, reliability, and instrument limits remain under development.</p>
+<p><a href="/current-ifd/synergy.html">SYNERGY — full explanatory chapter</a></p>
+</section>
+
+<section class="section" id="trace">
+<div class="kicker">07 / Dimension T</div>
+<h2>T — TRACE: Consequence, persistence, temporal continuity, and retained information.</h2>
+<p>TRACE concerns what remains from an Action, identity manifestation, interaction, or experience: consequence, residue, record, impression, memory, or change. Trace is central to the examination of identity continuity and diachronic manifestation.</p>
+<p>The metaphysical architecture separately proposes that MONAD retains the diachronic Trace of ZEROID manifestations through the UIF relationship. This proposed retained information must be distinguished from operational Trace as it appears in the AIIST sequence. Whether the two are identical, related, or connected through some further process remains unresolved. No storage location or internal retention mechanism is inferred.</p>
+<h3>Feedback and subsequent Action</h3>
+<p>A Trace may remain relevant to later observation or become part of the conditions informing subsequent Action. Interactions may also alter conditions for later interactions. This supplies a conceptual continuity bridge across successive manifestations; it does not yet specify a complete mathematical feedback mechanism.</p>
+<div class="diagram"><div class="equation">TRACE → SUBSEQUENT CONDITIONS → ACTION → IDENTITY → INTERACTION → SYNERGY → TRACE</div></div>
+<p><a href="/current-ifd/identity-in-operation.html">Identity in Operation</a> · <a href="/current-ifd/generation-differentiation.html">MONAD / ZEROID / UIF</a></p>
+</section>
+
+<section class="section" id="recursive">
+<div class="kicker">08 / The recursive architecture</div>
+<h2>Recursive Identity Dynamics.</h2>
+<p><strong>RECURSIVE IDENTITY DYNAMICS</strong> has two simultaneous roles:</p>
+<div class="branch">
+<div class="card"><h3>Foundational construct</h3><p>A foundational account of how ACTION, IDENTITY, INTERACTION, SYNERGY, and TRACE operate recursively.</p></div>
+<div class="card"><h3>Integrative instrument</h3><p>A framework for examining continuity, dependencies, relationships, and coherence throughout the entire IFD architecture.</p></div>
+</div>
+<p>The foundational proposition and operational sequence remain distinct:</p>
+<div class="diagram"><div class="equation">ACTION = IDENTITY</div><div class="equation">A → I → I → S → T</div><p class="small">ACTION = IDENTITY is the foundational proposition. A → I → I → S → T is the operational sequence. Recursion is the recurring organizational principle.</p></div>
+<p>The sequence is not restricted to one pass or a single developmental progression. Its operation may be examined across successive Actions and interactions, changing scales, diachronic ZEROID manifestations, functional development, and individual and collective configurations. Chronological, nested, overlapping, and multiscale behavior remain subjects for investigation rather than assumptions.</p>
+<p>The first SPARK-associated Action remains distinct from subsequent Actions. A complete mathematical recurrence relation, state space, transition function, boundary conditions, and quantitative variables have not yet been specified.</p>
+<p><a href="https://github.com/FreeBeat222/IdentityFieldDynamics/blob/main/docs/IFD_RECURSIVE_IDENTITY_DYNAMICS_FOUNDATIONAL_DOCTRINE_v1.1.md">Read the canonized Recursive Identity Dynamics doctrine v1.1</a></p>
+</section>
+
+<section class="section" id="experience">
+<div class="kicker">09 / Experience as a recursive dynamic</div>
+<h2>Experience follows an AIIST pattern.</h2>
+<p>AIIST is also a pattern through which an EXPERIENCE may unfold. An event is not automatically a complete experience; the experiential pattern concerns identity's participation in and encounter with what occurs.</p>
+<ul>
+<li><strong>ACTION:</strong> an event, activity, or initiating occurrence enters the experiential process.</li>
+<li><strong>IDENTITY:</strong> the individual identity participates in and encounters what occurs; the event is not thereby said to create the identity.</li>
+<li><strong>INTERACTION:</strong> the identity engages with the event, other identities, and relevant conditions.</li>
+<li><strong>SYNERGY:</strong> interaction produces consequences, which may be generative, destructive, mixed, or graduated.</li>
+<li><strong>TRACE:</strong> consequence, impression, memory, record, or change remains. Conscious recollection is not presumed.</li>
+</ul>
+<div class="diagram">
+<div class="equation">EXPERIENCE₁ → T₁ → A₂ → I₂ → I₂ → S₂ → T₂</div>
+<p class="small">The two I₂ positions are distinct: first Identity, then Interaction. A prior experience leaves a Trace; a subsequent Action occurs under conditions informed by that Trace; identity and interaction follow; synergy produces consequences; another Trace remains.</p>
+</div>
+<p>This makes the bridge visible: <strong>EXPERIENCE → TRACE → SUBSEQUENT CONDITIONS → ACTION → EXPERIENCE.</strong> Experience is not identical to Identity; it is a process in which identity participates and through which identity may be expressed and developed. Awareness and consciousness may be relevant to further analysis, but neither is added as a sixth AIIST element or declared a necessary condition here.</p>
+</section>
+
+<section class="section" id="continuity">
+<div class="kicker">10 / Comparative research connection</div>
+<h2>Continuity, recursion, and Nietzsche's Eternal Recurrence.</h2>
+<p>The Trace-to-recurrence relationship prompted a comparison with Nietzsche's Eternal Recurrence, especially the thought experiment in <em>The Gay Science</em>, §341, “The Heaviest Weight.” The comparison is philosophical context, not evidence for IFD.</p>
+<div class="branch3">
+<div class="card"><h3>CONTINUITY</h3><p>Persistence: something remains consequential across time.</p></div>
+<div class="card"><h3>RECURSION</h3><p>Continuation: a subsequent manifestation occurs within an ongoing dynamic and may be informed by prior Trace.</p></div>
+<div class="card"><h3>ETERNAL RECURRENCE</h3><p>Repetition: the entire configuration returns identically, in the same order, as posed in Nietzsche's thought experiment.</p></div>
+</div>
+<div class="equation">CONTINUITY ≠ RECURSION ≠ ETERNAL REPETITION</div>
+<p>Recursive Identity Dynamics does not assert that an entire life or configuration repeats identically. The IFD question is how prior Trace may remain relevant to subsequent manifestation.</p>
+<p><strong>Research question:</strong> Does TRACE merely preserve what happened, or does it participate in the conditions through which identity continues to manifest?</p>
+</section>
+
+<section class="section" id="principles">
+<div class="kicker">11 / Cross-cutting integrative principles</div>
+<h2>ALIGN · INTERCONNECT · MANIFEST.</h2>
+<div class="branch3">
+<div class="card"><h3>ALIGN</h3><p>Components must be mutually compatible. Contradictions and unresolved tensions are identified, not concealed.</p></div>
+<div class="card"><h3>INTERCONNECT</h3><p>Relationships among components must be articulated clearly. No connection is assumed merely to make the architecture look complete.</p></div>
+<div class="card"><h3>MANIFEST</h3><p>The architecture remains connected to observations, actions, records, and evidence relevant to identity.</p></div>
+</div>
+<p>LOVE, COHERENCE, and EQUILIBRIUM remain proposed cross-cutting whole-system principles, not terminal stages or additional AIIST elements. LOVE names a proposed binding principle; COHERENCE names intelligible relational order; EQUILIBRIUM names persistence amid change and multiplicity.</p>
+<p><a href="/current-ifd/integrative-principles.html">Integrative Principles — explanatory page</a></p>
+</section>
+
+<section class="section" id="research">
+<div class="kicker">12 / Research, evaluation &amp; construction</div>
+<h2>From formulation to investigation.</h2>
+<p>The integrated formulation remains answerable to research. Its concepts and relationships must be examined through clear definitions, observations, operational criteria, and evidence capable of revising or disconfirming a claim.</p>
+<div class="status-list">
+<div class="status-item"><strong>Established mathematical results</strong><p>Mathematical relationships such as Euler's formula are established within mathematics. Their validity does not automatically establish an ontological or physical interpretation.</p></div>
+<div class="status-item"><strong>Foundational IFD commitments</strong><p>Stated propositions and organizing commitments adopted within the present IFD formulation, including ZERO = EVERYTHING, ACTION = IDENTITY, and the AIIST architecture.</p></div>
+<div class="status-item"><strong>Proposed structural relationships</strong><p>Relationships advanced by the formulation that require further definition, investigation, and verification.</p></div>
+<div class="status-item"><strong>Interpretive contributions</strong><p>Conceptual prompts from the I Ching, metaphor, philosophical comparison, and intellectual history. These document inquiry; they do not independently establish empirical facts.</p></div>
+<div class="status-item"><strong>Unresolved claims and mechanisms</strong><p>Propositions whose definitions, mechanisms, predictions, evidence, or explanatory adequacy remain undetermined. They remain visible and open to challenge.</p></div>
+</div>
+<h3>Research Program</h3>
+<p>Move from formulation to investigation: define research questions, identify observable implications, design appropriate methods, preserve provenance, and revise the architecture when evidence or contradiction warrants it.</p>
+<h3>FLAW CHART™</h3>
+<p>The FLAW CHART™ is the IFD instrument for identifying and tracking weaknesses or areas for inspection, redesign, and better use. Its working cycle is: IDENTIFY → REGISTER → CLASSIFY → INVESTIGATE → TRACK → VERIFY → DISPOSITION.</p>
+<h3>Four-Channel Workflow</h3>
+<p>RESEARCH, CONSTRUCTION, VERIFICATION, and ARCHIVING are coordinated work channels. They are complementary functions, not additional AIIST dimensions.</p>
+<div class="linkgrid">
+<a class="linkcard" href="/current-ifd/purpose-and-scope.html"><span class="label">Orientation</span><strong>Purpose &amp; Scope</strong><span>What IFD investigates and does not claim.</span></a>
+<a class="linkcard" href="/current-ifd/research-program.html"><span class="label">Investigation</span><strong>Research Program</strong><span>Questions and development from formulation to investigation.</span></a>
+<a class="linkcard" href="/current-ifd/evidence-and-status.html"><span class="label">Evaluation</span><strong>Evidence &amp; Status</strong><span>Established, proposed, interpreted, and unresolved claims.</span></a>
+<a class="linkcard" href="/current-ifd/four-channel-workflow.html"><span class="label">Construction</span><strong>Four-Channel Workflow</strong><span>Research, Construction, Verification, and Archiving.</span></a>
+</div>
+<div class="notice"><strong>Revision principle.</strong> The formulation must change when warranted by contradictions, better definitions, failed predictions, new observations, or stronger explanations. No proposition is protected from examination by its place in the architecture. Comprehensiveness is not proof of accuracy.</div>
+</section>
+
+<section class="section" id="panning">
+<div class="kicker">13 / Rapid discovery method</div>
+<h2>PANNING™ — Rapid Discovery Through Recursive Inquiry.</h2>
+<p>PANNING™ names the rapid synthesis method demonstrated during the AIIST architectural inquiry. It sifts accumulated material, follows relationships, identifies high-value findings, and asks whether those findings reveal a larger organizing pattern.</p>
+<div class="flow">
+<div class="card"><h3>01 · SIFT</h3><p>Begin with accumulated source material, formulations, records, and prior findings.</p></div>
+<div class="card"><h3>02 · FOLLOW</h3><p>Trace relationships, dependencies, sequence positions, and recurring patterns.</p></div>
+<div class="card"><h3>03 · LOOK FOR COLOR</h3><p>Notice unexpected fit, explanatory value, or a question worth pursuing.</p></div>
+<div class="card"><h3>04 · COLLECT NUGGETS</h3><p>State discrete findings and distinguish them from speculation.</p></div>
+<div class="card"><h3>05 · RECOGNIZE THE VEIN</h3><p>Determine whether the findings point toward a larger organizing relationship.</p></div>
+<div class="card"><h3>06 · PRESERVE DISTINCTIONS</h3><p>Separate IFD commitments, interpretations, hypotheses, evidence, and open questions.</p></div>
+</div>
+<p>PANNING™ is not exhaustive excavation, indiscriminate association, or premature theorizing. It is not a substitute for source retrieval, external verification, or deeper research when warranted. If no meaningful pattern appears, the method must not manufacture one. A promising nugget is a candidate for examination, not automatic proof.</p>
+<p>The method's value is that structured inquiry can produce a discovery opportunity not specified at the outset. In this demonstration, AIIST organization exposed a Trace-to-recurrence relationship; comparison with Nietzsche clarified distinctions among continuity, recursion, and eternal repetition; the synthesis produced five nuggets and one connecting vein.</p>
+<p><strong>PANNING™:</strong> sift the accumulated material, follow the relationships, collect the nuggets, and recognize the vein. Do not manufacture gold; do not mistake a promising find for verified evidence.</p>
+<p><a href="https://github.com/FreeBeat222/IdentityFieldDynamics/blob/main/research/IFD_AIIST_PANNING_DISCOVERY_CORPUS_2026-11-22.md">Read the canonical AIIST &amp; PANNING™ discovery corpus</a></p>
+</section>
+
+<div class="footer">Identity Field Dynamics · The Current IFD Formulation · <a href="/">Home</a>
+<div class="ifd-copyright"><a class="ifd-copyright-link" href="/copyright">Copyright © 2026 Rick York</a></div>
+</div>
 <a class="toplink" href="#top">↑ Return to top</a>
-</main></body></html>
+</main>
+</body>
+</html>
