@@ -202,3 +202,15 @@ These are not requests to reopen settled definitions. The frequency-term equival
 
 **Governing discipline:** HARVEST FIRST. ABSTRACT SECOND. CANONIZE LAST.  
 **Whole–part rule:** PRESERVE THE WHOLE. INCREASE THE RESOLUTION. EXERCISE RESTRAINT.
+
+
+## Canonization update — v1.3
+
+Rick explicitly authorized canonization of the proposition that **THE MONAD (SOUL) RETAINS THE DIACHRONIC TRACE OF THE ZEROID'S MANIFESTATIONS.** The canonical entry records that the ZEROID's diachronic manifestations leave a metaphysical TRACE retained by or associated with the MONAD / SOUL, and that the UNIQUE IDENTIFYING FREQUENCY is the channel used in the recording relationship as Rick described it.
+
+The entry deliberately leaves unresolved whether TRACE is etched upon the SOUL, stored within it, or retained through another relationship; whether MONAD's recording is active or passive; and the recording, storage, and retrieval mechanisms. No unsupported active-recorder claim is made.
+
+Canonical file: `docs/IFD_SOURCE_ZEROID_PRODUCTION_EULER_MOMENT_CANONICAL_ENTRY_v1.3.md`
+- Commit: `dc1813acec7799acd7ebc8ce04a28f4970e710e7`
+- Blob SHA: `0f747ef9de12d371baccd3e65413f132c61195db`
+- Read-back verification: successful.
