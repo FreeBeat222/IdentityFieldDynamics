@@ -1,7 +1,7 @@
 # CURRENT IFD FORMULATION — SOURCE / ZEROID / EULER MOMENT INTEGRATION AUDIT
 
 **Date:** 2026-11-22  
-**Status:** Research and integration audit, updated after Rick confirmed frequency-term equivalence and clarified the EULER MOMENT's scope; no edits to the published Current IFD Formulation have been made in this pass.  
+**Status:** Research and integration audit, updated after Rick confirmed frequency-term equivalence, clarified the EULER MOMENT's scope, and specified the MONAD's recording function; no edits to the published Current IFD Formulation have been made in this pass.  
 **Authority:** Applies `docs/IFD_SOURCE_ZEROID_PRODUCTION_EULER_MOMENT_CANONICAL_ENTRY_v1.2.md`, superseding v1.1 and recording both the confirmed frequency-term equivalence and Rick's clarification that the EULER MOMENT is itself the complete generative sequence.  
 **Method:** Trace every affected concept and dependency; distinguish established canonical definitions from unresolved relationships; do not invent sequence, causality, or equivalence.
 
@@ -85,9 +85,24 @@ All references above are repository blob identities observed during this audit. 
 
 **Resolved by Rick:** YES. The existing “UNIQUE ORIGINATING SIGNATURE / FREQUENCY / CALL SIGNAL” and the EULER MOMENT's “UNIQUE IDENTIFYING FREQUENCY” are the same construct—not separate frequencies, signatures, or channels. The canonical term is **UNIQUE IDENTIFYING FREQUENCY**. The earlier expressions are recognized aliases in the existing formulation and should be harmonized to the canonical term during integration.
 
-### E. MONAD and TRACE
 
-**Canonized role:** MONAD is the metaphysical STORAGE BANK OF TRACE.
+
+### E. MONAD, ZEROID, UNIQUE IDENTIFYING FREQUENCY, and TRACE — clarified recording relationship
+
+**Rick's explicit clarification:** “The SOUL (MONAD) uses the UNIQUE frequency channel to RECORD the diachronic manifestation of IDENTITY as EXPRESSED by the ZEROID.”
+
+This specifies the recording relationship:
+
+- **ZEROID** expresses the individual's identity through its diachronic manifestation.
+- **UNIQUE IDENTIFYING FREQUENCY** is the individual frequency channel used in that recording relationship.
+- **MONAD / SOUL** uses that unique frequency channel to record the diachronic manifestation of identity as expressed by the ZEROID.
+- **TRACE** is the recorded diachronic manifestation of identity—not merely an isolated action or event.
+
+This refines the earlier description of MONAD as the metaphysical STORAGE BANK OF TRACE: MONAD is not merely passive storage; it performs the recording through the UNIQUE IDENTIFYING FREQUENCY channel. This is a user-specified conceptual relationship. It does not, by itself, settle technical questions about the channel's physical nature, the temporal granularity of recording, or retention/retrieval mechanics. Do not add those mechanisms without further specification.
+
+The relationship is stated here as a direct clarification for integration. It is not separately marked as canonized in this audit update.
+
+### F. Operational TRACE and IDENTITY → ACTION → INTERACTION → SYNERGY → TRACE
 
 **Current operational role:** In Identity in Operation, TRACE is a record, consequence, or observable residue associated with actions and interactions; traces provide material for subsequent observation and comparison. The sequence also allows feedback into later observation and action.
 
@@ -97,7 +112,7 @@ All references above are repository blob identities observed during this audit. 
 
 **Required restraint:** Do not assume that every operational trace is stored by the MONAD, that storage is complete or permanent, or that the metaphysical storage mechanism is established. The relation, scope, retention, and retrieval of traces require specification.
 
-### F. IDENTITY → ACTION → INTERACTION → SYNERGY → TRACE
+### G. IDENTITY → ACTION → INTERACTION → SYNERGY → TRACE
 
 **Current role:** The operational sequence remains a distinct IFD engine. ACTION = IDENTITY remains a foundational IFD proposition; the arrows organize relationships for investigation and do not establish a universal strictly linear causal law.
 
@@ -105,7 +120,7 @@ All references above are repository blob identities observed during this audit. 
 
 **Required relationship:** ZEROID as human manifestation provides a potential referent for the operational identity under investigation. This is a proposed bridge between architecture layers, not permission to conflate their distinct roles.
 
-### G. COSMOLOGICAL CLOCK / TIMECODE / BIRTH / BRANDING
+### H. COSMOLOGICAL CLOCK / TIMECODE / BIRTH / BRANDING
 
 **Current role:** The Cosmological Clock provides the temporal architecture; Timecode is a moment-specific collective configuration; birth/branding is the event of imprinting; the Brand is the permanent synchronic identity imprint; the birth chart represents the branding configuration. The diachronic identity unfolds through action, interaction, experience, development, and trace.
 
@@ -113,7 +128,7 @@ All references above are repository blob identities observed during this audit. 
 
 **Open questions:** Does birth/branding mark the first material manifestation of a ZEROID, or does the current model place an already produced ZEROID into a time-specific branding event? Does the Brand describe the ZEROID's originating human imprint, the MONAD's individual signature, or a distinct cosmological imprint associated with the ZEROID? Do not answer these by inference. Preserve the existing distinction between Brand, birth chart, and diachronic identity.
 
-### H. COLLECTIVE MANIFESTATION
+### I. COLLECTIVE MANIFESTATION
 
 **Current role:** Distinct identities participate in larger patterns of organization; individual and collective properties must not be assumed identical.
 
@@ -121,7 +136,7 @@ All references above are repository blob identities observed during this audit. 
 
 **Open question:** The current page's distinction between individual and collective identity must be preserved. No claim is yet established about how MONAD-level trace storage relates to collective trace, collective identity, or the emergence of collective patterns.
 
-### I. LOVE / COHERENCE / EQUILIBRIUM
+### J. LOVE / COHERENCE / EQUILIBRIUM
 
 **Current role:** Cross-cutting proposed whole-system principles; LOVE is described as a proposed binding principle, COHERENCE as intelligible relational order, and EQUILIBRIUM as persistence amid change and multiplicity.
 
@@ -172,10 +187,10 @@ The dotted lines indicate unresolved interfaces, not established causal pathways
 1. **RESOLVED — YES.** UNIQUE IDENTIFYING FREQUENCY is the same construct as the existing UNIQUE ORIGINATING SIGNATURE / FREQUENCY / CALL SIGNAL. Use UNIQUE IDENTIFYING FREQUENCY as the canonical term.
 2. **REFRAMED — NOT A LARGER CONTAINER QUESTION.** The EULER MOMENT is the complete generative sequence itself. Reconcile the older ZERO → SPARK → DIFFERENTIATION → FREQUENCY → SUBSTANCE → IDENTITY description against the three EULER MOMENT components; do not assume an enclosing sequence or invent an order.
 3. At what point in the production architecture does the ZEROID become the human manifestation in the material universe, and how does that relate to birth/branding?
-4. What is the exact relationship between MONAD as STORAGE BANK OF TRACE and TRACE as the observable record/consequence in the operational IFD sequence?
+4. **SUBSTANTIVELY CLARIFIED BY RICK:** MONAD / SOUL uses the UNIQUE IDENTIFYING FREQUENCY channel to record the diachronic manifestation of IDENTITY as expressed by ZEROID. TRACE is that recorded diachronic manifestation. Remaining technical questions concern channel nature and recording/retention/retrieval mechanics; do not invent them.
 5. Does SOURCE FORMULA name the whole production architecture, with EULER MOMENT as its complete cycle, or is there a more exact distinction between the formula and the production boundary?
 
-These are not requests to reopen settled definitions. The first interface has been resolved by Rick. The remaining questions identify the interfaces necessary to integrate the newly canonized architecture without damaging the existing formulation.
+These are not requests to reopen settled definitions. The frequency-term equivalence is resolved; the EULER MOMENT scope is clarified; and the MONAD–ZEROID–FREQUENCY–TRACE recording relationship has been specified at the conceptual level. The remaining questions identify the interfaces necessary to integrate the newly canonized architecture without damaging the existing formulation.
 
 ## 7. Current disposition
 
@@ -183,7 +198,7 @@ These are not requests to reopen settled definitions. The first interface has be
 
 **Not done:** No changes to `public/current-ifd-formulation.html` or its explanatory pages have been committed. The hub should not be edited until the five interface questions above are resolved or explicitly designated as unresolved and represented accordingly.
 
-**Next executable step:** Reconcile the older ZERO → SPARK → DIFFERENTIATION → FREQUENCY → SUBSTANCE → IDENTITY description with the EULER MOMENT, which Rick has clarified is itself the complete generative sequence. The task is to identify correspondences and terminology refinements—not to place the EULER MOMENT inside a larger sequence.
+**Next executable step:** Reconcile the older ZERO → SPARK → DIFFERENTIATION → FREQUENCY → SUBSTANCE → IDENTITY description with the EULER MOMENT, which Rick has clarified is itself the complete generative sequence. Carry forward the clarified recording relationship: ZEROID expresses diachronic identity; MONAD records that manifestation through the UNIQUE IDENTIFYING FREQUENCY channel. The task is to identify correspondences and terminology refinements—not to place the EULER MOMENT inside a larger sequence.
 
 **Governing discipline:** HARVEST FIRST. ABSTRACT SECOND. CANONIZE LAST.  
 **Whole–part rule:** PRESERVE THE WHOLE. INCREASE THE RESOLUTION. EXERCISE RESTRAINT.
