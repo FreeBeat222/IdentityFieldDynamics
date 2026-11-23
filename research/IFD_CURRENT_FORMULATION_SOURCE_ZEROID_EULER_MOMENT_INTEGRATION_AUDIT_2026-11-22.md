@@ -198,7 +198,7 @@ These are not requests to reopen settled definitions. The frequency-term equival
 
 **Not done:** No changes to `public/current-ifd-formulation.html` or its explanatory pages have been committed. The hub should not be edited until the five interface questions above are resolved or explicitly designated as unresolved and represented accordingly.
 
-**Next executable step:** Reconcile the older ZERO → SPARK → DIFFERENTIATION → FREQUENCY → SUBSTANCE → IDENTITY description with the EULER MOMENT, which Rick has clarified is itself the complete generative sequence. Carry forward the clarified recording relationship: ZEROID expresses diachronic identity; MONAD records that manifestation through the UNIQUE IDENTIFYING FREQUENCY channel. The task is to identify correspondences and terminology refinements—not to place the EULER MOMENT inside a larger sequence.
+**Next executable step:** Reconcile the older ZERO → SPARK → DIFFERENTIATION → FREQUENCY → SUBSTANCE → IDENTITY description with the EULER MOMENT, which Rick has clarified is itself the complete generative sequence. Carry forward the canonized relationship: the MONAD (SOUL) retains the diachronic TRACE of the ZEROID's manifestations; the UNIQUE IDENTIFYING FREQUENCY is the channel used in the recording relationship. The location and mechanism of retention remain unspecified. The task is to identify correspondences and terminology refinements—not to place the EULER MOMENT inside a larger sequence.
 
 **Governing discipline:** HARVEST FIRST. ABSTRACT SECOND. CANONIZE LAST.  
 **Whole–part rule:** PRESERVE THE WHOLE. INCREASE THE RESOLUTION. EXERCISE RESTRAINT.
