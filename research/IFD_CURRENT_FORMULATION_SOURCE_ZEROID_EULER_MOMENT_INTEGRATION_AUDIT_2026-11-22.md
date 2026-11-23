@@ -226,3 +226,18 @@ Canonical file: `docs/IFD_SOURCE_ZEROID_PRODUCTION_EULER_MOMENT_CANONICAL_ENTRY_
 - Commit: `0e5557f19b1d1c408165fab5207e968f491bc66e`
 - Blob SHA: `3fb86c9bddb2a1d632eea7057ee46d2e1f7d6efc`
 - Read-back verification: successful.
+
+
+## 2026-11-22 — Canonical clarification: SPARK outputs, TIMECODE, SOURCE possibility, and UIF mechanism
+
+Rick explicitly authorized canonization of the following clarified architecture. Canonical entry v1.5 supersedes v1.4:
+
+- **SPARK = EULER MOMENT**: two names for the same generative event.
+- Four simultaneous creations: **COSMIC MOMENT; MONAD / SOUL; ZEROID (ZYGOTE); UIF / UNIQUE IDENTIFYING FREQUENCY**. These are simultaneous, not successive. COSMIC MOMENT is added to the simultaneous output set; the MONAD–ZEROID–UIF triad remains the three core elements of the individual connection architecture.
+- **TIMECODE = TEMPORAL ADDRESS OF THE SPARK.** It locates the generative event in time; it is not a downstream stage or a fifth creation. COSMIC MOMENT and TIMECODE must not be conflated. The Natal Horoscope is the astrological representation associated with the COSMIC MOMENT.
+- **ZERO = EVERYTHING** is the totality of possibilities. **SOURCE** is the metaphysical primordial Creator of a specific possibility within ZERO. It is unknown whether SOURCE creates all possibilities. Do not assert either universal creation of all possibilities or mere selection as the established account.
+- **UIF** is the specific metaphysical signal channel and establishes the proposed metaphysical mechanism connecting MONAD and ZEROID. It enables the possibility of further communication and transmits manifestation information from ZEROID to MONAD. MONAD retains the diachronic TRACE of ZEROID manifestations. The channel's physical nature and detailed operation remain unspecified; MONAD's retention mechanism and location remain unknown. Do not characterize MONAD as active or passive without evidence.
+
+The canonical diagram must show the four simultaneous outputs branching from SPARK / EULER MOMENT, with TIMECODE separately identified as its temporal address. SOURCE remains external to the EULER MOMENT. This is canonization of the IFD conceptual model, not independent empirical verification.
+
+Canonical file: `docs/IFD_SOURCE_ZEROID_PRODUCTION_EULER_MOMENT_CANONICAL_ENTRY_v1.5.md`.
