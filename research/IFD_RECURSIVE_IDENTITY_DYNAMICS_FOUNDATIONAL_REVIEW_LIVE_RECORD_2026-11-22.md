@@ -182,3 +182,56 @@ The following are open questions, not settled conclusions:
 
 **Sources retrieved in this review:** canonical doctrine v1.0 (blob `e9f64de01209889076db8b3a03ff333c649f7a81`); live record before this entry (blob `e6ed0325aedb26dca59fef59515d4a2753ae8040`); Current IFD hub (blob `5a30a3ebd26ebf5cf1cddf420b99839a33b1a0a9`); operational identity page (blob `18f86a24e618db639bf0de31659d5d3bcea92f21`); synergy page (blob `fde6396971824d705af629187823f6de0da64bd1`); collective manifestation page (blob `bceeac6300b43ecd9832c4a6f0b9fecea2f373c4`); integrative principles page (blob `6c0c1c90550d54b87628e5af0b68f4d57f008e77`); birth/branding page (blob `ec5d1127834f1b1746329261820c2c8e2906214a`); SOURCE–ZEROID canonical entry v1.7 (blob `75ea74aada33b8dd31ab7d84ccb600dc2ba8bee0`).
 
+
+
+## Entry 002 — 2026-11-22 — EXPERIENCE as an AIIST pattern
+
+**User direction:** “LOVE IT ALL, save it to CANON!”
+
+**Finding adopted:** AIIST is also a pattern through which an EXPERIENCE may unfold. Experience is not merely an event that happens to an identity; it involves the participation of identity in what occurs and contributes to the continuing diachronic manifestation of identity.
+
+### Experience mapped through AIIST
+
+- **A — ACTION:** An event, activity, or initiating occurrence enters the experiential process.
+- **I — IDENTITY:** The individual identity participates in and encounters what occurs. This does not mean the event creates the identity.
+- **I — INTERACTION:** The identity engages with the event, other identities, and relevant conditions.
+- **S — SYNERGY:** Interaction produces consequences, which may be generative, destructive, mixed, or graduated.
+- **T — TRACE:** Something remains: consequence, impression, memory, record, or change. Conscious recollection is not presumed.
+
+### Recursive continuity between experiences
+
+\[
+\boxed{
+\text{EXPERIENCE}_1 \rightarrow T_1
+\rightarrow A_2 \rightarrow I_2 \rightarrow I_2
+\rightarrow S_2 \rightarrow T_2
+}
+\]
+
+The Trace of one experience can become part of the conditions informing a subsequent Action and experience. The second Action is a subsequent diachronic Action, not another original SPARK.
+
+The continuity bridge is:
+
+**EXPERIENCE → TRACE → SUBSEQUENT CONDITIONS → ACTION → EXPERIENCE**
+
+This expresses recursive continuity conceptually; it does not yet specify a mathematical feedback mechanism, state space, transition function, or retention mechanism.
+
+### Three-part connection
+
+1. **IDENTITY** — individual distinctness and continuity.
+2. **EXPERIENCE** — identity's participation in unfolding events and interactions.
+3. **TRACE** — persistence of consequences across time.
+
+### Distinctions retained
+
+- An event is not automatically a complete experience; the experiential pattern concerns identity's participation in and encounter with what occurs.
+- Experience is not identical to Identity. It is a process in which identity participates and through which identity may be expressed and developed.
+- Trace connects successive experiences without requiring conscious memory.
+- Awareness and consciousness may be relevant to further analysis, but neither is added as a sixth AIIST element or declared a necessary condition here.
+- This is an experiential expression/application of Recursive Identity Dynamics, not a separately established doctrine named Recursive Experience Dynamics.
+
+**Disposition:** Canonized as the Experience-pattern extension to Recursive Identity Dynamics in doctrine v1.1. The extension applies AIIST to experience and makes the Trace-mediated continuity between successive experiences explicit. Mathematical formalization and empirical validation remain open.
+
+**Canonical source created:** `docs/IFD_RECURSIVE_IDENTITY_DYNAMICS_FOUNDATIONAL_DOCTRINE_v1.1.md`  
+**Creation commit:** `2794dc666a7ccdc752107050ced839bf7b9168ea`
+
