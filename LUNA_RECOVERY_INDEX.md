@@ -278,3 +278,22 @@ Integration audit updated and read back:
 - Commit: `ed3348b62aff3c1e631759c50afef1e9c9a838e2`
 
 The first of the five integration questions is resolved. The next unresolved architectural question is the placement of the EULER MOMENT relative to the existing `ZERO → SPARK → DIFFERENTIATION → SUBSTANCE → IDENTITY` generative sequence. No changes to the published hub or explanatory pages have yet been made.
+
+
+## 2026-11-22 — EULER MOMENT scope clarified
+
+Rick explicitly corrected the framing: **The EULER MOMENT is the complete generative sequence itself**—the specific MONAD–ZEROID–UNIQUE IDENTIFYING FREQUENCY cycle operating. It is not a sub-cycle operating within a separately presumed larger generative sequence. The question “within what larger sequence?” was correctly raised; the prior audit's larger-container framing is withdrawn.
+
+The earlier `ZERO → SPARK → DIFFERENTIATION → FREQUENCY / CALL SIGNAL → SUBSTANCE → IDENTITY` description must now be reconciled as an earlier explanatory account against the complete EULER MOMENT. Do not place the EULER MOMENT before, after, or inside that older path. Identify correspondences and distinctions without inventing sequence or causality.
+
+Canonical v1.2:
+- `docs/IFD_SOURCE_ZEROID_PRODUCTION_EULER_MOMENT_CANONICAL_ENTRY_v1.2.md`
+- Blob SHA: `648bdc0fdd868b26074a8eb93b7fc97855a82cf0`
+- Commit: `5e5bd1939bfec97e2817aba9686a4b22154f7299`
+
+Integration audit corrected and read back:
+- `research/IFD_CURRENT_FORMULATION_SOURCE_ZEROID_EULER_MOMENT_INTEGRATION_AUDIT_2026-11-22.md`
+- Blob SHA: `d3009c7592e58b3caa933fbacf674dfbe1e882c0`
+- Commit: `9a724430e37cb46c3a93ea9be13576548fa60d3d`
+
+The frequency terminology equivalence remains resolved. The next task is a term-by-term reconciliation of the older generation/differentiation description with the EULER MOMENT—not a search for a larger sequence. No published Current IFD Formulation page has been changed.
