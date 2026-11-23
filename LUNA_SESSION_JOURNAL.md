@@ -536,3 +536,22 @@ Current integration questions remain: SPARK TIMECODE vs physical birth time; COS
 Canonical v1.7 supersedes v1.6 to resolve wording that could imply only three simultaneous creations. The SPARK / EULER MOMENT has four simultaneous creations: COSMIC MOMENT, MONAD / SOUL, ZEROID (ZYGOTE), and UIF. MONAD, ZEROID, and UIF are the three core individual-connection components within that four-output event. The UIF supports the possibility of further communication, retains the prior MONAD-facilitated ZEROID–SOURCE communication statement, and is used to transmit manifestation information from ZEROID to MONAD. Channel physics and detailed operation remain unspecified.
 
 Canonical file: `docs/IFD_SOURCE_ZEROID_PRODUCTION_EULER_MOMENT_CANONICAL_ENTRY_v1.7.md`.
+
+
+## 2026-11-22 — Read-back verification: canonical v1.7 and Current IFD Formulation deployment files
+
+Canonical v1.7 was fetched back from the repository and verified:
+- Path: `docs/IFD_SOURCE_ZEROID_PRODUCTION_EULER_MOMENT_CANONICAL_ENTRY_v1.7.md`
+- Commit: `0fe0a420fdf722101f63dcff0f0f3ead042dd933`
+- Blob SHA: `75ea74aada33b8dd31ab7d84ccb600dc2ba8bee0`
+
+Updated public pages were also fetched back:
+- `public/current-ifd-formulation.html` — blob `e8e8311940c16640245c14847ee4b00eab989a81`
+- `public/current-ifd/zero-source.html` — blob `d03c0495341af902f3564e2a0f7c3c3784701348`
+- `public/current-ifd/generation-differentiation.html` — blob `34ee5b112a4457d6a901e87fc82557fb305738a6`
+- `public/current-ifd/cosmological-clock.html` — blob `99c476ba620ca8b0cae3b21862429e2a6170a767`
+- `public/current-ifd/birth-branding-brand.html` — blob `ec5d1127834f1b1746329261820c2c8e2906214a`
+- `public/current-ifd/identity-in-operation.html` — blob `18f86a24e618db639bf0de31659d5d3bcea92f21`
+- `public/ifd-overview.html` — blob `138c7859b10a123be4ab44a2e78e70ffa835de85`
+
+Integration audit blob: `4c170f14508db4efff4f8454221b8a4a0fe5c9f7`. The public Current IFD hub is Edition 1.1. Read-back confirms the current files contain the revised architecture. Hosting deployment/live-site rendering was not independently checked in this operation.
