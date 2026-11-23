@@ -241,3 +241,22 @@ Rick explicitly authorized canonization of the following clarified architecture.
 The canonical diagram must show the four simultaneous outputs branching from SPARK / EULER MOMENT, with TIMECODE separately identified as its temporal address. SOURCE remains external to the EULER MOMENT. This is canonization of the IFD conceptual model, not independent empirical verification.
 
 Canonical file: `docs/IFD_SOURCE_ZEROID_PRODUCTION_EULER_MOMENT_CANONICAL_ENTRY_v1.5.md`.
+
+
+## 2026-11-22 — Corpus propagation and Current IFD Formulation update
+
+The v1.5 distinctions have now been propagated into the published formulation and relevant explanatory pages:
+
+- `public/current-ifd-formulation.html`: central architecture replaced with ZERO / SOURCE / SPARK–EULER MOMENT; four simultaneous creations; TIMECODE as SPARK's temporal address; diachronic ZEROID manifestation and MONAD retention; separate operational A > I > I > S > T sequence; explicit ACTION = IDENTITY statement and TRACE relationship caveat.
+- `public/current-ifd/zero-source.html`: SOURCE defined as Creator of a specific possibility within ZERO; whether SOURCE creates all possibilities marked unknown; SOURCE distinguished from SOURCE FORMULA.
+- `public/current-ifd/generation-differentiation.html`: SPARK = EULER MOMENT; four simultaneous creations; UIF channel functions; older linear generation wording retained as historical terminology pending reconciliation, with SUBSTANCE placement left open.
+- `public/current-ifd/cosmological-clock.html`: TIMECODE defined as temporal address of SPARK; COSMIC MOMENT and Natal Horoscope distinguished; FLASH retained as a separate term pending reconciliation.
+- `public/current-ifd/birth-branding-brand.html`: SPARK / ZYGOTE architecture distinguished from birth/branding; exact temporal relationship left unresolved.
+- `public/current-ifd/identity-in-operation.html`: A > I > I > S > T and ACTION = IDENTITY preserved; operational and metaphysical TRACE distinguished without asserting equivalence or separate mechanism.
+- `public/ifd-overview.html`: compact overview aligned with the updated architecture.
+
+Canonical harmonization created as v1.6 to resolve the earlier wording tension: the SPARK / EULER MOMENT has four simultaneous creations (COSMIC MOMENT, MONAD, ZEROID/ZYGOTE, UIF), while MONAD–ZEROID–UIF remain the three core components of the individual connection architecture. TIMECODE is separate and is the temporal address of SPARK. SOURCE remains external to the event. See `docs/IFD_SOURCE_ZEROID_PRODUCTION_EULER_MOMENT_CANONICAL_ENTRY_v1.6.md`.
+
+Remaining integration questions: the exact relationship of SPARK TIMECODE to physical birth time; the relationship of COSMIC MOMENT/Natal Horoscope to the birth/branding chart; the meaning and placement of SUBSTANCE in the earlier formulation; the distinction or correspondence between FLASH and TIMECODE; and the precise relationship between operational TRACE and MONAD-retained diachronic TRACE. These remain open rather than silently resolved.
+
+This is corpus propagation of the canonized conceptual model, not independent empirical verification of its metaphysical claims.
