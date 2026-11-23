@@ -412,4 +412,4 @@ Rick explicitly authorized canonization of the clarified architecture. **SPARK =
 
 Canonical file: `docs/IFD_SOURCE_ZEROID_PRODUCTION_EULER_MOMENT_CANONICAL_ENTRY_v1.5.md`.
 - Canonical creation commit: 1694425ce54b753736cfaa16eac295b26f9be527
-- Read-back verification pending.
+- Read-back verification successful. Canonical v1.5 blob SHA: `7b4ee085d1b64e3d96406f802bfe518c224d36e7`.
