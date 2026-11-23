@@ -434,3 +434,25 @@ The record preserves the tab's relevant user/assistant exchange from the initial
 **Status discipline:** THE RETRO MOMENT™ is an adopted IFD research name and a coherent provisional construct. A generalizable RETRO OFFSET, correspondence with zygotic conception, equivalence between SPARK and fertilization, and any retrograde metaphysical mechanism remain unverified hypotheses. Plato's Cave is conceptual/epistemological support for investigating origins through manifestations, not empirical proof of the proposed mechanism. The Human Design 88° solar-arc comparison remains a candidate model requiring independent reproduction.
 
 **Next research action:** Develop `IFD RETRO MOMENT™ RESEARCH PROTOCOL v1.0`, specifying the biological event, timestamp standards, Human Design calculation convention, candidate IFD offset models, uncertainty tolerances, falsification criteria, and out-of-sample validation before testing cases.
+
+
+## 2026-11-22 — Foundational doctrine canonized: RECURSIVE IDENTITY DYNAMICS
+
+Rick explicitly directed canonization of **RECURSIVE IDENTITY DYNAMICS** as another IFD foundational doctrine, with both foundational and integrative functions.
+
+Canonical doctrine:
+- Path: `docs/IFD_RECURSIVE_IDENTITY_DYNAMICS_FOUNDATIONAL_DOCTRINE_v1.0.md`
+- URL: https://github.com/FreeBeat222/IdentityFieldDynamics/blob/main/docs/IFD_RECURSIVE_IDENTITY_DYNAMICS_FOUNDATIONAL_DOCTRINE_v1.0.md
+- Creation commit: `85b598e01b660e41e3040ffaad9214c852d3e654`
+- Blob SHA: `e9f64de01209889076db8b3a03ff333c649f7a81`
+- Read-back verification: successful; fetched content length 8,425 characters.
+
+Canonical sequence: **A → I → I → S → T**, where A = Action, first I = Identity, second I = Interaction, S = Synergy, T = Trace. The doctrine preserves **ACTION = IDENTITY** as the foundational proposition and distinguishes it from the operational sequence. Recursion is the recurring organizational principle.
+
+The doctrine has two inseparable roles: (1) foundational account of the recurring dynamics of identity; and (2) integrative instrument for examining continuity, dependencies, relationships, and coherence across IFD.
+
+The record relates the first Action to SPARK / EULER MOMENT and subsequent Identity and Interaction to the individual identity and its manifestations, without altering the four simultaneous SPARK creations or treating later actions as additional original SPARKs. It preserves the unresolved relationship between operational TRACE and MONAD-retained diachronic TRACE.
+
+**Open development:** formal mathematical recurrence/state-transition specification; temporal/overlapping/nested operation; prenatal developmental mapping and the Human Design 88° comparison; functional expression thresholds; and full architectural integration. Canonization establishes the conceptual doctrine, not independent empirical verification or a completed formal mathematical model.
+
+The public Current IFD Formulation has not been updated as part of this canonization. Integration is a subsequent task.
