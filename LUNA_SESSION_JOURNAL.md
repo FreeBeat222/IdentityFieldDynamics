@@ -529,3 +529,10 @@ The canonized SPARK / EULER MOMENT distinctions have been propagated into the re
 Canonical entry v1.6 harmonizes the four simultaneous creations with the three core MONAD–ZEROID–UIF connection components. SOURCE remains external to SPARK / EULER MOMENT; TIMECODE is not a fifth creation. Canonical file: `docs/IFD_SOURCE_ZEROID_PRODUCTION_EULER_MOMENT_CANONICAL_ENTRY_v1.6.md`.
 
 Current integration questions remain: SPARK TIMECODE vs physical birth time; COSMIC MOMENT / Natal Horoscope vs birth/branding chart; SUBSTANCE's placement in the earlier explanatory wording; FLASH vs TIMECODE; and the precise relationship between operational TRACE and MONAD-retained diachronic TRACE. No unsupported mechanisms have been added. Canonization records the IFD conceptual model, not independent empirical verification.
+
+
+## 2026-11-22 — Canonical v1.7 editorial harmonization
+
+Canonical v1.7 supersedes v1.6 to resolve wording that could imply only three simultaneous creations. The SPARK / EULER MOMENT has four simultaneous creations: COSMIC MOMENT, MONAD / SOUL, ZEROID (ZYGOTE), and UIF. MONAD, ZEROID, and UIF are the three core individual-connection components within that four-output event. The UIF supports the possibility of further communication, retains the prior MONAD-facilitated ZEROID–SOURCE communication statement, and is used to transmit manifestation information from ZEROID to MONAD. Channel physics and detailed operation remain unspecified.
+
+Canonical file: `docs/IFD_SOURCE_ZEROID_PRODUCTION_EULER_MOMENT_CANONICAL_ENTRY_v1.7.md`.
