@@ -33,24 +33,24 @@ app.use((req, res, next) => {
     const contentType = res.get("Content-Type") || "";
     if (typeof body === "string" && contentType.includes("text/html") && !res.headersSent) {
       const origin = "https://identityfielddynamics.com";
-      const titleMatch = body.match(/<title[^>]*>([\\s\\S]*?)<\\/title>/i);
-      const title = titleMatch ? titleMatch[1].replace(/<[^>]*>/g, " ").replace(/\\s+/g, " ").trim() : "Identity Field Dynamics";
-      const paragraphMatch = body.match(/<p[^>]*>([\\s\\S]*?)<\\/p>/i);
+      const titleMatch = body.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+      const title = titleMatch ? titleMatch[1].replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim() : "Identity Field Dynamics";
+      const paragraphMatch = body.match(/<p[^>]*>([\s\S]*?)<\/p>/i);
       let description = paragraphMatch
-        ? paragraphMatch[1].replace(/<[^>]*>/g, " ").replace(/\\s+/g, " ").trim()
+        ? paragraphMatch[1].replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim()
         : title + " — Identity Field Dynamics.";
       description = description.replace(/&nbsp;/g, " ").replace(/&amp;/g, "&").replace(/&quot;/g, '"').slice(0, 160);
       const canonical = origin + req.path;
       const escapeAttr = value => String(value).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
       const tags = [];
-      if (!/<meta\\s+name=["']description["']/i.test(body)) tags.push('<meta name="description" content="' + escapeAttr(description) + '">');
-      if (!/<link\\s+rel=["']canonical["']/i.test(body)) tags.push('<link rel="canonical" href="' + escapeAttr(canonical) + '">');
-      if (!/<meta\\s+property=["']og:title["']/i.test(body)) tags.push('<meta property="og:title" content="' + escapeAttr(title) + '">');
-      if (!/<meta\\s+property=["']og:description["']/i.test(body)) tags.push('<meta property="og:description" content="' + escapeAttr(description) + '">');
-      if (!/<meta\\s+property=["']og:type["']/i.test(body)) tags.push('<meta property="og:type" content="website">');
-      if (!/<meta\\s+property=["']og:url["']/i.test(body)) tags.push('<meta property="og:url" content="' + escapeAttr(canonical) + '">');
-      if (!/<meta\\s+name=["']twitter:card["']/i.test(body)) tags.push('<meta name="twitter:card" content="summary">');
-      if (!/<script[^>]+type=["']application\\/ld\\+json["']/i.test(body)) {
+      if (!/<meta\s+name=["']description["']/i.test(body)) tags.push('<meta name="description" content="' + escapeAttr(description) + '">');
+      if (!/<link\s+rel=["']canonical["']/i.test(body)) tags.push('<link rel="canonical" href="' + escapeAttr(canonical) + '">');
+      if (!/<meta\s+property=["']og:title["']/i.test(body)) tags.push('<meta property="og:title" content="' + escapeAttr(title) + '">');
+      if (!/<meta\s+property=["']og:description["']/i.test(body)) tags.push('<meta property="og:description" content="' + escapeAttr(description) + '">');
+      if (!/<meta\s+property=["']og:type["']/i.test(body)) tags.push('<meta property="og:type" content="website">');
+      if (!/<meta\s+property=["']og:url["']/i.test(body)) tags.push('<meta property="og:url" content="' + escapeAttr(canonical) + '">');
+      if (!/<meta\s+name=["']twitter:card["']/i.test(body)) tags.push('<meta name="twitter:card" content="summary">');
+      if (!/<script[^>]+type=["']application\/ld\+json["']/i.test(body)) {
         const schema = {
           "@context": "https://schema.org",
           "@type": "WebPage",
@@ -59,9 +59,9 @@ app.use((req, res, next) => {
           "url": canonical,
           "isPartOf": { "@type": "WebSite", "name": "Identity Field Dynamics", "url": origin + "/" }
         };
-        tags.push('<script type="application/ld+json">' + JSON.stringify(schema).replace(/</g, "\\\\u003c") + '</script>');
+        tags.push('<script type="application/ld+json">' + JSON.stringify(schema).replace(/</g, "\\u003c") + '</script>');
       }
-      if (tags.length && /<\\/head>/i.test(body)) body = body.replace(/<\\/head>/i, tags.join("\\n") + "\\n</head>");
+      if (tags.length && /<\/head>/i.test(body)) body = body.replace(/<\/head>/i, tags.join("\n") + "\n</head>");
     }
     return send.call(this, body);
   };
