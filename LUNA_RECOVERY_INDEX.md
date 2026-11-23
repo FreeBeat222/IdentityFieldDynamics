@@ -456,3 +456,17 @@ The record relates the first Action to SPARK / EULER MOMENT and subsequent Ident
 **Open development:** formal mathematical recurrence/state-transition specification; temporal/overlapping/nested operation; prenatal developmental mapping and the Human Design 88° comparison; functional expression thresholds; and full architectural integration. Canonization establishes the conceptual doctrine, not independent empirical verification or a completed formal mathematical model.
 
 The public Current IFD Formulation has not been updated as part of this canonization. Integration is a subsequent task.
+
+
+## 2026-11-22 — Foundational Review opened: RECURSIVE IDENTITY DYNAMICS
+
+A dedicated live file of record has been created for the comprehensive Foundational Review. The record is intended to be updated throughout the operation, not reconstructed at its conclusion.
+
+- **Live record:** `research/IFD_RECURSIVE_IDENTITY_DYNAMICS_FOUNDATIONAL_REVIEW_LIVE_RECORD_2026-11-22.md`
+- **URL:** https://github.com/FreeBeat222/IdentityFieldDynamics/blob/main/research/IFD_RECURSIVE_IDENTITY_DYNAMICS_FOUNDATIONAL_REVIEW_LIVE_RECORD_2026-11-22.md
+- **Creation commit:** `45800a6ea67eb548a24c08db66f37d26511d9d1b`
+- **Read-back verification:** Successful. Fetched the created file; content length 8,816 characters. Confirmed the mandatory completion rule and next-action checkpoint are present.
+- **Purpose:** Live authoritative record for the ten-step, four-phase review of RECURSIVE IDENTITY DYNAMICS in its dual role as foundational construct and integrative instrument.
+- **Mandatory rule:** No research step is complete until findings, relationships, evidence status, unresolved questions and next action are entered into the live record.
+- **Initial status:** Record opened; architecture-wide integration audit not yet performed.
+- **Next executable action:** Retrieve and verify the current canonical doctrine, Current IFD Formulation hub and relevant supporting architecture records; then execute Step 1 by specifying A>I>I>S>T and its recursive operation without prematurely fixing the mathematical form.
