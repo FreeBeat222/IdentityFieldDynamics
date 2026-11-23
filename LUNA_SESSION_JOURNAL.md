@@ -404,3 +404,21 @@ The audit traces dependencies across ZERO, SOURCE / SOURCE FORMULA, Generation /
 **Next executable step:** Resolve the frequency-term identity/equivalence first, then locate the EULER MOMENT relative to the existing generation/differentiation sequence. Do not edit the central hub until these interfaces are resolved or deliberately marked as unresolved in the diagram.
 
 Research discipline: HARVEST FIRST. ABSTRACT SECOND. CANONIZE LAST.
+
+
+## 2026-11-22 — Frequency terminology equivalence confirmed
+
+Rick explicitly answered **YES**: the existing `UNIQUE ORIGINATING SIGNATURE / FREQUENCY / CALL SIGNAL` and the EULER MOMENT's `UNIQUE IDENTIFYING FREQUENCY` are the same construct. They are not separate frequencies, signatures, or channels. **UNIQUE IDENTIFYING FREQUENCY** is the canonical term; the earlier phrases are aliases in the existing formulation and should be harmonized during integration.
+
+Canonical architecture updated with v1.1:
+- `docs/IFD_SOURCE_ZEROID_PRODUCTION_EULER_MOMENT_CANONICAL_ENTRY_v1.1.md`
+- Blob SHA: `05cc397d2e9af6f3f42dc7b3f416ad3c1f156efb`
+- Commit: `13195e543c30fb18c375b4e4716337606cebc927`
+- v1.1 supersedes v1.0 for the clarified terminology.
+
+Integration audit updated and read back:
+- `research/IFD_CURRENT_FORMULATION_SOURCE_ZEROID_EULER_MOMENT_INTEGRATION_AUDIT_2026-11-22.md`
+- Blob SHA: `ecbf5f63a9cca936a2a3c9ff35dd0d0c11d6abe7`
+- Commit: `ed3348b62aff3c1e631759c50afef1e9c9a838e2`
+
+The first of the five integration questions is resolved. The next unresolved architectural question is the placement of the EULER MOMENT relative to the existing `ZERO → SPARK → DIFFERENTIATION → SUBSTANCE → IDENTITY` generative sequence. No changes to the published hub or explanatory pages have yet been made.
