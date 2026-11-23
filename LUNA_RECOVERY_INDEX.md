@@ -470,3 +470,10 @@ A dedicated live file of record has been created for the comprehensive Foundatio
 - **Mandatory rule:** No research step is complete until findings, relationships, evidence status, unresolved questions and next action are entered into the live record.
 - **Initial status:** Record opened; architecture-wide integration audit not yet performed.
 - **Next executable action:** Retrieve and verify the current canonical doctrine, Current IFD Formulation hub and relevant supporting architecture records; then execute Step 1 by specifying A>I>I>S>T and its recursive operation without prematurely fixing the mathematical form.
+
+
+## 2026-11-22 — Workflow authority clarification: Foundational Review
+
+Rick clarified that he retains final authority over all project rules, restrictions, workflow choices, and completion criteria. An assistant-proposed mandatory completion rule was unauthorized and has been removed from the live review record.
+
+The live record is a continuity and documentation aid, not a source of unilateral restrictions. Treat procedural safeguards as proposals unless Rick explicitly adopts them.
