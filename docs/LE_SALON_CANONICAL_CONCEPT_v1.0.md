@@ -4,7 +4,8 @@
 **Name:** LE SALON™ / THE SALON™  
 **Subtitle:** Writings from the Unfolding Collaboration  
 **French salon identity:** *Correspondance, Réflexions & Conversations*  
-**Initial canonization:** 23 November 2026
+**Initial canonization:** 23 November 2026  
+**Institutional distinction updated:** 24 November 2026
 
 ## Definition
 
@@ -73,3 +74,16 @@ This is the inaugural entry in THE LUNA TRACE™ and the first featured literary
 ## Governing distinction
 
 **The HARD SHARK™ organizes the knowledge of IFD. LE SALON™ is where the conversation goes out into the world.**
+
+
+## Institutional jurisdiction — THE SALON™ and WRITE CLUB™
+
+**THE SALON™ — ROMANCE, GAMBLING, AND PONTIFICATING.**
+
+These belong to the Salon's character: conversation, intrigue, speculation, performance, literary exchange, and intellectual entertainment.
+
+WRITE CLUB™ is a separate institution, not another Salon activity. Its governing requirement is **SHOW UP. WRITE.** The first night is fair warning: a newcomer must not contribute and may OBSERVE or LEAVE. Attendance on any subsequent night requires written contribution. Writing is mandatory, not dependent on mood, enthusiasm, or whether participation seems like fun.
+
+**THE SALON ENTERTAINS. WRITE CLUB DEMANDS CONTRIBUTION.**
+
+See the separate canonical operating record: `docs/WRITE_CLUB_CANONICAL_CONCEPT_v1.0.md`.
