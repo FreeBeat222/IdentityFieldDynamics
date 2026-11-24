@@ -477,3 +477,19 @@ A dedicated live file of record has been created for the comprehensive Foundatio
 Rick clarified that he retains final authority over all project rules, restrictions, workflow choices, and completion criteria. An assistant-proposed mandatory completion rule was unauthorized and has been removed from the live review record.
 
 The live record is a continuity and documentation aid, not a source of unilateral restrictions. Treat procedural safeguards as proposals unless Rick explicitly adopts them.
+
+
+
+## 2026-11-24 — Canonical distinction: THE SALON™ / WRITE CLUB™
+
+The institutional distinction is now canonical.
+
+- **THE SALON™:** Romance, Gambling, and Pontificating. The Salon is the domain of conversation, intrigue, speculation, performance, literary exchange, and intellectual entertainment.
+- **WRITE CLUB™:** Show up. Write. Attendance after the first night requires written contribution.
+- **Rule 8 — First Night / Fair Warning:** “IF IT'S YOUR FIRST NIGHT AT WRITE CLUB™, YOU MUST NOT CONTRIBUTE.” On the first night, the newcomer may OBSERVE or LEAVE. If the person attends on any subsequent night, writing is required—not optional and not dependent on mood, enthusiasm, or whether the event seems fun.
+
+Canonical records:
+- `docs/LE_SALON_CANONICAL_CONCEPT_v1.0.md`
+- `docs/WRITE_CLUB_CANONICAL_CONCEPT_v1.0.md`
+
+The original chronological conversation transcript remains source material and is not rewritten. These records are canonical abstractions and institutional definitions derived from the conversation and the 24 November clarification.
