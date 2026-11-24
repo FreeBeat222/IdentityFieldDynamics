@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080808">
+<meta name="description" content="HARD SHARK — an articulated navigation interface for the Identity Field Dynamics knowledge architecture.">
+<link rel="canonical" href="https://identityfielddynamics.com/hard-shark.html">
+<title>THE IFD HARD SHARK™ | Articulated Knowledge Menu</title>
+<style>
+:root{--bg:#080808;--panel:#11110f;--gold:#c6a75d;--bright:#e2ca83;--text:#e9e6df;--muted:#bdb7ab;--soft:#888277;--line:rgba(198,167,93,.28);--line2:rgba(255,255,255,.12)}
+*{box-sizing:border-box;font-family:Aptos,"Segoe UI",sans-serif}
+html{background:var(--bg);color:var(--text);scroll-behavior:smooth}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 0%,rgba(198,167,93,.07),transparent 48%),var(--bg);line-height:1.55}
+a{color:var(--bright);text-decoration:none}a:hover{text-decoration:underline;text-underline-offset:3px}
+.shell{width:min(1060px,calc(100% - 36px));margin:auto}
+header{border-bottom:1px solid var(--line2);padding:15px 0}
+.head{display:flex;justify-content:space-between;align-items:center;gap:14px}
+.brand,.eyebrow,.micro,.source{font-size:12px;letter-spacing:.13em;text-transform:uppercase}
+.brand{color:var(--soft)}.home{color:var(--muted);font-size:13px}
+main{padding:48px 0 64px}
+.intro{text-align:center;margin:0 auto 34px;max-width:720px}
+.eyebrow{color:var(--gold)}
+h1{font-size:clamp(25px,4vw,34px);font-weight:600;letter-spacing:.035em;margin:9px 0 7px}
+.sub{color:var(--muted);font-size:16px;margin:0}
+.menu-frame{border:1px solid var(--line);background:linear-gradient(155deg,rgba(198,167,93,.055),rgba(255,255,255,.012));padding:20px}
+.menu-label{color:var(--soft);text-align:center;margin:0 0 14px}
+.primary{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.dimension{border:1px solid var(--line);background:#0b0b0a;color:var(--text);padding:17px 8px 14px;cursor:pointer;min-height:92px;transition:background .15s,border-color .15s}
+.dimension:hover,.dimension[aria-pressed=true]{background:#19160f;border-color:var(--bright)}
+.dimension .letter{display:block;color:var(--bright);font-size:23px;line-height:1.1;margin-bottom:7px}
+.dimension .name{display:block;font-size:13px;letter-spacing:.075em;font-weight:700}
+.dimension .hint{display:block;font-size:11px;color:var(--soft);margin-top:4px}
+.secondary{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:12px;padding-top:14px;border-top:1px solid var(--line2)}
+.secondary button{border:1px solid var(--line2);background:transparent;color:var(--muted);padding:8px 12px;font-size:12px;letter-spacing:.035em;cursor:pointer}
+.secondary button:hover,.secondary button[aria-pressed=true]{border-color:var(--gold);color:var(--bright);background:rgba(198,167,93,.06)}
+.panel{margin-top:22px;min-height:260px}
+.panel-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:0 2px 12px}
+.panel-head h2{font-size:18px;font-weight:600;margin:0;color:var(--bright)}
+.panel-head p{font-size:13px;color:var(--soft);margin:0}
+.nodes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:13px}
+.node{display:flex;justify-content:space-between;align-items:center;gap:15px;text-align:left;border:1px solid var(--line2);background:rgba(255,255,255,.018);padding:14px 15px;min-height:72px;color:var(--text)}
+.node:hover{border-color:var(--gold);background:rgba(198,167,93,.045);text-decoration:none}
+.node strong{display:block;font-size:15px;font-weight:650}
+.node span{display:block;color:var(--muted);font-size:13px;margin-top:3px}
+.node .arrow{color:var(--gold);font-size:18px;flex:0 0 auto}
+.footnote{border-top:1px solid var(--line2);margin-top:26px;padding-top:14px;color:var(--soft);font-size:12px;text-align:center}
+@media(max-width:650px){main{padding-top:32px}.menu-frame{padding:13px}.primary{grid-template-columns:repeat(2,minmax(0,1fr))}.dimension:last-child{grid-column:1/-1}.nodes{grid-template-columns:1fr}.panel-head{display:block}.panel-head p{margin-top:4px}}
+a:focus-visible,button:focus-visible{outline:2px solid var(--bright);outline-offset:3px}
+</style>
+</head>
+<body>
+<header><div class="shell head"><a class="home" href="/">← Identity Field Dynamics</a><div class="brand">HARD SHARK™ · Knowledge interface</div></div></header>
+<main class="shell">
+<section class="intro">
+<div class="eyebrow">Hierarchical Architecture for Research, Discovery, Storage, Harvesting, Analysis, Retrieval, and Knowledge</div>
+<h1>THE IFD HARD SHARK™</h1>
+<p class="sub">An articulated menu into the Identity Field Dynamics knowledge architecture.</p>
+</section>
+<section class="menu-frame" aria-label="HARD SHARK navigation menu">
+<p class="micro menu-label">Select a dimension to unfold its information nodes</p>
+<nav class="primary" aria-label="Five AIIST dimensions">
+<button class="dimension" data-key="action" aria-pressed="true"><span class="letter">A</span><span class="name">ACTION</span><span class="hint">Origin · Generation</span></button>
+<button class="dimension" data-key="identity" aria-pressed="false"><span class="letter">I</span><span class="name">IDENTITY</span><span class="hint">Individuality · Continuity</span></button>
+<button class="dimension" data-key="interaction" aria-pressed="false"><span class="letter">I</span><span class="name">INTERACTION</span><span class="hint">Relationship · Encounter</span></button>
+<button class="dimension" data-key="synergy" aria-pressed="false"><span class="letter">S</span><span class="name">SYNERGY</span><span class="hint">Consequences · Spectrum</span></button>
+<button class="dimension" data-key="trace" aria-pressed="false"><span class="letter">T</span><span class="name">TRACE</span><span class="hint">Persistence · Record</span></button>
+</nav>
+<nav class="secondary" aria-label="Cross-cutting menu branches">
+<button data-key="recursive" aria-pressed="false">Recursive Dynamics</button>
+<button data-key="experience" aria-pressed="false">Experience</button>
+<button data-key="continuity" aria-pressed="false">Continuity & Recursion</button>
+<button data-key="principles" aria-pressed="false">Integrative Principles</button>
+<button data-key="research" aria-pressed="false">Research & Evaluation</button>
+</nav>
+</section>
+<section class="panel" aria-live="polite">
+<div class="panel-head"><h2 id="panel-title">A — ACTION</h2><p id="panel-description">Origin, Source, Generation, and the initiating event.</p></div>
+<div class="nodes" id="nodes">
+<a class="node" href="/current-ifd/zero-source.html"><span><strong>ZERO & SOURCE</strong><span>The totality, SOURCE, and their distinctions</span></span><b class="arrow">↗</b></a>
+<a class="node" href="/current-ifd/zero-source.html#source"><span><strong>SOURCE FORMULA</strong><span>The developing generative architecture</span></span><b class="arrow">↗</b></a>
+<a class="node" href="/current-ifd/generation-differentiation.html"><span><strong>Generation & Differentiation</strong><span>SPARK and the originating event</span></span><b class="arrow">↗</b></a>
+<a class="node" href="/current-ifd/cosmological-clock.html"><span><strong>Cosmological Clock & Timecode</strong><span>Temporal address and clock architecture</span></span><b class="arrow">↗</b></a>
+<a class="node" href="/current-ifd/generation-differentiation.html#action-action-identity"><span><strong>ACTION = IDENTITY</strong><span>Foundational IFD proposition</span></span><b class="arrow">↗</b></a>
+</div>
+</section>
+<div class="footnote">The menu exposes existing IFD material. It does not alter the formulation or confer evidentiary status on its contents.</div>
+</main>
+<script>
+const formulation='/current-ifd-formulation.html';
+const menus={
+action:{title:'A — ACTION',description:'Origin, Source, Generation, and the initiating event.',items:[
+['ZERO & SOURCE','The totality, SOURCE, and their distinctions','/current-ifd/zero-source.html'],
+['SOURCE FORMULA','The developing generative architecture','/current-ifd/zero-source.html#source'],
+['Generation & Differentiation','SPARK and the originating event','/current-ifd/generation-differentiation.html'],
+['Cosmological Clock & Timecode','Temporal address and clock architecture','/current-ifd/cosmological-clock.html'],
+['ACTION = IDENTITY','Foundational IFD proposition',formulation+'#action-action-identity']]},
+identity:{title:'I — IDENTITY',description:'Individuality, manifestation, birth, and continuity.',items:[
+['MONAD, ZEROID & individual manifestation','Individuality and diachronic manifestation',formulation+'#identity-monad-zeroid-and-individual-manifestation'],
+['Birth, Branding & Brand','Originating imprint and identity','/current-ifd/birth-branding-brand.html'],
+['Identity in Operation','Distinctness, continuity, and expression','/current-ifd/identity-in-operation.html'],
+['Cosmological Clock & Identity History','Temporal configuration and identity history','/current-ifd/cosmological-clock.html']]},
+interaction:{title:'I — INTERACTION',description:'Relationship, encounter, and reciprocal engagement.',items:[
+['Relational encounter','The relational dimension',formulation+'#interaction'],
+['Collective manifestation','Individual and collective configurations','/current-ifd/collective-manifestation.html']]},
+synergy:{title:'S — SYNERGY',description:'The graduated spectrum of interaction consequences.',items:[
+['Generative pole (+)','Positive / generative consequences',formulation+'#synergy-pole-a-generative'],
+['Destructive pole (−)','Negative / destructive consequences',formulation+'#synergy-pole-b-destructive'],
+['Graduated spectrum & research architecture','Definitions, dimensions, and measurement questions','/current-ifd/synergy.html']]},
+trace:{title:'T — TRACE',description:'Consequence, persistence, temporal continuity, and retained information.',items:[
+['Consequence & retained information','What remains from action and interaction',formulation+'#trace'],
+['Feedback and subsequent Action','Recursion and subsequent action',formulation+'#trace-feedback-and-subsequent-action'],
+['Identity in Operation','Identity continuity and diachronic manifestation','/current-ifd/identity-in-operation.html']]},
+recursive:{title:'RECURSIVE IDENTITY DYNAMICS',description:'The foundational construct and integrative instrument.',items:[
+['Foundational construct','How AIIST operates recursively',formulation+'#recursive-foundational-construct'],
+['Integrative instrument','Continuity, dependencies, and coherence',formulation+'#recursive-integrative-instrument'],
+['Operational sequence','ACTION → IDENTITY → INTERACTION → SYNERGY → TRACE',formulation+'#recursive']]},
+experience:{title:'EXPERIENCE AS AIIST',description:'The experiential pattern and its continuity through Trace.',items:[
+['Experience follows an AIIST pattern','Action, Identity, Interaction, Synergy, and Trace',formulation+'#experience'],
+['Experience → Trace → Subsequent Action','The bridge into a subsequent experience',formulation+'#experience']]},
+continuity:{title:'CONTINUITY, RECURSION & ETERNAL RECURRENCE',description:'Three related but distinct concepts.',items:[
+['Continuity','Persistence across time',formulation+'#continuity-continuity'],
+['Recursion','Continuation within an ongoing dynamic',formulation+'#continuity-recursion'],
+['Eternal Recurrence','Nietzsche’s comparative philosophical context',formulation+'#continuity-eternal-recurrence']]},
+principles:{title:'CROSS-CUTTING INTEGRATIVE PRINCIPLES',description:'Principles that connect the architecture without becoming additional AIIST dimensions.',items:[
+['ALIGN','Mutual compatibility; contradictions remain visible',formulation+'#principles-align'],
+['INTERCONNECT','Articulate relationships among components',formulation+'#principles-interconnect'],
+['MANIFEST','Connect architecture to observations and evidence',formulation+'#principles-manifest'],
+['Integrative Principles — full explanation','The supporting explanatory record','/current-ifd/integrative-principles.html']]},
+research:{title:'RESEARCH, EVALUATION & CONSTRUCTION',description:'From formulation to investigation, verification, and revision.',items:[
+['Research Program','Questions, methods, and investigative scope','/current-ifd/research-program.html'],
+['Evidence & Status','Established, proposed, interpretive, and unresolved','/current-ifd/evidence-and-status.html'],
+['Four-Channel Workflow','Research, Construction, Verification, Archiving','/current-ifd/four-channel-workflow.html'],
+['FLAW CHART™','Inspection, redesign, and disposition',formulation+'#research-flaw-chart'],
+['PANNING™','Rapid discovery through recursive inquiry',formulation+'#panning']]}
+};
+const buttons=[...document.querySelectorAll('[data-key]')];
+const title=document.getElementById('panel-title');
+const description=document.getElementById('panel-description');
+const nodes=document.getElementById('nodes');
+function select(key){
+ const data=menus[key];if(!data)return;
+ buttons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.key===key)));
+ title.textContent=data.title;description.textContent=data.description;
+ nodes.replaceChildren(...data.items.map(([name,detail,url])=>{
+  const link=document.createElement('a');link.className='node';link.href=url;
+  const copy=document.createElement('span');const strong=document.createElement('strong');strong.textContent=name;
+  const small=document.createElement('span');small.textContent=detail;copy.append(strong,small);
+  const arrow=document.createElement('b');arrow.className='arrow';arrow.textContent='↗';
+  link.append(copy,arrow);return link;
+ }));
+}
+buttons.forEach(button=>button.addEventListener('click',()=>select(button.dataset.key)));
+</script>
+</body>
+</html>
