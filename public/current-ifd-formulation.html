@@ -381,12 +381,16 @@ a:focus-visible{outline:2px solid var(--bright);outline-offset:4px}
   heading.textContent=(target.matches('h1,h2,h3,h4')?target.textContent:(target.querySelector('h2')?.textContent||source.textContent)).trim();
   preview.append(heading);
   if(target.matches('h1,h2,h3,h4')){
-   const level=Number(target.tagName.slice(1));
-   let current=target.nextElementSibling;
-   while(current){
-    if(/^H[1-4]$/.test(current.tagName) && Number(current.tagName.slice(1))<=level)break;
-    preview.append(current.cloneNode(true));
-    current=current.nextElementSibling;
+   const card=target.closest('.card');
+   if(card){preview.append(card.cloneNode(true));}
+   else{
+    const level=Number(target.tagName.slice(1));
+    let current=target.nextElementSibling;
+    while(current){
+     if(/^H[1-4]$/.test(current.tagName) && Number(current.tagName.slice(1))<=level)break;
+     preview.append(current.cloneNode(true));
+     current=current.nextElementSibling;
+    }
    }
   }else{
    const section=target.closest('.section')||target;
@@ -400,8 +404,11 @@ a:focus-visible{outline:2px solid var(--bright);outline-offset:4px}
   preview.querySelectorAll('a[href^="#"]').forEach(link=>{
    link.addEventListener('click',event=>{
     const next=document.getElementById(decodeURIComponent(link.getAttribute('href').slice(1)));
-    if(!next || !preview.contains(next))return;
+    if(!next || !document.getElementById('hs-source').contains(next))return;
     event.preventDefault();
+    const nestedButton=document.createElement('button');
+    nestedButton.setAttribute('aria-expanded','false');
+    showPreview(link,nestedButton);
    });
   });
   preview.hidden=false;
