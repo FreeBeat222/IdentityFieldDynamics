@@ -27,13 +27,13 @@ h1{font-size:clamp(25px,4vw,34px);font-weight:600;letter-spacing:.035em;margin:9
 .menu-label{color:var(--soft);text-align:center;margin:0 0 14px}
 .primary{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
 .dimension{border:1px solid var(--line);background:#0b0b0a;color:var(--text);padding:17px 8px 14px;cursor:pointer;min-height:92px;transition:background .15s,border-color .15s}
-.dimension:hover,.dimension[aria-pressed=true]{background:#19160f;border-color:var(--bright)}
+.dimension:hover,.dimension:active,.dimension[aria-pressed=true]{background:#19160f;border-color:var(--bright);box-shadow:inset 0 -2px 0 var(--gold)}
 .dimension .letter{display:block;color:var(--bright);font-size:23px;line-height:1.1;margin-bottom:7px}
 .dimension .name{display:block;font-size:13px;letter-spacing:.075em;font-weight:700}
 .dimension .hint{display:block;font-size:11px;color:var(--soft);margin-top:4px}
 .secondary{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:12px;padding-top:14px;border-top:1px solid var(--line2)}
 .secondary button{border:1px solid var(--line2);background:transparent;color:var(--muted);padding:8px 12px;font-size:12px;letter-spacing:.035em;cursor:pointer}
-.secondary button:hover,.secondary button[aria-pressed=true]{border-color:var(--gold);color:var(--bright);background:rgba(198,167,93,.06)}
+.secondary button:hover,.secondary button:active,.secondary button[aria-pressed=true]{border-color:var(--gold);color:var(--bright);background:rgba(198,167,93,.06)}
 .panel{margin-top:22px;min-height:260px}
 .panel-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:0 2px 12px}
 .panel-head h2{font-size:18px;font-weight:600;margin:0;color:var(--bright)}
@@ -58,7 +58,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bright);outline-off
 <p class="sub">An articulated menu into the Identity Field Dynamics knowledge architecture.</p>
 </section>
 <section class="menu-frame" aria-label="HARD SHARK navigation menu">
-<p class="micro menu-label">Select a dimension to unfold its information nodes</p>
+<p class="micro menu-label">AIIST · FIVE INTERACTIVE DIMENSIONS</p>
 <nav class="primary" aria-label="Five AIIST dimensions">
 <button class="dimension" data-key="action" aria-pressed="true"><span class="letter">A</span><span class="name">ACTION</span><span class="hint">Origin · Generation</span></button>
 <button class="dimension" data-key="identity" aria-pressed="false"><span class="letter">I</span><span class="name">IDENTITY</span><span class="hint">Individuality · Continuity</span></button>
