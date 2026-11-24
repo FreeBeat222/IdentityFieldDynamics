@@ -95,6 +95,38 @@ a:focus-visible{outline:2px solid var(--bright);outline-offset:4px}
 .hs-primary button:focus-visible,.hs-secondary button:focus-visible,.hs-node:focus-visible{outline:2px solid var(--bright);outline-offset:3px}
 @media(max-width:650px){.hard-shark{padding:12px}.hs-primary{grid-template-columns:repeat(2,minmax(0,1fr))}.hs-primary button:last-child{grid-column:1/-1}.hs-nodes{grid-template-columns:1fr}.hs-topline{font-size:10px}}
 
+
+/* HARD SHARK™ full-payload presentation */
+.hs-preview{padding:0;overflow:visible}
+.hs-preview .hs-payload-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line);background:rgba(198,167,93,.035)}
+.hs-preview .hs-payload-bar strong{color:var(--bright);font-size:14px;letter-spacing:.04em}
+.hs-preview .hs-payload-bar button{border:1px solid var(--line2);background:#0b0b0a;color:var(--muted);padding:7px 10px;font:inherit;font-size:13px;cursor:pointer}
+.hs-preview .hs-payload-bar button:hover{border-color:var(--gold);color:var(--bright)}
+.hs-preview .hs-payload-content{padding:20px 22px 26px;min-width:0}
+.hs-preview .hs-payload-content .hero{max-width:82ch}
+.hs-preview .hs-payload-content h1{font-size:clamp(24px,4vw,34px);line-height:1.18;margin:6px 0 12px}
+.hs-preview .hs-payload-content h2{font-size:22px;line-height:1.3;margin:8px 0 12px}
+.hs-preview .hs-payload-content h3{font-size:17px;line-height:1.35;margin:22px 0 8px}
+.hs-preview .hs-payload-content p,.hs-preview .hs-payload-content li{color:var(--muted);font-size:15px;line-height:1.68}
+.hs-preview .hs-payload-content .sub{font-size:16px}
+.hs-preview .hs-payload-content .notice{border-left:2px solid var(--gold);background:rgba(198,167,93,.045);padding:13px 16px;margin:18px 0}
+.hs-preview .hs-payload-content .toc{display:flex;gap:8px 14px;flex-wrap:wrap;border-top:1px solid #292929;border-bottom:1px solid #292929;padding:10px 0;margin:18px 0}
+.hs-preview .hs-payload-content .toc a{font-size:13px}
+.hs-preview .hs-payload-content .section{padding:20px 0 0}
+.hs-preview .hs-payload-content .diagram{border:1px solid var(--line);background:rgba(198,167,93,.025);padding:15px;margin:15px 0}
+.hs-preview .hs-payload-content .cards,.hs-preview .hs-payload-content .poles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:14px 0}
+.hs-preview .hs-payload-content .card,.hs-preview .hs-payload-content .pole{border:1px solid var(--line2);padding:13px;background:rgba(255,255,255,.015)}
+.hs-preview .hs-payload-content .card h3,.hs-preview .hs-payload-content .pole strong{margin:0 0 6px;color:var(--bright)}
+.hs-preview .hs-payload-content .table-wrap{overflow-x:auto}
+.hs-preview .hs-payload-content table{width:100%;border-collapse:collapse;min-width:540px}
+.hs-preview .hs-payload-content th,.hs-preview .hs-payload-content td{text-align:left;vertical-align:top;padding:9px;border-bottom:1px solid var(--line2);font-size:14px;line-height:1.55;color:var(--muted)}
+.hs-preview .hs-payload-content th{color:var(--gold);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+.hs-preview .hs-payload-content .spectrum{height:12px;border-radius:20px;background:linear-gradient(90deg,#238653 0%,#a5a5a5 50%,#c64b45 100%);margin:16px 0 7px}
+.hs-preview .hs-payload-content .ends{display:flex;justify-content:space-between;gap:10px;font-size:12px;color:var(--muted)}
+.hs-preview .hs-payload-content .quote{font-size:17px;font-weight:650;color:var(--text)}
+.hs-preview .hs-payload-content a{overflow-wrap:anywhere}
+@media(max-width:650px){.hs-preview .hs-payload-content{padding:15px}.hs-preview .hs-payload-content .cards,.hs-preview .hs-payload-content .poles{grid-template-columns:1fr}.hs-preview .hs-payload-bar{align-items:flex-start;flex-direction:column}}
+
 [hidden]{display:none!important}
 </style>
 <link rel="stylesheet" href="/copyright.css">
@@ -161,7 +193,7 @@ a:focus-visible{outline:2px solid var(--bright);outline-offset:4px}
 <p>AIIST is the organizing framework of this formulation, not an additional subject appended to it. The earlier ZERO/SOURCE, SPARK, TIME, BIRTH, BRANDING, identity-in-operation, Synergy, and collective architectures are integrated into their appropriate dimensions. Their definitions and unresolved questions remain visible.</p>
 </section>
 
-<details class="toc-group" id="group-action"><summary><span class="summary-title">A — ACTION</span><span class="summary-detail">A — ACTION: Origin, Source, Generation, and the initiating event.</span><span class="summary-open">Open contents +</span></summary><nav class="subject-toc" aria-label="A — ACTION contents"><span class="toc-label">Explore this subject</span><ul><li><a href="/current-ifd/zero-source.html">ZERO & SOURCE</a><span>The totality, SOURCE, and their distinctions</span></li><li><a href="/current-ifd/zero-source.html#source">SOURCE FORMULA</a><span>The developing generative architecture</span></li><li><a href="/current-ifd/generation-differentiation.html">Generation & Differentiation</a><span>SPARK and the originating event</span></li><li><a href="/current-ifd/cosmological-clock.html">Cosmological Clock & Timecode</a><span>Temporal address and clock architecture</span></li><li><a href="#action-action-identity">ACTION = IDENTITY</a><span>Foundational IFD proposition</span></li></ul></nav><section class="section" id="action">
+<details class="toc-group" id="group-action"><summary><span class="summary-title">A — ACTION</span><span class="summary-detail">A — ACTION: Origin, Source, Generation, and the initiating event.</span><span class="summary-open">Open contents +</span></summary><nav class="subject-toc" aria-label="A — ACTION contents"><span class="toc-label">Explore this subject</span><ul><li><a href="/current-ifd/action.html">Complete ACTION payload</a><span>Full explanatory chapter: origin, generation, SPARK, and time</span></li><li><a href="/current-ifd/zero-source.html">ZERO & SOURCE</a><span>The totality, SOURCE, and their distinctions</span></li><li><a href="/current-ifd/zero-source.html#source">SOURCE FORMULA</a><span>The developing generative architecture</span></li><li><a href="/current-ifd/generation-differentiation.html">Generation & Differentiation</a><span>SPARK and the originating event</span></li><li><a href="/current-ifd/cosmological-clock.html">Cosmological Clock & Timecode</a><span>Temporal address and clock architecture</span></li><li><a href="#action-action-identity">ACTION = IDENTITY</a><span>Foundational IFD proposition</span></li></ul></nav><section class="section" id="action">
 <div class="kicker">03 / Dimension A</div>
 <h2>A — ACTION: Origin, Source, Generation, and the initiating event.</h2>
 <p>The ACTION dimension includes the generative and initiating architecture: ZERO, SOURCE, SOURCE FORMULA, SPARK / EULER MOMENT, generation, differentiation, originating signature, the four simultaneous creations, and SPARK TIMECODE.</p>
@@ -184,7 +216,7 @@ a:focus-visible{outline:2px solid var(--bright);outline-offset:4px}
 <p><a href="/current-ifd/zero-source.html">ZERO &amp; SOURCE</a> · <a href="/current-ifd/generation-differentiation.html">Generation &amp; Differentiation</a> · <a href="/current-ifd/cosmological-clock.html">Cosmological Clock &amp; Timecode</a></p>
 </section></details>
 
-<details class="toc-group" id="group-identity"><summary><span class="summary-title">I — IDENTITY</span><span class="summary-detail">I — IDENTITY: Individuality, manifestation, birth, and continuity.</span><span class="summary-open">Open contents +</span></summary><nav class="subject-toc" aria-label="I — IDENTITY contents"><span class="toc-label">Explore this subject</span><ul><li><a href="#identity-monad-zeroid-and-individual-manifestation">MONAD, ZEROID & individual manifestation</a><span>Individuality and diachronic manifestation</span></li><li><a href="/current-ifd/birth-branding-brand.html">Birth, Branding & Brand</a><span>Originating imprint and identity</span></li><li><a href="/current-ifd/identity-in-operation.html">Identity in operation</a><span>Distinctness, continuity, and expression</span></li><li><a href="/current-ifd/cosmological-clock.html">Cosmological Clock & Identity History</a><span>Temporal configuration and identity history</span></li></ul></nav><section class="section" id="identity">
+<details class="toc-group" id="group-identity"><summary><span class="summary-title">I — IDENTITY</span><span class="summary-detail">I — IDENTITY: Individuality, manifestation, birth, and continuity.</span><span class="summary-open">Open contents +</span></summary><nav class="subject-toc" aria-label="I — IDENTITY contents"><span class="toc-label">Explore this subject</span><ul><li><a href="/current-ifd/identity.html">Complete IDENTITY payload</a><span>Full explanatory chapter: individuality, manifestation, and continuity</span></li><li><a href="#identity-monad-zeroid-and-individual-manifestation">MONAD, ZEROID & individual manifestation</a><span>Individuality and diachronic manifestation</span></li><li><a href="/current-ifd/birth-branding-brand.html">Birth, Branding & Brand</a><span>Originating imprint and identity</span></li><li><a href="/current-ifd/identity-in-operation.html">Identity in operation</a><span>Distinctness, continuity, and expression</span></li><li><a href="/current-ifd/cosmological-clock.html">Cosmological Clock & Identity History</a><span>Temporal configuration and identity history</span></li></ul></nav><section class="section" id="identity">
 <div class="kicker">04 / Dimension I</div>
 <h2>I — IDENTITY: Individuality, manifestation, birth, and continuity.</h2>
 <h3 id="identity-monad-zeroid-and-individual-manifestation">MONAD, ZEROID &amp; individual manifestation</h3>
@@ -198,7 +230,7 @@ a:focus-visible{outline:2px solid var(--bright);outline-offset:4px}
 <p><a href="/current-ifd/birth-branding-brand.html">Birth, Branding &amp; Brand</a> · <a href="/current-ifd/cosmological-clock.html">Cosmological Clock</a> · <a href="/current-ifd/identity-in-operation.html">Identity in Operation</a></p>
 </section></details>
 
-<details class="toc-group" id="group-interaction"><summary><span class="summary-title">I — INTERACTION</span><span class="summary-detail">I — INTERACTION: Relationship, encounter, and reciprocal engagement.</span><span class="summary-open">Open contents +</span></summary><nav class="subject-toc" aria-label="I — INTERACTION contents"><span class="toc-label">Explore this subject</span><ul><li><a href="#interaction">Relational encounter & reciprocal engagement</a><span>The relational dimension</span></li><li><a href="/current-ifd/collective-manifestation.html">Collective manifestation</a><span>Individual and collective configurations</span></li></ul></nav><section class="section" id="interaction">
+<details class="toc-group" id="group-interaction"><summary><span class="summary-title">I — INTERACTION</span><span class="summary-detail">I — INTERACTION: Relationship, encounter, and reciprocal engagement.</span><span class="summary-open">Open contents +</span></summary><nav class="subject-toc" aria-label="I — INTERACTION contents"><span class="toc-label">Explore this subject</span><ul><li><a href="/current-ifd/interaction.html">Complete INTERACTION payload</a><span>Full explanatory chapter: relational and collective engagement</span></li><li><a href="#interaction">Relational encounter & reciprocal engagement</a><span>The relational dimension</span></li><li><a href="/current-ifd/collective-manifestation.html">Collective manifestation</a><span>Individual and collective configurations</span></li></ul></nav><section class="section" id="interaction">
 <div class="kicker">05 / Dimension I</div>
 <h2>I — INTERACTION: Relationship, encounter, and reciprocal engagement.</h2>
 <p>INTERACTION concerns relationships among identities, Actions, entities, and conditions when they affect or respond to one another. It includes reciprocal engagement, dyadic relationships, and individual and collective interaction.</p>
@@ -233,10 +265,10 @@ a:focus-visible{outline:2px solid var(--bright);outline-offset:4px}
 <li>Evidence, disconfirmation, operational criteria, and measurement development.</li>
 </ul>
 <p>Synergy is not defined as an outcome greater than the sum of parts. Superadditive gain is one possible generative outcome, not the definition. Magnitude, duration, intensity, and direction of consequence are distinct analytical variables. Measurement criteria, intermediate graduations, comparison baselines, reliability, and instrument limits remain under development.</p>
-<p><a href="/current-ifd/synergy.html">SYNERGY — full explanatory chapter</a></p>
+<p><a href="/current-ifd/synergy.html">Complete SYNERGY payload</a></p>
 </section></details>
 
-<details class="toc-group" id="group-trace"><summary><span class="summary-title">T — TRACE</span><span class="summary-detail">T — TRACE: Consequence, persistence, temporal continuity, and retained information.</span><span class="summary-open">Open contents +</span></summary><nav class="subject-toc" aria-label="T — TRACE contents"><span class="toc-label">Explore this subject</span><ul><li><a href="#trace">Consequence, persistence & retained information</a><span>What remains from action and interaction</span></li><li><a href="#trace-feedback-and-subsequent-action">Feedback and subsequent Action</a><span>Recursion and subsequent action</span></li></ul></nav><section class="section" id="trace">
+<details class="toc-group" id="group-trace"><summary><span class="summary-title">T — TRACE</span><span class="summary-detail">T — TRACE: Consequence, persistence, temporal continuity, and retained information.</span><span class="summary-open">Open contents +</span></summary><nav class="subject-toc" aria-label="T — TRACE contents"><span class="toc-label">Explore this subject</span><ul><li><a href="/current-ifd/trace.html">Complete TRACE payload</a><span>Full explanatory chapter: consequence, retention, and recursion</span></li><li><a href="#trace">Consequence, persistence & retained information</a><span>What remains from action and interaction</span></li><li><a href="#trace-feedback-and-subsequent-action">Feedback and subsequent Action</a><span>Recursion and subsequent action</span></li></ul></nav><section class="section" id="trace">
 <div class="kicker">07 / Dimension T</div>
 <h2>T — TRACE: Consequence, persistence, temporal continuity, and retained information.</h2>
 <p>TRACE concerns what remains from an Action, identity manifestation, interaction, or experience: consequence, residue, record, impression, memory, or change. Trace is central to the examination of identity continuity and diachronic manifestation.</p>
@@ -353,6 +385,7 @@ a:focus-visible{outline:2px solid var(--bright);outline-offset:4px}
 </div>
 </main>
 
+
 <script>
 (function(){
  const buttons=[...document.querySelectorAll('[data-hs-group]')];
@@ -360,58 +393,130 @@ a:focus-visible{outline:2px solid var(--bright);outline-offset:4px}
  const count=document.getElementById('hs-count');
  const nodes=document.getElementById('hs-nodes');
  const preview=document.getElementById('hs-preview');
+ const sourceRoot=document.getElementById('hs-source');
+ let currentGroup='group-action';
+ let payloadStack=[];
  function closePreview(){
   preview.hidden=true;
   preview.replaceChildren();
   nodes.querySelectorAll('[aria-expanded]').forEach(node=>node.setAttribute('aria-expanded','false'));
  }
+ function setPayloadBar(label,canGoBack){
+  const bar=document.createElement('div');
+  bar.className='hs-payload-bar';
+  const name=document.createElement('strong');
+  name.textContent=label;
+  const back=document.createElement('button');
+  back.type='button';
+  back.textContent=canGoBack?'← Previous information':'← '+(document.querySelector('[data-hs-group="'+currentGroup+'"] span')?.textContent||'Menu');
+  back.addEventListener('click',()=>{
+   if(payloadStack.length){const previous=payloadStack.pop();renderPayload(previous.url,previous.label,false);}
+   else closePreview();
+  });
+  bar.append(name,back);
+  preview.append(bar);
+ }
+ function routeLink(link,baseUrl){
+  const raw=link.getAttribute('href')||'';
+  if(!raw || raw.startsWith('javascript:'))return;
+  let url;
+  try{url=new URL(raw,baseUrl||location.href);}catch{return;}
+  if(url.origin!==location.origin){link.target='_blank';link.rel='noopener noreferrer';return;}
+  link.addEventListener('click',event=>{
+   event.preventDefault();
+   if(url.pathname.endsWith('/current-ifd-formulation.html') && url.hash.startsWith('#group-')){
+    const id=url.hash.slice(1);selectGroup(id);return;
+   }
+   if(url.hash && (url.pathname===location.pathname || url.pathname===new URL(baseUrl||location.href).pathname)){
+    const target=preview.querySelector('[id="'+CSS.escape(decodeURIComponent(url.hash.slice(1)))+'"]');
+    if(target)target.scrollIntoView({block:'start',behavior:'auto'});
+    return;
+   }
+   if(baseUrl!==location.href)payloadStack.push({url:baseUrl,label:preview.querySelector('.hs-payload-bar strong')?.textContent||'Previous information'});
+   renderPayload(url.href,link.textContent.trim()||url.pathname,false);
+  });
+ }
+ function renderPayloadLinks(container,baseUrl){
+  container.querySelectorAll('a[href]').forEach(link=>routeLink(link,baseUrl));
+ }
+ async function renderPayload(url,label,push=true){
+  if(push && preview.querySelector('.hs-payload-bar'))payloadStack.push({url:preview.dataset.payloadUrl,label:preview.querySelector('.hs-payload-bar strong')?.textContent||'Previous information'});
+  preview.hidden=false;
+  preview.replaceChildren();
+  setPayloadBar(label,payloadStack.length>0);
+  const loading=document.createElement('p');loading.className='small';loading.textContent='Loading information…';preview.append(loading);
+  try{
+   const response=await fetch(url,{credentials:'same-origin'});
+   if(!response.ok)throw new Error('HTTP '+response.status);
+   const html=await response.text();
+   const doc=new DOMParser().parseFromString(html,'text/html');
+   const main=doc.querySelector('main')||doc.body;
+   const content=document.createElement('div');
+   content.className='hs-payload-content';
+   const children=[...main.children].filter(el=>!el.matches('.footer,.toplink,header,script,style'));
+   children.forEach(el=>content.append(el.cloneNode(true)));
+   preview.replaceChildren();
+   setPayloadBar(doc.querySelector('h1')?.textContent.trim()||label,payloadStack.length>0);
+   preview.append(content);
+   preview.dataset.payloadUrl=url;
+   renderPayloadLinks(content,url);
+   const hash=new URL(url,location.href).hash;
+   if(hash){
+    const target=content.querySelector('[id="'+CSS.escape(decodeURIComponent(hash.slice(1)))+'"]');
+    if(target)target.scrollIntoView({block:'start',behavior:'auto'});
+   }
+  }catch(error){
+   preview.replaceChildren();
+   setPayloadBar(label,payloadStack.length>0);
+   const message=document.createElement('p');
+   message.textContent='This information page could not be loaded inside the menu. Open the source page: ';
+   const link=document.createElement('a');link.href=url;link.textContent=label;link.target='_blank';link.rel='noopener noreferrer';
+   message.append(link);preview.append(message);
+  }
+ }
  function showPreview(source,button){
   if(button.getAttribute('aria-expanded')==='true'){closePreview();return;}
   closePreview();
+  payloadStack=[];
   button.setAttribute('aria-expanded','true');
   const href=source.getAttribute('href')||'';
-  const target=document.getElementById(decodeURIComponent(href.slice(1)));
+  const target=sourceRoot.querySelector('[id="'+CSS.escape(decodeURIComponent(href.slice(1)))+'"]');
   if(!target)return;
   const heading=document.createElement('h3');
   heading.textContent=(target.matches('h1,h2,h3,h4')?target.textContent:(target.querySelector('h2')?.textContent||source.textContent)).trim();
   preview.append(heading);
   if(target.matches('h1,h2,h3,h4')){
    const card=target.closest('.card');
-   if(card){preview.append(card.cloneNode(true));}
+   if(card)preview.append(card.cloneNode(true));
    else{
     const level=Number(target.tagName.slice(1));
     let current=target.nextElementSibling;
     while(current){
-     if(/^H[1-4]$/.test(current.tagName) && Number(current.tagName.slice(1))<=level)break;
-     preview.append(current.cloneNode(true));
-     current=current.nextElementSibling;
+     if(/^H[1-4]$/.test(current.tagName)&&Number(current.tagName.slice(1))<=level)break;
+     preview.append(current.cloneNode(true));current=current.nextElementSibling;
     }
    }
   }else{
    const section=target.closest('.section')||target;
-   [...section.children].forEach(child=>{
-    if(child!==target && child.matches('h1,h2,h3,h4'))return;
-    if(child===target)return;
-    preview.append(child.cloneNode(true));
-   });
-   if(preview.children.length===1 && target!==section)preview.append(target.cloneNode(true));
+   [...section.children].forEach(child=>{if(child!==target)preview.append(child.cloneNode(true));});
   }
-  preview.querySelectorAll('a[href^="#"]').forEach(link=>{
+  preview.querySelectorAll('a[href]').forEach(link=>{
    link.addEventListener('click',event=>{
-    const next=document.getElementById(decodeURIComponent(link.getAttribute('href').slice(1)));
-    if(!next || !document.getElementById('hs-source').contains(next))return;
-    event.preventDefault();
-    const nestedButton=document.createElement('button');
-    nestedButton.setAttribute('aria-expanded','false');
-    showPreview(link,nestedButton);
+    const raw=link.getAttribute('href')||'';
+    if(raw.startsWith('#')){
+     const next=sourceRoot.querySelector('[id="'+CSS.escape(decodeURIComponent(raw.slice(1)))+'"]');
+     if(next){event.preventDefault();const nestedButton=document.createElement('button');nestedButton.setAttribute('aria-expanded','false');showPreview(link,nestedButton);}
+     return;
+    }
+    routeLink(link,location.href);
    });
   });
   preview.hidden=false;
  }
  function selectGroup(id){
-  const group=document.getElementById(id);
+  const group=sourceRoot.querySelector('#'+CSS.escape(id));
   if(!group)return;
-  closePreview();
+  currentGroup=id;payloadStack=[];closePreview();
   buttons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.hsGroup===id)));
   const heading=group.querySelector('.summary-title');
   title.textContent=heading?heading.textContent.trim():id;
@@ -421,18 +526,15 @@ a:focus-visible{outline:2px solid var(--bright);outline-offset:4px}
    const href=source.getAttribute('href')||'';
    if(href.startsWith('#')){
     const button=document.createElement('button');
-    button.type='button';
-    button.className='hs-node hs-node-toggle';
-    button.textContent=source.textContent.trim();
+    button.type='button';button.className='hs-node hs-node-toggle';button.textContent=source.textContent.trim();
     button.setAttribute('aria-expanded','false');
     button.addEventListener('click',()=>showPreview(source,button));
     return button;
    }
-   const link=document.createElement('a');
-   link.className='hs-node';
-   link.href=href;
-   link.textContent=source.textContent.trim();
-   return link;
+   const button=document.createElement('button');
+   button.type='button';button.className='hs-node';button.textContent=source.textContent.trim();
+   button.addEventListener('click',()=>{payloadStack=[];renderPayload(new URL(href,location.href).href,source.textContent.trim(),false);});
+   return button;
   }));
  }
  buttons.forEach(button=>button.addEventListener('click',()=>selectGroup(button.dataset.hsGroup)));
