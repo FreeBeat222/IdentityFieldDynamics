@@ -62,6 +62,30 @@ a:focus-visible{outline:2px solid var(--bright);outline-offset:4px}
 @media(max-width:440px){.shell{width:calc(100% - 30px)}.headrow{align-items:flex-start;flex-direction:column;gap:8px}}
 
 .subject-toc{border:1px solid var(--line2);background:rgba(255,255,255,.012);padding:16px;margin:14px 0 22px}.toc-label{display:block;color:var(--gold);font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}.subject-toc ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 22px}.subject-toc li{padding:9px 0;border-top:1px solid rgba(203,208,212,.10)}.subject-toc li a{display:block;color:var(--bright);font-weight:700}.subject-toc li span{display:block;color:var(--soft);font-size:14px;line-height:1.45}.toc-group{border-top:1px solid var(--line);padding:18px 0 4px;scroll-margin-top:20px}.toc-group:last-of-type{border-bottom:1px solid var(--line)}.toc-group>summary{display:flex;align-items:baseline;gap:10px 18px;flex-wrap:wrap;cursor:pointer;list-style:none}.toc-group>summary::-webkit-details-marker{display:none}.toc-group>summary:before{content:'+';color:var(--gold);font-size:20px;line-height:1}.toc-group[open]>summary:before{content:'−'}.summary-title{font-size:18px;font-weight:700;color:var(--bright)}.summary-detail{font-size:15px;color:var(--muted)}.summary-open{margin-left:auto;font-size:13px;color:var(--soft);letter-spacing:.06em;text-transform:uppercase}.toc-group[open] .summary-open{display:none}.toc-group .section{padding-top:16px}.signet-promo{border:1px solid var(--line);padding:20px;margin-top:38px;background:rgba(198,167,93,.035)}.signet-promo h2{font-size:20px;margin:4px 0}.signet-promo p{color:var(--muted);margin:6px 0 12px}.signet-promo a{font-weight:700}@media(max-width:680px){.subject-toc ul{grid-template-columns:1fr}.summary-open{margin-left:0}}
+
+/* HARD SHARK™ articulated menu */
+.hard-shark{border:1px solid var(--line);background:linear-gradient(150deg,rgba(198,167,93,.055),rgba(255,255,255,.012));padding:18px;margin:24px 0 8px}
+.hs-topline{display:flex;justify-content:space-between;gap:12px;color:var(--soft);font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin:0 2px 13px}
+.hs-primary{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.hs-primary button,.hs-secondary button{font:inherit;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
+.hs-primary button{min-height:76px;border:1px solid var(--line);background:#0b0b0a;color:var(--text);padding:10px 5px}
+.hs-primary button b{display:block;color:var(--bright);font-size:22px;line-height:1.1}
+.hs-primary button span{display:block;font-size:12px;letter-spacing:.06em;font-weight:700;margin-top:6px}
+.hs-primary button:hover,.hs-primary button[aria-pressed=true]{background:#19160f;border-color:var(--bright);box-shadow:inset 0 -2px 0 var(--gold)}
+.hs-secondary{display:flex;justify-content:center;flex-wrap:wrap;gap:7px;border-top:1px solid var(--line2);margin-top:12px;padding-top:12px}
+.hs-secondary button{border:1px solid var(--line2);background:transparent;color:var(--muted);font-size:13px;padding:7px 10px}
+.hs-secondary button:hover,.hs-secondary button[aria-pressed=true]{border-color:var(--gold);color:var(--bright);background:rgba(198,167,93,.06)}
+.hs-panel{margin-top:18px}
+.hs-panel-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:0 2px 9px}
+.hs-panel-head h2{font-size:17px;color:var(--bright);margin:0}
+.hs-panel-head span{font-size:12px;color:var(--soft)}
+.hs-nodes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:11px}
+.hs-node{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:58px;border:1px solid var(--line2);background:rgba(255,255,255,.018);padding:10px 13px;color:var(--bright);font-size:15px;font-weight:700}
+.hs-node:after{content:'↗';color:var(--gold);font-size:17px}
+.hs-node:hover{border-color:var(--gold);background:rgba(198,167,93,.05);text-decoration:none}
+.hs-primary button:focus-visible,.hs-secondary button:focus-visible,.hs-node:focus-visible{outline:2px solid var(--bright);outline-offset:3px}
+@media(max-width:650px){.hard-shark{padding:12px}.hs-primary{grid-template-columns:repeat(2,minmax(0,1fr))}.hs-primary button:last-child{grid-column:1/-1}.hs-nodes{grid-template-columns:1fr}.hs-topline{font-size:10px}}
+
 </style>
 <link rel="stylesheet" href="/copyright.css">
 <meta property="og:title" content="The Current IFD Formulation | AIIST Architecture &amp;amp; Subject Index">
@@ -83,7 +107,27 @@ a:focus-visible{outline:2px solid var(--bright);outline-offset:4px}
 
 <div class="notice"><strong>What this formulation does.</strong> AIIST organizes IFD through five interdependent dimensions: ACTION, IDENTITY, INTERACTION, SYNERGY, and TRACE. The sections below open into subject-specific contents and explanatory records. This architecture organizes the inquiry; it does not by itself establish every proposed mechanism.</div>
 
-<nav class="toc" aria-label="Primary contents"><a href="#group-action">A · Action</a><a href="#group-identity">I · Identity</a><a href="#group-interaction">I · Interaction</a><a href="#group-synergy">S · Synergy</a><a href="#group-trace">T · Trace</a><a href="#group-recursive">Recursive Dynamics</a><a href="#group-experience">Experience</a><a href="#group-principles">Integrative Principles</a><a href="#group-research">Research &amp; Evaluation</a></nav>
+<section class="hard-shark" aria-label="HARD SHARK articulated IFD menu">
+<div class="hs-topline"><span>THE IFD HARD SHARK™</span><span>ARTICULATED KNOWLEDGE MENU</span></div>
+<div class="hs-primary" aria-label="AIIST dimensions">
+<button type="button" data-hs-group="group-action" aria-pressed="true"><b>A</b><span>ACTION</span></button>
+<button type="button" data-hs-group="group-identity" aria-pressed="false"><b>I</b><span>IDENTITY</span></button>
+<button type="button" data-hs-group="group-interaction" aria-pressed="false"><b>I</b><span>INTERACTION</span></button>
+<button type="button" data-hs-group="group-synergy" aria-pressed="false"><b>S</b><span>SYNERGY</span></button>
+<button type="button" data-hs-group="group-trace" aria-pressed="false"><b>T</b><span>TRACE</span></button>
+</div>
+<div class="hs-secondary" aria-label="Cross-cutting branches">
+<button type="button" data-hs-group="group-recursive" aria-pressed="false">Recursive Dynamics</button>
+<button type="button" data-hs-group="group-experience" aria-pressed="false">Experience</button>
+<button type="button" data-hs-group="group-continuity" aria-pressed="false">Continuity &amp; Recursion</button>
+<button type="button" data-hs-group="group-principles" aria-pressed="false">Integrative Principles</button>
+<button type="button" data-hs-group="group-research" aria-pressed="false">Research &amp; Evaluation</button>
+</div>
+<div class="hs-panel" aria-live="polite">
+<div class="hs-panel-head"><h2 id="hs-title">A — ACTION</h2><span id="hs-count"></span></div>
+<div class="hs-nodes" id="hs-nodes"></div>
+</div>
+</section>
 
 <section class="section" id="orientation">
 <div class="kicker">01 / Foundational orientation</div>
@@ -305,5 +349,43 @@ a:focus-visible{outline:2px solid var(--bright);outline-offset:4px}
 </div>
 <a class="toplink" href="#top">↑ Return to top</a>
 </main>
+
+<script>
+(function(){
+ const buttons=[...document.querySelectorAll('[data-hs-group]')];
+ const title=document.getElementById('hs-title');
+ const count=document.getElementById('hs-count');
+ const nodes=document.getElementById('hs-nodes');
+ function selectGroup(id){
+  const group=document.getElementById(id);
+  if(!group)return;
+  buttons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.hsGroup===id)));
+  const heading=group.querySelector('.summary-title');
+  title.textContent=heading?heading.textContent.trim():id;
+  const links=[...group.querySelectorAll('.subject-toc a')];
+  count.textContent=links.length+' SUBJECT NODES';
+  nodes.replaceChildren(...links.map(source=>{
+   const link=document.createElement('a');
+   link.className='hs-node';
+   link.href=source.getAttribute('href');
+   link.textContent=source.textContent.trim();
+   link.addEventListener('click',event=>{
+    const href=link.getAttribute('href')||'';
+    if(!href.startsWith('#'))return;
+    const target=document.getElementById(decodeURIComponent(href.slice(1)));
+    if(!target)return;
+    event.preventDefault();
+    group.open=true;
+    target.scrollIntoView({behavior:'smooth',block:'start'});
+    history.replaceState(null,'',href);
+   });
+   return link;
+  }));
+ }
+ buttons.forEach(button=>button.addEventListener('click',()=>selectGroup(button.dataset.hsGroup)));
+ selectGroup('group-action');
+})();
+</script>
+
 </body>
 </html>
