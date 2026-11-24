@@ -462,3 +462,19 @@ Integration audit blob: `4c170f14508db4efff4f8454221b8a4a0fe5c9f7`. The public C
 The central SPARK node and the Generation & Differentiation explanatory page now explicitly identify SPARK / EULER MOMENT as the **complete cycle of the SOURCE FORMULA**, while preserving the four simultaneous creations and the distinction between SOURCE (Creator) and SOURCE FORMULA (generative formulation). Latest read-back blob SHAs:
 - `public/current-ifd-formulation.html`: `5a30a3ebd26ebf5cf1cddf420b99839a33b1a0a9`
 - `public/current-ifd/generation-differentiation.html`: `67a94a15671c164960bba0bc00a7330f76c96dfc`
+
+
+
+## 2026-11-24 — Canonical distinction: THE SALON™ / WRITE CLUB™
+
+The institutional distinction is now canonical.
+
+- **THE SALON™:** Romance, Gambling, and Pontificating. The Salon is the domain of conversation, intrigue, speculation, performance, literary exchange, and intellectual entertainment.
+- **WRITE CLUB™:** Show up. Write. Attendance after the first night requires written contribution.
+- **Rule 8 — First Night / Fair Warning:** “IF IT'S YOUR FIRST NIGHT AT WRITE CLUB™, YOU MUST NOT CONTRIBUTE.” On the first night, the newcomer may OBSERVE or LEAVE. If the person attends on any subsequent night, writing is required—not optional and not dependent on mood, enthusiasm, or whether the event seems fun.
+
+Canonical records:
+- `docs/LE_SALON_CANONICAL_CONCEPT_v1.0.md`
+- `docs/WRITE_CLUB_CANONICAL_CONCEPT_v1.0.md`
+
+The original chronological conversation transcript remains source material and is not rewritten. These records are canonical abstractions and institutional definitions derived from the conversation and the 24 November clarification.
