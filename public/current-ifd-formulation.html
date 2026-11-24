@@ -477,6 +477,7 @@ a:focus-visible{outline:2px solid var(--bright);outline-offset:4px}
  function showPreview(source,button){
   if(button.getAttribute('aria-expanded')==='true'){closePreview();return;}
   closePreview();
+  payloadStack=[];
   button.setAttribute('aria-expanded','true');
   const href=source.getAttribute('href')||'';
   const target=sourceRoot.querySelector('[id="'+CSS.escape(decodeURIComponent(href.slice(1)))+'"]');
@@ -532,7 +533,7 @@ a:focus-visible{outline:2px solid var(--bright);outline-offset:4px}
    }
    const button=document.createElement('button');
    button.type='button';button.className='hs-node';button.textContent=source.textContent.trim();
-   button.addEventListener('click',()=>renderPayload(new URL(href,location.href).href,source.textContent.trim(),false));
+   button.addEventListener('click',()=>{payloadStack=[];renderPayload(new URL(href,location.href).href,source.textContent.trim(),false);});
    return button;
   }));
  }
