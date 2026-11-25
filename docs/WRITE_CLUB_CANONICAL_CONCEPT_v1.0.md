@@ -56,3 +56,8 @@ The chronological conversation transcript remains primary source material. This 
 
 **Source → Interaction → TRACE.**  
 **HARVEST FIRST. ABSTRACT SECOND. CANONIZE LAST.**
+
+
+## Participant manual
+
+The canonical participant-facing operating document is `docs/WRITE_CLUB_PARTICIPANT_MANUAL_v1.0.md` (25 November 2026). The public Cathedral page at `/write-club.html` presents that manual as the current WRITE CLUB™ page. The manual governs participant orientation and conduct; unresolved competition administration and implementation questions remain explicitly open there.
