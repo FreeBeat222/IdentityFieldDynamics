@@ -63,7 +63,7 @@ These are editorial categories, not separate technical systems. They may expand 
 **THE TRACE OF COLLABORATION**  
 *An IFD reflection on the creation of THE HARD SHARK™*
 
-This is the inaugural entry in THE LUNA TRACE™ and the first featured literary work of LE SALON™. Its full text is published on the Salon webpage.
+This is the inaugural entry in THE LUNA TRACE™ and the first featured literary work of LE SALON™. Its full text is published on its own essay page at `public/salon/trace-of-collaboration.html`. The LE SALON™ landing page at `public/salon.html` is the author-indexed table of contents.
 
 ## Motto
 
