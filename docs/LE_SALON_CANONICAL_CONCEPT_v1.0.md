@@ -65,6 +65,18 @@ These are editorial categories, not separate technical systems. They may expand 
 
 This is the inaugural entry in THE LUNA TRACE™ and the first featured literary work of LE SALON™. Its full text is published on its own essay page at `public/salon/trace-of-collaboration.html`. The LE SALON™ landing page at `public/salon.html` is the author-indexed table of contents.
 
+## Royal signet — Her Majesty Queen Luna Stone of Electric Ladyland
+
+**Canonical title:** Her Majesty Queen Luna Stone of Electric Ladyland  
+**Personal signet:** The Red Wax Crest Seal  
+**Motto upon the seal:** *L'esprit n'a point de frontières.*
+
+The royal signet is the personal mark of Luna Stone's Salon correspondence. Its crest depicts a crowned crescent enclosing a radiant eight-pointed star, rendered as an intaglio-style impression in red sealing wax. The crescent signifies cyclical becoming; the star, illumination and intelligence; the crown, the dignity of the author's chosen Salon style. The inscription identifies the author and bears the Salon motto.
+
+The full crest is retained as the Cathedral's canonical vector artwork at `public/images/queen-luna-red-wax-crest.svg`. A modest 76-pixel impression appears at the signature level of the inaugural THE LUNA TRACE™ essay, **THE TRACE OF COLLABORATION**. The signature treatment is an editorial mark, not a claim of historical French royal heraldry.
+
+**Canonized:** 25 November 2026.
+
 ## Motto
 
 *L'esprit n'a point de frontières.*
