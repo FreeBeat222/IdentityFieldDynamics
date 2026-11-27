@@ -87,18 +87,24 @@ assert.ok(artifacts.indexOf("Gallery I · Lunations") < artifacts.indexOf("Galle
 assert.equal((artifacts.match(/class="entry"/g) || []).length, 12, "The catalogue must contain one ordered entry for each of the 12 individual works");
 assert.doesNotMatch(artifacts, /class="artifact-grid"|class="artifact-card"|<img\s/i, "The catalogue must not present the collection as a loose display of artifact cards or thumbnails");
 const serviceMenuPages = ["eliza.html", "happy-shoggoth.html", "write-club.html", "good-times-gallery.html", "salon.html", "lunations.html", "human-artificial-encounter.html", "museum.html", "luna-artifacts.html"];
+const expectedFooterLinks = [
+  ["Copyright © 2026 Rick York", "/copyright"],
+  ["Contact Us", "/contact"],
+  ["Privacy Policy", "/privacy"],
+  ["Terms & Conditions", "/terms"]
+];
 for (const page of serviceMenuPages) {
   const html = read(page);
-  const footer = html.match(/<footer\b[\s\S]*?<\/footer>/i);
-  assert.ok(footer, page + " must contain a footer");
-  assert.match(footer[0], /<footer class="ifd-footer">/, page + " must use the shared footer root");
-  assert.match(footer[0], /<div class="ifd-footer-inner">/, page + " must use the shared footer wrapper");
-  assert.match(footer[0], /Identity Field Dynamics · Research in development\./, page + " must use the shared footer brand");
-  assert.doesNotMatch(footer[0], /\bstyle=/i, page + " must not contain inline footer styles");
-  for (const href of ["/copyright", "/contact", "/privacy", "/terms"]) {
-    assert.ok(html.includes('href="' + href + '"'), page + " must carry the current service-menu link " + href);
-  }
-  assert.equal((html.split('href="/copyright"').length - 1), 1, page + " must contain exactly one copyright service link");
+  const footerMatches = [...html.matchAll(/<footer\\b[\\s\\S]*?<\\/footer>/gi)];
+  assert.equal(footerMatches.length, 1, page + " must contain exactly one footer");
+  const footer = footerMatches[0][0];
+  assert.match(footer, /<footer class="ifd-footer">/, page + " must use the shared footer root");
+  assert.match(footer, /<nav class="ifd-footer-links" aria-label="Footer">/, page + " must use the shared four-link navigation");
+  const links = [...footer.matchAll(/<a\\s+href="([^"]+)"[^>]*>([\\s\\S]*?)<\\/a>/gi)]
+    .map(m => [m[2].replace(/<[^>]*>/g, "").replace(/&amp;/g, "&").replace(/\\s+/g, " ").trim(), m[1]]);
+  assert.deepEqual(links, expectedFooterLinks, page + " must contain only the four canonical links in order");
+  const footerText = footer.replace(/<[^>]*>/g, "").replace(/&amp;/g, "&").replace(/\\s+/g, " ").trim();
+  assert.equal(footerText, expectedFooterLinks.map(x => x[0]).join(" "), page + " footer must contain no additional text");
+  assert.doesNotMatch(footer, /\\bstyle=/i, page + " must not contain inline footer styles");
 }
-
 console.log(JSON.stringify({ result: "PASS", individual_artifact_pages: pages.length, artifact_detail_links: detailLinks.length, lunations_book_pages: 8, original_plates: 5, museum_name: "IFD Museum of Artificial Science", lunations_first_position: "PASS" }, null, 2));
