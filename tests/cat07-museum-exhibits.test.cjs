@@ -29,6 +29,7 @@ for (const page of pages) {
   const html = read(page);
   assert.match(html, /<!doctype html>/i, page + " must be a complete HTML document");
   assert.match(html, /<title>[^<]+<\/title>/i, page + " must have a page title");
+  assert.doesNotMatch(html, /IFD Museum of Artificial History/i, page + " must use the corrected Museum name");
   assert.ok(html.includes('href="/museum.html"') || html.includes('href="/luna-artifacts.html"') || html.includes('href="/emblem.html"') || html.includes('href="/aiist-signet.html"') || html.includes('href="/lunascape.html"') || html.includes('href="/luna-crowned-closeup.html"') || html.includes('href="/luna-tuna-reveal.html"') || html.includes('href="/museum-gateway.html"'),
     page + " must provide a route back to the collection or a related exhibit");
 }
