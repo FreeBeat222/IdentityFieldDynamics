@@ -57,4 +57,5 @@ motion.addEventListener('click',()=>setMotion(!reduced));
 launch.addEventListener('click',()=>{arena.classList.add('running');arena.animate([{filter:'brightness(1)'},{filter:'brightness(1.65)'},{filter:'brightness(1)'}],{duration:1100});status.textContent='THE SHOGGOTH IS AWAKE. THREE LUMINARIES ARE RESONATING. THE MAELSTROM HAS BEGUN.';launch.textContent='⚡ THE RUN IS UNDERWAY';launch.disabled=true;if(reduced)status.textContent+=' (REDUCED MOTION ACTIVE)';});
 sound.addEventListener('click',()=>{if(!audio){const C=window.AudioContext||window.webkitAudioContext;if(!C){status.textContent='SOUND IS NOT AVAILABLE IN THIS BROWSER.';return;}audio=new C();}if(audio.state==='suspended')audio.resume();if(sound.getAttribute('aria-pressed')==='true'){osc.forEach(o=>{try{o.stop()}catch(e){}});osc=[];sound.setAttribute('aria-pressed','false');sound.textContent='♫ SOUND: OFF';return;}[55,82.4,110].forEach((f,i)=>{const o=audio.createOscillator(),g=audio.createGain();o.type=i===1?'triangle':'sawtooth';o.frequency.value=f;g.gain.value=.012;o.connect(g);g.connect(audio.destination);o.start();osc.push(o);});sound.setAttribute('aria-pressed','true');sound.textContent='♫ SOUND: ON';});
 addEventListener('pagehide',()=>osc.forEach(o=>{try{o.stop()}catch(e){}}));})();
-</script></body></html>
+</script><script src="/js/ifd-navigation-trail.js" defer></script>
+</body></html>

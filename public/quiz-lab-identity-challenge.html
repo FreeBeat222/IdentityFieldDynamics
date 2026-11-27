@@ -80,4 +80,5 @@ function reset(){index=0;answers=[];render()}
 $('next').addEventListener('click',()=>{if(answers[index]===undefined)return;if(index<questions.length-1){index++;render()}else finish()});$('restart').addEventListener('click',reset);render();
 })();
 </script>
+<script src="/js/ifd-navigation-trail.js" defer></script>
 </body></html>
