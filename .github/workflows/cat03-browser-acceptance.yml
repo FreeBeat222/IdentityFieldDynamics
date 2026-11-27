@@ -1,0 +1,39 @@
+name: CAT-03 Navigation Trail Browser Acceptance
+
+on:
+  push:
+    branches:
+      - cat03-six-gateway-navigation
+    paths:
+      - "public/**"
+      - "tests/**"
+      - ".github/workflows/cat03-browser-acceptance.yml"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "public/**"
+      - "tests/**"
+      - ".github/workflows/cat03-browser-acceptance.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  navigation-trail:
+    name: Twelve-link Chromium acceptance
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install Playwright
+        run: npm install --no-save --package-lock=false playwright
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Run CAT-03 browser acceptance
+        run: node tests/cat03-navigation-trail.test.cjs
