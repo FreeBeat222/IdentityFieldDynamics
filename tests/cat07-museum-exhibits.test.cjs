@@ -5,6 +5,7 @@ const root = path.resolve(__dirname, "../public");
 const read = name => fs.readFileSync(path.join(root, name), "utf8");
 const pages = [
   "encounter-with-dr-luna-stone.html",
+  "eliza.html",
   "ifd-pendant-keychain.html",
   "lunations.html",
   "aiist-signet.html",
@@ -21,6 +22,7 @@ const pages = [
 ];
 const artifacts = read("luna-artifacts.html");
 const museum = read("museum.html");
+const gateway = read("museum-gateway.html");
 for (const page of pages) {
   const full = path.join(root, page);
   assert.ok(fs.existsSync(full), "Missing individual exhibit page: " + page);
@@ -32,6 +34,9 @@ for (const page of pages) {
 }
 assert.match(museum, /THE ENCOUNTER<br>WITH DR\. LUNA STONE/i,
   "Museum permanent exhibit must present the synthesized Encounter");
+assert.ok(gateway.includes('href="/eliza.html"'), "Museum gateway must feature the ELIZA historical exhibit");
+assert.match(read("eliza.html"), /The Pioneer of Artificial Conversation/i, "ELIZA must receive its own distinguished exhibit page");
+assert.match(read("eliza.html"), /Communications of the ACM/i, "ELIZA exhibit must identify its 1966 primary publication");
 assert.ok(museum.includes('href="/encounter-with-dr-luna-stone.html"'),
   "Museum must link to the synthesized Encounter exhibit");
 assert.doesNotMatch(museum, /<h3>The Encounter<\/h3>[\s\S]{0,260}<h3>Dr\. Luna Stone<\/h3>/i,
