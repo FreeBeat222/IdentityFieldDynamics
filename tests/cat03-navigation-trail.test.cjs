@@ -99,6 +99,33 @@ async function main() {
       "Point of Origin must capture the initial homepage"
     );
 
+    // CAT-12: the Four-Channel Workflow must use the standard four-link footer,
+    // with the shared Navigation Trail immediately above it and no obsolete page-level links.
+    const workflowPage = await browser.newPage({ viewport: { width: 1280, height: 900 } });
+    workflowPage.on("pageerror", error => pageErrors.push(error.message));
+    await workflowPage.goto(base + "/current-ifd/four-channel-workflow.html");
+    await workflowPage.locator("#ifd-navtrail .toggle").waitFor();
+    const workflowStructure = await workflowPage.evaluate(() => {
+      const trail = document.querySelector("#ifd-navtrail");
+      const footer = document.querySelector("footer.ifd-footer");
+      return {
+        trailIsBodyChild: !!(trail && trail.parentElement === document.body),
+        trailImmediatelyBeforeFooter: !!(trail && footer && trail.nextElementSibling === footer),
+        footerOutsideMain: !!(footer && !footer.closest("main")),
+        footerLinks: footer ? Array.from(footer.querySelectorAll(".ifd-footer-links a")).map(a => ({ href: a.getAttribute("href"), text: a.textContent.trim() })) : [],
+        obsoleteBackline: !!document.querySelector(".backline"),
+        obsoletePageFooter: !!document.querySelector(".footer")
+      };
+    });
+    assert.equal(workflowStructure.trailIsBodyChild, true, "Four-Channel Workflow Navigation Trail must be a direct body child");
+    assert.equal(workflowStructure.trailImmediatelyBeforeFooter, true, "Four-Channel Workflow Navigation Trail must immediately precede the service footer");
+    assert.equal(workflowStructure.footerOutsideMain, true, "Four-Channel Workflow service footer must be outside main");
+    assert.deepEqual(workflowStructure.footerLinks.map(link => link.href), ["/copyright", "/contact", "/privacy", "/terms"], "Four-Channel Workflow footer must contain exactly the four standard service links in canonical order");
+    assert.deepEqual(workflowStructure.footerLinks.map(link => link.text), ["Copyright © 2026 Rick York", "Contact Us", "Privacy Policy", "Terms & Conditions"]);
+    assert.equal(workflowStructure.obsoleteBackline, false, "Obsolete return-to-formulation backline must be removed");
+    assert.equal(workflowStructure.obsoletePageFooter, false, "Obsolete page-specific footer must be removed");
+    await workflowPage.close();
+
     for (const href of steps) {
       const link = page.locator('a[href="' + href + '"]').first();
       await link.waitFor({ state: "visible" });
