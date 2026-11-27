@@ -87,7 +87,11 @@ async function main() {
         precedesFooter: !!(footer && trail && (trail.compareDocumentPosition(footer) & Node.DOCUMENT_POSITION_FOLLOWING)),
         isImmediatelyBeforeFooter: !!(footer && trail && trail.nextElementSibling === footer),
         position: trail ? getComputedStyle(trail).position : null,
-        separatedByBorder: trail ? getComputedStyle(trail).borderTopWidth === "1px" : false,
+        borderTopWidth: trail ? getComputedStyle(trail).borderTopWidth : null,
+        backgroundImage: trail ? getComputedStyle(trail).backgroundImage : null,
+        trailWidth: trail ? Math.round(trail.getBoundingClientRect().width) : 0,
+        toggleIcon: trail ? trail.querySelector(".toggle [aria-hidden=\"true\"]")?.textContent : "",
+        toggleLabel: trail ? trail.querySelector(".toggle span:nth-child(2)")?.textContent : "",
         topMargin: trail ? parseFloat(getComputedStyle(trail).marginTop) : 0,
         footerWidth: footer ? Math.round(footer.getBoundingClientRect().width) : 0,
         menuWidth: footer ? Math.round(footer.querySelector(".ifd-footer-links").getBoundingClientRect().width) : 0
@@ -97,8 +101,12 @@ async function main() {
     assert.equal(trailPlacement.precedesFooter, true, "Navigation Trail must appear above the footer");
     assert.equal(trailPlacement.isImmediatelyBeforeFooter, true, "Navigation Trail must be a distinct body element immediately before the footer");
     assert.equal(trailPlacement.position, "relative", "Navigation Trail must remain in normal document flow");
-    assert.equal(trailPlacement.separatedByBorder, true, "Navigation Trail must have a visible separating top rule");
-    assert.equal(trailPlacement.topMargin, 22, "Navigation Trail must have visible separation from preceding page content");
+    assert.equal(trailPlacement.borderTopWidth, "0px", "Navigation Trail must not render a full-width separating rule");
+    assert.equal(trailPlacement.backgroundImage, "none", "Navigation Trail must not render a background strip or glow");
+    assert.ok(trailPlacement.trailWidth < 260, "Navigation Trail must occupy only the compact control width");
+    assert.equal(trailPlacement.toggleIcon, "⌖", "Navigation Trail must use the designated navigation glyph");
+    assert.ok(trailPlacement.toggleLabel.startsWith("NAV TRAIL · "), "Navigation Trail must have an explicit label and visit count");
+    assert.equal(trailPlacement.topMargin, 22, "Navigation Trail must retain visible separation from preceding page content");
     assert.ok(trailPlacement.footerWidth > 0, "Homepage footer must be present");
     assert.ok(trailPlacement.menuWidth < trailPlacement.footerWidth * 0.8, "Footer links must form a compact menu rather than stretch across the page");
     await page.locator(".ifd-footer-links a").first().hover();

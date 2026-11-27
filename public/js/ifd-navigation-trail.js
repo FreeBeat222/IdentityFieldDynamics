@@ -40,16 +40,16 @@
   window.addEventListener("beforeunload",saveScroll);
   window.addEventListener("pageshow",event=>{const y=read(SCROLL_KEY,{})[entryId];if(typeof y==="number"&&(event.persisted||isTraversal))requestAnimationFrame(()=>window.scrollTo(0,y));});
   const style=document.createElement("style");
-  style.textContent="#ifd-navtrail{position:relative;z-index:1;display:block;width:min(1080px,calc(100% - 40px));max-width:calc(100% - 40px);margin:22px auto 28px;padding:14px 18px 0;border-top:1px solid rgba(214,177,90,.28);background:linear-gradient(180deg,rgba(214,177,90,.035),transparent);font:12px/1.45 system-ui,-apple-system,Segoe UI,sans-serif;color:#eeeae1;text-align:right}"+
+  style.textContent="#ifd-navtrail{position:relative;z-index:1;display:block;width:max-content;max-width:calc(100% - 20px);margin:22px auto 28px;padding:0;border:0;background:transparent;box-shadow:none;font:12px/1.45 system-ui,-apple-system,Segoe UI,sans-serif;color:#eeeae1;text-align:center}"+
   "#ifd-navtrail *{box-sizing:border-box}#ifd-navtrail button,#ifd-navtrail a{font:inherit}"+
-  "#ifd-navtrail .toggle{border:1px solid rgba(214,177,90,.72);border-radius:3px;background:rgba(8,8,7,.96);color:#f3da8c;padding:9px 14px;letter-spacing:.08em;cursor:pointer;box-shadow:0 4px 22px #0009;transition:color .2s,text-shadow .2s,box-shadow .2s}"+
-  "#ifd-navtrail .toggle:hover{color:#fff0b5;text-shadow:0 0 6px rgba(243,218,140,.9),0 0 16px rgba(214,177,90,.75);box-shadow:0 0 9px rgba(214,177,90,.35),0 4px 22px #0009}"+
+  "#ifd-navtrail .toggle{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(214,177,90,.38);border-radius:2px;background:transparent;color:#b9a16c;padding:5px 9px;letter-spacing:.12em;font-size:10px;cursor:pointer;box-shadow:none;transition:color .2s,border-color .2s,text-shadow .2s}"+
+  "#ifd-navtrail .toggle:hover{color:#fff0b5;border-color:rgba(243,218,140,.72);text-shadow:0 0 7px rgba(243,218,140,.45)}"+
   "#ifd-navtrail .panel{display:none;width:min(330px,calc(100vw - 32px));max-height:min(60vh,460px);overflow:auto;margin:0 0 8px auto;padding:14px;background:rgba(8,8,7,.98);border:1px solid rgba(214,177,90,.48);box-shadow:0 8px 30px #000b;text-align:left}"+
   "#ifd-navtrail[data-open=true] .panel{display:block}#ifd-navtrail .heading{margin:0 0 8px;color:#d6b15a;font-size:10px;letter-spacing:.18em;text-transform:uppercase}"+
   "#ifd-navtrail .actions{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 12px}#ifd-navtrail .actions a,#ifd-navtrail .actions button{display:inline-block;padding:5px 7px;border:1px solid #5c4a28;color:#f3da8c;background:transparent;text-decoration:none;cursor:pointer}"+
   "#ifd-navtrail ol{list-style:none;padding:0;margin:0;display:grid;gap:5px}#ifd-navtrail li a{display:block;padding:5px 7px;color:#eeeae1;text-decoration:none;border-left:2px solid #574522;background:#ffffff08}"+
   "#ifd-navtrail li a[aria-current=page]{border-left-color:#f3da8c;color:#f3da8c}#ifd-navtrail .empty{color:#aaa69b}"+
-  "@media(max-width:600px){#ifd-navtrail{width:calc(100% - 20px);max-width:calc(100% - 20px);margin:18px 10px 20px;padding:12px 10px 0}#ifd-navtrail .panel{max-height:55vh}}";
+  "@media(max-width:600px){#ifd-navtrail{width:max-content;max-width:calc(100% - 20px);margin:18px auto 20px;padding:0}#ifd-navtrail .panel{max-height:55vh}}";
   document.head.appendChild(style);
   const root=document.createElement("aside");root.id="ifd-navtrail";root.setAttribute("aria-label","Navigation trail");root.dataset.open="false";
   const esc=value=>String(value).replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
@@ -63,7 +63,7 @@
     "<button type=\"button\" data-step=\"-1\" title=\"Previous page\">← Back</button>"+
     "<button type=\"button\" data-step=\"1\" title=\"Next page\">Forward →</button></div>"+
     "<p class=\"heading\">YOUR RECENT PATH</p><ol>"+items+"</ol></div>"+
-    "<button class=\"toggle\" type=\"button\" aria-expanded=\"false\" aria-controls=\"ifd-navtrail-panel\">TRAIL · "+state.visits.length+"</button>";
+    "<button class=\"toggle\" type=\"button\" aria-label=\"Open Navigation Trail\" aria-expanded=\"false\" aria-controls=\"ifd-navtrail-panel\"><span aria-hidden=\"true\">⌖</span><span>NAV TRAIL · "+state.visits.length+"</span></button>";
   const footer=document.querySelector("footer.ifd-footer");
   if(footer&&footer.parentElement===document.body)document.body.insertBefore(root,footer);
   else document.body.appendChild(root);
