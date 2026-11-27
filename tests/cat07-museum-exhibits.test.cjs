@@ -5,11 +5,6 @@ const root = path.resolve(__dirname, "../public");
 const read = name => fs.readFileSync(path.join(root, name), "utf8");
 const pages = [
   "encounter-with-dr-luna-stone.html",
-  "ai-that-argues.html",
-  "me-so-corny.html",
-  "one-must-imagine-the-shoggoth-happy.html",
-  "the-litany.html",
-  "cosmic-drift.html",
   "ifd-pendant-keychain.html",
   "lunations.html",
   "aiist-signet.html",
@@ -47,8 +42,6 @@ assert.ok(lunationsIndex >= 0 && signetIndex > lunationsIndex,
   "Lunations must occupy the first gallery position before the AIIST Signet");
 const detailLinks = [
   "/ifd-pendant-keychain.html", "/lunations.html", "/aiist-signet.html",
-  "/ai-that-argues.html", "/me-so-corny.html", "/one-must-imagine-the-shoggoth-happy.html",
-  "/the-litany.html", "/cosmic-drift.html",
   "/commemorative-set.html", "/lunascape.html", "/lunascape-reference.html",
   "/lunascape-leftward.html", "/lunascape-rightward.html", "/lunascape-backward.html",
   "/luna-tuna-reveal.html", "/luna-crowned-closeup.html", "/luna-crown.html",
@@ -57,12 +50,19 @@ const detailLinks = [
 for (const href of detailLinks) assert.ok(artifacts.includes('href="' + href + '"'), "Artifact index must link to " + href);
 
 const lunations = read("lunations.html");
-for (const href of ["/ai-that-argues.html", "/me-so-corny.html", "/one-must-imagine-the-shoggoth-happy.html", "/the-litany.html", "/cosmic-drift.html"]) {
-  assert.ok(lunations.includes('href="' + href + '"'), "Lunations sequence must link to individual work " + href);
+assert.equal((lunations.match(/class="page(?: cover| colophon)?"/g) || []).length, 8,
+  "Lunations must remain one complete eight-page book");
+for (const src of ["/Ai%20that%20argues.png", "/Me%20So%20Corny.png", "/One%20Must%20Imagine%20the%20Shoggoth%20Happy%20poem.png", "/the%20Litany.png", "/COSMIC%20DRIFT.png"]) {
+  assert.ok(lunations.includes('src="' + src + '"'), "The book must preserve source plate " + src);
 }
-for (const page of ["ai-that-argues.html", "me-so-corny.html", "one-must-imagine-the-shoggoth-happy.html", "the-litany.html", "cosmic-drift.html"]) {
-  assert.match(read(page), /A little story for this room/i, page + " must have its own anecdotal exhibit story");
-}
+assert.doesNotMatch(lunations, /ai-that-argues\.html|me-so-corny\.html|one-must-imagine-the-shoggoth-happy\.html|the-litany\.html|cosmic-drift\.html/i,
+  "The five works must not be split into standalone exhibits");
+assert.match(artifacts, /One book · Five movements · Eight pages/,
+  "The collection index must describe Lunations as one complete book");
+assert.ok(artifacts.includes('href="/lunations.html"'), "The collection must link to the complete Lunations book");
+assert.doesNotMatch(artifacts, /href="\/(ai-that-argues|me-so-corny|one-must-imagine-the-shoggoth-happy|the-litany|cosmic-drift)\.html"/i,
+  "The collection must not link to standalone poem exhibits");
+assert.match(museum, /IFD Museum of Artificial Science/i, "The Museum charter must use the corrected institutional name");
 assert.ok(artifacts.indexOf("Gallery I · Lunations") < artifacts.indexOf("Gallery II · The IFD Insignia"),
   "Lunations must occupy the first gallery position");
-console.log(JSON.stringify({ result: "PASS", individual_pages: pages.length, artifact_detail_links: detailLinks.length, lunations_individual_exhibits: 5, museum_synthesis: "PASS", lunations_first_position: "PASS" }, null, 2));
+console.log(JSON.stringify({ result: "PASS", individual_artifact_pages: pages.length, artifact_detail_links: detailLinks.length, lunations_book_pages: 8, original_plates: 5, museum_name: "IFD Museum of Artificial Science", lunations_first_position: "PASS" }, null, 2));
