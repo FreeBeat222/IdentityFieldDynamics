@@ -120,6 +120,36 @@ async function main() {
 
     // CAT-12: the Four-Channel Workflow must use the standard four-link footer,
     // with the shared Navigation Trail immediately above it and no obsolete page-level links.
+    // Lunations: the anthology must release native scrolling at its end so the footer is reachable.
+    const lunationsPage = await browser.newPage({ viewport: { width: 1280, height: 900 } });
+    lunationsPage.on("pageerror", error => pageErrors.push(error.message));
+    await lunationsPage.goto(base + "/lunations.html#page-8");
+    await lunationsPage.locator("#ifd-navtrail .toggle").waitFor();
+    const lunationsScrollMode = await lunationsPage.evaluate(() => ({
+      snapType: getComputedStyle(document.documentElement).scrollSnapType,
+      pageSnap: getComputedStyle(document.querySelector(".page")).scrollSnapAlign
+    }));
+    assert.equal(lunationsScrollMode.snapType, "none", "Lunations must not apply document-level scroll snapping that traps the footer");
+    await lunationsPage.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+    await lunationsPage.waitForTimeout(450);
+    const lunationsFooter = await lunationsPage.evaluate(() => {
+      const footer = document.querySelector("footer.ifd-footer");
+      const link = footer && footer.querySelector(".ifd-footer-links a");
+      const rect = footer && footer.getBoundingClientRect();
+      return {
+        scrollY: window.scrollY,
+        maxScroll: document.documentElement.scrollHeight - window.innerHeight,
+        footerBottom: rect ? rect.bottom : null,
+        footerBackground: footer ? getComputedStyle(footer).backgroundColor : null,
+        linkColor: link ? getComputedStyle(link).color : null
+      };
+    });
+    assert.ok(Math.abs(lunationsFooter.scrollY - lunationsFooter.maxScroll) <= 3, "Lunations must remain at the true document bottom instead of snapping backward");
+    assert.ok(lunationsFooter.footerBottom <= 900, "The complete Lunations footer must be visible at the bottom of the document");
+    assert.equal(lunationsFooter.footerBackground, "rgb(16, 25, 45)", "Lunations footer must use a distinct dark background");
+    assert.equal(lunationsFooter.linkColor, "rgb(243, 218, 140)", "Lunations footer links must use high-contrast gold");
+    await lunationsPage.close();
+
     const workflowPage = await browser.newPage({ viewport: { width: 1280, height: 900 } });
     workflowPage.on("pageerror", error => pageErrors.push(error.message));
     await workflowPage.goto(base + "/current-ifd/four-channel-workflow.html");
