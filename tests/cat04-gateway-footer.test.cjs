@@ -9,7 +9,8 @@ const gateways = [
   "library-gateway.html",
   "museum-gateway.html",
   "experience-gateway.html",
-  "participate-gateway.html"
+  "participate-gateway.html",
+  "luna-crown.html"
 ];
 const requiredLinks = [
   ["Copyright © 2026 Rick York", "/copyright"],
