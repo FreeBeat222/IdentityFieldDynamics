@@ -106,13 +106,13 @@ async function main() {
     await page.waitForTimeout(100);
     const savedScroll = await page.evaluate(() => window.scrollY);
     assert.ok(savedScroll > 100, "Scroll test page must be tall enough to scroll");
-    await page.locator('a[href="/salon.html"]').first().click();
+    await page.locator('a[href="/salon.html"]').first().evaluate(element => element.click());
     await page.waitForURL(url => url.pathname === "/salon.html");
     await page.goBack();
     await page.waitForURL(url => url.pathname === "/museum.html");
     await page.waitForTimeout(250);
     const restoredScroll = await page.evaluate(() => window.scrollY);
-    assert.ok(Math.abs(restoredScroll - savedScroll) <= 3, "Back navigation should restore the prior scroll position");
+    assert.ok(Math.abs(restoredScroll - savedScroll) <= 3, "Back navigation should restore the prior scroll position (saved " + savedScroll + ", restored " + restoredScroll + ")");
 
     await ensurePanelOpen();
     await page.locator('#ifd-navtrail a[title="Return to the first page in this tab"]').click();
