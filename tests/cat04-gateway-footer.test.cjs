@@ -10,7 +10,9 @@ const gateways = [
   "museum-gateway.html",
   "experience-gateway.html",
   "participate-gateway.html",
-  "luna-crown.html"
+  "luna-crown.html",
+  "homepage-cathedral.html",
+  "current-ifd-formulation.html"
 ];
 const requiredLinks = [
   ["Copyright © 2026 Rick York", "/copyright"],
