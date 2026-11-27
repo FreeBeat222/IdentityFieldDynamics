@@ -125,15 +125,11 @@ document.getElementById('edit').onclick=()=>show(6);
 document.getElementById('submit').onclick=async()=>{capture();const btn=document.getElementById('submit'),err=document.getElementById('submitError');btn.disabled=true;err.textContent='';try{const r=await fetch('/api/research-intake',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(state)});const d=await r.json();if(!r.ok)throw new Error(d.error||'Submission failed.');document.getElementById('app').style.display='none';document.getElementById('success').style.display='block';document.getElementById('success').textContent='Submission received · Research Intake '+d.intakeId+'. Your intake has been received by the IFD research system. Keep this identifier if you refer to the submission later.'}catch(e){err.textContent=e.message;btn.disabled=false}};
 </script>
 <footer class="ifd-footer">
-<div class="ifd-footer-inner">
-<div class="ifd-footer-brand">Identity Field Dynamics · Research in development.</div>
-<table role="presentation" aria-label="Footer utilities" border="0" cellpadding="0" cellspacing="0">
-<tbody><tr>
-<td><a href="/copyright">Copyright © 2026 Rick York</a></td>
-<td><a href="/contact">Contact Us</a></td>
-<td><a href="/privacy">Privacy Policy</a></td>
-<td><a href="/terms">Terms &amp; Conditions</a></td>
-</tr></tbody></table>
-</div>
+<nav class="ifd-footer-links" aria-label="Footer">
+<a href="/copyright">Copyright © 2026 Rick York</a>
+<a href="/contact">Contact Us</a>
+<a href="/privacy">Privacy Policy</a>
+<a href="/terms">Terms &amp; Conditions</a>
+</nav>
 </footer><script src="/js/ifd-navigation-trail.js" defer></script>
 </body></html>

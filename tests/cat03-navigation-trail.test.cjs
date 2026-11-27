@@ -68,6 +68,22 @@ async function main() {
   try {
     await page.goto(base + "/");
     await page.locator("#ifd-navtrail .toggle").waitFor();
+    const trailPlacement = await page.evaluate(() => {
+      const footer = document.querySelector("footer.ifd-footer");
+      const trail = document.querySelector("#ifd-navtrail");
+      return {
+        isBodyChild: trail && trail.parentElement === document.body,
+        followsFooter: !!(footer && trail && (footer.compareDocumentPosition(trail) & Node.DOCUMENT_POSITION_FOLLOWING)),
+        isLastBodyElement: !!(trail && trail === document.body.lastElementChild),
+        position: trail ? getComputedStyle(trail).position : null
+      };
+    });
+    assert.deepEqual(trailPlacement, {
+      isBodyChild: true,
+      followsFooter: true,
+      isLastBodyElement: true,
+      position: "relative"
+    }, "Navigation Trail must be a normal-flow body element after the footer, never inside or overlaid on it");
     assert.equal(
       await page.locator('#ifd-navtrail a[title="Return to the first page in this tab"]').getAttribute("href"),
       "/",

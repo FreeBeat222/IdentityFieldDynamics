@@ -40,7 +40,7 @@
   window.addEventListener("beforeunload",saveScroll);
   window.addEventListener("pageshow",event=>{const y=read(SCROLL_KEY,{})[entryId];if(typeof y==="number"&&(event.persisted||isTraversal))requestAnimationFrame(()=>window.scrollTo(0,y));});
   const style=document.createElement("style");
-  style.textContent="#ifd-navtrail{position:fixed;z-index:9998;right:18px;bottom:16px;font:12px/1.45 system-ui,-apple-system,Segoe UI,sans-serif;color:#eeeae1}"+
+  style.textContent="#ifd-navtrail{position:relative;z-index:1;display:block;width:max-content;max-width:calc(100% - 36px);margin:0 18px 16px auto;font:12px/1.45 system-ui,-apple-system,Segoe UI,sans-serif;color:#eeeae1}"+
   "#ifd-navtrail *{box-sizing:border-box}#ifd-navtrail button,#ifd-navtrail a{font:inherit}"+
   "#ifd-navtrail .toggle{border:1px solid rgba(214,177,90,.72);border-radius:3px;background:rgba(8,8,7,.96);color:#f3da8c;padding:9px 12px;letter-spacing:.08em;cursor:pointer;box-shadow:0 4px 22px #0009}"+
   "#ifd-navtrail .panel{display:none;width:min(330px,calc(100vw - 32px));max-height:min(60vh,460px);overflow:auto;margin-bottom:8px;padding:14px;background:rgba(8,8,7,.98);border:1px solid rgba(214,177,90,.48);box-shadow:0 8px 30px #000b}"+
@@ -48,7 +48,7 @@
   "#ifd-navtrail .actions{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 12px}#ifd-navtrail .actions a,#ifd-navtrail .actions button{display:inline-block;padding:5px 7px;border:1px solid #5c4a28;color:#f3da8c;background:transparent;text-decoration:none;cursor:pointer}"+
   "#ifd-navtrail ol{list-style:none;padding:0;margin:0;display:grid;gap:5px}#ifd-navtrail li a{display:block;padding:5px 7px;color:#eeeae1;text-decoration:none;border-left:2px solid #574522;background:#ffffff08}"+
   "#ifd-navtrail li a[aria-current=page]{border-left-color:#f3da8c;color:#f3da8c}#ifd-navtrail .empty{color:#aaa69b}"+
-  "@media(max-width:600px){#ifd-navtrail{right:10px;bottom:10px}#ifd-navtrail .panel{max-height:55vh}}";
+  "@media(max-width:600px){#ifd-navtrail{max-width:calc(100% - 20px);margin:0 10px 10px auto}#ifd-navtrail .panel{max-height:55vh}}";
   document.head.appendChild(style);
   const root=document.createElement("aside");root.id="ifd-navtrail";root.setAttribute("aria-label","Navigation trail");root.dataset.open="false";
   const esc=value=>String(value).replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));

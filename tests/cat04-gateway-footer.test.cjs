@@ -3,85 +3,51 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const root = path.resolve(__dirname, "../public");
-const gateways = [
-  "understand.html",
-  "research-gateway.html",
-  "library-gateway.html",
-  "museum-gateway.html",
-  "experience-gateway.html",
-  "participate-gateway.html",
-  "luna-crown.html",
-  "homepage-cathedral.html",
-  "current-ifd-formulation.html",
-  "tools.html",
-  "quiz-lab.html",
-  "research-deep.html",
-  "structure-dynamics-identity.html",
-  "terms.html",
-  "privacy.html",
-  "copyright.html",
-  "research-intake.html"
-];
-const requiredLinks = [
+const pages = fs.readdirSync(root).filter(name => name.endsWith(".html")).sort();
+const expected = [
   ["Copyright © 2026 Rick York", "/copyright"],
   ["Contact Us", "/contact"],
   ["Privacy Policy", "/privacy"],
-  ["Terms &amp; Conditions", "/terms"]
+  ["Terms & Conditions", "/terms"]
 ];
 const sharedCss = fs.readFileSync(path.join(root, "copyright.css"), "utf8");
 
-assert.match(sharedCss, /\.ifd-footer-brand\s*\{[^}]*color:\s*#d6b15a/i,
-  "Shared CSS must define the Cathedral-gold footer brand label");
-assert.match(sharedCss, /\.ifd-footer\s*\{[^}]*font-family:\s*Aptos,\s*"Segoe UI",\s*sans-serif/is,
-  "Shared CSS must own the footer typography");
+assert.match(sharedCss, /\.ifd-footer-links\s*\{[\s\S]*?display:\s*flex[\s\S]*?flex-wrap:\s*wrap[\s\S]*?justify-content:\s*center/i,
+  "Shared footer must center its four links and wrap on narrow screens");
+assert.match(sharedCss, /\.ifd-footer-links a:focus-visible\s*\{[\s\S]*?outline:\s*2px/i,
+  "Footer links must retain visible keyboard focus");
+assert.doesNotMatch(sharedCss, /\.ifd-footer-brand\s*\{|\.ifd-footer table/i,
+  "Shared footer CSS must not retain the former brand label or table layout");
 
-assert.match(sharedCss, /\.ifd-footer table\s*\{/is,
-  "Shared CSS must define the footer table");
-assert.match(sharedCss, /width:\s*auto[\s\S]*?margin:\s*14px auto 0/is,
-  "Footer utility table must be centered as a group");
-assert.match(sharedCss, /text-align:\s*center/is,
-  "Footer cells must center their contents");
-assert.match(sharedCss, /\.ifd-footer table,\s*\.ifd-footer table tr,\s*\.ifd-footer table td\s*\{[^}]*border:\s*0/is,
-  "Footer table, row, and cells must have invisible borders");
+function inspectFooter(html, filename) {
+  const matches = [...html.matchAll(/<footer\b[^>]*>([\s\S]*?)<\/footer>/gi)];
+  assert.equal(matches.length, 1, filename + " must contain exactly one footer");
+  assert.match(matches[0][0], /<footer class="ifd-footer">/i,
+    filename + " must use the shared footer component");
+  const inner = matches[0][1];
+  const links = [...inner.matchAll(/<a\s+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi)]
+    .map(m => [m[2].replace(/<[^>]*>/g, "").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim(), m[1]]);
+  assert.deepEqual(links, expected, filename + " must contain only the four canonical links in order");
+  const text = inner.replace(/<[^>]*>/g, "").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim();
+  assert.equal(text, expected.map(x => x[0]).join(" "), filename + " footer must contain no additional text");
+}
 
-for (const filename of gateways) {
+for (const filename of pages) {
   const html = fs.readFileSync(path.join(root, filename), "utf8");
+  inspectFooter(html, filename);
   assert.ok(html.includes('<link rel="stylesheet" href="/copyright.css">'),
     filename + " must load the shared footer stylesheet");
-  assert.match(html, /<footer class="ifd-footer">/,
-    filename + " must use the shared footer class without inline style attributes");
-  assert.match(html, /<div class="ifd-footer-inner">/,
-    filename + " must use the shared footer inner wrapper");
-  assert.match(html, /<div class="ifd-footer-brand">Identity Field Dynamics · Research in development\.<\/div>/,
-    filename + " must use the shared footer brand style");
-  assert.doesNotMatch(html, /<footer\b[^>]*\bstyle=/i,
-    filename + " must not override the shared footer stylesheet inline");
-  assert.doesNotMatch(html, /<div class="ifd-footer-inner"[^>]*\bstyle=/i,
-    filename + " must not override the shared inner-wrapper stylesheet inline");
-  assert.doesNotMatch(html, /<table\b[^>]*\bstyle=/i,
-    filename + " must not override the shared footer-table stylesheet inline");
-  assert.match(html, /<table\b(?=[^>]*role="presentation")(?=[^>]*border="0")/i,
-    filename + " must use a borderless footer table");
-  assert.match(html, /<tr>\s*<td[\s\S]*?<td[\s\S]*?<td[\s\S]*?<td[\s\S]*?<\/tr>/i,
-    filename + " must contain one footer row with four columns");
-  assert.ok(html.indexOf(">Copyright © 2026 Rick York</a>") < html.indexOf(">Contact Us</a>") &&
-    html.indexOf(">Contact Us</a>") < html.indexOf(">Privacy Policy</a>") &&
-    html.indexOf(">Privacy Policy</a>") < html.indexOf(">Terms &amp; Conditions</a>"),
-    filename + " must preserve the requested footer order");
-  assert.doesNotMatch(html, /class="ifd-copyright"/,
-    filename + " must not center copyright in the old standalone copyright block");
-  for (const [label, href] of requiredLinks) {
-    assert.ok(html.includes('href="' + href + '"'),
-      filename + " must include link target " + href);
-    assert.ok(html.includes(">" + label + "</a>"),
-      filename + " must include label " + label);
-  }
 }
 
 const serverSource = fs.readFileSync(path.resolve(__dirname, "../server.js"), "utf8");
-assert.match(serverSource, /<footer class="ifd-footer">[\s\S]*?<a href="\/terms">Terms &amp; Conditions<\/a>/,
-  "Dynamic deepPage template must use the shared four-link service footer");
-assert.doesNotMatch(serverSource, /<footer><div style="width:min\(900px/,
-  "Dynamic deepPage template must not retain its reduced legacy footer");
+const template = serverSource.match(/const deepPage = [\s\S]*?;\n\napp\.post/);
+assert.ok(template, "Dynamic deepPage template must remain present");
+inspectFooter(template[0], "server.js deepPage template");
 
-console.log(JSON.stringify({ result: "PASS", gateways_checked: gateways.length, utilities_per_gateway: requiredLinks.length, gold: "#d6b15a" }, null, 2));
+console.log(JSON.stringify({
+  result: "PASS",
+  static_pages_checked: pages.length,
+  links_per_footer: expected.length,
+  responsive: true,
+  dynamic_template: "PASS"
+}, null, 2));
