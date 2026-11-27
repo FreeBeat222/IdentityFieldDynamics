@@ -12,7 +12,15 @@ const gateways = [
   "participate-gateway.html",
   "luna-crown.html",
   "homepage-cathedral.html",
-  "current-ifd-formulation.html"
+  "current-ifd-formulation.html",
+  "tools.html",
+  "quiz-lab.html",
+  "research-deep.html",
+  "structure-dynamics-identity.html",
+  "terms.html",
+  "privacy.html",
+  "copyright.html",
+  "research-intake.html"
 ];
 const requiredLinks = [
   ["Copyright © 2026 Rick York", "/copyright"],
