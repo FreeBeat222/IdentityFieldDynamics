@@ -165,6 +165,35 @@ async function main() {
     await page.keyboard.press("Escape");
     assert.equal(await page.locator("#ifd-navtrail").getAttribute("data-open"), "false", "Escape should close the trail panel");
 
+    // Structural acceptance across every public HTML page that loads the shared Trail.
+    const auditPage = await browser.newPage({ viewport: { width: 1280, height: 900 } });
+    auditPage.on("pageerror", error => pageErrors.push(error.message));
+    const htmlFiles = (await fs.readdir(publicRoot)).filter(name => name.endsWith(".html"));
+    const auditedPages = [];
+    const placementFailures = [];
+    for (const name of htmlFiles) {
+      const source = await fs.readFile(path.join(publicRoot, name), "utf8");
+      if (!source.includes("/js/ifd-navigation-trail.js")) continue;
+      await auditPage.goto(base + "/" + name);
+      await auditPage.locator("#ifd-navtrail .toggle").waitFor();
+      const placement = await auditPage.evaluate(() => {
+        const trail = document.querySelector("#ifd-navtrail");
+        const footer = document.querySelector("footer.ifd-footer");
+        return {
+          hasFooter: !!footer,
+          directBodyChild: !!(trail && trail.parentElement === document.body),
+          immediatelyBeforeFooter: !!(trail && footer && trail.nextElementSibling === footer),
+          footerInsideMain: !!(footer && footer.closest("main"))
+        };
+      });
+      if (!placement.hasFooter || !placement.directBodyChild || !placement.immediatelyBeforeFooter || placement.footerInsideMain) {
+        placementFailures.push({ page: name, ...placement });
+      }
+      auditedPages.push(name);
+    }
+    await auditPage.close();
+
+    assert.deepEqual(placementFailures, [], "Navigation Trail structural acceptance failures: " + JSON.stringify(placementFailures));
     assert.deepEqual(pageErrors, [], "No uncaught browser errors should occur");
     console.log(JSON.stringify({
       result: "PASS",
@@ -178,7 +207,9 @@ async function main() {
       return_to_category: "PASS",
       mobile_viewport: "PASS",
       escape_to_close: "PASS",
-      browser_errors: pageErrors.length
+      browser_errors: pageErrors.length,
+      audited_pages: auditedPages.length,
+      audited_page_list: auditedPages
     }, null, 2));
   } finally {
     await browser.close();
