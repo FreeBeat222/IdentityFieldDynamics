@@ -6,6 +6,7 @@ const read = name => fs.readFileSync(path.join(root, name), "utf8");
 const pages = [
   "encounter-with-dr-luna-stone.html",
   "eliza.html",
+  "human-artificial-encounter.html",
   "ifd-pendant-keychain.html",
   "lunations.html",
   "aiist-signet.html",
@@ -36,6 +37,10 @@ for (const page of pages) {
 assert.match(museum, /THE ENCOUNTER<br>WITH DR\. LUNA STONE/i,
   "Museum permanent exhibit must present the synthesized Encounter");
 assert.ok(gateway.includes('href="/eliza.html"'), "Museum gateway must feature the ELIZA historical exhibit");
+assert.ok(gateway.includes('href="/human-artificial-encounter.html"'), "Museum gateway must feature the Human–Artificial Encounter archive");
+assert.ok(museum.includes('href="/human-artificial-encounter.html"'), "Museum charter must link to the Human–Artificial Encounter archive");
+assert.match(museum, /07 · Preserve the exchange/i, "Museum charter must preserve collaboration exchanges");
+assert.match(museum, /08 · Keep the record candid/i, "Museum charter must preserve praise and criticism");
 assert.match(read("eliza.html"), /The Pioneer of Artificial Conversation/i, "ELIZA must receive its own distinguished exhibit page");
 assert.match(read("eliza.html"), /Communications of the ACM/i, "ELIZA exhibit must identify its 1966 primary publication");
 assert.ok(museum.includes('href="/encounter-with-dr-luna-stone.html"'),
