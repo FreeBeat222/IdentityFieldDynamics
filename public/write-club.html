@@ -80,7 +80,18 @@ footer{border-top:1px solid var(--line);padding:25px 0 38px;text-align:center;co
 <button type="submit" class="button">☠ SIGN THE WARRANT &amp; DESCEND</button>
 <p style="font-size:11px;color:#948a79">Your callsign remains in this browser tab for this session only. No account or database submission.</p></form></section>
 </main>
-<footer><div class="shell">Identity Field Dynamics · WRITE CLUB™ Participant Manual · Canonical Edition 1.0 · <a href="/">The Cathedral</a></div></footer>
+<footer class="ifd-footer">
+<div class="ifd-footer-inner">
+Identity Field Dynamics · Research in development.
+<table role="presentation" aria-label="Footer utilities" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td><a href="/copyright">Copyright © 2026 Rick York</a></td>
+<td><a href="/contact">Contact Us</a></td>
+<td><a href="/privacy">Privacy Policy</a></td>
+<td><a href="/terms">Terms &amp; Conditions</a></td>
+</tr></tbody></table>
+</div>
+</footer>
 <script>
 document.getElementById('basement-consent')?.addEventListener('submit',function(e){e.preventDefault();const n=document.getElementById('combatant-name').value.trim();if(!n||!document.getElementById('warrant-accept').checked)return;try{sessionStorage.setItem('lu-basement-combatant',n);sessionStorage.setItem('lu-basement-consent','accepted')}catch(x){}location.href='/lu-basement.html'});
 </script><script src="/js/ifd-navigation-trail.js" defer></script>
