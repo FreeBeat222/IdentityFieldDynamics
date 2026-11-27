@@ -165,6 +165,34 @@ async function main() {
     await page.keyboard.press("Escape");
     assert.equal(await page.locator("#ifd-navtrail").getAttribute("data-open"), "false", "Escape should close the trail panel");
 
+    // Structural acceptance across every public HTML page that loads the shared Trail.
+    const auditPage = await browser.newPage({ viewport: { width: 1280, height: 900 } });
+    auditPage.on("pageerror", error => pageErrors.push(error.message));
+    const htmlFiles = (await fs.readdir(publicRoot)).filter(name => name.endsWith(".html"));
+    const auditedPages = [];
+    for (const name of htmlFiles) {
+      const source = await fs.readFile(path.join(publicRoot, name), "utf8");
+      if (!source.includes("/js/ifd-navigation-trail.js")) continue;
+      await auditPage.goto(base + "/" + name);
+      await auditPage.locator("#ifd-navtrail .toggle").waitFor();
+      const placement = await auditPage.evaluate(() => {
+        const trail = document.querySelector("#ifd-navtrail");
+        const footer = document.querySelector("footer.ifd-footer");
+        return {
+          hasFooter: !!footer,
+          directBodyChild: !!(trail && trail.parentElement === document.body),
+          immediatelyBeforeFooter: !!(trail && footer && trail.nextElementSibling === footer),
+          footerInsideMain: !!(footer && footer.closest("main"))
+        };
+      });
+      assert.equal(placement.hasFooter, true, name + ": shared Trail page must have the Cathedral footer");
+      assert.equal(placement.directBodyChild, true, name + ": Navigation Trail must be a direct child of body");
+      assert.equal(placement.immediatelyBeforeFooter, true, name + ": Navigation Trail must be immediately above the footer");
+      assert.equal(placement.footerInsideMain, false, name + ": footer must sit outside main content");
+      auditedPages.push(name);
+    }
+    await auditPage.close();
+
     assert.deepEqual(pageErrors, [], "No uncaught browser errors should occur");
     console.log(JSON.stringify({
       result: "PASS",
