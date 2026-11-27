@@ -69,4 +69,11 @@ for (const filename of gateways) {
       filename + " must include label " + label);
   }
 }
+
+const serverSource = fs.readFileSync(path.resolve(__dirname, "../server.js"), "utf8");
+assert.match(serverSource, /<footer class="ifd-footer">[\\s\\S]*?<a href="\\/terms">Terms &amp; Conditions<\\/a>/,
+  "Dynamic deepPage template must use the shared four-link service footer");
+assert.doesNotMatch(serverSource, /<footer><div style="width:min\\(900px/,
+  "Dynamic deepPage template must not retain its reduced legacy footer");
+
 console.log(JSON.stringify({ result: "PASS", gateways_checked: gateways.length, utilities_per_gateway: requiredLinks.length, gold: "#d6b15a" }, null, 2));
