@@ -123,7 +123,7 @@ const deepPage = (title, kicker, body) => `<!doctype html><html lang="en"><head>
 <a href="/privacy">Privacy Policy</a>
 <a href="/terms">Terms &amp; Conditions</a>
 </nav>
-</footer></body></html>`;
+</footer><script src="/js/ifd-navigation-trail.js" defer></script></body></html>`;
 
 app.post("/api/research-intake", async (req,res)=>{
   const body=req.body||{};
