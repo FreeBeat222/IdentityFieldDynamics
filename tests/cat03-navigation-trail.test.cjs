@@ -103,7 +103,9 @@ async function main() {
     await page.locator("#ifd-navtrail .toggle").waitFor();
     await page.evaluate(() => window.scrollTo(0, 560));
     await page.waitForTimeout(100);
-    const scrollEntryId = await page.evaluate(() => history.state.ifdTrailEntryId);
+    const scrollEntryId = await page.evaluate(() => history.state && history.state.ifdTrailEntryId);
+    const beforeDeparture = await page.evaluate(() => ({ y: window.scrollY, state: history.state, scrollMap: sessionStorage.getItem("ifd.navigationTrail.scroll.v1"), trailScript: !!window.__IFD_NAV_TRAIL__ }));
+    await page.evaluate(() => window.addEventListener("pagehide", () => sessionStorage.setItem("__cat03_test_pagehide", JSON.stringify({ y: window.scrollY, state: history.state }))));
     await page.evaluate(() => {
       if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
       window.location.assign("/current-ifd/zero-source.html");
@@ -111,14 +113,15 @@ async function main() {
     await page.waitForURL(url => url.pathname === "/current-ifd/zero-source.html");
     const savedScroll = await page.evaluate(entryId => {
       const positions = JSON.parse(sessionStorage.getItem("ifd.navigationTrail.scroll.v1") || "{}");
-      return positions[entryId];
+      return { value: positions[entryId], map: positions, pagehide: sessionStorage.getItem("__cat03_test_pagehide") };
     }, scrollEntryId);
-    assert.ok(typeof savedScroll === "number" && savedScroll > 100, "The trail should save the departing page's scroll position");
+    console.log("SCROLL DEBUG", JSON.stringify({ beforeDeparture, scrollEntryId, savedScroll }));
+    assert.ok(typeof savedScroll.value === "number" && savedScroll.value > 100, "The trail should save the departing page's scroll position");
     await page.goBack();
     await page.waitForURL(url => url.pathname === "/current-ifd-formulation.html");
     await page.waitForTimeout(300);
     const restoredScroll = await page.evaluate(() => window.scrollY);
-    assert.ok(Math.abs(restoredScroll - savedScroll) <= 3, "Back navigation should restore the saved scroll position (saved " + savedScroll + ", restored " + restoredScroll + ")");
+    assert.ok(Math.abs(restoredScroll - savedScroll.value) <= 3, "Back navigation should restore the saved scroll position (saved " + savedScroll.value + ", restored " + restoredScroll + ")");
 
     await ensurePanelOpen();
     await page.locator('#ifd-navtrail a[title="Return to the first page in this tab"]').click();
