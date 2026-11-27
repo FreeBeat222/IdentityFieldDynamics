@@ -83,4 +83,5 @@ footer{border-top:1px solid var(--line);padding:25px 0 38px;text-align:center;co
 <footer><div class="shell">Identity Field Dynamics · WRITE CLUB™ Participant Manual · Canonical Edition 1.0 · <a href="/">The Cathedral</a></div></footer>
 <script>
 document.getElementById('basement-consent')?.addEventListener('submit',function(e){e.preventDefault();const n=document.getElementById('combatant-name').value.trim();if(!n||!document.getElementById('warrant-accept').checked)return;try{sessionStorage.setItem('lu-basement-combatant',n);sessionStorage.setItem('lu-basement-consent','accepted')}catch(x){}location.href='/lu-basement.html'});
-</script></body></html>
+</script><script src="/js/ifd-navigation-trail.js" defer></script>
+</body></html>
