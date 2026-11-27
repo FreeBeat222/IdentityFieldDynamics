@@ -19,6 +19,11 @@ const requiredLinks = [
 ];
 const sharedCss = fs.readFileSync(path.join(root, "copyright.css"), "utf8");
 
+assert.match(sharedCss, /\\.ifd-footer-brand\\s*\\{[^}]*color:\\s*#d6b15a/i,
+  "Shared CSS must define the Cathedral-gold footer brand label");
+assert.match(sharedCss, /\\.ifd-footer\\s*\\{[^}]*font-family:\\s*Aptos,\\s*"Segoe UI",\\s*sans-serif/is,
+  "Shared CSS must own the footer typography");
+
 assert.match(sharedCss, /\.ifd-footer table\s*\{/is,
   "Shared CSS must define the footer table");
 assert.match(sharedCss, /width:\s*auto[\s\S]*?margin:\s*14px auto 0/is,
