@@ -64,7 +64,9 @@
     "<button type=\"button\" data-step=\"1\" title=\"Next page\">Forward →</button></div>"+
     "<p class=\"heading\">YOUR RECENT PATH</p><ol>"+items+"</ol></div>"+
     "<button class=\"toggle\" type=\"button\" aria-expanded=\"false\" aria-controls=\"ifd-navtrail-panel\">TRAIL · "+state.visits.length+"</button>";
-  document.body.appendChild(root);
+  const footer=document.querySelector("footer.ifd-footer");
+  if(footer&&footer.parentElement===document.body)document.body.insertBefore(root,footer);
+  else document.body.appendChild(root);
   const toggle=root.querySelector(".toggle");
   toggle.addEventListener("click",()=>{const open=root.dataset.open!=="true";root.dataset.open=String(open);toggle.setAttribute("aria-expanded",String(open));});
   root.querySelectorAll("[data-step]").forEach(button=>button.addEventListener("click",()=>{if(button.dataset.step==="-1")history.back();else history.forward();}));
