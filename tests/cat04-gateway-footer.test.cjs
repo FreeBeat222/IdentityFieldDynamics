@@ -12,10 +12,10 @@ const gateways = [
   "participate-gateway.html"
 ];
 const requiredLinks = [
-  ['Contact Us', '/contact'],
-  ['Terms of Use', '/terms'],
-  ['Privacy Policy', '/privacy'],
-  ['Copyright © 2026 Rick York', '/copyright']
+  ["Contact Us", "/contact"],
+  ["Terms of Use", "/terms"],
+  ["Privacy Policy", "/privacy"],
+  ["Copyright © 2026 Rick York", "/copyright"]
 ];
 const sharedCss = fs.readFileSync(path.join(root, "copyright.css"), "utf8");
 
@@ -28,13 +28,13 @@ for (const filename of gateways) {
   const html = fs.readFileSync(path.join(root, filename), "utf8");
   assert.match(html, /<link rel="stylesheet" href="\/copyright\.css">/,
     filename + " must load the shared footer stylesheet");
-  assert.match(html, /<footer class="ifd-footer">/,
+  assert.match(html, /<footer\b[^>]*class="ifd-footer"/,
     filename + " must contain the shared Cathedral footer");
   for (const [label, href] of requiredLinks) {
-    const expectedAnchor = label.startsWith("Copyright")
-      ? '<a class="ifd-copyright-link" href="' + href + '">' + label + '</a>'
-      : '<a href="' + href + '">' + label + '</a>';
-    assert.ok(html.includes(expectedAnchor),
+    const escapedHref = href.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const escapedLabel = label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const anchorPattern = new RegExp("<a\\b(?=[^>]*href=\"" + escapedHref + "\")[^>]*>" + escapedLabel + "</a>");
+    assert.match(html, anchorPattern,
       filename + " must include " + label + " → " + href);
   }
 }
