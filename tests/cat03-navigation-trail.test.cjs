@@ -5,6 +5,16 @@ const path = require("node:path");
 const { chromium } = require("playwright");
 
 const publicRoot = path.resolve(__dirname, "../public");
+
+async function collectHtmlFiles(directory) {
+  const entries = await fs.readdir(directory, { withFileTypes: true });
+  const nested = await Promise.all(entries.map(async entry => {
+    const fullPath = path.join(directory, entry.name);
+    if (entry.isDirectory()) return collectHtmlFiles(fullPath);
+    return entry.isFile() && entry.name.endsWith(".html") ? [fullPath] : [];
+  }));
+  return nested.flat();
+}
 const mime = {
   ".html": "text/html; charset=utf-8",
   ".js": "text/javascript; charset=utf-8",
@@ -30,7 +40,8 @@ async function main() {
         return;
       }
       const body = await fs.readFile(file);
-      res.writeHead(200, { "content-type": mime[path.extname(file)] || "application/octet-stream" });
+      const contentType = pathname === "/observor" ? "text/html; charset=utf-8" : (mime[path.extname(file)] || "application/octet-stream");
+      res.writeHead(200, { "content-type": contentType });
       res.end(body);
     } catch {
       res.writeHead(404).end("Not found");
@@ -195,13 +206,15 @@ async function main() {
     // Structural acceptance across every public HTML page that loads the shared Trail.
     const auditPage = await browser.newPage({ viewport: { width: 1280, height: 900 } });
     auditPage.on("pageerror", error => pageErrors.push(error.message));
-    const htmlFiles = (await fs.readdir(publicRoot)).filter(name => name.endsWith(".html"));
+    const htmlFiles = await collectHtmlFiles(publicRoot);
     const auditedPages = [];
     const placementFailures = [];
-    for (const name of htmlFiles) {
-      const source = await fs.readFile(path.join(publicRoot, name), "utf8");
+    const expectedFooterLinks = ["/copyright", "/contact", "/privacy", "/terms"];
+    for (const filePath of htmlFiles) {
+      const source = await fs.readFile(filePath, "utf8");
       if (!source.includes("/js/ifd-navigation-trail.js")) continue;
-      await auditPage.goto(base + "/" + name);
+      const relative = path.relative(publicRoot, filePath).split(path.sep).join("/");
+      await auditPage.goto(base + "/" + relative);
       await auditPage.locator("#ifd-navtrail .toggle").waitFor();
       const placement = await auditPage.evaluate(() => {
         const trail = document.querySelector("#ifd-navtrail");
@@ -210,17 +223,49 @@ async function main() {
           hasFooter: !!footer,
           directBodyChild: !!(trail && trail.parentElement === document.body),
           immediatelyBeforeFooter: !!(trail && footer && trail.nextElementSibling === footer),
-          footerInsideMain: !!(footer && footer.closest("main"))
+          footerInsideMain: !!(footer && footer.closest("main")),
+          footerLinks: footer ? Array.from(footer.querySelectorAll(".ifd-footer-links a")).map(a => a.getAttribute("href")) : []
         };
       });
-      if (!placement.hasFooter || !placement.directBodyChild || !placement.immediatelyBeforeFooter || placement.footerInsideMain) {
-        placementFailures.push({ page: name, ...placement });
+      if (!placement.hasFooter || !placement.directBodyChild || !placement.immediatelyBeforeFooter ||
+          placement.footerInsideMain || JSON.stringify(placement.footerLinks) !== JSON.stringify(expectedFooterLinks)) {
+        placementFailures.push({ page: relative, ...placement });
       }
-      auditedPages.push(name);
+      auditedPages.push(relative);
     }
+
+    // OBSERVOR is an extensionless standalone tool and is not part of the HTML-file walk.
+    await auditPage.goto(base + "/observor");
+    await auditPage.locator("#ifd-navtrail .toggle").waitFor();
+    const observorPlacement = await auditPage.evaluate(() => {
+      const trail = document.querySelector("#ifd-navtrail");
+      const footer = document.querySelector("footer.ifd-footer");
+      return {
+        hasFooter: !!footer,
+        directBodyChild: !!(trail && trail.parentElement === document.body),
+        immediatelyBeforeFooter: !!(trail && footer && trail.nextElementSibling === footer),
+        footerInsideMain: !!(footer && footer.closest("main")),
+        footerLinks: footer ? Array.from(footer.querySelectorAll(".ifd-footer-links a")).map(a => a.getAttribute("href")) : []
+      };
+    });
+    if (!observorPlacement.hasFooter || !observorPlacement.directBodyChild ||
+        !observorPlacement.immediatelyBeforeFooter || observorPlacement.footerInsideMain ||
+        JSON.stringify(observorPlacement.footerLinks) !== JSON.stringify(expectedFooterLinks)) {
+      placementFailures.push({ page: "observor", ...observorPlacement });
+    }
+
+    // Dynamic informational routes share deepPage(); verify the template emits the canonical structure and Trail.
+    const serverSource = await fs.readFile(path.resolve(__dirname, "../server.js"), "utf8");
+    const deepPageStart = serverSource.indexOf("const deepPage =");
+    const deepPageEnd = serverSource.indexOf(";\n\napp.post", deepPageStart);
+    assert.ok(deepPageStart >= 0 && deepPageEnd > deepPageStart, "The shared deepPage template must be inspectable");
+    const deepPageTemplate = serverSource.slice(deepPageStart, deepPageEnd);
+    assert.ok(deepPageTemplate.includes("</main><footer class=\"ifd-footer\">"), "Generated pages must place the four-part footer outside main");
+    assert.ok(deepPageTemplate.includes('<script src="/js/ifd-navigation-trail.js" defer></script>'), "Generated pages must load the shared Navigation Trail");
     await auditPage.close();
 
     assert.deepEqual(placementFailures, [], "Navigation Trail structural acceptance failures: " + JSON.stringify(placementFailures));
+    assert.ok(auditedPages.length > 0, "The recursive audit must discover nested HTML pages");
     assert.deepEqual(pageErrors, [], "No uncaught browser errors should occur");
     console.log(JSON.stringify({
       result: "PASS",
@@ -236,7 +281,9 @@ async function main() {
       escape_to_close: "PASS",
       browser_errors: pageErrors.length,
       audited_pages: auditedPages.length,
-      audited_page_list: auditedPages
+      audited_page_list: auditedPages,
+      observor: "PASS",
+      dynamic_deep_page_template: "PASS"
     }, null, 2));
   } finally {
     await browser.close();
