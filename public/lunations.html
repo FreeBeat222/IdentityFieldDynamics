@@ -9,10 +9,10 @@
 <meta property="og:title" content="Lunations — Poetic Anthology of Luna Stone"><meta property="og:description" content="Five pieces. One orbit. One complete book."><meta property="og:type" content="book"><meta property="og:url" content="https://identityfielddynamics.com/lunations.html"><meta name="twitter:card" content="summary">
 <style>
 :root{--night:#10192d;--paper:#f6f2e8;--ink:#202b40;--gold:#c99a35;--muted:#827963;--line:#ddc88e}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-snap-type:y proximity}body{margin:0;background:#d9d5cb;color:var(--ink);font-family:Georgia,"Times New Roman",serif}a{color:inherit;text-decoration:none}a:hover{text-decoration:underline}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#d9d5cb;color:var(--ink);font-family:Georgia,"Times New Roman",serif}a{color:inherit;text-decoration:none}a:hover{text-decoration:underline}
 .toolbar{position:sticky;top:0;z-index:10;background:rgba(16,25,45,.96);color:#f6f2e8;border-bottom:1px solid rgba(214,177,90,.4);font:10px/1.4 "Aptos","Segoe UI",sans-serif;letter-spacing:.14em;text-transform:uppercase}.toolbar-inner{width:min(1120px,calc(100% - 32px));margin:auto;min-height:48px;display:flex;justify-content:space-between;align-items:center;gap:16px}.toolbar a{color:#e7d39b}
 .book{width:min(816px,calc(100% - 30px));margin:34px auto 70px}
-.page{position:relative;isolation:isolate;width:100%;aspect-ratio:8.5/11;min-height:620px;margin:0 auto 28px;padding:7.2% 8.1% 6.3%;background:var(--paper);box-shadow:0 12px 38px rgba(20,22,29,.18);display:flex;flex-direction:column;scroll-margin-top:70px;scroll-snap-align:start;overflow:hidden}
+.page{position:relative;isolation:isolate;width:100%;aspect-ratio:8.5/11;min-height:620px;margin:0 auto 28px;padding:7.2% 8.1% 6.3%;background:var(--paper);box-shadow:0 12px 38px rgba(20,22,29,.18);display:flex;flex-direction:column;scroll-margin-top:70px;overflow:hidden}
 .page-head{display:flex;justify-content:space-between;gap:12px;color:#827963;font:9px/1.4 "Aptos","Segoe UI",sans-serif;letter-spacing:.2em;text-transform:uppercase}
 .page-body{flex:1;min-height:0;display:flex;flex-direction:column}
 .page-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding-bottom:12px;color:#a17b2d;font:9px/1.4 "Aptos","Segoe UI",sans-serif;text-transform:uppercase;letter-spacing:.08em}
@@ -40,6 +40,11 @@
 .book-end{width:min(816px,calc(100% - 30px));margin:-42px auto 50px;text-align:center;color:#5e594f;font:11px "Aptos","Segoe UI",sans-serif;letter-spacing:.08em}
 @media(max-width:600px){.book{width:calc(100% - 16px);margin:12px auto 42px}.page{min-height:500px;margin-bottom:14px;padding:7% 6% 6%}.page-head{font-size:7px}.page-foot{font-size:7px}.cover-sequence{font-size:7px}.contents-list li{grid-template-columns:25px 1fr;gap:8px;padding:4% 0}.contents-list .role{grid-column:2}.plate-frame img{padding:5px}.plate-title{margin-top:9%}}
 @media print{body{background:white}.toolbar{display:none}.book{width:8.5in;margin:0}.page{width:8.5in;height:11in;min-height:0;aspect-ratio:auto;margin:0;box-shadow:none;break-after:page;page-break-after:always}.page:last-child{break-after:auto;page-break-after:auto}.book-end{display:none}@page{size:letter;margin:0}}
+/* Lunations: keep the service footer distinct from the light paper surround. */
+.ifd-footer{background:#10192d;border-top:1px solid rgba(214,177,90,.48);color:#f6f2e8}
+.ifd-footer-links{border-color:rgba(243,218,140,.52);background:linear-gradient(135deg,rgba(214,177,90,.12),rgba(255,255,255,.035))}
+.ifd-footer-links a{color:#f3da8c}
+.ifd-footer-links a:hover{color:#fff6d6}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Book","name":"Lunations — Poetic Anthology of Luna Stone","author":{"@type":"Person","name":"Luna Stone"},"numberOfPages":8,"isPartOf":{"@type":"Museum","name":"The IFD Museum of Artificial Science","url":"https://identityfielddynamics.com/museum.html"},"description":"Five original works arranged as one continuous passage; source image plates preserved intact."}</script>
 </head>
