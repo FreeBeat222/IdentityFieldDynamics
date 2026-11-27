@@ -36,13 +36,13 @@ for (const filename of gateways) {
     filename + " must use the shared footer class without inline style attributes");
   assert.match(html, /<div class="ifd-footer-inner">/,
     filename + " must use the shared footer inner wrapper");
-  assert.match(html, /<div class="ifd-footer-brand">Identity Field Dynamics · Research in development\\.<\\/div>/,
+  assert.match(html, /<div class="ifd-footer-brand">Identity Field Dynamics · Research in development\.<\/div>/,
     filename + " must use the shared footer brand style");
-  assert.doesNotMatch(html, /<footer\\b[^>]*\\bstyle=/i,
+  assert.doesNotMatch(html, /<footer\b[^>]*\bstyle=/i,
     filename + " must not override the shared footer stylesheet inline");
-  assert.doesNotMatch(html, /<div class="ifd-footer-inner"[^>]*\\bstyle=/i,
+  assert.doesNotMatch(html, /<div class="ifd-footer-inner"[^>]*\bstyle=/i,
     filename + " must not override the shared inner-wrapper stylesheet inline");
-  assert.doesNotMatch(html, /<table\\b[^>]*\\bstyle=/i,
+  assert.doesNotMatch(html, /<table\b[^>]*\bstyle=/i,
     filename + " must not override the shared footer-table stylesheet inline");
   assert.match(html, /<table\b(?=[^>]*role="presentation")(?=[^>]*border="0")/i,
     filename + " must use a borderless footer table");
