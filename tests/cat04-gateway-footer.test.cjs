@@ -31,9 +31,8 @@ for (const filename of gateways) {
   assert.match(html, /<footer class="ifd-footer">/,
     filename + " must contain the shared Cathedral footer");
   for (const [label, href] of requiredLinks) {
-    const escaped = label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const pattern = new RegExp('<a href="' + href.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + '">' + escaped + '</a>');
-    assert.match(html, pattern, filename + " must include " + label + " → " + href);
+    assert.ok(html.includes('<a href="' + href + '">' + label + '</a>'),
+      filename + " must include " + label + " → " + href);
   }
 }
 console.log(JSON.stringify({ result: "PASS", gateways_checked: gateways.length, utilities_per_gateway: requiredLinks.length, gold: "#d6b15a" }, null, 2));
