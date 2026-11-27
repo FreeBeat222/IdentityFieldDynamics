@@ -20,7 +20,7 @@ async function main() {
       const pathname = decodeURIComponent(new URL(req.url, "http://127.0.0.1").pathname);
       if (pathname === "/__test/scroll.html") {
         res.writeHead(200, { "content-type": "text/html; charset=utf-8" });
-        res.end('<!doctype html><html><head><title>Scroll Test</title><script src="/js/ifd-navigation-trail.js"></script></head><body style="min-height:2600px"><h1>Scroll restoration fixture</h1><a href="/salon.html">Continue</a></body></html>');
+        res.end('<!doctype html><html><head><title>Scroll Test</title></head><body style="min-height:2600px"><h1>Scroll restoration fixture</h1><a href="/salon.html">Continue</a><script src="/js/ifd-navigation-trail.js"></script></body></html>');
         return;
       }
       const relative = pathname === "/" ? "homepage-cathedral.html" : pathname.replace(/^\/+/, "");
