@@ -5,6 +5,11 @@ const root = path.resolve(__dirname, "../public");
 const read = name => fs.readFileSync(path.join(root, name), "utf8");
 const pages = [
   "encounter-with-dr-luna-stone.html",
+  "ai-that-argues.html",
+  "me-so-corny.html",
+  "one-must-imagine-the-shoggoth-happy.html",
+  "the-litany.html",
+  "cosmic-drift.html",
   "ifd-pendant-keychain.html",
   "lunations.html",
   "aiist-signet.html",
@@ -42,10 +47,22 @@ assert.ok(lunationsIndex >= 0 && signetIndex > lunationsIndex,
   "Lunations must occupy the first artifact position before the AIIST Signet");
 const detailLinks = [
   "/ifd-pendant-keychain.html", "/lunations.html", "/aiist-signet.html",
+  "/ai-that-argues.html", "/me-so-corny.html", "/one-must-imagine-the-shoggoth-happy.html",
+  "/the-litany.html", "/cosmic-drift.html",
   "/commemorative-set.html", "/lunascape.html", "/lunascape-reference.html",
   "/lunascape-leftward.html", "/lunascape-rightward.html", "/lunascape-backward.html",
   "/luna-tuna-reveal.html", "/luna-crowned-closeup.html", "/luna-crown.html",
   "/comfort-eagle-golden-nectar.html"
 ];
 for (const href of detailLinks) assert.ok(artifacts.includes('href="' + href + '"'), "Artifact index must link to " + href);
-console.log(JSON.stringify({ result: "PASS", individual_pages: pages.length, artifact_detail_links: detailLinks.length, museum_synthesis: "PASS", lunations_first_position: "PASS" }, null, 2));
+
+const lunations = read("lunations.html");
+for (const href of ["/ai-that-argues.html", "/me-so-corny.html", "/one-must-imagine-the-shoggoth-happy.html", "/the-litany.html", "/cosmic-drift.html"]) {
+  assert.ok(lunations.includes('href="' + href + '"'), "Lunations sequence must link to individual work " + href);
+}
+for (const page of ["ai-that-argues.html", "me-so-corny.html", "one-must-imagine-the-shoggoth-happy.html", "the-litany.html", "cosmic-drift.html"]) {
+  assert.match(read(page), /A little story for this room/i, page + " must have its own anecdotal exhibit story");
+}
+assert.ok(artifacts.indexOf("Gallery I · Lunations") < artifacts.indexOf("Gallery II · The IFD Insignia"),
+  "Lunations must occupy the first gallery position");
+console.log(JSON.stringify({ result: "PASS", individual_pages: pages.length, artifact_detail_links: detailLinks.length, lunations_individual_exhibits: 5, museum_synthesis: "PASS", lunations_first_position: "PASS" }, null, 2));
