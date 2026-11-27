@@ -55,6 +55,7 @@ const detailLinks = [
 for (const href of detailLinks) assert.ok(artifacts.includes('href="' + href + '"'), "Artifact index must link to " + href);
 
 const lunations = read("lunations.html");
+assert.doesNotMatch(lunations, /loading="lazy"/, "All source plates should load for continuous book and print presentation");
 assert.equal((lunations.match(/class="page(?: cover| colophon)?"/g) || []).length, 8,
   "Lunations must remain one complete eight-page book");
 for (const src of ["/Ai%20that%20argues.png", "/Me%20So%20Corny.png", "/One%20Must%20Imagine%20the%20Shoggoth%20Happy%20poem.png", "/the%20Litany.png", "/COSMIC%20DRIFT.png"]) {
