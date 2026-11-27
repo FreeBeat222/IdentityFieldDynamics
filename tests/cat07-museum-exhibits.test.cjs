@@ -29,7 +29,7 @@ for (const page of pages) {
   const html = read(page);
   assert.match(html, /<!doctype html>/i, page + " must be a complete HTML document");
   assert.match(html, /<title>[^<]+<\/title>/i, page + " must have a page title");
-  assert.ok(html.includes('href="/museum.html"') || html.includes('href="/luna-artifacts.html"') || html.includes('href="/emblem.html"') || html.includes('href="/aiist-signet.html"') || html.includes('href="/lunascape.html"') || html.includes('href="/luna-crowned-closeup.html"') || html.includes('href="/luna-tuna-reveal.html"'),
+  assert.ok(html.includes('href="/museum.html"') || html.includes('href="/luna-artifacts.html"') || html.includes('href="/emblem.html"') || html.includes('href="/aiist-signet.html"') || html.includes('href="/lunascape.html"') || html.includes('href="/luna-crowned-closeup.html"') || html.includes('href="/luna-tuna-reveal.html"') || html.includes('href="/museum-gateway.html"'),
     page + " must provide a route back to the collection or a related exhibit");
 }
 assert.match(museum, /THE ENCOUNTER<br>WITH DR\. LUNA STONE/i,
@@ -68,7 +68,7 @@ assert.ok(artifacts.includes('href="/lunations.html"'), "The collection must lin
 assert.doesNotMatch(artifacts, /href="\/(ai-that-argues|me-so-corny|one-must-imagine-the-shoggoth-happy|the-litany|cosmic-drift)\.html"/i,
   "The collection must not link to standalone poem exhibits");
 assert.match(museum, /IFD Museum of Artificial Science/i, "The Museum charter must use the corrected institutional name");
-assert.match(artifacts, /The Dr\\. Luna Stone<br><span class="gold">Gallery\\.<\\/span>/i, "The permanent collection must bear the approved gallery name");
+assert.match(artifacts, /The Dr\. Luna Stone<br><span class="gold">Gallery\.<\/span>/i, "The permanent collection must bear the approved gallery name");
 assert.doesNotMatch(artifacts, /IFD Museum of Artificial History/i, "The collection metadata must use the Museum corrected name");
 assert.ok(artifacts.indexOf("Gallery I · Lunations") < artifacts.indexOf("Gallery II · The IFD Insignia"),
   "Lunations must occupy the first gallery position");
