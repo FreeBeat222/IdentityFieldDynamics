@@ -41,10 +41,10 @@ assert.ok(museum.includes('href="/encounter-with-dr-luna-stone.html"'),
   "Museum must link to the synthesized Encounter exhibit");
 assert.doesNotMatch(museum, /<h3>The Encounter<\/h3>[\s\S]{0,260}<h3>Dr\. Luna Stone<\/h3>/i,
   "Museum must not present the Encounter and Dr. Luna Stone as disconnected adjacent cards");
-const lunationsIndex = artifacts.indexOf("<h3>Lunations</h3>");
+const lunationsIndex = artifacts.indexOf("Gallery I · Lunations");
 const signetIndex = artifacts.indexOf("<h3>The AIIST Signet</h3>");
 assert.ok(lunationsIndex >= 0 && signetIndex > lunationsIndex,
-  "Lunations must occupy the first artifact position before the AIIST Signet");
+  "Lunations must occupy the first gallery position before the AIIST Signet");
 const detailLinks = [
   "/ifd-pendant-keychain.html", "/lunations.html", "/aiist-signet.html",
   "/ai-that-argues.html", "/me-so-corny.html", "/one-must-imagine-the-shoggoth-happy.html",
