@@ -59,3 +59,24 @@
   outline: 2px solid #f3da8c;
   outline-offset: 3px;
 }
+
+/* CAT-06: fixed four-column footer utility row. */
+.ifd-footer-inner { max-width: none; margin: 0; }
+.ifd-footer table,
+.ifd-footer table tr,
+.ifd-footer table td {
+  border: 0 !important;
+}
+.ifd-footer table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin: 14px 0 0;
+}
+.ifd-footer table td {
+  padding: 8px 12px;
+  text-align: left;
+  vertical-align: middle;
+}
+.ifd-footer table td:first-child { padding-left: 18px; }
+.ifd-footer table a { color: #d6b15a; }
