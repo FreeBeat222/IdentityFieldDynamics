@@ -93,6 +93,28 @@ async function main() {
     await page.locator(".ifd-footer-links a").first().hover();
     const hoverStyle = await page.locator(".ifd-footer-links a").first().evaluate(el => getComputedStyle(el).textShadow);
     assert.notEqual(hoverStyle, "none", "Footer link hover must use a visible gold glow");
+
+    const overviewPage = await browser.newPage({ viewport: { width: 1280, height: 900 } });
+    overviewPage.on("pageerror", error => pageErrors.push(error.message));
+    await overviewPage.goto(base + "/ifd-overview.html");
+    await overviewPage.locator("#ifd-navtrail .toggle").waitFor();
+    const overviewPlacement = await overviewPage.evaluate(() => {
+      const trail = document.querySelector("#ifd-navtrail");
+      const footer = document.querySelector("footer.ifd-footer");
+      return {
+        trailIsBodyChild: !!trail && trail.parentElement === document.body,
+        footerIsBodyChild: !!footer && footer.parentElement === document.body,
+        trailImmediatelyBeforeFooter: !!trail && !!footer && trail.nextElementSibling === footer,
+        trailPosition: trail ? getComputedStyle(trail).position : null
+      };
+    });
+    assert.deepEqual(overviewPlacement, {
+      trailIsBodyChild: true,
+      footerIsBodyChild: true,
+      trailImmediatelyBeforeFooter: true,
+      trailPosition: "relative"
+    }, "IFD Overview must place the Navigation Trail immediately above the footer as a separate body child");
+    await overviewPage.close();
     assert.equal(
       await page.locator('#ifd-navtrail a[title="Return to the first page in this tab"]').getAttribute("href"),
       "/",
