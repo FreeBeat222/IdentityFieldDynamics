@@ -99,24 +99,23 @@ async function main() {
     const afterForward = await page.evaluate(() => JSON.parse(sessionStorage.getItem("ifd.navigationTrail.v1")).visits.length);
     assert.deepEqual([beforeTraversal, afterBack, afterForward], [13, 13, 13], "Back/Forward traversal must not create duplicate visits");
 
-    await ensurePanelOpen();
-    await page.locator('#ifd-navtrail [data-step="-1"]').click();
-    await page.waitForURL(url => url.pathname === "/museum.html");
+    await page.goto(base + "/current-ifd-formulation.html");
+    await page.locator("#ifd-navtrail .toggle").waitFor();
     await page.evaluate(() => window.scrollTo(0, 560));
     await page.waitForTimeout(100);
     const scrollEntryId = await page.evaluate(() => history.state.ifdTrailEntryId);
     await page.evaluate(() => {
       if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
-      window.location.assign("/salon.html");
+      window.location.assign("/current-ifd/zero-source.html");
     });
-    await page.waitForURL(url => url.pathname === "/salon.html");
+    await page.waitForURL(url => url.pathname === "/current-ifd/zero-source.html");
     const savedScroll = await page.evaluate(entryId => {
       const positions = JSON.parse(sessionStorage.getItem("ifd.navigationTrail.scroll.v1") || "{}");
       return positions[entryId];
     }, scrollEntryId);
     assert.ok(typeof savedScroll === "number" && savedScroll > 100, "The trail should save the departing page's scroll position");
     await page.goBack();
-    await page.waitForURL(url => url.pathname === "/museum.html");
+    await page.waitForURL(url => url.pathname === "/current-ifd-formulation.html");
     await page.waitForTimeout(300);
     const restoredScroll = await page.evaluate(() => window.scrollY);
     assert.ok(Math.abs(restoredScroll - savedScroll) <= 3, "Back navigation should restore the saved scroll position (saved " + savedScroll + ", restored " + restoredScroll + ")");
