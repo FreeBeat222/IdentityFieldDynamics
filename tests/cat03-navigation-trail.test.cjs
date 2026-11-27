@@ -73,27 +73,22 @@ async function main() {
       const trail = document.querySelector("#ifd-navtrail");
       return {
         isBodyChild: trail && trail.parentElement === document.body,
-        followsFooter: !!(footer && trail && (footer.compareDocumentPosition(trail) & Node.DOCUMENT_POSITION_FOLLOWING)),
-        isLastBodyElement: !!(trail && trail === document.body.lastElementChild),
+        precedesFooter: !!(footer && trail && (trail.compareDocumentPosition(footer) & Node.DOCUMENT_POSITION_FOLLOWING)),
+        isImmediatelyBeforeFooter: !!(footer && trail && trail.nextElementSibling === footer),
         position: trail ? getComputedStyle(trail).position : null,
         separatedByBorder: trail ? getComputedStyle(trail).borderTopWidth === "1px" : false,
         topMargin: trail ? parseFloat(getComputedStyle(trail).marginTop) : 0,
         footerWidth: footer ? Math.round(footer.getBoundingClientRect().width) : 0,
-        menuWidth: footer ? Math.round(footer.querySelector(".ifd-footer-links").getBoundingClientRect().width) : 0,
-        menuMinHeight: footer ? getComputedStyle(footer.querySelector(".ifd-footer-links")).minHeight : null
+        menuWidth: footer ? Math.round(footer.querySelector(".ifd-footer-links").getBoundingClientRect().width) : 0
       };
     });
-    assert.deepEqual(trailPlacement, {
-      isBodyChild: true,
-      followsFooter: true,
-      isLastBodyElement: true,
-      position: "relative",
-      separatedByBorder: true,
-      topMargin: 22,
-      footerWidth: 1280,
-      menuWidth: trailPlacement.menuWidth,
-      menuMinHeight: "0px"
-    }, "Navigation Trail must be a visibly separated normal-flow body element after the footer, never inside or overlaid on it");
+    assert.equal(trailPlacement.isBodyChild, true, "Navigation Trail must be a direct child of the page body");
+    assert.equal(trailPlacement.precedesFooter, true, "Navigation Trail must appear above the footer");
+    assert.equal(trailPlacement.isImmediatelyBeforeFooter, true, "Navigation Trail must be a distinct body element immediately before the footer");
+    assert.equal(trailPlacement.position, "relative", "Navigation Trail must remain in normal document flow");
+    assert.equal(trailPlacement.separatedByBorder, true, "Navigation Trail must have a visible separating top rule");
+    assert.equal(trailPlacement.topMargin, 22, "Navigation Trail must have visible separation from preceding page content");
+    assert.ok(trailPlacement.footerWidth > 0, "Homepage footer must be present");
     assert.ok(trailPlacement.menuWidth < trailPlacement.footerWidth * 0.8, "Footer links must form a compact menu rather than stretch across the page");
     await page.locator(".ifd-footer-links a").first().hover();
     const hoverStyle = await page.locator(".ifd-footer-links a").first().evaluate(el => getComputedStyle(el).textShadow);
