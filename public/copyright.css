@@ -29,7 +29,7 @@
   outline-offset: 3px;
 }
 
-/* Shared Cathedral footer utilities. */
+/* Cathedral standard: four essential links, and nothing else. */
 .ifd-footer {
   margin: 0;
   padding: 26px 26px 36px;
@@ -41,13 +41,14 @@
   line-height: 1.6;
   text-transform: uppercase;
 }
-.ifd-footer-inner { max-width: 1120px; margin: 0 auto; }
-.ifd-footer-brand { color: #d6b15a; }
 .ifd-footer-links {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: 12px 26px;
-  margin-top: 14px;
+  max-width: 1120px;
+  margin: 0 auto;
 }
 .ifd-footer-links a {
   color: #d6b15a;
@@ -60,25 +61,3 @@
   outline: 2px solid #f3da8c;
   outline-offset: 3px;
 }
-
-/* CAT-06: centered, borderless four-column footer utility row. */
-.ifd-footer-inner { max-width: none; margin: 0; }
-.ifd-footer table,
-.ifd-footer table tr,
-.ifd-footer table td {
-  border: 0 !important;
-}
-.ifd-footer table {
-  width: auto;
-  max-width: 100%;
-  table-layout: auto;
-  border-collapse: collapse;
-  margin: 14px auto 0;
-}
-.ifd-footer table td {
-  padding: 8px 16px;
-  text-align: center;
-  vertical-align: middle;
-  white-space: nowrap;
-}
-.ifd-footer table a { color: #d6b15a; }

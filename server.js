@@ -117,16 +117,12 @@ const initDatabase = async () => {
 };
 
 const deepPage = (title, kicker, body) => `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#070707"><title>${title} · Identity Field Dynamics</title><style>body{margin:0;background:#050505;color:#eeeae1;font-family:Inter,system-ui,sans-serif}main{width:min(900px,calc(100% - 40px));margin:auto;padding:100px 0}a{color:#f3da8c;text-decoration:none}.k{color:#d6b15a;font-size:11px;letter-spacing:.25em;text-transform:uppercase}h1{font-size:clamp(44px,8vw,82px);line-height:.95;letter-spacing:-.05em;margin:20px 0 30px}p{color:#aaa9a4;font-size:18px;line-height:1.8}.panel{border-top:1px solid #292929;margin-top:55px;padding-top:35px}.back{font-size:11px;letter-spacing:.16em;text-transform:uppercase}footer{border-top:1px solid rgba(203,208,212,.12);padding:24px 0 36px;color:#777;font-size:10px;letter-spacing:.08em;text-transform:uppercase}.footlinks{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:12px}.footlinks a{font-size:10px;letter-spacing:.1em;text-transform:uppercase}</style><link rel="stylesheet" href="/copyright.css"></head><body><main><a class="back" href="/">← Identity Field Dynamics</a><div class="panel"><div class="k">${kicker}</div><h1>${title}</h1>${body}</div></main><footer class="ifd-footer">
-<div class="ifd-footer-inner">
-<div class="ifd-footer-brand">Identity Field Dynamics · Research in development.</div>
-<table role="presentation" aria-label="Footer utilities" border="0" cellpadding="0" cellspacing="0">
-<tbody><tr>
-<td><a href="/copyright">Copyright © 2026 Rick York</a></td>
-<td><a href="/contact">Contact Us</a></td>
-<td><a href="/privacy">Privacy Policy</a></td>
-<td><a href="/terms">Terms &amp; Conditions</a></td>
-</tr></tbody></table>
-</div>
+<nav class="ifd-footer-links" aria-label="Footer">
+<a href="/copyright">Copyright © 2026 Rick York</a>
+<a href="/contact">Contact Us</a>
+<a href="/privacy">Privacy Policy</a>
+<a href="/terms">Terms &amp; Conditions</a>
+</nav>
 </footer></body></html>`;
 
 app.post("/api/research-intake", async (req,res)=>{
