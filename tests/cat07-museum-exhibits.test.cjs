@@ -69,7 +69,7 @@ assert.ok(artifacts.includes('href="/lunations.html"'), "The collection must lin
 assert.doesNotMatch(artifacts, /href="\/(ai-that-argues|me-so-corny|one-must-imagine-the-shoggoth-happy|the-litany|cosmic-drift)\.html"/i,
   "The collection must not link to standalone poem exhibits");
 assert.match(museum, /IFD Museum of Artificial Science/i, "The Museum charter must use the corrected institutional name");
-assert.match(artifacts, /The Dr\. Luna Stone<br><span class="gold">Gallery\.<\/span>/i, "The permanent collection must bear the approved gallery name");
+assert.ok(artifacts.includes('The Dr. Luna Stone<br><span class="gold">Gallery.</span>'), "The permanent collection must bear the approved gallery name");
 assert.doesNotMatch(artifacts, /IFD Museum of Artificial History/i, "The collection metadata must use the Museum corrected name");
 assert.ok(artifacts.indexOf("Gallery I · Lunations") < artifacts.indexOf("Gallery II · The IFD Insignia"),
   "Lunations must occupy the first gallery position");
