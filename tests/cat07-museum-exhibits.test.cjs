@@ -87,5 +87,6 @@ assert.ok(artifacts.indexOf("Gallery I · Lunations") < artifacts.indexOf("Galle
 assert.equal((artifacts.match(/class="entry"/g) || []).length, 12, "The catalogue must contain one ordered entry for each of the 12 individual works");
 assert.doesNotMatch(artifacts, /class="artifact-grid"|class="artifact-card"|<img\s/i, "The catalogue must not present the collection as a loose display of artifact cards or thumbnails");
 for (const href of ["/copyright", "/contact", "/privacy", "/terms"]) assert.ok(read("eliza.html").includes('href="' + href + '"'), "ELIZA must carry the current service-menu link " + href);
+for (const href of ["/copyright", "/contact", "/privacy", "/terms"]) assert.ok(read("happy-shoggoth.html").includes('href="' + href + '"'), "Happy Shoggoth must carry the current service-menu link " + href);
 
 console.log(JSON.stringify({ result: "PASS", individual_artifact_pages: pages.length, artifact_detail_links: detailLinks.length, lunations_book_pages: 8, original_plates: 5, museum_name: "IFD Museum of Artificial Science", lunations_first_position: "PASS" }, null, 2));
