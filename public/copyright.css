@@ -31,8 +31,10 @@
 
 /* Cathedral standard: four essential links, and nothing else. */
 .ifd-footer {
+  display: flex;
+  justify-content: center;
   margin: 0;
-  padding: 26px 26px 36px;
+  padding: 22px 20px 26px;
   border-top: 1px solid rgba(203, 208, 212, .12);
   color: #666;
   font-family: Aptos, "Segoe UI", sans-serif;
@@ -46,18 +48,40 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 12px 26px;
-  max-width: 1120px;
+  width: max-content;
+  max-width: 100%;
+  min-height: 0;
   margin: 0 auto;
+  padding: 6px 10px;
+  border: 1px solid rgba(214, 177, 90, .28);
+  background: linear-gradient(135deg, rgba(214, 177, 90, .045), rgba(255, 255, 255, .012));
 }
 .ifd-footer-links a {
+  display: inline-block;
+  margin: 0;
+  padding: 8px 14px;
   color: #d6b15a;
-  text-decoration: underline;
+  text-decoration: none;
   text-underline-offset: 3px;
-  text-decoration-thickness: 1px;
+  transition: color .2s ease, text-shadow .2s ease, background-color .2s ease;
 }
-.ifd-footer-links a:hover { color: #f3da8c; }
+.ifd-footer-links a + a {
+  border-left: 1px solid rgba(214, 177, 90, .2);
+}
+.ifd-footer-links a:hover {
+  color: #fff0b5;
+  text-shadow: 0 0 5px rgba(243, 218, 140, .9), 0 0 12px rgba(214, 177, 90, .75), 0 0 22px rgba(214, 177, 90, .42);
+  background-color: rgba(214, 177, 90, .055);
+}
 .ifd-footer-links a:focus-visible {
   outline: 2px solid #f3da8c;
   outline-offset: 3px;
+}
+@media (max-width: 600px) {
+  .ifd-footer { padding: 18px 10px 22px; }
+  .ifd-footer-links { width: min(100%, 360px); }
+  .ifd-footer-links a { flex: 1 1 42%; text-align: center; padding: 9px 8px; }
+  .ifd-footer-links a + a { border-left: 0; }
+  .ifd-footer-links a:nth-child(even) { border-left: 1px solid rgba(214, 177, 90, .2); }
+  .ifd-footer-links a:nth-child(n+3) { border-top: 1px solid rgba(214, 177, 90, .2); }
 }
