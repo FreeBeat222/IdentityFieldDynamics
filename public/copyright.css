@@ -62,7 +62,6 @@
 
 /* CAT-06: centered, borderless four-column footer utility row. */
 .ifd-footer-inner { max-width: none; margin: 0; }
-.ifd-footer strong { color: #d6b15a; font-weight: 400; }
 .ifd-footer table,
 .ifd-footer table tr,
 .ifd-footer table td {
