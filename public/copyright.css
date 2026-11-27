@@ -60,7 +60,7 @@
   outline-offset: 3px;
 }
 
-/* CAT-06: fixed four-column footer utility row. */
+/* CAT-06: centered, borderless four-column footer utility row. */
 .ifd-footer-inner { max-width: none; margin: 0; }
 .ifd-footer table,
 .ifd-footer table tr,
@@ -68,15 +68,16 @@
   border: 0 !important;
 }
 .ifd-footer table {
-  width: 100%;
-  table-layout: fixed;
+  width: auto;
+  max-width: 100%;
+  table-layout: auto;
   border-collapse: collapse;
-  margin: 14px 0 0;
+  margin: 14px auto 0;
 }
 .ifd-footer table td {
-  padding: 8px 12px;
-  text-align: left;
+  padding: 8px 16px;
+  text-align: center;
   vertical-align: middle;
+  white-space: nowrap;
 }
-.ifd-footer table td:first-child { padding-left: 18px; }
 .ifd-footer table a { color: #d6b15a; }
