@@ -31,7 +31,10 @@ for (const filename of gateways) {
   assert.match(html, /<footer class="ifd-footer">/,
     filename + " must contain the shared Cathedral footer");
   for (const [label, href] of requiredLinks) {
-    assert.ok(html.includes('<a href="' + href + '">' + label + '</a>'),
+    const expectedAnchor = label.startsWith("Copyright")
+      ? '<a class="ifd-copyright-link" href="' + href + '">' + label + '</a>'
+      : '<a href="' + href + '">' + label + '</a>';
+    assert.ok(html.includes(expectedAnchor),
       filename + " must include " + label + " → " + href);
   }
 }
