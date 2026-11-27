@@ -31,3 +31,5 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Run CAT-03 browser acceptance
         run: node tests/cat03-navigation-trail.test.cjs
+      - name: Run CAT-04 gateway footer acceptance
+        run: node tests/cat04-gateway-footer.test.cjs

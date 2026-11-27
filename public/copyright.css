@@ -28,3 +28,34 @@
   outline: 2px solid #f3da8c;
   outline-offset: 3px;
 }
+
+/* Shared Cathedral footer utilities. */
+.ifd-footer {
+  margin: 0;
+  padding: 26px 26px 36px;
+  border-top: 1px solid rgba(203, 208, 212, .12);
+  color: #666;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 10px;
+  letter-spacing: .1em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+.ifd-footer-inner { max-width: 1120px; margin: 0 auto; }
+.ifd-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  margin-top: 12px;
+}
+.ifd-footer-links a {
+  color: #d6b15a;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.ifd-footer-links a:hover { color: #f3da8c; }
+.ifd-footer-links a:focus-visible {
+  outline: 2px solid #f3da8c;
+  outline-offset: 3px;
+}
