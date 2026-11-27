@@ -99,6 +99,7 @@ async function main() {
     const afterForward = await page.evaluate(() => JSON.parse(sessionStorage.getItem("ifd.navigationTrail.v1")).visits.length);
     assert.deepEqual([beforeTraversal, afterBack, afterForward], [13, 13, 13], "Back/Forward traversal must not create duplicate visits");
 
+    await ensurePanelOpen();
     await page.locator('#ifd-navtrail [data-step="-1"]').click();
     await page.waitForURL(url => url.pathname === "/museum.html");
     await page.evaluate(() => window.scrollTo(0, 560));
