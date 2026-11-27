@@ -42,6 +42,7 @@
   text-transform: uppercase;
 }
 .ifd-footer-inner { max-width: 1120px; margin: 0 auto; }
+.ifd-footer-brand { color: #d6b15a; }
 .ifd-footer-links {
   display: flex;
   flex-wrap: wrap;
