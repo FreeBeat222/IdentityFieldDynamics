@@ -18,6 +18,11 @@ async function main() {
   const server = http.createServer(async (req, res) => {
     try {
       const pathname = decodeURIComponent(new URL(req.url, "http://127.0.0.1").pathname);
+      if (pathname === "/__test/scroll.html") {
+        res.writeHead(200, { "content-type": "text/html; charset=utf-8" });
+        res.end('<!doctype html><html><head><title>Scroll Test</title><script src="/js/ifd-navigation-trail.js"></script></head><body style="min-height:2600px"><h1>Scroll restoration fixture</h1><a href="/salon.html">Continue</a></body></html>');
+        return;
+      }
       const relative = pathname === "/" ? "homepage-cathedral.html" : pathname.replace(/^\/+/, "");
       const file = path.resolve(publicRoot, relative);
       if (file !== publicRoot && !file.startsWith(publicRoot + path.sep)) {
@@ -99,18 +104,17 @@ async function main() {
     const afterForward = await page.evaluate(() => JSON.parse(sessionStorage.getItem("ifd.navigationTrail.v1")).visits.length);
     assert.deepEqual([beforeTraversal, afterBack, afterForward], [13, 13, 13], "Back/Forward traversal must not create duplicate visits");
 
-    await page.goto(base + "/museum.html");
+    await page.goto(base + "/__test/scroll.html");
     await page.locator("#ifd-navtrail .toggle").waitFor();
-    await page.evaluate(() => {
-      document.body.style.minHeight = "2400px";
-      window.scrollTo(0, 560);
-    });
+    await page.evaluate(() => window.scrollTo(0, 560));
     await page.waitForTimeout(100);
-    const scrollEntryId = await page.evaluate(() => history.state && history.state.ifdTrailEntryId);
-    const savedScroll = await page.evaluate(entryId => {
-      const positions = JSON.parse(sessionStorage.getItem("ifd.navigationTrail.scroll.v1") || "{}");
-      return positions[entryId];
-    }, scrollEntryId);
+    const scrollState = await page.evaluate(() => ({
+      y: window.scrollY,
+      entryId: history.state && history.state.ifdTrailEntryId,
+      positions: JSON.parse(sessionStorage.getItem("ifd.navigationTrail.scroll.v1") || "{}")
+    }));
+    assert.ok(scrollState.y > 100, "Scroll fixture must be scrollable");
+    const savedScroll = scrollState.positions[scrollState.entryId];
     assert.ok(typeof savedScroll === "number" && savedScroll > 100, "The trail should save the departing page's scroll position");
     await page.evaluate(() => {
       if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
@@ -118,7 +122,7 @@ async function main() {
     });
     await page.waitForURL(url => url.pathname === "/salon.html");
     await page.goBack();
-    await page.waitForURL(url => url.pathname === "/museum.html");
+    await page.waitForURL(url => url.pathname === "/__test/scroll.html");
     await page.waitForTimeout(300);
     const restoredScroll = await page.evaluate(() => window.scrollY);
     assert.ok(Math.abs(restoredScroll - savedScroll) <= 3, "Back navigation should restore the saved scroll position (saved " + savedScroll + ", restored " + restoredScroll + ")");
