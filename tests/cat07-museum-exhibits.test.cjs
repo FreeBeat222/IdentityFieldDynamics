@@ -48,7 +48,7 @@ assert.ok(museum.includes('href="/encounter-with-dr-luna-stone.html"'),
 assert.doesNotMatch(museum, /<h3>The Encounter<\/h3>[\s\S]{0,260}<h3>Dr\. Luna Stone<\/h3>/i,
   "Museum must not present the Encounter and Dr. Luna Stone as disconnected adjacent cards");
 const lunationsIndex = artifacts.indexOf("Gallery I · Lunations");
-const signetIndex = artifacts.indexOf("<h3>The AIIST Signet</h3>");
+const signetIndex = artifacts.indexOf("The AIIST Signet");
 assert.ok(lunationsIndex >= 0 && signetIndex > lunationsIndex,
   "Lunations must occupy the first gallery position before the AIIST Signet");
 const detailLinks = [
@@ -69,7 +69,7 @@ for (const src of ["/Ai%20that%20argues.png", "/Me%20So%20Corny.png", "/One%20Mu
 }
 assert.doesNotMatch(lunations, /ai-that-argues\.html|me-so-corny\.html|one-must-imagine-the-shoggoth-happy\.html|the-litany\.html|cosmic-drift\.html/i,
   "The five works must not be split into standalone exhibits");
-assert.match(artifacts, /One book · Five movements · Eight pages/,
+assert.match(artifacts, /One complete book · Eight pages/,
   "The collection index must describe Lunations as one complete book");
 assert.ok(artifacts.includes('href="/lunations.html"'), "The collection must link to the complete Lunations book");
 assert.doesNotMatch(artifacts, /href="\/(ai-that-argues|me-so-corny|one-must-imagine-the-shoggoth-happy|the-litany|cosmic-drift)\.html"/i,
@@ -78,8 +78,13 @@ assert.match(museum, /IFD Museum of Artificial Science/i, "The Museum charter mu
 assert.doesNotMatch(museum, /IFD Museum of Artificial History/i, "The Museum charter must not retain its former name");
 assert.match(gateway, /The IFD Museum of<br>Artificial Science/i, "The Museum gateway must use the corrected institutional name");
 assert.doesNotMatch(gateway, /IFD Museum of Artificial History/i, "The Museum gateway must not retain its former name");
-assert.ok(artifacts.includes('The Dr. Luna Stone<br><span class="gold">Gallery.</span>'), "The permanent collection must bear the approved gallery name");
+assert.match(artifacts, /<h1>The Dr\. Luna Stone Gallery<\/h1>/, "The permanent collection must bear the approved gallery name");
 assert.doesNotMatch(artifacts, /IFD Museum of Artificial History/i, "The collection metadata must use the Museum corrected name");
 assert.ok(artifacts.indexOf("Gallery I · Lunations") < artifacts.indexOf("Gallery II · The IFD Insignia"),
   "Lunations must occupy the first gallery position");
+
+assert.equal((artifacts.match(/class="entry"/g) || []).length, 12, "The catalogue must contain one ordered entry for each of the 12 individual works");
+assert.doesNotMatch(artifacts, /class="artifact-grid"|class="artifact-card"|<img\s/i, "The catalogue must not present the collection as a loose display of artifact cards or thumbnails");
+for (const href of ["/copyright", "/contact", "/privacy", "/terms"]) assert.ok(read("eliza.html").includes('href="' + href + '"'), "ELIZA must carry the current service-menu link " + href);
+
 console.log(JSON.stringify({ result: "PASS", individual_artifact_pages: pages.length, artifact_detail_links: detailLinks.length, lunations_book_pages: 8, original_plates: 5, museum_name: "IFD Museum of Artificial Science", lunations_first_position: "PASS" }, null, 2));
