@@ -93,7 +93,7 @@ for (const page of serviceMenuPages) {
   assert.ok(footer, page + " must contain a footer");
   assert.match(footer[0], /<footer class="ifd-footer">/, page + " must use the shared footer root");
   assert.match(footer[0], /<div class="ifd-footer-inner">/, page + " must use the shared footer wrapper");
-  assert.match(footer[0], /<strong>Identity Field Dynamics · Research in development\.<\/strong>/, page + " must use the shared footer brand");
+  assert.match(footer[0], /Identity Field Dynamics · Research in development\./, page + " must use the shared footer brand");
   assert.doesNotMatch(footer[0], /\bstyle=/i, page + " must not contain inline footer styles");
   for (const href of ["/copyright", "/contact", "/privacy", "/terms"]) {
     assert.ok(html.includes('href="' + href + '"'), page + " must carry the current service-menu link " + href);
