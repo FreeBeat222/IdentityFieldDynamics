@@ -34,6 +34,8 @@
   if(!entryId){entryId="ifd-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,9);try{history.replaceState(Object.assign({},history.state||{},{ifdTrailEntryId:entryId}),"",location.href);}catch(_){}}
   try{history.scrollRestoration="manual";}catch(_){}
   const saveScroll=()=>{const positions=read(SCROLL_KEY,{});positions[entryId]=window.scrollY||window.pageYOffset||0;write(SCROLL_KEY,positions);};
+  let scrollSavePending=false;
+  window.addEventListener("scroll",()=>{if(scrollSavePending)return;scrollSavePending=true;requestAnimationFrame(()=>{scrollSavePending=false;saveScroll();});},{passive:true});
   window.addEventListener("pagehide",saveScroll);
   window.addEventListener("beforeunload",saveScroll);
   window.addEventListener("pageshow",event=>{const y=read(SCROLL_KEY,{})[entryId];if(typeof y==="number"&&(event.persisted||isTraversal))requestAnimationFrame(()=>window.scrollTo(0,y));});
