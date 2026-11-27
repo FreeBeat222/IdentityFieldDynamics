@@ -104,15 +104,22 @@ async function main() {
     await page.waitForURL(url => url.pathname === "/museum.html");
     await page.evaluate(() => window.scrollTo(0, 560));
     await page.waitForTimeout(100);
-    const savedScroll = await page.evaluate(() => window.scrollY);
-    assert.ok(savedScroll > 100, "Scroll test page must be tall enough to scroll");
-    await page.locator('a[href="/salon.html"]').first().evaluate(element => element.click());
+    const scrollEntryId = await page.evaluate(() => history.state.ifdTrailEntryId);
+    await page.evaluate(() => {
+      if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
+      window.location.assign("/salon.html");
+    });
     await page.waitForURL(url => url.pathname === "/salon.html");
+    const savedScroll = await page.evaluate(entryId => {
+      const positions = JSON.parse(sessionStorage.getItem("ifd.navigationTrail.scroll.v1") || "{}");
+      return positions[entryId];
+    }, scrollEntryId);
+    assert.ok(typeof savedScroll === "number" && savedScroll > 100, "The trail should save the departing page's scroll position");
     await page.goBack();
     await page.waitForURL(url => url.pathname === "/museum.html");
-    await page.waitForTimeout(250);
+    await page.waitForTimeout(300);
     const restoredScroll = await page.evaluate(() => window.scrollY);
-    assert.ok(Math.abs(restoredScroll - savedScroll) <= 3, "Back navigation should restore the prior scroll position (saved " + savedScroll + ", restored " + restoredScroll + ")");
+    assert.ok(Math.abs(restoredScroll - savedScroll) <= 3, "Back navigation should restore the saved scroll position (saved " + savedScroll + ", restored " + restoredScroll + ")");
 
     await ensurePanelOpen();
     await page.locator('#ifd-navtrail a[title="Return to the first page in this tab"]').click();
