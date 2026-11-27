@@ -9,7 +9,18 @@ const gateways = [
   "library-gateway.html",
   "museum-gateway.html",
   "experience-gateway.html",
-  "participate-gateway.html"
+  "participate-gateway.html",
+  "luna-crown.html",
+  "homepage-cathedral.html",
+  "current-ifd-formulation.html",
+  "tools.html",
+  "quiz-lab.html",
+  "research-deep.html",
+  "structure-dynamics-identity.html",
+  "terms.html",
+  "privacy.html",
+  "copyright.html",
+  "research-intake.html"
 ];
 const requiredLinks = [
   ["Copyright © 2026 Rick York", "/copyright"],
@@ -18,6 +29,11 @@ const requiredLinks = [
   ["Terms &amp; Conditions", "/terms"]
 ];
 const sharedCss = fs.readFileSync(path.join(root, "copyright.css"), "utf8");
+
+assert.match(sharedCss, /\.ifd-footer-brand\s*\{[^}]*color:\s*#d6b15a/i,
+  "Shared CSS must define the Cathedral-gold footer brand label");
+assert.match(sharedCss, /\.ifd-footer\s*\{[^}]*font-family:\s*Aptos,\s*"Segoe UI",\s*sans-serif/is,
+  "Shared CSS must own the footer typography");
 
 assert.match(sharedCss, /\.ifd-footer table\s*\{/is,
   "Shared CSS must define the footer table");
@@ -32,8 +48,18 @@ for (const filename of gateways) {
   const html = fs.readFileSync(path.join(root, filename), "utf8");
   assert.ok(html.includes('<link rel="stylesheet" href="/copyright.css">'),
     filename + " must load the shared footer stylesheet");
-  assert.match(html, /<footer\b[^>]*class="ifd-footer"/,
-    filename + " must contain the shared Cathedral footer");
+  assert.match(html, /<footer class="ifd-footer">/,
+    filename + " must use the shared footer class without inline style attributes");
+  assert.match(html, /<div class="ifd-footer-inner">/,
+    filename + " must use the shared footer inner wrapper");
+  assert.match(html, /<div class="ifd-footer-brand">Identity Field Dynamics · Research in development\.<\/div>/,
+    filename + " must use the shared footer brand style");
+  assert.doesNotMatch(html, /<footer\b[^>]*\bstyle=/i,
+    filename + " must not override the shared footer stylesheet inline");
+  assert.doesNotMatch(html, /<div class="ifd-footer-inner"[^>]*\bstyle=/i,
+    filename + " must not override the shared inner-wrapper stylesheet inline");
+  assert.doesNotMatch(html, /<table\b[^>]*\bstyle=/i,
+    filename + " must not override the shared footer-table stylesheet inline");
   assert.match(html, /<table\b(?=[^>]*role="presentation")(?=[^>]*border="0")/i,
     filename + " must use a borderless footer table");
   assert.match(html, /<tr>\s*<td[\s\S]*?<td[\s\S]*?<td[\s\S]*?<td[\s\S]*?<\/tr>/i,
@@ -51,4 +77,11 @@ for (const filename of gateways) {
       filename + " must include label " + label);
   }
 }
+
+const serverSource = fs.readFileSync(path.resolve(__dirname, "../server.js"), "utf8");
+assert.match(serverSource, /<footer class="ifd-footer">[\s\S]*?<a href="\/terms">Terms &amp; Conditions<\/a>/,
+  "Dynamic deepPage template must use the shared four-link service footer");
+assert.doesNotMatch(serverSource, /<footer><div style="width:min\(900px/,
+  "Dynamic deepPage template must not retain its reduced legacy footer");
+
 console.log(JSON.stringify({ result: "PASS", gateways_checked: gateways.length, utilities_per_gateway: requiredLinks.length, gold: "#d6b15a" }, null, 2));
