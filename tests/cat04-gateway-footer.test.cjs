@@ -32,8 +32,18 @@ for (const filename of gateways) {
   const html = fs.readFileSync(path.join(root, filename), "utf8");
   assert.ok(html.includes('<link rel="stylesheet" href="/copyright.css">'),
     filename + " must load the shared footer stylesheet");
-  assert.match(html, /<footer\b[^>]*class="ifd-footer"/,
-    filename + " must contain the shared Cathedral footer");
+  assert.match(html, /<footer class="ifd-footer">/,
+    filename + " must use the shared footer class without inline style attributes");
+  assert.match(html, /<div class="ifd-footer-inner">/,
+    filename + " must use the shared footer inner wrapper");
+  assert.match(html, /<div class="ifd-footer-brand">Identity Field Dynamics · Research in development\\.<\\/div>/,
+    filename + " must use the shared footer brand style");
+  assert.doesNotMatch(html, /<footer\\b[^>]*\\bstyle=/i,
+    filename + " must not override the shared footer stylesheet inline");
+  assert.doesNotMatch(html, /<div class="ifd-footer-inner"[^>]*\\bstyle=/i,
+    filename + " must not override the shared inner-wrapper stylesheet inline");
+  assert.doesNotMatch(html, /<table\\b[^>]*\\bstyle=/i,
+    filename + " must not override the shared footer-table stylesheet inline");
   assert.match(html, /<table\b(?=[^>]*role="presentation")(?=[^>]*border="0")/i,
     filename + " must use a borderless footer table");
   assert.match(html, /<tr>\s*<td[\s\S]*?<td[\s\S]*?<td[\s\S]*?<td[\s\S]*?<\/tr>/i,
