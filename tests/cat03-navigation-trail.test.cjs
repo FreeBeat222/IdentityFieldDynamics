@@ -90,7 +90,7 @@ async function main() {
         borderTopWidth: trail ? getComputedStyle(trail).borderTopWidth : null,
         backgroundImage: trail ? getComputedStyle(trail).backgroundImage : null,
         trailWidth: trail ? Math.round(trail.getBoundingClientRect().width) : 0,
-        toggleText: trail ? trail.querySelector(".toggle").innerText.replace(/\\s+/g, " ").trim() : "",
+        toggleText: trail ? trail.querySelector(".toggle").innerText.trim() : "",
         topMargin: trail ? parseFloat(getComputedStyle(trail).marginTop) : 0,
         footerWidth: footer ? Math.round(footer.getBoundingClientRect().width) : 0,
         menuWidth: footer ? Math.round(footer.querySelector(".ifd-footer-links").getBoundingClientRect().width) : 0
