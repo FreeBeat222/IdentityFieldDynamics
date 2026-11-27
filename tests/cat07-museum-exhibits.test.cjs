@@ -92,7 +92,7 @@ for (const page of serviceMenuPages) {
   for (const href of ["/copyright", "/contact", "/privacy", "/terms"]) {
     assert.ok(html.includes('href="' + href + '"'), page + " must carry the current service-menu link " + href);
   }
-  assert.equal((html.match(/href="\\/copyright"/g) || []).length, 1, page + " must contain exactly one copyright service link");
+  assert.equal((html.split('href="/copyright"').length - 1), 1, page + " must contain exactly one copyright service link");
 }
 
 console.log(JSON.stringify({ result: "PASS", individual_artifact_pages: pages.length, artifact_detail_links: detailLinks.length, lunations_book_pages: 8, original_plates: 5, museum_name: "IFD Museum of Artificial Science", lunations_first_position: "PASS" }, null, 2));
