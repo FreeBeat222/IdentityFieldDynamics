@@ -170,6 +170,7 @@ async function main() {
     auditPage.on("pageerror", error => pageErrors.push(error.message));
     const htmlFiles = (await fs.readdir(publicRoot)).filter(name => name.endsWith(".html"));
     const auditedPages = [];
+    const placementFailures = [];
     for (const name of htmlFiles) {
       const source = await fs.readFile(path.join(publicRoot, name), "utf8");
       if (!source.includes("/js/ifd-navigation-trail.js")) continue;
@@ -185,14 +186,14 @@ async function main() {
           footerInsideMain: !!(footer && footer.closest("main"))
         };
       });
-      assert.equal(placement.hasFooter, true, name + ": shared Trail page must have the Cathedral footer");
-      assert.equal(placement.directBodyChild, true, name + ": Navigation Trail must be a direct child of body");
-      assert.equal(placement.immediatelyBeforeFooter, true, name + ": Navigation Trail must be immediately above the footer");
-      assert.equal(placement.footerInsideMain, false, name + ": footer must sit outside main content");
+      if (!placement.hasFooter || !placement.directBodyChild || !placement.immediatelyBeforeFooter || placement.footerInsideMain) {
+        placementFailures.push({ page: name, ...placement });
+      }
       auditedPages.push(name);
     }
     await auditPage.close();
 
+    assert.deepEqual(placementFailures, [], "Navigation Trail structural acceptance failures: " + JSON.stringify(placementFailures));
     assert.deepEqual(pageErrors, [], "No uncaught browser errors should occur");
     console.log(JSON.stringify({
       result: "PASS",
@@ -206,7 +207,9 @@ async function main() {
       return_to_category: "PASS",
       mobile_viewport: "PASS",
       escape_to_close: "PASS",
-      browser_errors: pageErrors.length
+      browser_errors: pageErrors.length,
+      audited_pages: auditedPages.length,
+      audited_page_list: auditedPages
     }, null, 2));
   } finally {
     await browser.close();
