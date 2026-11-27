@@ -15,6 +15,7 @@ button{background:#202020;color:var(--text);border:1px solid #444;border-radius:
 pre{white-space:pre-wrap;max-height:340px;overflow:auto;background:#0b0b0b;padding:12px;border-radius:7px;color:#ccc}.full{grid-column:1/-1}.warn{color:#e6c77a}
 @media(max-width:760px){.grid{grid-template-columns:1fr}}
 </style>
+<link rel="stylesheet" href="/copyright.css">
 </head>
 <body>
 <main>
@@ -68,38 +69,13 @@ pre{white-space:pre-wrap;max-height:340px;overflow:auto;background:#0b0b0b;paddi
 </section>
 </div>
 </main>
-<script>
-const S={started:null,records:[],log:["OBSERVOR™ 2.0 initialized. Identity inference disabled by design."]};
-const $=id=>document.getElementById(id);
-function now(){return new Date().toISOString()}
-function cfg(){return{study:$('study').value.trim(),property:$('property').value.trim(),ablation:$('ablation').value,condition:$('condition').value,stimulus:$('stimulus').value.trim(),question:$('question').value.trim()}}
-function log(x){S.log.push(now()+"  "+x);$('log').textContent=S.log.join("\n");}
-function render(){
- const r=S.records,n=r.length,rt=n?r.reduce((a,x)=>a+x.rt,0)/n:0;
- $('n').textContent=n;$('rt').textContent=n?Math.round(rt)+" ms":"—";
- const choices=r.filter(x=>x.choice!==null).map(x=>x.choice);
- let p="—";if(choices.length>1){let same=0;for(let i=1;i<choices.length;i++)if(choices[i]===choices[i-1])same++;p=(same/(choices.length-1)).toFixed(3)}
- $('persist').textContent=p;
- if(n>1){const m=rt,v=r.reduce((a,x)=>a+(x.rt-m)**2,0)/n;$('var').textContent=Math.sqrt(v).toFixed(1)+" ms"}else $('var').textContent="—";
- const a=r.filter(x=>x.condition==="H+"),b=r.filter(x=>x.condition!=="H+");
- $('hdi').textContent=a.length&&b.length?Math.abs(a.reduce((s,x)=>s+x.rt,0)/a.length-b.reduce((s,x)=>s+x.rt,0)/b.length).toFixed(1)+" ms":"—";
-}
-$('start').onclick=()=>{S.started=performance.now();$('status').textContent="Trial active. Record an observable response; do not interpret it.";log("START "+JSON.stringify(cfg()))};
-$('record').onclick=()=>{
- if(S.started===null){$('status').textContent="Start a trial first.";return}
- const rt=Math.round(performance.now()-S.started), c=cfg();
- const choice=prompt("Record the observable response (free text):","")??"";
- S.records.push({...c,trial:S.records.length+1,time:now(),rt,response:choice,choice:choice||null});
- S.started=null;render();$('status').textContent="Recorded. Observation stored without identity interpretation.";log("RECORD trial="+S.records.length+" condition="+c.condition+" rt="+rt+"ms");
-};
-$('reset').onclick=()=>{S.started=null;$('status').textContent="Trial reset. No record created.";};
-$('compare').onclick=()=>{
- const groups={};for(const r of S.records)(groups[r.condition]??=[]).push(r);
- const summary=Object.fromEntries(Object.entries(groups).map(([k,v])=>[k,{n:v.length,mean_rt:Math.round(v.reduce((a,x)=>a+x.rt,0)/v.length),responses:v.map(x=>x.response)}]));
- $('result').textContent=JSON.stringify({question:$('question').value,property:$('property').value,comparison:summary,interpretation:"Descriptive only. A difference supports an effect of the manipulation; it does not by itself establish identity."},null,2);
- log("COMPARE conditions="+Object.keys(groups).join(","));
-};
-$('export').onclick=()=>{const out={schema:"OBSERVOR-2.0",created_at:now(),study:cfg(),records:S.records,method:{identity_inference:"disabled",principle:"measure -> manipulate -> observe -> compare -> construct"}};const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(out,null,2)],{type:"application/json"}));a.download="observor-2.0-study.json";a.click();URL.revokeObjectURL(a.href)};
-render();
-</script>
+<footer class="ifd-footer">
+<nav class="ifd-footer-links" aria-label="Footer">
+<a href="/copyright">Copyright © 2026 Rick York</a>
+<a href="/contact">Contact Us</a>
+<a href="/privacy">Privacy Policy</a>
+<a href="/terms">Terms &amp; Conditions</a>
+</nav>
+</footer>
+<script src="/js/ifd-navigation-trail.js" defer></script>
 </body></html>
