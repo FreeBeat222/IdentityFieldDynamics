@@ -38,6 +38,11 @@ async function main() {
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
   const pageErrors = [];
+  const ensurePanelOpen = async () => {
+    if (await page.locator("#ifd-navtrail").getAttribute("data-open") !== "true") {
+      await page.locator("#ifd-navtrail .toggle").click();
+    }
+  };
   page.on("pageerror", error => pageErrors.push(error.message));
 
   const steps = [
@@ -87,6 +92,7 @@ async function main() {
     await page.waitForURL(url => url.pathname === "/museum.html");
     await page.waitForTimeout(150);
     const afterBack = await page.evaluate(() => JSON.parse(sessionStorage.getItem("ifd.navigationTrail.v1")).visits.length);
+    await ensurePanelOpen();
     await page.locator('#ifd-navtrail [data-step="1"]').click();
     await page.waitForURL(url => url.pathname === "/salon.html");
     await page.waitForTimeout(150);
@@ -107,7 +113,7 @@ async function main() {
     const restoredScroll = await page.evaluate(() => window.scrollY);
     assert.ok(Math.abs(restoredScroll - savedScroll) <= 3, "Back navigation should restore the prior scroll position");
 
-    await page.locator("#ifd-navtrail .toggle").click();
+    await ensurePanelOpen();
     await page.locator('#ifd-navtrail a[title="Return to the first page in this tab"]').click();
     await page.waitForURL(url => url.pathname === "/");
     assert.equal(new URL(page.url()).pathname, "/", "Point of Origin should return to the homepage");
@@ -116,7 +122,7 @@ async function main() {
     const toggleBox = await page.locator("#ifd-navtrail .toggle").boundingBox();
     assert.ok(toggleBox && toggleBox.x >= 0 && toggleBox.x + toggleBox.width <= 390, "Trail control must remain within a mobile viewport");
 
-    await page.locator("#ifd-navtrail .toggle").click();
+    await ensurePanelOpen();
     await page.keyboard.press("Escape");
     assert.equal(await page.locator("#ifd-navtrail").getAttribute("data-open"), "false", "Escape should close the trail panel");
 
