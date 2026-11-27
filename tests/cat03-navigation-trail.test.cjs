@@ -75,15 +75,29 @@ async function main() {
         isBodyChild: trail && trail.parentElement === document.body,
         followsFooter: !!(footer && trail && (footer.compareDocumentPosition(trail) & Node.DOCUMENT_POSITION_FOLLOWING)),
         isLastBodyElement: !!(trail && trail === document.body.lastElementChild),
-        position: trail ? getComputedStyle(trail).position : null
+        position: trail ? getComputedStyle(trail).position : null,
+        separatedByBorder: trail ? getComputedStyle(trail).borderTopWidth === "1px" : false,
+        topMargin: trail ? parseFloat(getComputedStyle(trail).marginTop) : 0,
+        footerWidth: footer ? Math.round(footer.getBoundingClientRect().width) : 0,
+        menuWidth: footer ? Math.round(footer.querySelector(".ifd-footer-links").getBoundingClientRect().width) : 0,
+        menuMinHeight: footer ? getComputedStyle(footer.querySelector(".ifd-footer-links")).minHeight : null
       };
     });
     assert.deepEqual(trailPlacement, {
       isBodyChild: true,
       followsFooter: true,
       isLastBodyElement: true,
-      position: "relative"
-    }, "Navigation Trail must be a normal-flow body element after the footer, never inside or overlaid on it");
+      position: "relative",
+      separatedByBorder: true,
+      topMargin: 22,
+      footerWidth: 1280,
+      menuWidth: trailPlacement.menuWidth,
+      menuMinHeight: "0px"
+    }, "Navigation Trail must be a visibly separated normal-flow body element after the footer, never inside or overlaid on it");
+    assert.ok(trailPlacement.menuWidth < trailPlacement.footerWidth * 0.8, "Footer links must form a compact menu rather than stretch across the page");
+    await page.locator(".ifd-footer-links a").first().hover();
+    const hoverStyle = await page.locator(".ifd-footer-links a").first().evaluate(el => getComputedStyle(el).textShadow);
+    assert.notEqual(hoverStyle, "none", "Footer link hover must use a visible gold glow");
     assert.equal(
       await page.locator('#ifd-navtrail a[title="Return to the first page in this tab"]').getAttribute("href"),
       "/",
