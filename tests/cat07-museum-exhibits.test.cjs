@@ -95,16 +95,16 @@ const expectedFooterLinks = [
 ];
 for (const page of serviceMenuPages) {
   const html = read(page);
-  const footerMatches = [...html.matchAll(/<footer\\b[\\s\\S]*?<\\/footer>/gi)];
+  const footerMatches = [...html.matchAll(/<footer\b[\s\S]*?<\/footer>/gi)];
   assert.equal(footerMatches.length, 1, page + " must contain exactly one footer");
   const footer = footerMatches[0][0];
   assert.match(footer, /<footer class="ifd-footer">/, page + " must use the shared footer root");
   assert.match(footer, /<nav class="ifd-footer-links" aria-label="Footer">/, page + " must use the shared four-link navigation");
-  const links = [...footer.matchAll(/<a\\s+href="([^"]+)"[^>]*>([\\s\\S]*?)<\\/a>/gi)]
-    .map(m => [m[2].replace(/<[^>]*>/g, "").replace(/&amp;/g, "&").replace(/\\s+/g, " ").trim(), m[1]]);
+  const links = [...footer.matchAll(/<a\s+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi)]
+    .map(m => [m[2].replace(/<[^>]*>/g, "").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim(), m[1]]);
   assert.deepEqual(links, expectedFooterLinks, page + " must contain only the four canonical links in order");
-  const footerText = footer.replace(/<[^>]*>/g, "").replace(/&amp;/g, "&").replace(/\\s+/g, " ").trim();
+  const footerText = footer.replace(/<[^>]*>/g, "").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim();
   assert.equal(footerText, expectedFooterLinks.map(x => x[0]).join(" "), page + " footer must contain no additional text");
-  assert.doesNotMatch(footer, /\\bstyle=/i, page + " must not contain inline footer styles");
+  assert.doesNotMatch(footer, /\bstyle=/i, page + " must not contain inline footer styles");
 }
 console.log(JSON.stringify({ result: "PASS", individual_artifact_pages: pages.length, artifact_detail_links: detailLinks.length, lunations_book_pages: 8, original_plates: 5, museum_name: "IFD Museum of Artificial Science", lunations_first_position: "PASS" }, null, 2));
