@@ -121,6 +121,7 @@ async function main() {
     const laReinaGlow = laReina.locator(".hotspot-glow");
     const idleOpacity = Number(await laReinaGlow.evaluate(el => getComputedStyle(el).opacity));
     await laReina.hover();
+    await desktop.waitForTimeout(250); // Allow the existing 180ms hover transition to complete.
     const hoverOpacity = Number(await laReinaGlow.evaluate(el => getComputedStyle(el).opacity));
     assert.ok(hoverOpacity > idleOpacity, "La Reina must illuminate on hover within the original image");
     await desktop.screenshot({ path: path.join(outputRoot, "desktop-la-reina-hover.png") });
