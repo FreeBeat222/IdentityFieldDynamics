@@ -79,7 +79,7 @@ async function main() {
     await desktop.screenshot({ path: path.join(outputRoot, "desktop-signet-modal.png") });
 
     await desktop.keyboard.press("Escape");
-    await desktop.locator("#artifact-modal[aria-hidden='true']").waitFor();
+    await desktop.locator("#artifact-modal").waitFor({ state: "hidden" });
     const tiaraTrigger = desktop.locator('.regalia-trigger[aria-label*="Tiara of La Reina"]');
     await tiaraTrigger.click();
     await desktop.locator("#artifact-modal[aria-hidden='false']").waitFor();
