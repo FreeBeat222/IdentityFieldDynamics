@@ -78,6 +78,24 @@ async function main() {
     assert.equal(modal.dialogVisible, true);
     await desktop.screenshot({ path: path.join(outputRoot, "desktop-signet-modal.png") });
 
+    await desktop.keyboard.press("Escape");
+    await desktop.locator("#artifact-modal[aria-hidden='true']").waitFor();
+    const tiaraTrigger = desktop.locator('.regalia-trigger[aria-label*="Tiara of La Reina"]');
+    await tiaraTrigger.click();
+    await desktop.locator("#artifact-modal[aria-hidden='false']").waitFor();
+    await desktop.locator("#artifact-modal-image").evaluate(img => img.decode());
+    const tiaraModal = await desktop.evaluate(() => ({
+      title: document.querySelector("#artifact-modal-title").textContent,
+      imageLoaded: document.querySelector("#artifact-modal-image").naturalWidth > 0,
+      imageSource: document.querySelector("#artifact-modal-image").getAttribute("src"),
+      onwardHref: document.querySelector("#artifact-modal-link").getAttribute("href")
+    }));
+    assert.equal(tiaraModal.title, "The Tiara of La Reina");
+    assert.equal(tiaraModal.imageLoaded, true, "The Tiara modal artwork must load");
+    assert.equal(tiaraModal.imageSource, "/la%20reina.png");
+    assert.equal(tiaraModal.onwardHref, "/luna-tiara.html");
+    await desktop.screenshot({ path: path.join(outputRoot, "desktop-tiara-modal.png") });
+
     const mobile = await browser.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 1 });
     mobile.on("pageerror", error => errors.push(error.message));
     await mobile.goto(base + "/commemorative-set.html", { waitUntil: "networkidle" });
@@ -107,11 +125,13 @@ async function main() {
       viewport: { desktop: "1440x1000", mobile: "390x844" },
       composition,
       modal,
+      tiaraModal,
       mobileLayout,
       tiaraImage,
       screenshots: [
         "desktop-casket-composition.png",
         "desktop-signet-modal.png",
+        "desktop-tiara-modal.png",
         "mobile-casket-composition.png",
         "mobile-tiara-exhibit.png"
       ]
