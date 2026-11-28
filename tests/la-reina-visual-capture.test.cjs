@@ -130,6 +130,12 @@ async function main() {
     mobile.on("pageerror", error => errors.push(error.message));
     await mobile.goto(base + "/commemorative-set.html", { waitUntil: "networkidle" });
     await mobile.locator(".casket-stage > img").waitFor();
+    const mobileTiara = await mobile.locator(".tiara-link .tiara-preview").evaluate(img => ({
+      loaded: img.complete && img.naturalWidth > 0,
+      href: img.closest("a").getAttribute("href")
+    }));
+    assert.equal(mobileTiara.loaded, true, "Illuminated Tiara artwork must load on mobile beneath the casket");
+    assert.equal(mobileTiara.href, "/luna-tiara.html", "Mobile Tiara artwork must link directly to its exhibit");
     await mobile.screenshot({ path: path.join(outputRoot, "mobile-casket-composition.png"), fullPage: true });
     const mobileLayout = await mobile.evaluate(() => ({
       viewportWidth: innerWidth,
@@ -156,6 +162,7 @@ async function main() {
       composition,
       modal,
       tiaraPreview,
+      mobileTiara,
       mobileLayout,
       tiaraImage,
       screenshots: [
