@@ -80,6 +80,30 @@ async function main() {
 
     await desktop.keyboard.press("Escape");
     await desktop.locator("#artifact-modal").waitFor({ state: "hidden" });
+
+    const remainingCasketPieces = [
+      { label: "IFD Medallion", title: "The IFD Medallion", image: "/C3.png", href: "/commemorative-ifd-medallion.html" },
+      { label: "Sequence Ring", title: "The AIIST Sequence Ring", image: "/C1.png", href: "/commemorative-a-i-i-s-t-ring.html" },
+      { label: "Zodiac Medallion", title: "The Zodiac Medallion", image: "/C4.png", href: "/commemorative-zodiac-medallion.html" }
+    ];
+    for (const piece of remainingCasketPieces) {
+      await desktop.locator('.casket-map a[aria-label*="' + piece.label + '"]').click();
+      await desktop.locator("#artifact-modal[aria-hidden='false']").waitFor();
+      await desktop.locator("#artifact-modal-image").evaluate(img => img.decode());
+      const opened = await desktop.evaluate(() => ({
+        title: document.querySelector("#artifact-modal-title").textContent,
+        imageLoaded: document.querySelector("#artifact-modal-image").naturalWidth > 0,
+        imageSource: document.querySelector("#artifact-modal-image").getAttribute("src"),
+        onwardHref: document.querySelector("#artifact-modal-link").getAttribute("href")
+      }));
+      assert.equal(opened.title, piece.title, piece.label + " modal title must match");
+      assert.equal(opened.imageLoaded, true, piece.label + " artwork must load");
+      assert.equal(opened.imageSource, piece.image, piece.label + " artwork source must match");
+      assert.equal(opened.onwardHref, piece.href, piece.label + " onward exhibit link must match");
+      await desktop.keyboard.press("Escape");
+      await desktop.locator("#artifact-modal").waitFor({ state: "hidden" });
+    }
+
     const tiaraTrigger = desktop.locator('.regalia-trigger[aria-label*="Tiara of La Reina"]');
     await tiaraTrigger.click();
     await desktop.locator("#artifact-modal[aria-hidden='false']").waitFor();
