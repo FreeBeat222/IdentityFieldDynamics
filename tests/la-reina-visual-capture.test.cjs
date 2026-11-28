@@ -63,7 +63,7 @@ async function main() {
     assert.equal(composition.totalTriggers, 5, "The separate Tiara regalia trigger must be present as the fifth trigger");
     await desktop.screenshot({ path: path.join(outputRoot, "desktop-casket-composition.png"), fullPage: true });
 
-    await desktop.locator('.casket-map a[aria-label*="AIIST Signet"]').click();
+    await desktop.locator('.casket-map a[aria-label*="Sequence Ring"]').click();
     await desktop.locator("#artifact-modal[aria-hidden='false']").waitFor();
     await desktop.locator("#artifact-modal-image").evaluate(img => img.decode());
     const modal = await desktop.evaluate(() => ({
@@ -72,18 +72,18 @@ async function main() {
       onwardHref: document.querySelector("#artifact-modal-link").getAttribute("href"),
       dialogVisible: getComputedStyle(document.querySelector("#artifact-modal")).display !== "none"
     }));
-    assert.equal(modal.title, "The AIIST Signet");
+    assert.equal(modal.title, "The AIIST Sequence Ring");
     assert.equal(modal.imageLoaded, true, "Enlarged artifact artwork must load");
-    assert.equal(modal.onwardHref, "/commemorative-aiist-signet.html");
+    assert.equal(modal.onwardHref, "/commemorative-a-i-i-s-t-ring.html");
     assert.equal(modal.dialogVisible, true);
-    await desktop.screenshot({ path: path.join(outputRoot, "desktop-signet-modal.png") });
+    await desktop.screenshot({ path: path.join(outputRoot, "desktop-sequence-ring-modal.png") });
 
     await desktop.keyboard.press("Escape");
     await desktop.locator("#artifact-modal").waitFor({ state: "hidden" });
 
     const remainingCasketPieces = [
+      { label: "AIIST Signet", title: "The AIIST Signet", image: "/C2.png", href: "/commemorative-aiist-signet.html" },
       { label: "IFD Medallion", title: "The IFD Medallion", image: "/C3.png", href: "/commemorative-ifd-medallion.html" },
-      { label: "Sequence Ring", title: "The AIIST Sequence Ring", image: "/C1.png", href: "/commemorative-a-i-i-s-t-ring.html" },
       { label: "Zodiac Medallion", title: "The Zodiac Medallion", image: "/C4.png", href: "/commemorative-zodiac-medallion.html" }
     ];
     for (const piece of remainingCasketPieces) {
@@ -104,21 +104,20 @@ async function main() {
       await desktop.locator("#artifact-modal").waitFor({ state: "hidden" });
     }
 
-    const tiaraTrigger = desktop.locator('.regalia-trigger[aria-label*="Tiara of La Reina"]');
-    await tiaraTrigger.click();
-    await desktop.locator("#artifact-modal[aria-hidden='false']").waitFor();
-    await desktop.locator("#artifact-modal-image").evaluate(img => img.decode());
-    const tiaraModal = await desktop.evaluate(() => ({
-      title: document.querySelector("#artifact-modal-title").textContent,
-      imageLoaded: document.querySelector("#artifact-modal-image").naturalWidth > 0,
-      imageSource: document.querySelector("#artifact-modal-image").getAttribute("src"),
-      onwardHref: document.querySelector("#artifact-modal-link").getAttribute("href")
+    const tiaraLink = desktop.locator('.tiara-link[aria-label*="Tiara of La Reina"]');
+    const tiaraPreview = await tiaraLink.locator(".tiara-preview").evaluate(img => ({
+      loaded: img.complete && img.naturalWidth > 0,
+      source: img.getAttribute("src"),
+      filter: getComputedStyle(img).filter
     }));
-    assert.equal(tiaraModal.title, "The Tiara of La Reina");
-    assert.equal(tiaraModal.imageLoaded, true, "The Tiara modal artwork must load");
-    assert.equal(tiaraModal.imageSource, "/la%20reina.png");
-    assert.equal(tiaraModal.onwardHref, "/luna-tiara.html");
-    await desktop.screenshot({ path: path.join(outputRoot, "desktop-tiara-modal.png") });
+    assert.equal(tiaraPreview.loaded, true, "The illuminated Tiara artwork must load beneath the casket");
+    assert.equal(tiaraPreview.source, "/la%20reina.png");
+    assert.match(tiaraPreview.filter, /brightness\(/, "The Tiara artwork itself must be illuminated");
+    assert.equal(await tiaraLink.getAttribute("href"), "/luna-tiara.html", "The Tiara image must link directly to its exhibit");
+    await desktop.screenshot({ path: path.join(outputRoot, "desktop-tiara-link.png") });
+    await tiaraLink.click();
+    await desktop.waitForURL("**/luna-tiara.html");
+    assert.equal(await desktop.locator(".tiara-image").evaluate(img => img.complete && img.naturalWidth > 0), true, "Clicking the Tiara artwork must open its exhibit");
 
     const mobile = await browser.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 1 });
     mobile.on("pageerror", error => errors.push(error.message));
@@ -149,13 +148,13 @@ async function main() {
       viewport: { desktop: "1440x1000", mobile: "390x844" },
       composition,
       modal,
-      tiaraModal,
+      tiaraPreview,
       mobileLayout,
       tiaraImage,
       screenshots: [
         "desktop-casket-composition.png",
-        "desktop-signet-modal.png",
-        "desktop-tiara-modal.png",
+        "desktop-sequence-ring-modal.png",
+        "desktop-tiara-link.png",
         "mobile-casket-composition.png",
         "mobile-tiara-exhibit.png"
       ]
