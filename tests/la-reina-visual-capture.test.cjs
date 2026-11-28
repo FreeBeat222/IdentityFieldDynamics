@@ -55,12 +55,19 @@ async function main() {
         imageHeight: image.naturalHeight,
         casketHotspots: document.querySelectorAll(".casket-map .artifact-trigger").length,
         totalTriggers: document.querySelectorAll(".artifact-trigger").length,
+        mappedArtifacts: [...document.querySelectorAll(".casket-map a")].map(a => ({ image: a.dataset.artifactImage, title: a.dataset.artifactTitle, href: a.dataset.artifactLink })),
         stage: (() => { const r = document.querySelector(".casket-stage").getBoundingClientRect(); return { width: Math.round(r.width), height: Math.round(r.height) }; })()
       };
     });
     assert.equal(composition.imageLoaded, true, "Casket artwork must load in Chromium");
     assert.equal(composition.casketHotspots, 4, "The casket must expose exactly four mapped artifact hotspots");
-    assert.equal(composition.totalTriggers, 5, "The separate Tiara regalia trigger must be present as the fifth trigger");
+    assert.equal(composition.totalTriggers, 4, "Only the four casket pieces use modal triggers");
+    assert.deepEqual(composition.mappedArtifacts, [
+      { image: "/C1.png", title: "The AIIST Sequence Ring", href: "/commemorative-a-i-i-s-t-ring.html" },
+      { image: "/C2.png", title: "The AIIST Signet", href: "/commemorative-aiist-signet.html" },
+      { image: "/C3.png", title: "The IFD Medallion", href: "/commemorative-ifd-medallion.html" },
+      { image: "/C4.png", title: "The Zodiac Medallion", href: "/commemorative-zodiac-medallion.html" }
+    ], "Casket hotspots must follow the intended left-to-right C1–C4 order");
     await desktop.screenshot({ path: path.join(outputRoot, "desktop-casket-composition.png"), fullPage: true });
 
     await desktop.locator('.casket-map a[aria-label*="Sequence Ring"]').click();
