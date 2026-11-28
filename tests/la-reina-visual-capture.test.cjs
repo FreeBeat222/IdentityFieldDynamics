@@ -55,13 +55,18 @@ async function main() {
         imageHeight: image.naturalHeight,
         casketHotspots: document.querySelectorAll(".casket-map .artifact-trigger").length,
         totalTriggers: document.querySelectorAll(".artifact-trigger").length,
-        mappedArtifacts: [...document.querySelectorAll(".casket-map a")].map(a => ({ image: a.dataset.artifactImage, title: a.dataset.artifactTitle, href: a.dataset.artifactLink })),
+        totalMappedLinks: document.querySelectorAll(".casket-map a").length,
+        laReinaLink: (() => { const a=document.querySelector(".casket-map .la-reina-hotspot"); return a ? { href:a.getAttribute("href"), bounds:a.querySelector(".hotspot-hit").getAttribute("cx")+","+a.querySelector(".hotspot-hit").getAttribute("cy") } : null; })(),
+        mappedArtifacts: [...document.querySelectorAll(".casket-map .artifact-trigger")].map(a => ({ image: a.dataset.artifactImage, title: a.dataset.artifactTitle, href: a.dataset.artifactLink })),
         stage: (() => { const r = document.querySelector(".casket-stage").getBoundingClientRect(); return { width: Math.round(r.width), height: Math.round(r.height) }; })()
       };
     });
     assert.equal(composition.imageLoaded, true, "Casket artwork must load in Chromium");
     assert.equal(composition.casketHotspots, 4, "The casket must expose exactly four mapped artifact hotspots");
     assert.equal(composition.totalTriggers, 4, "Only the four casket pieces use modal triggers");
+    assert.equal(composition.totalMappedLinks, 5, "The original composition must expose four casket hotspots plus La Reina");
+    assert.deepEqual(composition.laReinaLink, { href: "/luna-tiara.html", bounds: "1276,2039" }, "La Reina must be a direct hotspot in the original composition");
+    assert.equal(await desktop.locator(".regalia-discovery, .tiara-preview, .tiara-link").count(), 0, "No duplicate La Reina artwork or separate link may appear beneath the composition");
     assert.deepEqual(composition.mappedArtifacts, [
       { image: "/C1.png", title: "The AIIST Sequence Ring", href: "/commemorative-a-i-i-s-t-ring.html" },
       { image: "/C2.png", title: "The AIIST Signet", href: "/commemorative-aiist-signet.html" },
@@ -111,31 +116,29 @@ async function main() {
       await desktop.locator("#artifact-modal").waitFor({ state: "hidden" });
     }
 
-    const tiaraLink = desktop.locator('.tiara-link[aria-label*="Tiara of La Reina"]');
-    const tiaraPreview = await tiaraLink.locator(".tiara-preview").evaluate(img => ({
-      loaded: img.complete && img.naturalWidth > 0,
-      source: img.getAttribute("src"),
-      filter: getComputedStyle(img).filter
-    }));
-    assert.equal(tiaraPreview.loaded, true, "The illuminated Tiara artwork must load beneath the casket");
-    assert.equal(tiaraPreview.source, "/la%20reina.png");
-    assert.match(tiaraPreview.filter, /brightness\(/, "The Tiara artwork itself must be illuminated");
-    assert.equal(await tiaraLink.getAttribute("href"), "/luna-tiara.html", "The Tiara image must link directly to its exhibit");
-    await desktop.screenshot({ path: path.join(outputRoot, "desktop-tiara-link.png") });
-    await tiaraLink.click();
+    const laReina = desktop.locator('.casket-map .la-reina-hotspot');
+    assert.equal(await laReina.getAttribute("href"), "/luna-tiara.html", "La Reina hotspot must link directly to her exhibit");
+    const laReinaGlow = laReina.locator(".hotspot-glow");
+    const idleOpacity = Number(await laReinaGlow.evaluate(el => getComputedStyle(el).opacity));
+    await laReina.hover();
+    const hoverOpacity = Number(await laReinaGlow.evaluate(el => getComputedStyle(el).opacity));
+    assert.ok(hoverOpacity > idleOpacity, "La Reina must illuminate on hover within the original image");
+    await desktop.screenshot({ path: path.join(outputRoot, "desktop-la-reina-hover.png") });
+    await laReina.click();
     await desktop.waitForURL("**/luna-tiara.html");
-    assert.equal(await desktop.locator(".tiara-image").evaluate(img => img.complete && img.naturalWidth > 0), true, "Clicking the Tiara artwork must open its exhibit");
+    assert.equal(await desktop.locator(".tiara-image").evaluate(img => img.complete && img.naturalWidth > 0), true, "Clicking La Reina in the original composition must open her exhibit");
 
     const mobile = await browser.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 1 });
     mobile.on("pageerror", error => errors.push(error.message));
     await mobile.goto(base + "/commemorative-set.html", { waitUntil: "networkidle" });
     await mobile.locator(".casket-stage > img").waitFor();
-    const mobileTiara = await mobile.locator(".tiara-link .tiara-preview").evaluate(img => ({
-      loaded: img.complete && img.naturalWidth > 0,
-      href: img.closest("a").getAttribute("href")
+    const mobileLaReina = await mobile.locator(".casket-map .la-reina-hotspot").evaluate(a => ({
+      href: a.getAttribute("href"),
+      hotspotPresent: !!a.querySelector(".hotspot-glow")
     }));
-    assert.equal(mobileTiara.loaded, true, "Illuminated Tiara artwork must load on mobile beneath the casket");
-    assert.equal(mobileTiara.href, "/luna-tiara.html", "Mobile Tiara artwork must link directly to its exhibit");
+    assert.equal(mobileLaReina.hotspotPresent, true, "La Reina hotspot must remain mapped within the original artwork on mobile");
+    assert.equal(mobileLaReina.href, "/luna-tiara.html", "Mobile La Reina hotspot must link directly to her exhibit");
+    assert.equal(await mobile.locator(".regalia-discovery, .tiara-preview, .tiara-link").count(), 0, "Mobile layout must not duplicate La Reina beneath the composition");
     await mobile.screenshot({ path: path.join(outputRoot, "mobile-casket-composition.png"), fullPage: true });
     const mobileLayout = await mobile.evaluate(() => ({
       viewportWidth: innerWidth,
@@ -161,8 +164,8 @@ async function main() {
       viewport: { desktop: "1440x1000", mobile: "390x844" },
       composition,
       modal,
-      tiaraPreview,
-      mobileTiara,
+      laReina: { href: "/luna-tiara.html", hoverOpacity },
+      mobileLaReina,
       mobileLayout,
       tiaraImage,
       screenshots: [
