@@ -84,7 +84,7 @@ assert.doesNotMatch(artifacts, /IFD Museum of Artificial History/i, "The collect
 assert.ok(artifacts.indexOf("Gallery I · Lunations") < artifacts.indexOf("Gallery II · The IFD Insignia"),
   "Lunations must occupy the first gallery position");
 
-assert.equal((artifacts.match(/class="entry"/g) || []).length, 12, "The catalogue must contain one ordered entry for each of the 12 individual works");
+assert.equal((artifacts.match(/class="entry"/g) || []).length, 13, "The catalogue must contain one ordered entry for each of the 13 individual works");
 assert.doesNotMatch(artifacts, /class="artifact-grid"|class="artifact-card"|<img\s/i, "The catalogue must not present the collection as a loose display of artifact cards or thumbnails");
 const serviceMenuPages = ["eliza.html", "happy-shoggoth.html", "write-club.html", "good-times-gallery.html", "salon.html", "lunations.html", "human-artificial-encounter.html", "museum.html", "luna-artifacts.html"];
 const expectedFooterLinks = [
