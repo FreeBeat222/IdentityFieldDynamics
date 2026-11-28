@@ -35,3 +35,13 @@ jobs:
         run: node tests/cat04-gateway-footer.test.cjs
       - name: Run CAT-07 Museum exhibit acceptance
         run: node tests/cat07-museum-exhibits.test.cjs
+      - name: Capture La Reina desktop and mobile exhibits
+        run: node tests/la-reina-visual-capture.test.cjs
+      - name: Upload La Reina visual evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: la-reina-visual-evidence
+          path: artifacts/la-reina-visual/*.png
+          if-no-files-found: warn
+          retention-days: 7

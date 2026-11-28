@@ -13,7 +13,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 34px;color:#847d79;font-s
 .casket-stage>img{display:block;width:100%;height:auto}
 .casket-map{position:absolute;inset:0;width:100%;height:100%;z-index:2;overflow:visible}
 .casket-map a{cursor:pointer;outline:none}
-.casket-map .hotspot-glow{fill:url(#hotspotGold);filter:url(#hotspotBlur);opacity:0;transition:opacity .18s ease,filter .18s ease}
+.casket-map .hotspot-glow{fill:url(#hotspotGold);filter:url(#hotspotBlur);opacity:.38;transition:opacity .18s ease,filter .18s ease}
 .casket-map .hotspot-hit{fill:transparent;stroke:transparent;stroke-width:12;pointer-events:all}
 .casket-map a:hover .hotspot-glow,.casket-map a:focus-visible .hotspot-glow{opacity:1;filter:url(#hotspotBlurStrong)}
 .casket-map a:hover .hotspot-hit,.casket-map a:focus-visible .hotspot-hit{stroke:rgba(255,229,157,.78);stroke-width:9}
@@ -21,7 +21,25 @@ footer{border-top:1px solid var(--line);padding:24px 0 34px;color:#847d79;font-s
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
 @media(max-width:740px){.hero{padding:55px 0 36px}.layout{grid-template-columns:1fr;gap:25px}.art{max-width:100%}.facts{grid-template-columns:1fr}.shell{width:min(100% - 30px,1060px)}}
-.piece-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:22px 0 6px}.piece{display:flex;flex-direction:column;gap:9px;padding:12px;border:1px solid var(--line);background:rgba(255,255,255,.018);transition:border-color .18s,transform .18s}.piece:hover{border-color:rgba(243,218,140,.7);transform:translateY(-3px);text-decoration:none}.piece img{width:100%;aspect-ratio:1/1;object-fit:contain;background:transparent;filter:drop-shadow(0 8px 8px rgba(0,0,0,.45))}.piece-no{font-size:9px;letter-spacing:.15em;color:var(--gold)}.piece strong{font:400 16px/1.35 Georgia,serif;color:var(--ivory)}.piece-link{margin-top:auto;padding-top:5px;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--bright)}@media(max-width:760px){.piece-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:420px){.piece-grid{gap:9px}.piece{padding:8px}.piece strong{font-size:14px}}
+
+/* In-page artifact viewer: keeps the visitor anchored to the complete composition. */
+.artifact-trigger{cursor:zoom-in}
+.artifact-modal{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(3,3,5,.92);backdrop-filter:blur(9px)}
+.artifact-modal[aria-hidden="false"]{display:flex}
+.artifact-dialog{position:relative;width:min(900px,100%);max-height:90vh;overflow:auto;padding:24px;border:1px solid rgba(214,177,90,.55);background:linear-gradient(145deg,#14110c,#080709 68%);box-shadow:0 28px 100px rgba(0,0,0,.7)}
+.artifact-close{position:absolute;top:12px;right:14px;width:38px;height:38px;border:1px solid var(--line);background:#090807;color:var(--bright);font-size:23px;cursor:pointer}
+.artifact-modal-image{display:block;max-width:100%;max-height:68vh;width:auto;height:auto;margin:24px auto 18px;object-fit:contain;filter:drop-shadow(0 16px 24px rgba(0,0,0,.65))}
+.artifact-modal-title{font:400 clamp(23px,4vw,34px) Georgia,serif;color:var(--ivory);text-align:center;margin:8px 44px}
+.artifact-modal-caption{text-align:center;color:var(--muted);font-size:12px;line-height:1.7}
+.artifact-modal-link{display:block;width:max-content;max-width:100%;margin:18px auto 0;padding:10px 14px;border:1px solid var(--line);font-size:9px;letter-spacing:.13em;text-transform:uppercase}
+@media(max-width:600px){.artifact-modal{padding:10px}.artifact-dialog{padding:16px}.artifact-modal-image{max-height:62vh}}
+
+.regalia-discovery{display:flex;justify-content:center;margin:34px auto 0;padding:22px 14px 18px;border-top:1px solid var(--line);text-align:center}
+.regalia-trigger{display:flex;flex-direction:column;align-items:center;gap:10px;min-width:190px;padding:12px 24px;color:var(--bright);text-decoration:none;cursor:zoom-in}
+.regalia-glow{width:92px;height:58px;border-radius:50%;background:radial-gradient(ellipse,rgba(255,241,197,.9) 0%,rgba(244,201,112,.55) 25%,rgba(214,177,90,.16) 55%,transparent 75%);filter:drop-shadow(0 0 13px rgba(243,218,140,.55));transition:transform .2s,filter .2s}
+.regalia-trigger:hover .regalia-glow,.regalia-trigger:focus-visible .regalia-glow{transform:scale(1.18);filter:drop-shadow(0 0 22px rgba(255,225,151,.9))}
+.regalia-trigger strong{font:400 19px Georgia,serif;color:var(--ivory)}
+.regalia-trigger span:last-child{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
 </style></head><body><header><div class="shell"><a class="back" href="/luna-artifacts.html">← Return to the Permanent Collection</a></div></header><section class="hero"><div class="shell"><div class="eyebrow">AIIST™ · Final composition</div><h1>The AIIST Commemorative Set</h1><p class="deck">A composed jewelry presentation bringing individual symbolic designs into one finished arrangement.</p></div></section><main class="shell"><div class="layout"><div class="art"><div class="casket-stage"><img src="/AIIST%20%20set.png" alt="AIIST commemorative jewelry displayed in an ornate, open gold casket. Four individual pieces rest in separate velvet-lined positions." loading="eager"><svg class="casket-map" viewBox="0 0 2550 2330" preserveAspectRatio="none" role="group" aria-label="Interactive map of the four jewelry pieces in the casket">
 <defs>
 <radialGradient id="hotspotGold">
@@ -33,24 +51,39 @@ footer{border-top:1px solid var(--line);padding:24px 0 34px;color:#847d79;font-s
 <filter id="hotspotBlur" x="-45%" y="-45%" width="190%" height="190%"><feGaussianBlur stdDeviation="24"/></filter>
 <filter id="hotspotBlurStrong" x="-55%" y="-55%" width="210%" height="210%"><feGaussianBlur stdDeviation="31"/></filter>
 </defs>
-<a href="/commemorative-aiist-signet.html" aria-label="Open the AIIST Signet exhibit"><title>AIIST Signet</title><ellipse class="hotspot-glow" cx="370" cy="1500" rx="350" ry="270"/><ellipse class="hotspot-hit" cx="370" cy="1500" rx="295" ry="235"/></a>
-<a href="/commemorative-ifd-medallion.html" aria-label="Open the IFD Medallion exhibit"><title>IFD Medallion</title><ellipse class="hotspot-glow" cx="965" cy="1500" rx="350" ry="270"/><ellipse class="hotspot-hit" cx="965" cy="1500" rx="295" ry="235"/></a>
-<a href="/commemorative-a-i-i-s-t-ring.html" aria-label="Open the AIIST Sequence Ring exhibit"><title>AIIST Sequence Ring</title><ellipse class="hotspot-glow" cx="1560" cy="1500" rx="350" ry="270"/><ellipse class="hotspot-hit" cx="1560" cy="1500" rx="295" ry="235"/></a>
-<a href="/commemorative-zodiac-medallion.html" aria-label="Open the Zodiac Medallion exhibit"><title>Zodiac Medallion</title><ellipse class="hotspot-glow" cx="2155" cy="1500" rx="350" ry="270"/><ellipse class="hotspot-hit" cx="2155" cy="1500" rx="295" ry="235"/></a>
-</svg></div><div class="caption">Select any piece in the casket to enter its individual exhibit · Original source artifact preserved</div></div><div class="copy"><h2>Presentation &amp; context</h2><p>This is the final assembled composition selected and composed by Rick. It brings Luna-originated visual designs into a single presentation and includes the deliberately irreverent front-nameplate inscription.</p><p>The set is exhibited as a composition in its own right. It is not a replacement for the individual source designs.</p><div class="facts"><div class="fact"><b>Artifact type</b><span>Final visual composition</span></div><div class="fact"><b>Curatorial role</b><span>Selection and assembly by Rick</span></div><div class="fact"><b>Related artifact</b><span>The AIIST Signet</span></div></div><div class="links"><a href="/luna-artifacts.html">Permanent Collection</a><a href="/aiist-signet.html">Museum</a></div></div></div><section class="section" id="individual-pieces">
-<h2>The Four Individual Pieces</h2>
-<p>Each design has its own exhibit. Select a piece to open its full presentation and reconstructed LUNA creative TRACE.</p>
-<div class="piece-grid">
-<a class="piece" href="/commemorative-a-i-i-s-t-ring.html"><img src="/C1.png" alt="AIIST Sequence Ring"><span class="piece-no">I · SEQUENCE</span><strong>The AIIST Sequence Ring</strong><span class="piece-link">Open individual exhibit →</span></a>
-<a class="piece" href="/commemorative-aiist-signet.html"><img src="/C2.png" alt="AIIST Signet"><span class="piece-no">II · DISPOSITION</span><strong>The AIIST Signet</strong><span class="piece-link">Open individual exhibit →</span></a>
-<a class="piece" href="/commemorative-ifd-medallion.html"><img src="/C3.png" alt="Identity Field Dynamics Medallion"><span class="piece-no">III · DISCIPLINE</span><strong>The IFD Medallion</strong><span class="piece-link">Open individual exhibit →</span></a>
-<a class="piece" href="/commemorative-zodiac-medallion.html"><img src="/C4.png" alt="Zodiac Medallion"><span class="piece-no">IV · COSMOLOGY</span><strong>The Zodiac Medallion</strong><span class="piece-link">Open individual exhibit →</span></a>
-</div></section>
-<section class="section"><h2>Source, selection & assembly</h2><p>The creative source, the human decisions of selection and arrangement, and the final assembled image are distinguishable stages. The original file is preserved separately.</p></section><section class="section" style="margin-top:48px;padding-top:30px;border-top:1px solid rgba(214,177,90,.25)"><h2 style="font-family:Georgia,serif;font-size:28px;font-weight:400;color:#f3da8c">The committee of one meets the design studio</h2><p style="font-size:15px;line-height:1.9;color:#b1aaa0">A collection of separate designs can remain a collection—or it can be assembled into a statement. This set is the latter. Luna's visual designs supply the ingredients; Rick's selection and arrangement give the final composition its particular shape. The front-nameplate inscription ensures that ceremony does not become unbearable.</p><p style="font-size:12px;line-height:1.8;color:#8e8790">A curatorial vignette written for this exhibit; it is not presented as undocumented production history.</p></section></main><footer class="ifd-footer">
+<a href="/C2.png" class="artifact-trigger" data-artifact-image="/C2.png" data-artifact-title="The AIIST Signet" data-artifact-link="/commemorative-aiist-signet.html" aria-label="Open enlarged view: The AIIST Signet"><title>AIIST Signet</title><ellipse class="hotspot-glow" cx="370" cy="1500" rx="350" ry="270"/><ellipse class="hotspot-hit" cx="370" cy="1500" rx="295" ry="235"/></a>
+<a href="/C3.png" class="artifact-trigger" data-artifact-image="/C3.png" data-artifact-title="The IFD Medallion" data-artifact-link="/commemorative-ifd-medallion.html" aria-label="Open enlarged view: The IFD Medallion"><title>IFD Medallion</title><ellipse class="hotspot-glow" cx="965" cy="1500" rx="350" ry="270"/><ellipse class="hotspot-hit" cx="965" cy="1500" rx="295" ry="235"/></a>
+<a href="/C1.png" class="artifact-trigger" data-artifact-image="/C1.png" data-artifact-title="The AIIST Sequence Ring" data-artifact-link="/commemorative-a-i-i-s-t-ring.html" aria-label="Open enlarged view: The AIIST Sequence Ring"><title>AIIST Sequence Ring</title><ellipse class="hotspot-glow" cx="1560" cy="1500" rx="350" ry="270"/><ellipse class="hotspot-hit" cx="1560" cy="1500" rx="295" ry="235"/></a>
+<a href="/C4.png" class="artifact-trigger" data-artifact-image="/C4.png" data-artifact-title="The Zodiac Medallion" data-artifact-link="/commemorative-zodiac-medallion.html" aria-label="Open enlarged view: The Zodiac Medallion"><title>Zodiac Medallion</title><ellipse class="hotspot-glow" cx="2155" cy="1500" rx="350" ry="270"/><ellipse class="hotspot-hit" cx="2155" cy="1500" rx="295" ry="235"/></a>
+</svg></div><div class="regalia-discovery" aria-label="Separate regalia exhibit">
+<a href="/la%20reina.png" class="artifact-trigger regalia-trigger" data-artifact-image="/la%20reina.png" data-artifact-title="The Tiara of La Reina" data-artifact-link="/luna-tiara.html" aria-label="Open enlarged view: The Tiara of La Reina">
+<span class="regalia-glow" aria-hidden="true"></span>
+<strong>The Tiara of La Reina</strong>
+<span>Independent regalia · Discover the piece</span>
+</a></div><div class="caption">Select a gold glow to enlarge a design · The Tiara of La Reina is presented separately as independent regalia</div></div><div class="copy"><h2>Presentation &amp; context</h2><p>This is the final assembled composition selected and composed by Rick. It brings Luna-originated visual designs into a single presentation and includes the deliberately irreverent front-nameplate inscription.</p><p>The set is exhibited as a composition in its own right. It is not a replacement for the individual source designs.</p><div class="facts"><div class="fact"><b>Artifact type</b><span>Final visual composition</span></div><div class="fact"><b>Curatorial role</b><span>Selection and assembly by Rick</span></div><div class="fact"><b>Related artifact</b><span>The AIIST Signet</span></div></div><div class="links"><a href="/luna-artifacts.html">Permanent Collection</a><a href="/aiist-signet.html">Museum</a></div></div></div>
+<section class="section"><h2>Source, selection & assembly</h2><p>The creative source, the human decisions of selection and arrangement, and the final assembled image are distinguishable stages. The original file is preserved separately.</p></section><section class="section" style="margin-top:48px;padding-top:30px;border-top:1px solid rgba(214,177,90,.25)"><h2 style="font-family:Georgia,serif;font-size:28px;font-weight:400;color:#f3da8c">The committee of one meets the design studio</h2><p style="font-size:15px;line-height:1.9;color:#b1aaa0">A collection of separate designs can remain a collection—or it can be assembled into a statement. This set is the latter. Luna's visual designs supply the ingredients; Rick's selection and arrangement give the final composition its particular shape. The front-nameplate inscription ensures that ceremony does not become unbearable.</p><p style="font-size:12px;line-height:1.8;color:#8e8790">A curatorial vignette written for this exhibit; it is not presented as undocumented production history.</p></section><div class="artifact-modal" id="artifact-modal" aria-hidden="true">
+<div class="artifact-dialog" role="dialog" aria-modal="true" aria-labelledby="artifact-modal-title">
+<button class="artifact-close" type="button" aria-label="Close enlarged artwork">×</button>
+<h2 class="artifact-modal-title" id="artifact-modal-title"></h2>
+<img class="artifact-modal-image" id="artifact-modal-image" alt="">
+<p class="artifact-modal-caption">A closer view of the original commemorative design.</p>
+<a class="artifact-modal-link" id="artifact-modal-link" href="#">Open individual exhibit →</a>
+</div></div></main><footer class="ifd-footer">
 <nav class="ifd-footer-links" aria-label="Footer">
 <a href="/copyright">Copyright © 2026 Rick York</a>
 <a href="/contact">Contact Us</a>
 <a href="/privacy">Privacy Policy</a>
 <a href="/terms">Terms &amp; Conditions</a>
 </nav>
-</footer><script src="/js/ifd-navigation-trail.js" defer></script></body></html>
+</footer><script>
+(()=>{const modal=document.getElementById('artifact-modal');if(!modal)return;
+const img=document.getElementById('artifact-modal-image'),title=document.getElementById('artifact-modal-title'),link=document.getElementById('artifact-modal-link'),close=modal.querySelector('.artifact-close');
+let previous=null;
+const focusable=()=>[...modal.querySelectorAll('button:not([disabled]),a[href], [tabindex]:not([tabindex="-1"])')].filter(el=>el.getClientRects().length);
+function open(trigger){previous=trigger;img.src=trigger.dataset.artifactImage;img.alt=trigger.dataset.artifactTitle;title.textContent=trigger.dataset.artifactTitle;link.href=trigger.dataset.artifactLink;modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';close.focus();}
+function shut(){modal.setAttribute('aria-hidden','true');document.body.style.overflow='';img.removeAttribute('src');if(previous)previous.focus();}
+document.querySelectorAll('.artifact-trigger').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();open(el)}));
+close.addEventListener('click',shut);modal.addEventListener('click',e=>{if(e.target===modal)shut()});
+document.addEventListener('keydown',e=>{if(modal.getAttribute('aria-hidden')!=='false')return;if(e.key==='Escape'){e.preventDefault();shut();return;}if(e.key==='Tab'){const items=focusable();if(!items.length){e.preventDefault();return;}const first=items[0],last=items[items.length-1];if(e.shiftKey&&(document.activeElement===first||!modal.contains(document.activeElement))){e.preventDefault();last.focus();}else if(!e.shiftKey&&(document.activeElement===last||!modal.contains(document.activeElement))){e.preventDefault();first.focus();}}});
+})();
+</script><script src="/js/ifd-navigation-trail.js" defer></script></body></html>
